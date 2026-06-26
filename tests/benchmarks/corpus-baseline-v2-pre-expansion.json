@@ -1,0 +1,19 @@
+{
+  "version": "CV_PARSE_BENCHMARK_V2_BASELINE",
+  "description": "Frozen baseline before corpus expansion (3 fixtures only).",
+  "generated_at": "2026-06-16T20:36:07.592Z",
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "pass_rate": 1
+  },
+  "corpus_metrics": {
+    "contact_accuracy": 1,
+    "section_detection_accuracy": 1,
+    "experience_segmentation_accuracy": 1,
+    "education_deduplication_success": 1,
+    "skills_purity": 1,
+    "unclassified_block_rate": 0.1118,
+    "portfolio_leakage_rate": 0
+  }
+}

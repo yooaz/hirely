@@ -1,0 +1,282 @@
+
+/* Hirely V1 Stabilizer — minimal visibility fixes, no redesign */
+#cvDoc.hirely-v1-stable-cv,
+#cvDoc.cv--raw-fallback,
+#cvDoc.cv--simple-fallback {
+  min-height: 1123px;
+  height: auto;
+  overflow: visible;
+  background: #fff;
+  color: #171717;
+}
+#cvDoc.hirely-v1-stable-cv .hirelyV1CvInner {
+  padding: 42px 48px;
+  max-width: 794px;
+  margin: 0 auto;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+#cvDoc.hirely-v1-stable-cv .cvName {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+#cvDoc.hirely-v1-stable-cv .cvTitle {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+#cvDoc.hirely-v1-stable-cv .cvContact {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #555;
+  overflow-wrap: anywhere;
+}
+#cvDoc.hirely-v1-stable-cv .cvSection {
+  margin-top: 22px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionTitle {
+  margin: 0 0 9px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 6px;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionBody,
+#cvDoc.hirely-v1-stable-cv li,
+#cvDoc.hirely-v1-stable-cv p {
+  font-size: 12px;
+  line-height: 1.52;
+}
+#cvDoc.hirely-v1-stable-cv ul {
+  margin: 0;
+  padding-left: 18px;
+}
+#cvDoc.hirely-v1-stable-cv li {
+  margin: 0 0 5px;
+}
+#cvDoc.hirely-v1-stable-cv .cvSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#cvDoc.hirely-v1-stable-cv .cvSkill {
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 10.5px;
+  background: #fafafa;
+}
+.workspaceGrid--ready #studioPreview,
+.workspaceGrid--ready #cvPanel,
+.workspaceGrid--ready #cvStage,
+.workspaceGrid--ready #cvDoc {
+  visibility: visible !important;
+}
+.workspaceGrid--ready.docStep-style #studioPreview,
+.workspaceGrid--ready.docStep-export #studioPreview {
+  display: block !important;
+}
+.workspaceGrid--ready.docStep-style #templatePickerBar {
+  display: block;
+  max-height: 280px;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+.workspaceGrid--ready.docStep-style #cvStageWrap,
+.workspaceGrid--ready.docStep-export #cvStageWrap {
+  display: block !important;
+}
+.workspaceGrid--ready.docStep-export #cvExportBar {
+  display: flex !important;
+}
+@media (max-width: 900px) {
+  #cvDoc.hirely-v1-stable-cv .hirelyV1CvInner {
+    padding: 28px 24px;
+  }
+  #cvDoc.hirely-v1-stable-cv .cvName {
+    font-size: 28px;
+  }
+  .workspaceGrid--ready.docStep-style #templatePickerBar {
+    max-height: 220px;
+  }
+}
+
+
+/* Template/readability pass — keep product design, fix density/overflow */
+#cvDoc.hirely-v1-stable-cv,
+#cvDoc.hirely-v1-stable-cv * {
+  box-sizing: border-box;
+}
+#cvDoc.hirely-v1-stable-cv {
+  width: 794px;
+  max-width: 100%;
+  min-height: 1123px;
+  overflow: hidden visible;
+}
+#cvDoc.hirely-v1-stable-cv .hirelyV1CvInner {
+  padding: 44px 50px;
+}
+#cvDoc.hirely-v1-stable-cv .cvName {
+  font-size: clamp(28px, 4vw, 38px);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+#cvDoc.hirely-v1-stable-cv .cvTitle {
+  font-size: 15px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionBody p,
+#cvDoc.hirely-v1-stable-cv .cvEduLine {
+  margin: 0 0 6px;
+}
+#cvDoc.hirely-v1-stable-cv .cvFallbackList {
+  display: grid;
+  gap: 7px;
+}
+#cvDoc.hirely-v1-stable-cv .cvFallbackList li {
+  padding-left: 2px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionBody {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.workspaceGrid--ready #reviewStudioAnalysis {
+  min-height: 520px;
+}
+.workspaceGrid--ready #reviewStudioAnalysis:empty::after,
+.workspaceGrid--ready #recruiterCommandCenter:empty::after {
+  content: "CV importé. Vérifiez le contenu, puis passez au modèle.";
+  display: block;
+  margin: 20px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.workspaceGrid--ready.docStep-style #templatePickerBar {
+  position: relative;
+  z-index: 2;
+  max-height: 300px;
+  overflow: auto;
+}
+.workspaceGrid--ready.docStep-style #cvStageWrap,
+.workspaceGrid--ready.docStep-export #cvStageWrap {
+  position: relative;
+  z-index: 1;
+}
+.workspaceGrid--ready.docStep-export #cvExportBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 1100px) {
+  #cvDoc.hirely-v1-stable-cv .hirelyV1CvInner {
+    padding: 34px 30px;
+  }
+  #cvDoc.hirely-v1-stable-cv .cvSection {
+    margin-top: 18px;
+  }
+}
+
+
+/* Designer polish pass — premium but minimal */
+#cvDoc.hirely-v1-stable-cv {
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, .10);
+  border: 1px solid rgba(15, 23, 42, .06);
+}
+#cvDoc.hirely-v1-stable-cv .hirelyV1CvInner {
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+#cvDoc.hirely-v1-stable-cv .cvHeaderRule {
+  width: 44px;
+  height: 3px;
+  border-radius: 999px;
+  background: #111827;
+  margin-bottom: 28px;
+}
+#cvDoc.hirely-v1-stable-cv .cvHead {
+  padding-bottom: 26px;
+  border-bottom: 1px solid #e5e7eb;
+}
+#cvDoc.hirely-v1-stable-cv .cvName {
+  font-weight: 760;
+  line-height: .98;
+}
+#cvDoc.hirely-v1-stable-cv .cvTitle {
+  color: #374151;
+  font-weight: 620;
+}
+#cvDoc.hirely-v1-stable-cv .cvContact {
+  color: #6b7280;
+  font-size: 11.5px;
+  margin-top: 12px;
+}
+#cvDoc.hirely-v1-stable-cv .cvContact--missing {
+  color: #9ca3af;
+}
+#cvDoc.hirely-v1-stable-cv .cvSection {
+  margin-top: 26px;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionTitle {
+  color: #6b7280;
+  font-weight: 780;
+  letter-spacing: .18em;
+  border-bottom: 1px solid #edf0f3;
+}
+#cvDoc.hirely-v1-stable-cv .cvSectionBody p {
+  color: #1f2937;
+}
+#cvDoc.hirely-v1-stable-cv .cvFallbackList {
+  list-style: none;
+  padding-left: 0;
+}
+#cvDoc.hirely-v1-stable-cv .cvFallbackList li {
+  position: relative;
+  padding-left: 18px;
+  color: #1f2937;
+}
+#cvDoc.hirely-v1-stable-cv .cvFallbackList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #111827;
+}
+#cvDoc.hirely-v1-stable-cv .cvSkill {
+  border-color: #dbe1e8;
+  background: #f8fafc;
+  color: #111827;
+  font-weight: 600;
+}
+#cvDoc.hirely-v1-stable-cv .cvEduLine {
+  color: #1f2937;
+}
+#cvDoc.hirely-v1-stable-cv.template-minimal,
+#cvDoc.hirely-v1-stable-cv.template-classic,
+#cvDoc.hirely-v1-stable-cv.template-modern,
+#cvDoc.hirely-v1-stable-cv.template-editorial {
+  overflow: visible;
+}
+#templatePickerBar .templateCard,
+.templateCard {
+  overflow: hidden;
+}
+#templatePickerBar {
+  border-radius: 18px;
+}

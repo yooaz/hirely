@@ -1,0 +1,33 @@
+/**
+ * HIRELY V1 production gallery — six strong templates.
+ */
+import {
+  TEMPLATE_V1_VERSION,
+  TEMPLATE_V1_IDS,
+  TEMPLATE_V1_NAMES,
+  TEMPLATE_V1_ALIASES,
+  resolveTemplateV1Id,
+  templateV1DisplayName,
+} from './template-v1-catalog.mjs';
+
+export const PREMIUM_TEMPLATE_SYSTEM_V1_IDS = [...TEMPLATE_V1_IDS];
+
+/** @deprecated use PREMIUM_TEMPLATE_SYSTEM_V1_IDS */
+export const PRODUCTION_TEMPLATE_IDS = PREMIUM_TEMPLATE_SYSTEM_V1_IDS;
+
+export const FEATURED_TEMPLATE_IDS = [...TEMPLATE_V1_IDS];
+
+export const PRODUCTION_TEMPLATE_DISPLAY_NAMES = {
+  ...TEMPLATE_V1_NAMES,
+};
+
+export const PREMIUM_TEMPLATE_SYSTEM_V1_COUNT = PREMIUM_TEMPLATE_SYSTEM_V1_IDS.length;
+export const PRODUCTION_TEMPLATE_COUNT = PREMIUM_TEMPLATE_SYSTEM_V1_COUNT;
+export const TEMPLATE_SYSTEM_VERSION = TEMPLATE_V1_VERSION;
+export const TEMPLATE_SYSTEM_LOCK = 'TEMPLATE_V1_QUALITY_RESET';
+
+export {
+  TEMPLATE_V1_ALIASES,
+  resolveTemplateV1Id,
+  templateV1DisplayName,
+};

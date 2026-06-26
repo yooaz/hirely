@@ -1,0 +1,24 @@
+Alex Chen
+Senior Software Engineer
+alex.chen@email.com · +1 415 555 0192 · San Francisco
+
+Summary
+Full-stack engineer with 9 years building scalable web applications and APIs.
+
+Experience
+Senior Software Engineer — Stripe — San Francisco — 2019 – Present
+
+Software Engineer — Dropbox — San Francisco — 2015 – 2019
+
+Education
+MIT — B.S. Computer Science — 2011 – 2015
+
+Skills
+System design, API design, distributed systems, mentoring, code review
+
+Tools
+TypeScript, Python, Go, React, PostgreSQL, Docker, Kubernetes, AWS
+
+Languages
+English — fluent
+Mandarin — conversational

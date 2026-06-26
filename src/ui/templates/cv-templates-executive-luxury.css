@@ -1,0 +1,196 @@
+/**
+ * Executive Luxury — McKinsey · BCG · Goldman Sachs · Airbnb executives.
+ * Luxury minimalism · impact-first leadership CV.
+ */
+
+.cv.template-executive-luxury {
+  --el-ink: #0f172a;
+  --el-muted: #475569;
+  --el-line: #e2e8f0;
+  --el-paper: #fdfcfa;
+  --el-accent: #1e293b;
+  --el-display: 'Source Serif 4', 'Libre Baskerville', Georgia, serif;
+  --el-body: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  font-family: var(--el-body);
+  font-size: 10pt;
+  line-height: 1.48;
+  color: var(--el-ink);
+  background: var(--el-paper);
+}
+
+.cv.template-executive-luxury .cvInner.cvLayout-executive-luxury {
+  padding: 0;
+}
+
+.cv.template-executive-luxury .cvHead--executive-luxury {
+  padding: 48px 52px 32px;
+  border-bottom: 1px solid var(--el-line);
+}
+
+.cv.template-executive-luxury .cvName {
+  font-family: var(--el-display);
+  font-size: 30pt;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--el-ink);
+  margin: 0;
+}
+
+.cv.template-executive-luxury .cvTitle {
+  font-family: var(--el-body);
+  font-size: 10pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--el-muted);
+  margin: 12px 0 0;
+}
+
+.cv.template-executive-luxury .cvLuxuryContact {
+  font-size: 8.75pt;
+  color: var(--el-muted);
+  margin: 14px 0 0;
+  letter-spacing: 0.03em;
+}
+
+.cv.template-executive-luxury .cvMain--executive-luxury {
+  padding: 36px 52px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cv.template-executive-luxury .cvSection {
+  margin: 0;
+  break-inside: avoid;
+}
+
+.cv.template-executive-luxury .cvSectionTitle {
+  font-family: var(--el-display);
+  font-size: 12pt;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--el-ink);
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--el-line);
+}
+
+.cv.template-executive-luxury .cvLuxurySummary {
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--el-accent);
+  margin: 0;
+}
+
+.cv.template-executive-luxury .cvLuxuryExpList {
+  display: grid;
+  gap: 24px;
+}
+
+.cv.template-executive-luxury .cvLuxuryExpEntry {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--el-line);
+}
+
+.cv.template-executive-luxury .cvLuxuryExpEntry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv.template-executive-luxury .cvLuxuryExpRole {
+  font-family: var(--el-display);
+  font-size: 13pt;
+  font-weight: 600;
+  margin: 0;
+  color: var(--el-ink);
+}
+
+.cv.template-executive-luxury .cvLuxuryExpMeta {
+  font-size: 9pt;
+  color: var(--el-muted);
+  margin: 4px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.cv.template-executive-luxury .cvLuxuryImpact {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 12px 0 10px;
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--el-line);
+}
+
+.cv.template-executive-luxury .cvLuxuryImpactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cv.template-executive-luxury .cvLuxuryImpactLabel {
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--el-muted);
+}
+
+.cv.template-executive-luxury .cvLuxuryImpactValue {
+  font-size: 9pt;
+  line-height: 1.35;
+  color: var(--el-ink);
+}
+
+.cv.template-executive-luxury .cvLuxuryExpBullet {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 6px 0 0;
+  color: var(--el-accent);
+}
+
+.cv.template-executive-luxury .cvLuxuryAchievement {
+  font-family: var(--el-display);
+  font-size: 11pt;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: var(--el-ink);
+}
+
+.cv.template-executive-luxury .cvLuxuryAchievement:last-child {
+  margin-bottom: 0;
+}
+
+.cv.template-executive-luxury .cvLuxuryLine,
+.cv.template-executive-luxury .cvLuxuryLangLine {
+  font-size: 9.5pt;
+  line-height: 1.5;
+  margin: 0 0 4px;
+  color: var(--el-accent);
+}
+
+.cv.template-executive-luxury .cvEduSchool {
+  font-family: var(--el-display);
+  font-size: 11.5pt;
+  margin: 0;
+}
+
+.cv.template-executive-luxury .cvEduProgram,
+.cv.template-executive-luxury .cvEduDates,
+.cv.template-executive-luxury .cvEduLine {
+  font-size: 9pt;
+  color: var(--el-muted);
+  margin: 4px 0 0;
+}
+
+.cv.template-executive-luxury .cvSkillChip,
+.cv.template-executive-luxury .cvClientChip,
+.cv.template-executive-luxury .cvProgress {
+  display: none !important;
+}
+
+.tplMiniWrap--executive-luxury {
+  border-bottom: 3px solid #0f172a;
+  background: #fdfcfa;
+}

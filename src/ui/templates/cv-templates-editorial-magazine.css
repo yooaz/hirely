@@ -1,0 +1,328 @@
+/**
+ * Editorial Magazine — Kinfolk · Wallpaper* · Aesop · Monocle
+ * Magazine cover meets professional resume.
+ */
+
+.cv.template-editorial-magazine {
+  --em-ink: #121212;
+  --em-muted: #5c5c5c;
+  --em-line: #d8d4cf;
+  --em-paper: #f9f7f4;
+  --em-accent: #1a1a1a;
+  --em-display: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
+  --em-serif: 'Source Serif 4', Georgia, serif;
+  --em-sans: 'DM Sans', 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--em-serif);
+  font-size: 10.25pt;
+  line-height: 1.58;
+  color: var(--em-ink);
+  background: var(--em-paper);
+}
+
+.cv.template-editorial-magazine .cvInner.cvLayout-editorial-magazine {
+  padding: 0;
+}
+
+/* —— Magazine cover —— */
+.cv.template-editorial-magazine .cvEmCover,
+.cv.template-editorial-magazine .cvHead--editorial-magazine {
+  position: relative;
+  padding: 56px 56px 44px;
+  border-bottom: 1px solid var(--em-line);
+  background: linear-gradient(180deg, #fff 0%, var(--em-paper) 100%);
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCover,
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvHead--editorial-magazine {
+  padding: 28px 40px 18px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmName,
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCover .cvName {
+  font-size: 34pt;
+  max-width: 14ch;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmDeck {
+  margin: 14px 0 0;
+  font-size: 11.5pt;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCol {
+  padding: 18px 0 22px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCol--left {
+  padding-left: 40px;
+  padding-right: 20px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCol--feature {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvEmCol--right {
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.cv.template-editorial-magazine .cvEmKicker {
+  display: block;
+  font-family: var(--em-sans);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--em-muted);
+  margin-bottom: 18px;
+}
+
+.cv.template-editorial-magazine .cvEmName,
+.cv.template-editorial-magazine .cvEmCover .cvName {
+  font-family: var(--em-display);
+  font-size: 54pt;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--em-accent);
+  margin: 0;
+  max-width: 11ch;
+}
+
+.cv.template-editorial-magazine .cvEmTitle,
+.cv.template-editorial-magazine .cvEmCover .cvTitle {
+  font-family: var(--em-sans);
+  font-size: 9.5pt;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--em-muted);
+  margin: 20px 0 0;
+}
+
+.cv.template-editorial-magazine .cvEmDeck {
+  margin: 28px 0 0;
+  max-width: 44ch;
+  font-family: var(--em-serif);
+  font-size: 13.5pt;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #3d3d3d;
+}
+
+.cv.template-editorial-magazine .cvEmContact {
+  margin: 22px 0 0;
+  font-family: var(--em-sans);
+  font-size: 8.25pt;
+  letter-spacing: 0.06em;
+  color: var(--em-muted);
+}
+
+/* —— Editorial spread —— */
+.cv.template-editorial-magazine .cvEmSpread {
+  display: grid;
+  grid-template-columns: minmax(0, 22%) minmax(0, 1fr) minmax(0, 26%);
+  gap: 0;
+  align-items: start;
+  min-height: 0;
+}
+
+.cv.template-editorial-magazine .cvEmCol {
+  padding: 36px 0 48px;
+  break-inside: avoid;
+}
+
+.cv.template-editorial-magazine .cvEmCol--left {
+  padding-left: 56px;
+  padding-right: 28px;
+  border-right: 1px solid var(--em-line);
+}
+
+.cv.template-editorial-magazine .cvEmCol--feature {
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.cv.template-editorial-magazine .cvEmCol--right {
+  padding-left: 28px;
+  padding-right: 56px;
+  border-left: 1px solid var(--em-line);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* —— Section hierarchy —— */
+.cv.template-editorial-magazine .cvSection--editorial {
+  margin: 0 0 32px;
+  break-inside: avoid;
+}
+
+.cv.template-editorial-magazine .cvSection--editorial:last-child {
+  margin-bottom: 0;
+}
+
+.cv.template-editorial-magazine .cvEmSectionTitle {
+  font-family: var(--em-sans);
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--em-muted);
+  margin: 0 0 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--em-line);
+}
+
+.cv.template-editorial-magazine .cvEmSectionTitle--feature {
+  font-family: var(--em-display);
+  font-size: 20pt;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--em-accent);
+  border-top: 0;
+  padding-top: 0;
+  margin-bottom: 22px;
+}
+
+.cv.template-editorial-magazine .cvEmSectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* —— Experience feature —— */
+.cv.template-editorial-magazine .cvExpList--airy .cvExpEntry {
+  margin: 0 0 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--em-line);
+}
+
+.cv.template-editorial-magazine .cvExpList--airy .cvExpEntry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.cv.template-editorial-magazine .cvExpRole {
+  font-family: var(--em-display);
+  font-size: 14pt;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--em-accent);
+}
+
+.cv.template-editorial-magazine .cvExpCompany,
+.cv.template-editorial-magazine .cvExpDates {
+  font-family: var(--em-sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--em-muted);
+  margin-top: 6px;
+}
+
+.cv.template-editorial-magazine .cvExpBullet {
+  font-size: 10pt;
+  line-height: 1.52;
+  color: #333;
+}
+
+/* —— Education & meta rails —— */
+.cv.template-editorial-magazine .cvEduSchool {
+  font-family: var(--em-display);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--em-accent);
+}
+
+.cv.template-editorial-magazine .cvEduProgram,
+.cv.template-editorial-magazine .cvEduDates,
+.cv.template-editorial-magazine .cvEduLine {
+  font-size: 9.5pt;
+  color: var(--em-muted);
+  line-height: 1.45;
+}
+
+.cv.template-editorial-magazine .cvEmMetaLine,
+.cv.template-editorial-magazine .cvEmClientLine {
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+.cv.template-editorial-magazine .cvEmProjectLine {
+  font-family: var(--em-display);
+  font-size: 11pt;
+  line-height: 1.35;
+  color: var(--em-accent);
+  margin: 0 0 8px;
+}
+
+.cv.template-editorial-magazine .cvListEntry,
+.cv.template-editorial-magazine .cvPortfolioLink {
+  font-size: 9pt;
+  color: var(--em-muted);
+}
+
+/* —— Excluded classic CV patterns —— */
+.cv.template-editorial-magazine .cvClientChip,
+.cv.template-editorial-magazine .cvSkillChip,
+.cv.template-editorial-magazine .cvProgress,
+.cv.template-editorial-magazine .cvMetaFooter,
+.cv.template-editorial-magazine:not(.cv--with-photo) .cvPhoto,
+.cv.template-editorial-magazine:not(.cv--with-photo) .cvPhotoWrap {
+  display: none !important;
+}
+
+.tplMiniWrap--editorial-magazine {
+  background: linear-gradient(180deg, #fff 42%, #f9f7f4 42%);
+  border-top: 2px solid #121212;
+}
+
+.tplMiniWrap--editorial-magazine .tplMini .cvEmName,
+.tplMiniWrap--editorial-magazine .tplMini .cvName {
+  font-size: 28pt !important;
+}
+
+@media (max-width: 720px) {
+  .cv.template-editorial-magazine .cvEmCover,
+  .cv.template-editorial-magazine .cvHead--editorial-magazine {
+    padding: 40px 32px 32px;
+  }
+
+  .cv.template-editorial-magazine .cvEmName,
+  .cv.template-editorial-magazine .cvEmCover .cvName {
+    font-size: 40pt;
+    max-width: none;
+  }
+
+  .cv.template-editorial-magazine .cvEmSpread {
+    grid-template-columns: 1fr;
+  }
+
+  .cv.template-editorial-magazine .cvEmCol--left,
+  .cv.template-editorial-magazine .cvEmCol--right {
+    border: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .cv.template-editorial-magazine .cvEmCol--feature {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media print {
+  .cv.template-editorial-magazine .cvEmCover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv.template-editorial-magazine .cvSection--editorial {
+    break-inside: avoid;
+  }
+}

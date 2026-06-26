@@ -1,0 +1,135 @@
+{
+  "version": "1",
+  "id": "YOAZ_PDF_BENCHMARK",
+  "label": "cv. Yohann azancot.pdf — two-column creative CV parsing benchmark",
+  "sourceFile": "cv. Yohann azancot.pdf",
+  "fixturePdf": "tests/fixtures/yoaz-pdf-benchmark/document.pdf",
+  "fixtureText": "tests/fixtures/yoaz-pdf-benchmark/fixture.txt",
+  "fixturePage1": "tests/fixtures/yoaz-pdf-benchmark/fixture-page1.txt",
+  "fixturePage2": "tests/fixtures/yoaz-pdf-benchmark/fixture-page2.txt",
+  "linesJson": [
+    "tests/fixtures/yoaz-pdf-benchmark/page1-lines.json",
+    "tests/fixtures/yoaz-pdf-benchmark/page2-lines.json"
+  ],
+  "pdfPageCount": 2,
+  "page2PortfolioMarkers": [
+    "Personal Project",
+    "Sunglass Man",
+    "Cubist Art",
+    "Fortune 500 Cover",
+    "God of War",
+    "Metro Display",
+    "adidas creation"
+  ],
+  "columnMergeForbiddenPatterns": [
+    {
+      "id": "email_merged_education",
+      "pattern": "yoaz@hotmail\\.fr.*LISAA",
+      "flags": "is",
+      "reason": "sidebar email merged into education column"
+    },
+    {
+      "id": "languages_merged_experience",
+      "pattern": "French native.*Freelancer",
+      "flags": "is",
+      "reason": "languages sidebar merged into work experience"
+    },
+    {
+      "id": "phone_merged_education_dates",
+      "pattern": "\\+336494344839.*2011\\s*-\\s*2012",
+      "flags": "is",
+      "reason": "phone merged with education dates (column collapse)"
+    },
+    {
+      "id": "skills_merged_experience",
+      "pattern": "Photoshop.*McCann",
+      "flags": "is",
+      "reason": "skills column merged with experience body"
+    }
+  ],
+  "clientBrands": ["Nike", "Converse", "Pantone", "Adobe", "Arte"],
+  "expectedNormalized": {
+    "identity": {
+      "full_name": "Yohann Azancot",
+      "title_contains": ["Graphic Designer", "Illustrator"],
+      "phone": "+336494344839",
+      "email": "yoaz@hotmail.fr",
+      "address_contains": "176 Boulevard de Charonne"
+    },
+    "summary_contains": ["35 years old", "illustrator", "graphic designer"],
+    "languages": [
+      { "label_contains": "French", "level_contains": "native" },
+      { "label_contains": "English", "level_contains": "fluent" }
+    ],
+    "experiences": [
+      {
+        "role_contains": ["Freelancer", "Illustrator", "Graphic Designer"],
+        "dates_contains": "2011",
+        "dates_contains_end": "2023",
+        "clients_include": ["Nike", "Converse", "Pantone", "Adobe", "Arte"]
+      },
+      {
+        "company_contains": "McCann",
+        "internship": true,
+        "dates_contains": "2011"
+      },
+      {
+        "company_contains": "3B",
+        "internship": true,
+        "dates_contains": "2010"
+      }
+    ],
+    "education": [
+      {
+        "school_contains": "LISAA",
+        "field_contains": "web",
+        "dates_contains": "2011",
+        "dates_contains_end": "2012"
+      },
+      {
+        "school_contains": "Créapôle",
+        "field_contains": "visual communication",
+        "dates_contains": "2009",
+        "dates_contains_end": "2011"
+      },
+      {
+        "school_contains": "Créapôle",
+        "field_contains": "product design",
+        "dates_contains": "2008",
+        "dates_contains_end": "2009"
+      },
+      {
+        "school_contains": "Créapôle",
+        "field_contains": "multisectoral",
+        "dates_contains": "2007",
+        "dates_contains_end": "2009"
+      }
+    ],
+    "skills_include": [
+      "Photoshop",
+      "Illustrator",
+      "Indesign",
+      "Affinity",
+      "Procreate",
+      "After effect"
+    ],
+    "interests_include": [
+      "Photography",
+      "Art",
+      "Snowboard",
+      "Soccer",
+      "Drawing",
+      "Movies",
+      "Reading",
+      "Music",
+      "Nature"
+    ],
+    "counts": {
+      "experiences_min": 3,
+      "education_min": 4,
+      "education_max": 4,
+      "skills_min": 6,
+      "interests_min": 5
+    }
+  }
+}

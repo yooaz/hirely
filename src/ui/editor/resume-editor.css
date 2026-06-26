@@ -1,0 +1,30 @@
+.rdEditor{font-family:var(--font-sans,system-ui,sans-serif);font-size:13px;line-height:1.45;color:var(--ink,#171717)}
+.rdHead h3{margin:0 0 4px;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.rdLead{margin:0 0 16px;color:var(--muted,#6b7280);font-size:12px}
+.rdSection{margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line,#e8e8e4)}
+.rdSection:last-child{border-bottom:0}
+.rdSection h4{margin:0 0 10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.rdSectionHead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.rdSectionHead h4{margin:0}
+.rdRow{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.rdRow label{font-size:11px;font-weight:600;color:var(--muted)}
+.rdRow input,.rdSection textarea{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.rdBlock{padding:10px;margin-bottom:10px;background:var(--blue-soft,#f4f4f1);border-radius:10px}
+.rdEmpty{margin:0;font-size:12px;color:var(--muted)}
+.rdHint{margin:0 0 8px;font-size:11px;color:var(--muted)}
+.rdUnsorted{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;max-height:280px;overflow:auto}
+.rdUnsortedItem p{margin:0 0 6px;font-size:12px;word-break:break-word}
+.rdRow--inline{flex-direction:row;align-items:center;gap:6px}
+.rdRow--inline input{flex:1}
+html:not(.debug-mode) .wsInsights .resultScoreBlock,
+html:not(.debug-mode) .wsInsights .pipelineReport,
+html:not(.debug-mode) .wsInsights .recsBlock,
+html:not(.debug-mode) .wsInsights #verifyReviewBlock,
+html:not(.debug-mode) .wsInsights .resumeEditorPanel{display:none!important}
+html:not(.debug-mode) .wsProduct .resumeEditorPanel{display:block!important}
+html:not(.debug-mode) .tab[data-tab="audit"],
+html:not(.debug-mode) .tab[data-tab="linkedin"],
+html:not(.debug-mode) .tab[data-tab="letter"]{display:none!important}
+html:not(.debug-mode) .importPanel .detectedDetails,
+html:not(.debug-mode) .importPanel .toolsMore{display:none!important}
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsImport{display:none!important}

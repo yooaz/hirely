@@ -1,0 +1,17 @@
+{
+  "version": "tesseract-vendor-1",
+  "package": "5.1.1",
+  "core": "5.1.1",
+  "files": [
+    "vendor/tesseract/tesseract.min.js",
+    "vendor/tesseract/worker.min.js",
+    "vendor/tesseract/core/tesseract-core-simd-lstm.wasm.js",
+    "vendor/tesseract/core/tesseract-core-simd-lstm.wasm",
+    "vendor/tesseract/core/tesseract-core-lstm.wasm.js",
+    "vendor/tesseract/core/tesseract-core-lstm.wasm"
+  ],
+  "langs": [
+    "vendor/tesseract/lang/eng.traineddata.gz",
+    "vendor/tesseract/lang/fra.traineddata.gz"
+  ]
+}

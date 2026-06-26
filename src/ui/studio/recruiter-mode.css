@@ -1,0 +1,216 @@
+/**
+ * Recruiter review mode — local fixes panel.
+ */
+
+.studioModeToggle {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 14px;
+  background: #f4f4f1;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.studioModeToggleBtn {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 10px;
+  border-radius: calc(var(--radius-md) - 2px);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.studioModeToggleBtn:hover {
+  color: var(--ink);
+}
+
+.studioModeToggleBtn.is-active {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.recruiterReviewPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+.recruiterReviewPanel.hidden {
+  display: none !important;
+}
+
+.recruiterReviewHead h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.recruiterReviewHead p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.recruiterReviewScore {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafaf8;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.recruiterReviewScoreRing {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  background: conic-gradient(var(--ink) calc(var(--score, 0) * 1%), #e8ecf1 0);
+  flex-shrink: 0;
+}
+
+.recruiterReviewScoreRing span {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruiterFixList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recruiterFixCard {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.recruiterFixCard--high {
+  border-color: #fecaca;
+  background: #fffbfb;
+}
+
+.recruiterFixCard--medium {
+  border-color: #fde68a;
+  background: #fffef5;
+}
+
+.recruiterFixIssue {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.recruiterFixAction {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.recruiterFixOk {
+  padding: 12px;
+  font-size: 13px;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+}
+
+.recruiterAuditChecks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recruiterAuditChecks.hidden {
+  display: none !important;
+}
+
+.recruiterAuditCheck {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fafaf8;
+}
+
+.recruiterAuditCheckLabel {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.recruiterAuditCheckStatus {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.recruiterAuditCheck--ok .recruiterAuditCheckStatus {
+  color: #166534;
+}
+
+.recruiterAuditCheck--warn .recruiterAuditCheckStatus {
+  color: #b45309;
+}
+
+.recruiterAuditCheck--fail .recruiterAuditCheckStatus {
+  color: #b91c1c;
+}
+
+.recruiterAuditCheck--skip .recruiterAuditCheckStatus {
+  color: var(--muted);
+}
+
+html:not(.debug-mode) .studioRail--recruiter #resumeEditorPanel,
+html:not(.debug-mode) .studioRail--recruiter #studioSectionNav {
+  display: none !important;
+}
+
+html:not(.debug-mode) .studioRail--edit #recruiterReviewPanel {
+  display: none !important;
+}
+
+html:not(.debug-mode) .studioRail--recruiter #studioScorePanel {
+  display: none !important;
+}

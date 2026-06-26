@@ -1,0 +1,30 @@
+{
+  "id": "degrees",
+  "version": 1,
+  "entityType": "degree",
+  "boost": 30,
+  "entities": [
+    { "id": "bachelor", "name": "Bachelor", "aliases": ["B.A", "B.S", "BA", "BS", "Licence", "Licenciatura"], "type": "degree" },
+    { "id": "master", "name": "Master", "aliases": ["M.A", "M.S", "MA", "MS", "Master 2", "MBA"], "type": "degree" },
+    { "id": "mba", "name": "MBA", "aliases": ["M.B.A"], "type": "degree" },
+    { "id": "phd", "name": "PhD", "aliases": ["Ph.D", "Doctorate", "Doctorat"], "type": "degree" },
+    { "id": "bfa", "name": "BFA", "aliases": ["B.F.A"], "type": "degree" },
+    { "id": "mfa", "name": "MFA", "aliases": ["M.F.A"], "type": "degree" },
+    { "id": "bts", "name": "BTS", "aliases": [], "type": "degree" },
+    { "id": "dut", "name": "DUT", "aliases": [], "type": "degree" },
+    { "id": "diploma", "name": "Diploma", "aliases": ["Diplôme", "DEUG"], "type": "degree" },
+    { "id": "baccalaureat", "name": "Baccalauréat", "aliases": ["Bac +2", "Bac +3", "Bac +5"], "type": "degree" }
+  ],
+  "terms": [
+    "Bachelor",
+    "Master",
+    "MBA",
+    "PhD",
+    "BFA",
+    "MFA",
+    "Licence",
+    "Diploma",
+    "BTS",
+    "DUT"
+  ]
+}

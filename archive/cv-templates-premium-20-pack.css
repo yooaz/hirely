@@ -1,0 +1,277 @@
+/* Hirely — 20 premium CV template systems (print/PDF safe, preview-readable) */
+
+/* Optional profile photo (non-ATS templates) */
+.cvPhotoWrap .cvPhoto{width:72px;height:72px;border-radius:8px;object-fit:cover;display:block}
+.cvHead--grid .cvPhotoWrap{justify-self:end}
+.layout-sidebar .cvSide .cvPhotoWrap,.layout-portfolio .cvSide .cvPhotoWrap{margin-bottom:12px}
+.cvHead--editorial .cvPhotoWrap,.cvHead--portfolio .cvPhotoWrap{float:right;margin:0 0 10px 14px}
+
+/* —— Shared foundations —— */
+.cv{font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;print-color-adjust:exact}
+.cv .cvSection:empty{display:none}
+.cvSummary{margin:0}
+.cvLangList{margin:0;padding:0;list-style:none}
+.cvLangList li{margin:0 0 6px;padding:0}
+.cvLangList li:last-child{margin-bottom:0}
+.cvExpBullets{margin:0;padding:0 0 0 1.1em}
+.cvExpBullets li{margin:0 0 7px}
+.cvExpNumbered{margin:0;padding:0;list-style:none;counter-reset:hirely-exp}
+.cvExpNumbered li{position:relative;margin:0 0 10px;padding-left:1.6em;counter-increment:hirely-exp}
+.cvExpNumbered li::before{content:counter(hirely-exp,decimal-leading-zero);position:absolute;left:0;top:0;font-size:8pt;font-weight:700;letter-spacing:.06em;color:#94a3b8}
+.cvExpList{display:flex;flex-direction:column;gap:10px}
+.cvExpEntry{padding:0 0 10px;border-bottom:1px solid #eef2f6}
+.cvExpEntry:last-child{border-bottom:0;padding-bottom:0}
+.cvExpEntry p{margin:0;font-size:inherit;line-height:inherit}
+.cvClientTags{display:flex;flex-wrap:wrap;gap:6px 10px}
+.cvClientTag{font-size:9pt;font-weight:600;color:#334155;letter-spacing:.02em}
+.cvHead--grid{display:grid;grid-template-columns:1fr auto;gap:20px 32px;align-items:end}
+.cvHeadPrimary{min-width:0}
+.cvHeadMeta{text-align:right;font-size:9.5pt}
+.cvHead--center{text-align:center}
+.cvHead--center .cvContact{justify-content:center}
+.cvLayout-compactCols .cvBody--compact{display:flex;gap:0;min-height:0;flex:1}
+.cvAsideNarrow{width:168px;flex-shrink:0;padding:22px 16px 40px 20px;background:#fafbfc;border-right:1px solid #e8ecf0;font-size:9.5pt}
+.cvAsideNarrow .cvSection{margin-bottom:14px}
+.cvMain--full{flex:1}
+
+/* Slim accent band — not full-bleed dark page */
+.cvTopBand--slim{background:#fff!important;color:#0f172a!important;padding:36px 48px 28px!important;border-bottom:4px solid #0f172a}
+.cvTopBand--slim .cvName{color:#0f172a!important}
+.cvTopBand--slim .cvTitle{color:#475569!important}
+.cvTopBand--slim .cvContact{color:#64748b!important}
+
+@media print{
+  .cv{box-shadow:none!important;border:0!important}
+  .cvStage{background:#fff!important;padding:0!important}
+}
+
+/* 1 — ATS Clean */
+.cv.template-ats{font-size:10.25pt;line-height:1.52}
+.cv.template-ats .cvHead{padding:40px 48px 16px;border-bottom:2px solid #0f172a}
+.cv.template-ats .cvName{font-size:20pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-ats .cvTitle{font-size:11pt;font-weight:600;color:#334155}
+.cv.template-ats .cvContact{font-size:9.75pt}
+.cv.template-ats .cvMain{padding:22px 48px 40px}
+.cv.template-ats .cvSection{margin-bottom:18px}
+.cv.template-ats .cvSectionTitle{font-size:7.5pt;letter-spacing:.16em;border-bottom:1px solid #cbd5e1;padding-bottom:5px;color:#475569}
+
+/* 2 — McKinsey Brief */
+.cv.template-mckinsey{font-size:10pt;line-height:1.5}
+.cv.template-mckinsey .cvHead--brief{padding:36px 48px 12px;border-bottom:1px solid #111827}
+.cv.template-mckinsey .cvName{font-size:18pt;font-weight:700;letter-spacing:-.02em}
+.cv.template-mckinsey .cvTitle{font-size:9.5pt;text-transform:uppercase;letter-spacing:.14em;color:#4b5563;font-weight:600}
+.cv.template-mckinsey .cvMain{padding:18px 48px 38px}
+.cv.template-mckinsey .cvSection{margin-bottom:12px}
+.cv.template-mckinsey .cvSectionTitle{font-size:6.5pt;letter-spacing:.24em;border:0;color:#6b7280;margin-bottom:6px}
+.cv.template-mckinsey .cvExpNumbered li::before{color:#111827}
+
+/* 3 — Swiss Grid */
+.cv.template-swiss{font-size:10pt;line-height:1.56}
+.cv.template-swiss .cvHead--grid{padding:36px 40px 20px;border-bottom:1px solid #d4d4d8}
+.cv.template-swiss .cvName{font-size:20pt;font-weight:600;letter-spacing:-.04em}
+.cv.template-swiss .cvTitle{font-size:10.5pt;color:#52525b;margin-top:4px}
+.cv.template-swiss .cvHeadMeta .cvContact{color:#71717a;line-height:1.55}
+.cv.template-swiss .cvSide{width:132px;background:#fafafa;border-right:1px solid #e4e4e7;padding:28px 14px 40px 18px}
+.cv.template-swiss .cvMain{padding:28px 36px 40px}
+.cv.template-swiss .cvSectionTitle{font-size:6.5pt;letter-spacing:.22em;border-bottom:1px solid #e4e4e7}
+.cv.template-swiss .chip{border-radius:2px;font-size:8pt;border-color:#d4d4d8}
+
+/* 4 — Editorial Designer */
+.cv.template-editorial{font-size:10.5pt;line-height:1.62;background:#fffefb;color:#292524}
+.cv.template-editorial .cvHead--serif{padding:48px 52px 8px;border:0}
+.cv.template-editorial .cvHead--serif::after{content:"";display:block;width:36px;height:1px;background:#292524;margin-top:20px}
+.cv.template-editorial .cvName{font-family:'Instrument Serif',Georgia,serif;font-size:28pt;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+.cv.template-editorial .cvTitle{font-size:11pt;font-style:italic;color:#57534e;margin-top:10px;font-weight:450}
+.cv.template-editorial .cvMain{padding:20px 52px 44px;max-width:100%}
+.cv.template-editorial .cvSection{margin-bottom:22px}
+.cv.template-editorial .cvSectionTitle{font-size:7pt;letter-spacing:.22em;border:0;color:#78716c}
+.cv.template-editorial .cvExpEntry{border-color:#e7e5e4}
+
+/* 5 — Portfolio Creative */
+.cv.template-portfolio{font-size:10.25pt;line-height:1.54}
+.cv.template-portfolio .cvHead--portfolio{padding:40px 44px 18px 48px;border-bottom:1px solid #e2e8f0;position:relative}
+.cv.template-portfolio .cvHead--portfolio::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:2px;background:#0f172a}
+.cv.template-portfolio .cvName{font-size:22pt;font-weight:700;letter-spacing:-.035em}
+.cv.template-portfolio .cvSide{width:128px;background:#fafafa;border-left:1px solid #e2e8f0;padding:24px 12px 36px}
+.cv.template-portfolio .cvMain{padding:24px 40px 36px}
+.cv.template-portfolio .cvExpEntry{border-left:2px solid #e2e8f0;padding-left:12px;border-bottom:0}
+
+/* 6 — Luxury Monochrome */
+.cv.template-luxury{font-size:10.5pt;line-height:1.58;background:#faf8f5;color:#1c1917}
+.cv.template-luxury .cvHead--luxury{padding:44px 44px 20px;border-bottom:1px solid #e7e0d4}
+.cv.template-luxury .cvName{font-family:'Instrument Serif',Georgia,serif;font-size:24pt;font-weight:400;line-height:1.08}
+.cv.template-luxury .cvTitle{font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:#78716c;margin-top:12px}
+.cv.template-luxury .cvContact{color:#a8a29e;font-size:9.25pt}
+.cv.template-luxury .cvSide{width:140px;background:#f5f2ec;border-right:1px solid #e7e0d4;padding:26px 14px 40px 18px}
+.cv.template-luxury .cvMain{padding:26px 40px 40px}
+.cv.template-luxury .cvSectionTitle{font-size:7pt;letter-spacing:.2em;border-bottom-color:#e7e0d4;color:#78716c}
+.cv.template-luxury .chip{border-color:#e7e0d4;background:#fff;border-radius:2px}
+
+/* 7 — Modern Sidebar Light */
+.cv.template-sidebar{font-size:10.25pt;line-height:1.52}
+.cv.template-sidebar .cvHead--linear{padding:38px 44px 16px;border-bottom:1px solid #e2e8f0}
+.cv.template-sidebar .cvName{font-size:21pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-sidebar .cvTitle{font-size:11pt;color:#475569}
+.cv.template-sidebar .cvSide{width:124px;background:#f8fafc;border-right:1px solid #e2e8f0;padding:24px 12px 36px 14px}
+.cv.template-sidebar .cvSection--meta .cvSectionTitle{color:#0f172a;font-size:7pt}
+.cv.template-sidebar .cvMain{padding:24px 40px 36px}
+.cv.template-sidebar .cvSectionTitle{font-size:7pt;letter-spacing:.14em;border:0;color:#64748b}
+
+/* 8 — Executive Minimal */
+.cv.template-executive{font-size:10.5pt;line-height:1.58}
+.cv.template-executive .cvHead--center{padding:52px 56px 28px;border-bottom:1px solid #e5e7eb}
+.cv.template-executive .cvName{font-size:23pt;font-weight:600;letter-spacing:-.04em}
+.cv.template-executive .cvTitle{font-size:11pt;color:#64748b;letter-spacing:.04em}
+.cv.template-executive .cvMain{padding:32px 56px 48px}
+.cv.template-executive .cvSection{margin-bottom:22px}
+.cv.template-executive .cvSectionTitle{font-size:7.5pt;letter-spacing:.18em;border:0;text-align:center}
+.cv.template-executive .cvSectionBody{text-align:left}
+.cv.template-executive .cvExpEntry{padding-bottom:14px}
+
+/* 9 — Tech Product */
+.cv.template-tech{font-size:10pt;line-height:1.54}
+.cv.template-tech .cvHead--tech{padding:40px 44px 14px;border-bottom:1px solid #e2e8f0}
+.cv.template-tech .cvName{font-size:21pt;font-weight:700;letter-spacing:-.04em}
+.cv.template-tech .cvTitle{font-size:10.5pt;color:#1d4ed8;font-weight:600}
+.cv.template-tech .cvSide{width:120px;background:#f8fafc;border-right:1px solid #e2e8f0;padding:24px 12px 36px;font-size:9.25pt}
+.cv.template-tech .cvMain{padding:24px 38px 36px}
+.cv.template-tech .cvSectionTitle{font-size:6.5pt;letter-spacing:.18em;border:0;color:#64748b}
+.cv.template-tech .chip{border-radius:4px;font-family:ui-monospace,Menlo,monospace;font-size:8pt;font-weight:500}
+
+/* 10 — Art Director Bold */
+.cv.template-artdirector{font-size:10.5pt;line-height:1.5}
+.cv.template-artdirector .cvHead--bold{padding:44px 48px 20px 52px;border-bottom:3px solid #0f172a;position:relative}
+.cv.template-artdirector .cvHead--bold::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#0f172a}
+.cv.template-artdirector .cvName{font-size:26pt;font-weight:800;letter-spacing:-.045em;line-height:1}
+.cv.template-artdirector .cvTitle{font-size:11pt;font-weight:500;margin-top:10px}
+.cv.template-artdirector .cvMain{padding:26px 48px 40px}
+.cv.template-artdirector .cvSectionTitle{font-size:8pt;letter-spacing:.12em;border:0;font-weight:800;color:#0f172a}
+
+/* 11 — Gallery Resume */
+.cv.template-gallery{font-size:9.75pt;line-height:1.48}
+.cv.template-gallery .cvHead--gallery{padding:38px 44px 14px}
+.cv.template-gallery .cvName{font-size:22pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-gallery .cvMain{padding:20px 44px 36px}
+.cv.template-gallery .cvGallery{grid-template-columns:1fr 1fr;gap:12px}
+.cv.template-gallery .cvGalleryItem{border:1px solid #e5e7eb;border-radius:4px;padding:12px;background:#fff;min-height:72px}
+.cv.template-gallery .cvSectionTitle{font-size:7pt;letter-spacing:.16em}
+
+/* 12 — Compact Pro */
+.cv.template-compact{font-size:9.5pt;line-height:1.46}
+.cv.template-compact .cvHead{padding:28px 40px 12px;border-bottom:1px solid #e2e8f0}
+.cv.template-compact .cvName{font-size:17pt;font-weight:700}
+.cv.template-compact .cvTitle{font-size:10pt}
+.cv.template-compact .cvAsideNarrow{padding:18px 14px 32px 18px}
+.cv.template-compact .cvMain{padding:18px 36px 32px}
+.cv.template-compact .cvSection{margin-bottom:10px}
+.cv.template-compact .cvSectionTitle{font-size:6.5pt;margin-bottom:4px}
+
+/* 13 — Dark Accent */
+.cv.template-darkaccent{font-size:10.25pt;line-height:1.52}
+.cv.template-darkaccent .cvMain-band{padding:26px 48px 40px}
+.cv.template-darkaccent .cvSectionTitle{letter-spacing:.14em}
+
+/* 14 — Creative Editorial */
+.cv.template-creativeed{font-size:10.5pt;line-height:1.6;background:#fffefb;color:#1c1917}
+.cv.template-creativeed .cvHead--kinfolk{padding:44px 48px 16px 56px;border:0;position:relative}
+.cv.template-creativeed .cvHead--kinfolk::before{content:"";position:absolute;left:48px;top:0;bottom:0;width:1px;background:#d6d3d1}
+.cv.template-creativeed .cvName{font-family:'Instrument Serif',Georgia,serif;font-size:26pt;font-weight:400;line-height:1.06}
+.cv.template-creativeed .cvTitle{font-size:10.5pt;color:#57534e;margin-top:8px}
+.cv.template-creativeed .cvMain{padding:16px 48px 40px 56px}
+.cv.template-creativeed .cvSectionTitle{font-size:7pt;letter-spacing:.2em;border:0;color:#a8a29e}
+
+/* 15 — Designer Signature */
+.cv.template-signature{font-size:10.5pt;line-height:1.56}
+.cv.template-signature .cvHead--signature{padding:40px 48px 12px}
+.cv.template-signature .cvSignatureRule{width:48px;height:1px;background:#0f172a;margin:0 0 14px}
+.cv.template-signature .cvName{font-size:21pt;font-weight:600;letter-spacing:-.02em}
+.cv.template-signature .cvTitle{font-size:10.5pt;color:#64748b;margin-top:6px}
+.cv.template-signature .cvMain{padding:20px 48px 40px}
+.cv.template-signature .cvSectionTitle{border:0;font-size:7pt;letter-spacing:.18em}
+
+/* 16 — Consultant Strategy */
+.cv.template-strategy{font-size:10pt;line-height:1.52}
+.cv.template-strategy .cvHead--strategy{padding:40px 50px 14px;border-bottom:3px double #111827}
+.cv.template-strategy .cvName{font-size:19pt;font-weight:700}
+.cv.template-strategy .cvTitle{font-size:10pt;letter-spacing:.1em;text-transform:uppercase;color:#4b5563;font-weight:600}
+.cv.template-strategy .cvMain{padding:22px 50px 40px}
+.cv.template-strategy .cvSectionTitle{font-size:7pt;letter-spacing:.2em;border-bottom:1px solid #d1d5db}
+.cv.template-strategy .cvExpNumbered li::before{color:#374151}
+
+/* 17 — Fashion Minimal */
+.cv.template-fashion{font-size:10.5pt;line-height:1.66;background:#fcfaf8;color:#1c1917}
+.cv.template-fashion .cvHead--fashion{padding:52px 56px 24px}
+.cv.template-fashion .cvName{font-family:'Instrument Serif',Georgia,serif;font-size:30pt;font-weight:400;line-height:1.04;letter-spacing:-.02em}
+.cv.template-fashion .cvTitle{font-size:10.5pt;font-style:italic;letter-spacing:.08em;color:#57534e;margin-top:14px}
+.cv.template-fashion .cvContact{color:#a8a29e;margin-top:16px;font-size:9.25pt}
+.cv.template-fashion .cvMain{padding:4px 56px 48px}
+.cv.template-fashion .cvSection{margin-bottom:26px}
+.cv.template-fashion .cvSectionTitle{font-size:6.5pt;letter-spacing:.3em;border:0;color:#a8a29e}
+.cv.template-fashion .chip{border:0;border-bottom:1px solid #d6d3d1;border-radius:0;background:transparent;padding:2px 0;margin:0 14px 8px 0;font-weight:500}
+
+/* 18 — Academic Clean */
+.cv.template-academic{font-size:10.25pt;line-height:1.54}
+.cv.template-academic .cvHead--academic{padding:38px 48px 14px;border-bottom:1px solid #d1d5db}
+.cv.template-academic .cvName{font-size:19pt;font-weight:600}
+.cv.template-academic .cvTitle{font-size:10.5pt;color:#4b5563;font-style:italic}
+.cv.template-academic .cvMain{padding:24px 48px 40px}
+.cv.template-academic .cvSectionTitle{font-variant:small-caps;letter-spacing:.1em;font-size:8pt;border-bottom:1px solid #e5e7eb}
+.cv.template-academic .cvEduLine{font-style:italic}
+
+/* 19 — Freelance Studio */
+.cv.template-freelance{font-size:10.25pt;line-height:1.54}
+.cv.template-freelance .cvHead--studio{padding:36px 48px 20px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.cv.template-freelance .cvName{font-size:22pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-freelance .cvTitle{font-size:11pt;color:#475569}
+.cv.template-freelance .cvMain{padding:24px 48px 38px}
+.cv.template-freelance .chip{border-radius:999px;background:#fff;border-color:#e2e8f0;font-weight:500;font-size:8.5pt}
+.cv.template-freelance .cvExpEntry{background:#f8fafc;padding:10px 12px;border:0;border-radius:8px}
+
+/* 20 — Timeline Premium */
+.cv.template-timeline{font-size:10.25pt;line-height:1.54}
+.cv.template-timeline .cvHead--timeline{padding:40px 48px 16px;border-bottom:1px solid #e2e8f0}
+.cv.template-timeline .cvName{font-size:21pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-timeline .cvMain{padding:28px 48px 42px}
+.cv.template-timeline .cvTimeline{border-left:1px solid #0f172a;margin-left:6px;padding-left:18px}
+.cv.template-timeline .cvTimelineItem{margin-bottom:16px}
+.cv.template-timeline .cvTimelineDot{width:8px;height:8px;left:-23px;background:#0f172a;border:2px solid #fff;box-shadow:0 0 0 1px #0f172a}
+
+/* Spacing modifiers per template */
+.spacing-compact.cv.template-fashion .cvHead--fashion{padding-top:40px}
+.spacing-spacious.cv.template-executive .cvHead--center{padding-top:64px}
+
+/* 21 — Classic Executive */
+.cv.template-classic-executive{font-size:10.25pt;line-height:1.54;color:#0f172a}
+.cv.template-classic-executive .cvHead--classicExec{padding:44px 52px 18px;border-bottom:2px solid #0f172a}
+.cv.template-classic-executive .cvName{font-size:22pt;font-weight:700;letter-spacing:-.03em}
+.cv.template-classic-executive .cvTitle{font-size:10.5pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#475569;margin-top:6px}
+.cv.template-classic-executive .cvContact{font-size:9.5pt;color:#64748b}
+.cv.template-classic-executive .cvMain{padding:24px 52px 44px}
+.cv.template-classic-executive .cvSectionTitle{font-size:7pt;letter-spacing:.2em;border-bottom:1px solid #cbd5e1;padding-bottom:5px;color:#334155}
+.cv.template-classic-executive .cvExpNumbered li::before{color:#0f172a}
+
+/* 22 — Modern Clean */
+.cv.template-modern-clean{font-size:10.5pt;line-height:1.58;color:#111827}
+.cv.template-modern-clean .cvHead--modernClean{padding:48px 56px 20px;border-bottom:1px solid #e5e7eb}
+.cv.template-modern-clean .cvName{font-size:24pt;font-weight:650;letter-spacing:-.04em}
+.cv.template-modern-clean .cvTitle{font-size:11.5pt;color:#2563eb;font-weight:600;margin-top:8px}
+.cv.template-modern-clean .cvContact{font-size:9.75pt;color:#6b7280}
+.cv.template-modern-clean .cvMain{padding:28px 56px 48px}
+.cv.template-modern-clean .cvSection{margin-bottom:20px}
+.cv.template-modern-clean .cvSectionTitle{font-size:7pt;letter-spacing:.16em;border:0;color:#9ca3af;margin-bottom:8px}
+.cv.template-modern-clean .cvExpEntry{border-left:2px solid #e5e7eb;padding-left:14px;border-bottom:0;margin-bottom:12px}
+
+/* 23 — Creative Minimal */
+.cv.template-creative-minimal{font-size:10.25pt;line-height:1.56;color:#1c1917}
+.cv.template-creative-minimal .cvHead--creativeMinimal{padding:40px 44px 16px 48px;border-bottom:0}
+.cv.template-creative-minimal .cvName{font-size:21pt;font-weight:600;letter-spacing:-.03em}
+.cv.template-creative-minimal .cvTitle{font-size:11pt;color:#78716c;margin-top:6px}
+.cv.template-creative-minimal .cvSide{width:130px;background:#fafaf9;border-right:1px solid #e7e5e4;padding:26px 14px 40px 18px}
+.cv.template-creative-minimal .cvMain{padding:26px 40px 40px}
+.cv.template-creative-minimal .cvSectionTitle{font-size:7pt;letter-spacing:.18em;border:0;color:#a8a29e}
+.cv.template-creative-minimal .chip{border-radius:999px;border-color:#e7e5e4;background:#fff;font-size:8.5pt}
+
+/* Preview scale legibility */
+@media(max-width:900px){
+  .cv{font-size:max(9pt,10.25pt)}
+}

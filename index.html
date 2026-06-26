@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Hirely — CV Premium</title>
+  <link rel="stylesheet" href="src/single-engine/app.css"/>
+</head>
+<body class="template-modern">
+  <header class="topbar">
+    <div class="brand"><span class="logo">H</span>Hirely</div>
+    <nav class="nav"><span class="active">Accueil</span><span>Mon CV</span><span>Prix</span></nav>
+    <button class="lang">FR⌄</button>
+  </header>
+
+  <section class="hero">
+    <span class="kicker">• CV professionnel · Relecture · Export PDF</span>
+    <h1>Le CV qui<br><span>décroche des entretiens.</span></h1>
+    <p>Déposez votre CV, relisez votre profil, choisissez un modèle, téléchargez.</p>
+  </section>
+
+  <nav class="steps">
+    <button class="step active" data-step="import"><b>1</b>Déposer</button>
+    <button class="step" data-step="review"><b>2</b>Relire</button>
+    <button class="step" data-step="style"><b>3</b>Choisir un modèle</button>
+    <button class="step" data-step="export"><b>4</b>Télécharger</button>
+  </nav>
+
+  <main class="page">
+    <section class="importCard" id="importCard">
+      <h2>Déposez votre CV</h2>
+      <div class="formatBox">
+        <div><h3>Pris en charge</h3><div>• ✓ PDF texte</div><div>• ✓ DOCX</div><div>• ✓ TXT</div><div>• ✓ Texte collé</div></div>
+        <div><h3>Sinon, collez le texte</h3><div>• PDF scanné</div><div>• Photos & captures</div><div>• PDF protégé</div></div>
+      </div>
+      <div class="drop" id="drop">
+        <div>
+          <div class="uploadIcon">↑</div>
+          <h3>Déposez votre CV</h3>
+          <p>PDF texte · DOCX · TXT · texte collé</p>
+        </div>
+      </div>
+      <input class="hiddenInput" id="fileInput" type="file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"/>
+      <div class="security">
+        🔒 Votre fichier reste sur votre appareil — nous ne stockons pas votre CV.
+        <div class="badges"><span class="badge ok">✓ Compatible ATS</span><span class="badge">★ Relu comme un recruteur</span></div>
+      </div>
+      <div class="pastePanel" id="pastePanel">
+        <h2>Collez le texte de votre CV</h2>
+        <p id="pasteMessage">Collez le texte complet du CV ci-dessous.</p>
+        <textarea id="pasteText" placeholder="Collez ici le texte complet de votre CV..."></textarea>
+        <div class="actions">
+          <button class="primary" id="pasteBtn">Créer mon CV avec ce texte</button>
+          <button class="secondary" id="tryOther">Essayer un autre fichier</button>
+        </div>
+      </div>
+      <div class="status" id="status"></div>
+    </section>
+
+    <section class="workspace" id="workspace">
+      <div class="cvShell">
+        <article class="cvPage" id="cvPage"></article>
+      </div>
+      <aside class="sidePanel">
+        <h2>Relecture</h2>
+        <div class="reviewList" id="reviewList"></div>
+        <div class="templates" id="templates">
+          <button class="template active" data-template="modern"><b>Modern</b><span>Clair, premium, recruteur</span></button>
+          <button class="template" data-template="classic"><b>Classic</b><span>Editorial, sobre</span></button>
+          <button class="template" data-template="compact"><b>Compact</b><span>Dense, ATS</span></button>
+          <button class="template" data-template="editorial"><b>Editorial</b><span>Design, créatif</span></button>
+        </div>
+        <div class="exportBox" id="exportBox">
+          <p>Votre CV est prêt. Téléchargez une version PDF propre et lisible.</p>
+          <button class="primary" id="downloadBtn">Télécharger le PDF</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="src/single-engine/app.js"></script>
+</body>
+</html>

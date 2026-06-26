@@ -1,0 +1,562 @@
+/**
+ * UI Scale Fix — calm Apple Pages / Keynote rhythm after P0 subtraction.
+ * Shrink chrome ~15%, keep CV document dominant. Load last.
+ */
+
+:root {
+  --ui-scale-fix: 'UI_SCALE_FIX_V1';
+  --chrome-scale: 0.85;
+
+  /* Typography caps */
+  --type-h1-max: 34px;
+  --type-h2-max: 26px;
+  --type-body: 15px;
+  --type-caption: 12px;
+  --type-caption-lg: 13px;
+
+  /* Calm spacing (not dashboard-dense) */
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 20px;
+
+  --ui-radius-sm: 8px;
+  --ui-radius-md: 10px;
+
+  --ui-canvas-max: 1200px;
+  --import-card-max: 520px;
+}
+
+/* —— Typography —— */
+body {
+  font-size: var(--type-body) !important;
+  line-height: 1.55 !important;
+}
+
+.heroCopy h1,
+.importPanel h2,
+.styleStepHead h2,
+.exportStepHead .level1,
+.resumeStudioHead h2 {
+  font-size: min(var(--type-h1-max), clamp(26px, 2.4vw, var(--type-h1-max))) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+}
+
+h2,
+.reviewV2Head h3,
+.importPasteFallback h2,
+#importPasteFallbackTitle {
+  font-size: min(var(--type-h2-max), clamp(20px, 2vw, var(--type-h2-max))) !important;
+  line-height: 1.22 !important;
+}
+
+h3,
+.wsCommandBarTitle,
+.premiumTplName {
+  font-size: var(--type-caption-lg) !important;
+  line-height: 1.35 !important;
+}
+
+.caption,
+.sub,
+.importLead,
+.heroHow,
+.heroCopy .lead,
+.hirelyProgressLabel,
+.kicker,
+.trustStrip,
+.exportStepLead,
+.importPasteFallbackLead,
+.dropHint,
+.statusText {
+  font-size: var(--type-caption-lg) !important;
+}
+
+.heroBadge,
+.premiumGalleryFilter,
+.btn.small,
+.hirelyProgressHint {
+  font-size: var(--type-caption) !important;
+}
+
+/* —— Shell chrome (−15%) —— */
+.top {
+  height: 40px !important;
+  margin-top: 8px !important;
+  padding: 0 4px !important;
+}
+
+.brand {
+  font-size: 14px !important;
+  gap: 7px !important;
+}
+
+.logo {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 11px !important;
+  border-radius: 7px !important;
+}
+
+.nav {
+  gap: 16px !important;
+  font-size: var(--type-caption-lg) !important;
+}
+
+.lang select {
+  padding: 5px 6px !important;
+  font-size: var(--type-caption-lg) !important;
+}
+
+.btn {
+  padding: 6px 11px !important;
+  font-size: var(--type-caption-lg) !important;
+  border-radius: var(--ui-radius-sm) !important;
+  font-weight: 600 !important;
+}
+
+.btn.small {
+  padding: 4px 8px !important;
+  font-size: var(--type-caption) !important;
+}
+
+.btn.primary,
+.heroUploadBtn {
+  padding: 8px 14px !important;
+  font-size: var(--type-body) !important;
+}
+
+.heroBadge {
+  margin: 0 0 10px !important;
+  padding: 4px 10px !important;
+}
+
+.hero {
+  padding: 20px 0 16px !important;
+  width: 100% !important;
+  max-width: min(1100px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+.heroGrid {
+  width: 100%;
+  max-width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+/* Landing: single-column hero — copy full width, pipeline below (not squeezed left) */
+html:not(.debug-mode) .app:not(.app--workspace) .heroGrid {
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .heroCopy {
+  text-align: center !important;
+  max-width: 100% !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .heroCopy h1,
+html:not(.debug-mode) .app:not(.app--workspace) .heroCopy .lead,
+html:not(.debug-mode) .app:not(.app--workspace) .heroHow {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .heroActions,
+html:not(.debug-mode) .app:not(.app--workspace) .heroUpload {
+  justify-content: center !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .heroPipeline {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.heroCopy .lead {
+  max-width: 52ch !important;
+}
+
+.heroUploadBtn {
+  min-width: 200px;
+  max-width: 100%;
+}
+
+/* —— Landing: import directly under hero, not split sidebar —— */
+html:not(.debug-mode) .app:not(.app--workspace) .workspaceGrid:not(.workspaceGrid--ready) {
+  grid-template-columns: 1fr !important;
+  grid-template-areas: "import" !important;
+  max-width: min(1100px, 100%) !important;
+  margin: 0 auto !important;
+  gap: 12px !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .workspaceGrid:not(.workspaceGrid--ready) .wsInsights {
+  display: none !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .workspaceGrid:not(.workspaceGrid--ready) .wsImport {
+  grid-area: import !important;
+  max-width: min(560px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+html:not(.debug-mode) .app:not(.app--workspace) .workspaceZone {
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+}
+
+.heroStep {
+  padding: 10px !important;
+}
+
+.heroStepNum {
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 0 6px !important;
+  font-size: 10px !important;
+}
+
+.heroStepTitle {
+  font-size: var(--type-caption) !important;
+}
+
+.heroStepDesc {
+  font-size: 11px !important;
+  margin-top: 3px !important;
+}
+
+/* —— Stepper (single nav, compact) —— */
+.hirelyProgressNav {
+  margin-bottom: 8px !important;
+  max-width: min(var(--ui-canvas-max), 100%) !important;
+}
+
+.hirelyProgressBtn {
+  padding: 5px 5px 4px !important;
+  gap: 3px !important;
+}
+
+.hirelyProgressIcon {
+  width: 16px !important;
+  height: 16px !important;
+  font-size: 10px !important;
+}
+
+.hirelyProgressLabel {
+  font-size: 10px !important;
+}
+
+html:not(.debug-mode) .docNav {
+  top: 44px !important;
+  padding: 2px 0 !important;
+}
+
+/* —— Import: centered drop card —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-import .wsImport,
+html:not(.debug-mode) .workspaceGrid:not(.workspaceGrid--ready) .wsImport {
+  max-width: var(--import-card-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: var(--ui-space-3) var(--ui-space-4) !important;
+  border-radius: var(--ui-radius-md) !important;
+}
+
+html:not(.debug-mode) .importExpanded {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+}
+
+html:not(.debug-mode) .drop {
+  min-height: 72px !important;
+  padding: 14px 16px !important;
+  border-radius: var(--ui-radius-md) !important;
+}
+
+html:not(.debug-mode) .importLead {
+  margin: 0 !important;
+  text-align: center;
+}
+
+html:not(.debug-mode) .wsCommandBar {
+  margin-bottom: var(--ui-space-2) !important;
+}
+
+html:not(.debug-mode) .wsCommandBar .kicker {
+  font-size: 10px !important;
+}
+
+html:not(.debug-mode) .statusRow {
+  padding: var(--ui-space-2) 0 !important;
+  gap: var(--ui-space-2) !important;
+}
+
+html:not(.debug-mode) .importPasteFallback {
+  padding: var(--ui-space-3) var(--ui-space-4) !important;
+  border-radius: var(--ui-radius-md) !important;
+}
+
+html:not(.debug-mode) .importPasteFallback textarea {
+  min-height: 140px !important;
+  font-size: var(--type-caption-lg) !important;
+}
+
+/* —— Workspace: document canvas, less stacking —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export {
+  max-width: min(var(--ui-canvas-max), calc(100% - 24px)) !important;
+  margin: 0 auto !important;
+  gap: var(--ui-space-2) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready .wsProduct {
+  gap: var(--ui-space-2) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #resumeStudioHead,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleStepLead,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleStepHead .kicker {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleStepHead {
+  margin: 0 0 4px !important;
+  padding: 0 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleStepHead h2 {
+  font-size: var(--type-body) !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .exportStepHead {
+  margin: 0 0 6px !important;
+  padding: 0 2px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .exportStepHead .kicker {
+  font-size: 10px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .exportStepLead {
+  margin: 2px 0 0 !important;
+  font-size: var(--type-caption) !important;
+}
+
+/* —— Review: CV 68–70%, airy stage —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack {
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 30%) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .workspaceCanvas {
+  min-height: min(70vh, 780px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStage {
+  padding: 18px 22px 20px !important;
+  background: #f3f3f0 !important;
+  border-radius: var(--ui-radius-md) !important;
+  min-height: min(68vh, 760px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStageInner {
+  transform: none !important;
+  margin-bottom: 0 !important;
+  max-width: 794px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #a4Viewport {
+  min-height: min(60vh, 700px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioAnalysis {
+  padding: 10px 12px !important;
+  border-radius: var(--ui-radius-md) !important;
+  box-shadow: 0 0 0 1px var(--line) !important;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2Head h3 {
+  font-size: var(--type-body) !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .rccKicker {
+  font-size: 10px !important;
+  letter-spacing: 0.06em !important;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .rccListItem {
+  font-size: var(--type-caption-lg) !important;
+  padding: 5px 0 !important;
+}
+
+/* —— Style: thumbnails first, minimal text —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerBar {
+  padding: 8px 10px 10px !important;
+  margin-bottom: 4px !important;
+  border-radius: var(--ui-radius-md) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerHead .kicker,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerMeta,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplHiring,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplBest,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplStyle {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerHead strong {
+  font-size: var(--type-caption-lg) !important;
+  font-weight: 600 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .spacingGroup {
+  gap: 4px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .spacingGroup .btn.small {
+  padding: 3px 7px !important;
+  font-size: 10px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryFilters {
+  margin-bottom: 6px !important;
+  gap: 4px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryFilter {
+  padding: 4px 8px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryGrid {
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)) !important;
+  gap: 8px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard {
+  padding: 5px !important;
+  border-radius: var(--ui-radius-sm) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplPreview {
+  min-height: 72px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplBody {
+  padding-top: 4px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplName {
+  display: block;
+  text-align: center;
+  font-size: 10px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .cvStage {
+  padding: 14px 18px 16px !important;
+  min-height: min(72vh, 820px) !important;
+}
+
+/* —— Export: clean A4, minimal chrome —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview {
+  min-height: min(76vh, 880px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .cvStage {
+  padding: 12px 16px 14px !important;
+  background: #f0f0ed !important;
+  min-height: min(74vh, 860px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .cvStageInner {
+  transform: none !important;
+  margin-bottom: 0 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export #a4Viewport {
+  min-height: min(68vh, 800px) !important;
+}
+
+html:not(.debug-mode) .docFooter .cvExportBar {
+  padding: 8px 10px !important;
+  max-width: 360px !important;
+  margin: 0 auto !important;
+}
+
+html:not(.debug-mode) .docFooter .cvExportBar .btn.primary {
+  padding: 8px 12px !important;
+  font-size: var(--type-body) !important;
+  min-width: 0 !important;
+}
+
+/* —— Cards / panels: less padding, less stack —— */
+.reviewStudioCenter,
+.coverLetterWorkspace {
+  padding: var(--ui-space-3) !important;
+}
+
+.mvpImportBanner {
+  padding: var(--ui-space-3) var(--ui-space-4) !important;
+  margin-bottom: var(--ui-space-2) !important;
+}
+
+.mvpImportTitle {
+  font-size: var(--type-body) !important;
+  margin: 0 0 6px !important;
+}
+
+.mvpImportChecks {
+  font-size: var(--type-caption-lg) !important;
+  gap: 4px !important;
+}
+
+.scoreRing {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 11px !important;
+}
+
+/* —— Undo density-pass zoom on CV chrome (keep document size) —— */
+html:not(.debug-mode) .workspaceGrid--ready .cvStageInner {
+  --cv-preview-scale: 1 !important;
+}
+
+@container cv-canvas (min-width: 720px) {
+  html:not(.debug-mode) .cvStageInner {
+    transform: scale(min(1.05, calc((100cqi - 32px) / 794))) !important;
+    transform-origin: top center !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@container cv-canvas (min-width: 960px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStageInner,
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-export .cvStageInner {
+    transform: scale(min(1.08, calc((100cqi - 40px) / 794))) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --import-card-max: 100%;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStage {
+    padding: 12px 10px !important;
+    min-height: min(58vh, 640px) !important;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack {
+    grid-template-columns: 1fr !important;
+  }
+}

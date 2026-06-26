@@ -1,0 +1,61 @@
+/**
+ * Agency Designer — dark header band + rose accent split studio layout.
+ */
+
+.cv.template-agency-designer {
+  --ad-accent: #e11d48;
+  --ad-band: #18181b;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 10pt;
+  line-height: 1.48;
+  color: #18181b;
+  background: #fff;
+}
+
+.cv.template-agency-designer .cvHead--agency-band {
+  background: var(--ad-band);
+  color: #fafafa;
+  padding: 22px 28px 18px;
+}
+
+.cv.template-agency-designer .cvHead--agency-band .cvName,
+.cv.template-agency-designer .cvHead--agency-band .cvTitle,
+.cv.template-agency-designer .cvHead--agency-band .cvContact {
+  color: #fafafa;
+}
+
+.cv.template-agency-designer .cvBody--agency {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+}
+
+.cv.template-agency-designer .cvSide--agency {
+  background: #f4f4f5;
+  padding: 20px 14px 24px 20px;
+  border-right: 3px solid var(--ad-accent);
+}
+
+.cv.template-agency-designer .cvMain--agency {
+  padding: 20px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cv.template-agency-designer .cvSectionTitle {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ad-accent);
+}
+
+.tplMiniWrap--agency-designer {
+  border-top: 8px solid #18181b;
+}
+
+@media (max-width: 640px) {
+  .cv.template-agency-designer .cvBody--agency {
+    grid-template-columns: 1fr;
+  }
+}

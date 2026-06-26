@@ -1,0 +1,10 @@
+{
+  "id": "social_networks",
+  "version": 3,
+  "deprecated": true,
+  "note": "Use socials.json — kept for import compatibility",
+  "entityType": "social",
+  "boost": 18,
+  "entities": [],
+  "terms": []
+}

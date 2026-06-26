@@ -1,0 +1,157 @@
+/**
+ * ATS Elite — Google / Stripe / Linear / Notion hiring style.
+ * Black & white · dense · no icons · no colored blocks · no gimmicks.
+ */
+
+.cv.template-ats-elite {
+  --cv-ink: #000000;
+  --cv-muted: #444444;
+  --cv-line: #d4d4d4;
+  --cv-body: #111111;
+  font-family: Inter, 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  font-size: 9.75pt;
+  line-height: 1.42;
+  color: var(--cv-body);
+  background: #ffffff;
+}
+
+.cv.template-ats-elite .cvInner.cvLayout-ats-elite {
+  padding: 0;
+}
+
+.cv.template-ats-elite .cvHead--ats-elite {
+  padding: 32px 40px 18px;
+  border-bottom: 1px solid var(--cv-ink);
+  background: #fff;
+}
+
+.cv.template-ats-elite .cvName {
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--cv-ink);
+  margin: 0;
+}
+
+.cv.template-ats-elite .cvTitle {
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: var(--cv-muted);
+  margin: 6px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-ats-elite .cvEliteContact {
+  font-size: 8.5pt;
+  color: var(--cv-muted);
+  margin: 8px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-ats-elite .cvMain--ats-elite {
+  padding: 20px 40px 36px;
+}
+
+.cv.template-ats-elite .cvSection {
+  margin-bottom: 14px;
+  break-inside: avoid;
+}
+
+.cv.template-ats-elite .cvSectionTitle {
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-ink);
+  border-bottom: 1px solid var(--cv-line);
+  padding-bottom: 4px;
+  margin: 0 0 8px;
+}
+
+.cv.template-ats-elite .cvSectionBody {
+  margin: 0;
+}
+
+.cv.template-ats-elite .cvSection--summary .cvSectionBody p {
+  font-size: 9.5pt;
+  line-height: 1.48;
+  color: var(--cv-body);
+  margin: 0;
+}
+
+.cv.template-ats-elite .cvExpList--tight .cvExpEntry {
+  margin-bottom: 7px;
+  padding-bottom: 0;
+  border: none;
+}
+
+.cv.template-ats-elite .cvExpRole {
+  font-size: 9.75pt;
+  font-weight: 600;
+  color: var(--cv-ink);
+  margin: 0;
+}
+
+.cv.template-ats-elite .cvExpCompany,
+.cv.template-ats-elite .cvExpDates {
+  font-size: 9pt;
+  color: var(--cv-muted);
+  margin: 1px 0 0;
+}
+
+.cv.template-ats-elite .cvExpBullet {
+  font-size: 9pt;
+  line-height: 1.4;
+  margin: 3px 0 0;
+  padding-left: 0;
+}
+
+.cv.template-ats-elite .cvExpBullet::before {
+  content: none;
+}
+
+.cv.template-ats-elite .cvEduEntry--stacked .cvEduSchool,
+.cv.template-ats-elite .cvEduEntry--stacked .cvEduProgram {
+  font-size: 9.5pt;
+  margin: 0;
+}
+
+.cv.template-ats-elite .cvEduEntry--stacked .cvEduDates {
+  font-size: 8.75pt;
+  color: var(--cv-muted);
+  margin: 1px 0 0;
+}
+
+.cv.template-ats-elite .cvEliteLine {
+  font-size: 9pt;
+  line-height: 1.45;
+  margin: 0;
+  color: var(--cv-body);
+}
+
+.cv.template-ats-elite .cvLangLine {
+  font-size: 9pt;
+  margin: 0 0 2px;
+}
+
+/* No photo by default; Pro may enable cv--with-photo */
+.cv.template-ats-elite:not(.cv--with-photo) .cvPhoto,
+.cv.template-ats-elite:not(.cv--with-photo) .cvPhotoWrap,
+.cv.template-ats-elite .cvTimelineDot,
+.cv.template-ats-elite .cvClientChip,
+.cv.template-ats-elite .cvSkillChip,
+.cv.template-ats-elite .cvProgress,
+.cv.template-ats-elite [class*='Icon'] {
+  display: none !important;
+}
+
+.cv.template-ats-elite .cvTimelineItem {
+  border-left: none;
+  padding-left: 0;
+}
+
+.tplMiniWrap--ats-elite {
+  border-bottom: 2px solid #000;
+  background: #fff;
+}

@@ -1,0 +1,198 @@
+/* Hirely Stable V3 — safe polish on classic 2-column structure (loads last) */
+
+/* Hero: keep headline, polish spacing only */
+html.v3-layout.classic-layout .hero.hero--compact {
+  padding: clamp(36px, 6vw, 52px) 20px clamp(28px, 4vw, 36px) !important;
+}
+
+html.v3-layout.classic-layout .hero h1 {
+  font-size: clamp(2.5rem, 6.5vw, 4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.04 !important;
+  margin: 14px 0 12px !important;
+}
+
+html.v3-layout.classic-layout .hero .heroLead {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html.v3-layout.classic-layout .hero .actions {
+  margin-top: 18px !important;
+  gap: 10px !important;
+}
+
+html.v3-layout.classic-layout .hero .btn.blue {
+  min-width: 160px;
+}
+
+@media (max-width: 640px) {
+  html.v3-layout.classic-layout .hero h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+  }
+
+  html.v3-layout.classic-layout .hero .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Right column reads as one dark workstation */
+html.v3-layout.classic-layout .workspaceGrid {
+  max-width: 1320px !important;
+}
+
+html.v3-layout.classic-layout .col-intel + .col-preview {
+  margin-top: 0 !important;
+}
+
+/* Pricing visible, clear */
+html.v3-layout.classic-layout .pricingBand {
+  margin-top: 8px;
+  margin-bottom: 48px;
+}
+
+/* Disable legacy single-column workstation when unwrapped */
+html.v3-layout.classic-layout .v3Workstation {
+  display: contents !important;
+}
+
+html.v3-layout.classic-layout .v3Controls {
+  display: none !important;
+}
+
+/* Template pills on dark toolbar */
+html.v3-layout.classic-layout .templateGallery--winning {
+  display: none !important;
+}
+
+html.v3-layout.classic-layout #templateButtons .chip {
+  display: inline-flex !important;
+}
+
+/* —— FIX: stable.css 3-col grid + gray workspacePreview overlay —— */
+html.stable-mode.classic-layout .workspaceGrid {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr) !important;
+  grid-template-rows: auto minmax(420px, 1fr) !important;
+  grid-template-areas:
+    "upload intel"
+    "upload preview" !important;
+  gap: 14px !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  align-items: stretch !important;
+}
+
+html.stable-mode.classic-layout .col-upload {
+  grid-area: upload !important;
+  grid-column: auto !important;
+}
+
+html.stable-mode.classic-layout .col-intel {
+  grid-area: intel !important;
+  grid-column: auto !important;
+  position: static !important;
+  max-height: none !important;
+}
+
+html.stable-mode.classic-layout .col-preview {
+  grid-area: preview !important;
+  grid-column: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+html.stable-mode.classic-layout .prepSection .sectionHead {
+  display: block !important;
+}
+
+/* Restore recruiter metrics hidden by stable.css */
+html.stable-mode.classic-layout #bars {
+  display: block !important;
+}
+
+html.stable-mode.classic-layout .insightGrid {
+  display: grid !important;
+}
+
+html.stable-mode.classic-layout .scoreTop > .scoreDetail,
+html.stable-mode.classic-layout .scoreTop .scoreDetail {
+  display: block !important;
+}
+
+html.stable-mode.classic-layout #verdict,
+html.stable-mode.classic-layout #summary {
+  display: block !important;
+}
+
+/* Kill the light-gray slab over the dark panel */
+html.stable-mode.classic-layout .workspacePreview {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html.stable-mode.classic-layout .proLock.proLock--compact {
+  background: rgba(15, 17, 23, 0.5) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  color: #e5e7eb !important;
+  max-width: 42ch;
+  margin: 0 auto 12px !important;
+}
+
+html.stable-mode.classic-layout .proLock.proLock--compact h3 {
+  color: #fff !important;
+}
+
+html.stable-mode.classic-layout .proLock.proLock--compact p {
+  color: #9ca3af !important;
+}
+
+html.stable-mode.classic-layout #proToolbar {
+  background: transparent !important;
+  border: none !important;
+  padding: 8px 0 !important;
+}
+
+html.stable-mode.classic-layout #proToolbar .toolbarGroup:first-of-type,
+html.stable-mode.classic-layout #proToolbar .toolbarLabel:first-of-type {
+  display: flex !important;
+}
+
+html.stable-mode.classic-layout #proToolbar .chip,
+html.stable-mode.classic-layout #templateButtons .chip {
+  display: inline-flex !important;
+}
+
+html.stable-mode.classic-layout .profileRecBanner:not(.is-empty) {
+  margin: 0 0 10px !important;
+  max-width: 100%;
+}
+
+html.stable-mode.classic-layout .cvStage {
+  flex: 1 1 auto !important;
+  min-height: 400px !important;
+}
+
+html.stable-mode.classic-layout .col-preview.workspace,
+html.stable-mode.classic-layout .workspaceZone {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html.winning-layout.stable-mode.classic-layout .workspaceGrid {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr) !important;
+  grid-template-areas:
+    "upload intel"
+    "upload preview" !important;
+}

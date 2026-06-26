@@ -1,0 +1,43 @@
+---
+description: Block templates/photo/pricing/design UI until import gate reports PASS
+alwaysApply: true
+---
+
+# Import gate — no UI work until import passes
+
+The product is **not usable** until file import works end-to-end. Do not work on the following until both gate reports are **PASS**:
+
+- CV templates / template gallery
+- Photo upload / crop / per-template photo
+- Section order / drag-reorder UX
+- Pricing / Stripe / Pro paywall UI
+- Visual design polish (spacing, typography, colors)
+- Animations / motion / transitions
+
+## No fake pass
+
+Read `NO_FAKE_PASS_IMPORT_POLICY.md`. **Terminal status ≠ product PASS.** Scanned/image files that OCR cannot read must be `IMPORT_NEEDS_PASTE` and **fail** the gate.
+
+## Gate reports (all required)
+
+| Report | Verify |
+|--------|--------|
+| `LOCAL_OCR_CSP_FIX_REPORT.md` | `npm run local-ocr-csp-fix-report` |
+| `IMPORT_REALITY_CHECK_REPORT.md` | `npm run import-reality-check-report` |
+| `REAL_WORLD_IMPORT_TRUTH_REPORT.md` | `npm run real-world-import-truth-report` |
+
+If either report is **FAIL** or stale, work only on:
+
+- Extraction / OCR / CSP
+- Import pipeline / paste fallback / format support
+- Import QA scripts and gate reports
+
+## Allowed while gate is open
+
+- Import bugs, extraction quality, parser fixes tied to import
+- Review queue / contact consistency if blocking import review
+- QA scripts for the two gate reports above
+
+## Current status
+
+Re-read both report files at session start. Treat `**Status:** PASS` in each as the gate signal. If either is missing or FAIL, refuse UI-scope tasks and fix import first.

@@ -1,0 +1,76 @@
+/**
+ * Tech Structured — skills rail + mono identity + engineering density.
+ */
+
+.cv.template-tech-structured {
+  --ts-accent: #2563eb;
+  --ts-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --ts-body: Inter, system-ui, sans-serif;
+  font-family: var(--ts-body);
+  font-size: 10pt;
+  line-height: 1.46;
+  color: #0f172a;
+  background: #fff;
+}
+
+.cv.template-tech-structured .cvHead--tech-structured {
+  padding: 20px 26px 14px;
+  border-bottom: 3px solid var(--ts-accent);
+  background: #f8fafc;
+}
+
+.cv.template-tech-structured .cvName {
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cv.template-tech-structured .cvTitle {
+  font-family: var(--ts-mono);
+  font-size: 9pt;
+  color: var(--ts-accent);
+  margin-top: 4px;
+}
+
+.cv.template-tech-structured .cvBody--tech-structured {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.cv.template-tech-structured .cvSide--tech-structured {
+  padding: 16px 14px 20px 20px;
+  background: #f1f5f9;
+  border-right: 2px solid var(--ts-accent);
+}
+
+.cv.template-tech-structured .cvMain--tech-structured {
+  padding: 16px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cv.template-tech-structured .cvSectionTitle {
+  font-family: var(--ts-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+  border-bottom: 1px solid #dbeafe;
+}
+
+.cv.template-tech-structured .cvExpDates {
+  font-family: var(--ts-mono);
+  font-size: 8pt;
+  color: #64748b;
+}
+
+.tplMiniWrap--tech-structured {
+  border-left: 4px solid #2563eb;
+}
+
+@media (max-width: 640px) {
+  .cv.template-tech-structured .cvBody--tech-structured {
+    grid-template-columns: 1fr;
+  }
+}

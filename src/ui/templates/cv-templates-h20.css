@@ -1,0 +1,472 @@
+/**
+ * H20 — Real template system.
+ * Five instantly recognizable layouts: grid · hierarchy · typography · sections · spacing · PDF.
+ */
+
+/* ═══ Shared H20 tokens (overridden per template) ═══ */
+.cv.cvTpl-h20-ats,
+.cv.cvTpl-h20-creative,
+.cv.cvTpl-h20-executive-minimal,
+.cv.cvTpl-h20-modern-two-column,
+.cv.cvTpl-h20-editorial {
+  --h20-grid: 1fr;
+  --h20-side: 0;
+  --h20-pad-x: 32px;
+  --h20-pad-y: 28px;
+  --h20-section-gap: 18px;
+  --h20-name-size: 22pt;
+  --h20-title-size: 11pt;
+  --h20-label-track: 0.18em;
+  --h20-accent: #0f172a;
+  --h20-surface: #ffffff;
+  --h20-muted: #64748b;
+  --h20-rule: #e2e8f0;
+  --h20-font-body: Inter, system-ui, sans-serif;
+  --h20-font-display: Inter, system-ui, sans-serif;
+  background: var(--h20-surface);
+  color: #0f172a;
+}
+
+.cvTpl-h20-ats .cvInner,
+.cvTpl-h20-creative .cvInner,
+.cvTpl-h20-executive-minimal .cvInner,
+.cvTpl-h20-modern-two-column .cvInner,
+.cvTpl-h20-editorial .cvInner {
+  padding: 0;
+}
+
+/* ── 1 · ATS Professional — single column · dense · recruiter scan ── */
+.cv.template-ats.cvTpl-h20-ats {
+  --h20-grid: 1fr;
+  --h20-pad-x: 28px;
+  --h20-pad-y: 22px;
+  --h20-section-gap: 14px;
+  --h20-name-size: 20pt;
+  --h20-title-size: 10.5pt;
+  --h20-label-track: 0.22em;
+  --h20-accent: #111827;
+  --h20-font-body: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  --h20-font-display: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  font-family: var(--h20-font-body);
+  font-size: 10pt;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvLayout-h20-ats .cvHead--ats {
+  padding: var(--h20-pad-y) var(--h20-pad-x) 12px;
+  border-bottom: 2px solid var(--h20-accent);
+  background: #fff;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvName {
+  font-family: var(--h20-font-display);
+  font-size: var(--h20-name-size);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvTitle {
+  font-size: var(--h20-title-size);
+  font-weight: 600;
+  color: var(--h20-muted);
+  margin-top: 4px;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvMain {
+  padding: 16px var(--h20-pad-x) var(--h20-pad-y);
+  display: grid;
+  grid-template-columns: var(--h20-grid);
+  gap: var(--h20-section-gap);
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvSectionTitle {
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--h20-label-track);
+  border-bottom: 1px solid var(--h20-rule);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvExpRole {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvExpDates {
+  font-size: 9pt;
+  color: var(--h20-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.cv.template-ats.cvTpl-h20-ats .cvMetaFooter {
+  border-top: 1px solid var(--h20-rule);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.tplMiniWrap--ats {
+  border-left: 4px solid #111827;
+}
+
+/* ── 2 · Executive — centered authority · serif · airy single column ── */
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal {
+  --h20-grid: minmax(0, 40em);
+  --h20-pad-x: 36px;
+  --h20-pad-y: 28px;
+  --h20-section-gap: 16px;
+  --h20-name-size: 26pt;
+  --h20-title-size: 11pt;
+  --h20-label-track: 0.14em;
+  --h20-accent: #1c1917;
+  --h20-surface: #fafaf9;
+  --h20-muted: #57534e;
+  --h20-rule: #d6d3d1;
+  --h20-font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --h20-font-display: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+  font-family: var(--h20-font-body);
+  font-size: 10.5pt;
+  line-height: 1.62;
+  background: var(--h20-surface);
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvLayout-h20-executive .cvHead--executive-minimal {
+  text-align: center;
+  padding: var(--h20-pad-y) var(--h20-pad-x) 20px;
+  border-bottom: 1px solid var(--h20-rule);
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvName {
+  font-family: var(--h20-font-display);
+  font-size: var(--h20-name-size);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: var(--h20-title-size);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--h20-muted);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvMain {
+  max-width: var(--h20-grid);
+  margin: 0 auto;
+  padding: 24px var(--h20-pad-x) var(--h20-pad-y);
+  display: flex;
+  flex-direction: column;
+  gap: var(--h20-section-gap);
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvLead {
+  font-style: italic;
+  text-align: center;
+  color: var(--h20-muted);
+  max-width: 36em;
+  margin: 0 auto 8px;
+}
+
+.cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: var(--h20-label-track);
+  border-bottom: 1px solid var(--h20-rule);
+  text-align: left;
+}
+
+.tplMiniWrap--executive-minimal {
+  background: linear-gradient(180deg, #fafaf9 0%, #fff 100%);
+  border-top: 3px solid #78716c;
+}
+
+/* ── 3 · Creative Portfolio — magazine split · projects first ── */
+.cv.template-creative.cvTpl-h20-creative {
+  --h20-grid: 1fr 1.15fr;
+  --h20-pad-x: 34px;
+  --h20-pad-y: 30px;
+  --h20-section-gap: 20px;
+  --h20-name-size: 36pt;
+  --h20-title-size: 12pt;
+  --h20-label-track: 0.28em;
+  --h20-accent: #18181b;
+  --h20-font-body: 'DM Sans', Inter, system-ui, sans-serif;
+  --h20-font-display: 'Playfair Display', 'Source Serif 4', Georgia, serif;
+  font-family: var(--h20-font-body);
+  font-size: 10pt;
+  line-height: 1.55;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvLayout-h20-creative .cvHead--split {
+  display: grid;
+  grid-template-columns: var(--h20-grid);
+  gap: 20px;
+  align-items: end;
+  padding: var(--h20-pad-y) var(--h20-pad-x) 18px;
+  border-bottom: 3px solid var(--h20-accent);
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvName {
+  font-family: var(--h20-font-display);
+  font-size: var(--h20-name-size);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvTitle {
+  font-family: var(--h20-font-body);
+  font-weight: 600;
+  font-size: var(--h20-title-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvMain {
+  padding: 20px var(--h20-pad-x) var(--h20-pad-y);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--h20-section-gap);
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSection--clients,
+.cv.template-creative.cvTpl-h20-creative .cvSection--projects {
+  order: -2;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSection--clients-hero .cvClientGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSection--clients-hero .cvClientChip {
+  display: inline-block;
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1.5px solid var(--h20-accent);
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSection--projects .cvProjectEntry {
+  border-left: 3px solid var(--h20-accent);
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSection--experience {
+  order: -1;
+}
+
+.cv.template-creative.cvTpl-h20-creative .cvSectionTitle {
+  font-family: var(--h20-font-body);
+  font-size: 7pt;
+  letter-spacing: var(--h20-label-track);
+  text-transform: uppercase;
+  border-bottom: none;
+  opacity: 0.75;
+}
+
+.tplMiniWrap--creative {
+  border-bottom: 4px solid #18181b;
+}
+
+.tplMiniWrap--creative .tplMini .cvName {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ── 4 · Modern Editorial — asymmetric Swiss grid ── */
+.cv.template-editorial.cvTpl-h20-editorial {
+  --h20-grid: 34% 1fr;
+  --h20-side: 34%;
+  --h20-pad-x: 30px;
+  --h20-pad-y: 28px;
+  --h20-section-gap: 24px;
+  --h20-name-size: 26pt;
+  --h20-title-size: 13pt;
+  --h20-label-track: 0.24em;
+  --h20-accent: #0a0a0a;
+  --h20-font-body: Georgia, 'Times New Roman', serif;
+  --h20-font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--h20-font-body);
+  font-size: 10.5pt;
+  line-height: 1.58;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvLayout-h20-editorial .cvHead {
+  padding: var(--h20-pad-y) var(--h20-pad-x) 16px;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvName {
+  font-family: var(--h20-font-display);
+  font-size: var(--h20-name-size);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvTitle {
+  font-family: var(--h20-font-body);
+  font-style: italic;
+  font-size: var(--h20-title-size);
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvBody--editorial {
+  display: grid;
+  grid-template-columns: var(--h20-grid);
+  gap: 0;
+  min-height: 200px;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvSide--editorial {
+  padding: 20px 18px var(--h20-pad-y) 22px;
+  border-right: 2px solid var(--h20-accent);
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvMain--editorial {
+  padding: 20px var(--h20-pad-x) var(--h20-pad-y) 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--h20-section-gap);
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvSectionTitle {
+  font-family: var(--h20-font-display);
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: var(--h20-label-track);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--h20-accent);
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvLead {
+  font-size: 11pt;
+  line-height: 1.65;
+  max-width: 28em;
+}
+
+.cv.template-editorial.cvTpl-h20-editorial .cvHead--grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.tplMiniWrap--editorial {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  gap: 0;
+  border-right: 2px solid #0a0a0a;
+}
+
+/* ── 5 · Tech Resume — dark skills rail · mono identity ── */
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column {
+  --h20-grid: 30% 1fr;
+  --h20-side: 30%;
+  --h20-pad-x: 26px;
+  --h20-pad-y: 24px;
+  --h20-section-gap: 16px;
+  --h20-name-size: 17pt;
+  --h20-title-size: 11pt;
+  --h20-label-track: 0.16em;
+  --h20-accent: #0d9488;
+  --h20-surface: #ffffff;
+  --h20-rail: #0f172a;
+  --h20-font-body: 'DM Sans', Inter, system-ui, sans-serif;
+  --h20-font-display: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+  font-family: var(--h20-font-body);
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvLayout-h20-tech .cvBody {
+  display: grid;
+  grid-template-columns: var(--h20-grid);
+  align-items: stretch;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta {
+  background: var(--h20-rail);
+  color: #e2e8f0;
+  padding: var(--h20-pad-y) 16px;
+  border-right: none;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvMain--dominant {
+  padding: var(--h20-pad-y) var(--h20-pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--h20-section-gap);
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvHead--modern {
+  padding: 18px var(--h20-pad-x) 14px;
+  border-bottom: 3px solid var(--h20-accent);
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvName {
+  font-family: var(--h20-font-display);
+  font-size: var(--h20-name-size);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvTitle {
+  font-weight: 600;
+  color: var(--h20-accent);
+  font-size: var(--h20-title-size);
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta .cvSectionTitle {
+  color: #94a3b8;
+  border-bottom-color: #334155;
+  letter-spacing: var(--h20-label-track);
+  font-size: 6.5pt;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta .cvChip {
+  background: #1e293b;
+  border: 1px solid #334155;
+  font-size: 8.5pt;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta .cvSection--skills .cvChip,
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta .cvSection--tools .cvSkillLine {
+  font-weight: 600;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta .cvToolsLine {
+  color: #e2e8f0;
+  font-family: var(--h20-font-display);
+  font-size: 8.5pt;
+  line-height: 1.55;
+}
+
+.cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSection--experience .cvExpRole {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tplMiniWrap--modern-two-column {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 0;
+}
+
+.tplMiniWrap--modern-two-column::before {
+  content: '';
+  background: #0f172a;
+  grid-column: 1;
+}

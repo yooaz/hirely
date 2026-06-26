@@ -1,0 +1,128 @@
+/**
+ * H16 — Stronger visual differentiation between production templates.
+ * Layout primitives live in cv-templates.js; this layer sets hierarchy + typography.
+ */
+
+/* ATS Professional — dense recruiter scan */
+.cv.template-ats {
+  font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-ats .cvSectionTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.cv.template-ats .cvExpRole {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Creative Portfolio — magazine hierarchy */
+.cv.template-creative .cvName,
+.cv.template-creativedirector .cvName {
+  font-family: 'Playfair Display', 'Source Serif 4', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.cv.template-creative .cvSectionTitle,
+.cv.template-creativedirector .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 7pt;
+  letter-spacing: 0.28em;
+  border-bottom: none;
+  opacity: 0.85;
+}
+
+/* Executive — centered authority */
+.cv.template-executive-minimal .cvName {
+  font-family: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-executive-minimal .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 7pt;
+  text-align: left;
+  border-bottom: 1px solid var(--cv-line, #e2e8f0);
+}
+
+.cv.template-executive-minimal .cvLead {
+  font-style: italic;
+  max-width: 38em;
+}
+
+/* Tech — sidebar skills rail, mono accents */
+.cv.template-modern-two-column {
+  font-family: 'DM Sans', Inter, system-ui, sans-serif;
+}
+
+.cv.template-modern-two-column .cvName {
+  font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.cv.template-modern-two-column .cvTitle {
+  font-family: 'DM Sans', Inter, sans-serif;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.cv.template-modern-two-column .cvSide--meta {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-right: none;
+}
+
+.cv.template-modern-two-column .cvSide--meta .cvSectionTitle {
+  color: #94a3b8;
+  border-bottom-color: #334155;
+  letter-spacing: 0.18em;
+}
+
+.cv.template-modern-two-column .cvSide--meta .cvChip,
+.cv.template-modern-two-column .cvSide--meta .cvListEntry p {
+  color: #f8fafc;
+}
+
+/* Modern Editorial — asymmetric grid */
+.cv.template-editorial .cvName {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 26pt;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.cv.template-editorial .cvTitle {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.cv.template-editorial .cvSectionTitle {
+  font-size: 7.5pt;
+  letter-spacing: 0.24em;
+  border-bottom-width: 2px;
+}
+
+.cv.template-editorial .cvSide--editorial .cvSectionTitle {
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.tplMiniWrap--tech {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: 4px;
+}
+
+.tplMiniWrap--tech .tplMiniSide {
+  background: #0f172a;
+}

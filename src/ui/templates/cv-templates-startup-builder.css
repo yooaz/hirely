@@ -1,0 +1,199 @@
+/**
+ * Startup Builder — founder / operator layout with traction strip + impact split.
+ */
+
+.cv.template-startup-builder {
+  --sb-ink: #0f172a;
+  --sb-muted: #475569;
+  --sb-accent: #16a34a;
+  --sb-hero: #0b1220;
+  --sb-paper: #f8fafc;
+  --sb-display: 'Inter', system-ui, sans-serif;
+  --sb-body: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  font-family: var(--sb-body);
+  font-size: 10pt;
+  line-height: 1.48;
+  color: var(--sb-ink);
+  background: var(--sb-paper);
+}
+
+.cv.template-startup-builder .cvInner.cvLayout-startup-builder {
+  padding: 0;
+}
+
+.cv.template-startup-builder .cvSbHero,
+.cv.template-startup-builder .cvHead--startup-builder {
+  background: var(--sb-hero);
+  color: #f8fafc;
+  padding: 40px 48px 32px;
+}
+
+.cv.template-startup-builder .cvSbHero .cvName {
+  font-family: var(--sb-display);
+  font-size: 28pt;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.cv.template-startup-builder .cvSbHero .cvTitle {
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #86efac;
+  margin: 10px 0 0;
+}
+
+.cv.template-startup-builder .cvSbThesis {
+  margin: 16px 0 0;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #cbd5e1;
+  max-width: 52ch;
+}
+
+.cv.template-startup-builder .cvSbContact {
+  margin: 14px 0 0;
+  font-size: 9pt;
+  color: #94a3b8;
+}
+
+.cv.template-startup-builder .cvMain--startup-builder {
+  padding: 28px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cv.template-startup-builder .cvSection--traction .cvSectionTitle {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sb-accent);
+  margin: 0 0 12px;
+}
+
+.cv.template-startup-builder .cvSbTraction {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cv.template-startup-builder .cvSbMetric {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  break-inside: avoid;
+}
+
+.cv.template-startup-builder .cvSbMetricIdx {
+  display: block;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--sb-accent);
+  margin-bottom: 6px;
+}
+
+.cv.template-startup-builder .cvSbMetricText {
+  margin: 0;
+  font-size: 9.5pt;
+  line-height: 1.4;
+  color: var(--sb-ink);
+}
+
+.cv.template-startup-builder .cvSbSplit {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.cv.template-startup-builder .cvSbRail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cv.template-startup-builder .cvSbMain {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cv.template-startup-builder .cvSection--startup-side .cvSectionTitle,
+.cv.template-startup-builder .cvSection--startup-impact .cvSectionTitle {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sb-muted);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cv.template-startup-builder .cvSbStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cv.template-startup-builder .cvSbStackChip {
+  font-size: 8.5pt;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.cv.template-startup-builder .cvSbLang {
+  margin: 0 0 6px;
+  font-size: 9pt;
+  color: var(--sb-muted);
+}
+
+.cv.template-startup-builder .cvExpList--airy .cvExpEntry {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cv.template-startup-builder .cvExpRole {
+  font-weight: 600;
+  font-size: 10.5pt;
+  color: var(--sb-ink);
+}
+
+.cv.template-startup-builder .cvEduLine {
+  font-size: 9.5pt;
+  color: var(--sb-muted);
+}
+
+.tplMiniWrap--startup-builder {
+  border-top: 4px solid #16a34a;
+  background: linear-gradient(180deg, #0b1220 28%, #f8fafc 28%);
+}
+
+@media (max-width: 640px) {
+  .cv.template-startup-builder .cvSbTraction {
+    grid-template-columns: 1fr;
+  }
+
+  .cv.template-startup-builder .cvSbSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .cv.template-startup-builder .cvSbHero {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

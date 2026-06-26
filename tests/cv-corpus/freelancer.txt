@@ -1,0 +1,24 @@
+Lucas Moreau
+Freelance Web Developer
+lucas.moreau@freelance.dev · +33 6 55 44 33 22 · Paris
+
+Summary
+Independent web developer delivering applications and technical audits for SMEs and agencies.
+
+Experience
+Freelance Web Developer — Independent — Paris — 2019 – Present
+
+Full Stack Developer — Startup Agency — Paris — 2016 – 2019
+
+Education
+Université Paris Cité — Licence Informatique — 2013 – 2016
+
+Skills
+JavaScript, React, Node.js, consulting, client management
+
+Tools
+Git, PostgreSQL, Docker, AWS
+
+Languages
+French — native
+English — fluent

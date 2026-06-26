@@ -1,0 +1,624 @@
+/**
+ * Hirely Wow Factor Pass — premium first-10-seconds feel.
+ * Direction: Apple Document Studio · Linear · Pitch · Figma
+ * Visual-only — no pipeline logic changes.
+ */
+
+:root {
+  --wow-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --wow-ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --wow-duration: 280ms;
+  --wow-import-progress: 0;
+}
+
+/* —— Hero → workspace reveal —— */
+.app.wow-workspace-reveal #hero {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.45s var(--wow-ease),
+    transform 0.45s var(--wow-ease);
+  pointer-events: none;
+}
+
+.app.wow-workspace-reveal.app--workspace #wsProduct {
+  animation: wowProductIn 0.52s var(--wow-ease) both;
+}
+
+@keyframes wowProductIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* —— Step transitions —— */
+#workspaceGrid.wow-step-enter #wsProduct,
+#workspaceGrid.wow-step-enter .reviewStudioCenter,
+#workspaceGrid.wow-step-enter .reviewStudioAnalysis,
+#workspaceGrid.wow-step-enter .studioPreview {
+  animation: wowStepIn var(--wow-duration) var(--wow-ease) both;
+}
+
+#workspaceGrid.wow-step-enter .reviewStudioCenter {
+  animation-delay: 40ms;
+}
+
+#workspaceGrid.wow-step-enter .reviewStudioAnalysis {
+  animation-delay: 72ms;
+}
+
+@keyframes wowStepIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* —— Export focus mode (Pitch / Apple Preview) —— */
+html:not(.debug-mode) #workspace[data-doc-step='export'] .docFooter {
+  animation: wowExportBarUp 0.38s var(--wow-ease) both;
+}
+
+html:not(.debug-mode) #workspace[data-doc-step='export'] .studioPreview--export {
+  animation: wowExportPreviewIn 0.42s var(--wow-ease) both;
+}
+
+html:not(.debug-mode) #workspace[data-doc-step='export'] #cvStage .cv,
+html:not(.debug-mode) #workspace[data-doc-step='export'] #cvStage .cvA4Sheet__surface {
+  box-shadow:
+    0 2px 4px rgba(17, 17, 17, 0.04),
+    0 12px 32px rgba(17, 17, 17, 0.1),
+    0 32px 64px rgba(17, 17, 17, 0.08);
+}
+
+@keyframes wowExportBarUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wowExportPreviewIn {
+  from {
+    opacity: 0.92;
+    transform: scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* —— Import: cinematic drop zone —— */
+.app--processing .drop.drop--processing {
+  border-style: solid;
+  border-color: rgba(17, 17, 17, 0.22);
+  background: linear-gradient(135deg, #fafaf8 0%, #fff 50%, #f8f8f6 100%);
+  box-shadow:
+    0 0 0 1px rgba(17, 17, 17, 0.04),
+    0 8px 24px rgba(17, 17, 17, 0.06);
+  animation: wowDropPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes wowDropPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(17, 17, 17, 0.04),
+      0 8px 24px rgba(17, 17, 17, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(17, 17, 17, 0.08),
+      0 12px 32px rgba(17, 17, 17, 0.1);
+  }
+}
+
+.app--processing .importLiveStatus {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  min-height: 1.25em;
+}
+
+/* Unified import progress rail */
+.app--processing .progress {
+  display: block !important;
+  height: 4px !important;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: #ececea;
+  overflow: hidden;
+  position: relative;
+}
+
+.app--processing #progressBar {
+  display: block !important;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111 0%, #3a3a3a 100%);
+  transition: width 0.42s var(--wow-ease);
+  position: relative;
+}
+
+.app--processing #progressBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  animation: wowProgressShine 1.8s ease-in-out infinite;
+}
+
+@keyframes wowProgressShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Import stages — Linear timeline */
+.importAnalysisStages {
+  margin: 16px 0 8px;
+  padding: 12px 14px;
+  background: var(--wash, #f3f3f0);
+  border: 1px solid var(--line, #e6e6e3);
+  border-radius: 12px;
+}
+
+.importAnalysisStage.is-active .importAnalysisStage__dot {
+  border-color: var(--ink, #111);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+  animation: wowStageDot 1.2s ease-in-out infinite;
+}
+
+.importAnalysisStage.is-done .importAnalysisStage__dot {
+  border-color: var(--ink, #111);
+  background: var(--ink, #111);
+}
+
+@keyframes wowStageDot {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.importAnalysisStage__line {
+  background: linear-gradient(
+    180deg,
+    var(--ink, #111) 0%,
+    var(--line, #e6e6e3) 100%
+  );
+  opacity: 0.35;
+}
+
+.importAnalysisStage.is-done + .importAnalysisStage .importAnalysisStage__line,
+.importAnalysisStage.is-done .importAnalysisStage__line {
+  opacity: 1;
+  background: var(--ink, #111);
+}
+
+/* —— Live CV preview skeleton —— */
+.cvSkeleton {
+  border-radius: 4px !important;
+  border: 1px solid rgba(17, 17, 17, 0.06) !important;
+  box-shadow: var(--shadow-cv) !important;
+  animation: wowSkeletonIn 0.32s var(--wow-ease) both;
+}
+
+@keyframes wowSkeletonIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cvSkBlock {
+  border-radius: 6px !important;
+  background: linear-gradient(
+    90deg,
+    #f0f0ee 0%,
+    #fafaf8 42%,
+    #ececea 84%,
+    #f0f0ee 100%
+  ) !important;
+  background-size: 240% 100% !important;
+  animation: wowSkShimmer 1.4s ease-in-out infinite !important;
+}
+
+@keyframes wowSkShimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+/* CV live reveal */
+.cv .cvReveal,
+.cvReveal {
+  animation: wowCvReveal 0.38s var(--wow-ease) both !important;
+  animation-delay: var(--reveal-delay, 0s) !important;
+}
+
+@keyframes wowCvReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* —— Analysis panel skeletons —— */
+.wowPanelSkeleton {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0 8px;
+}
+
+.wowPanelSkeleton.is-visible {
+  display: flex;
+}
+
+.wowPanelSkeleton__row {
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f0f0ee 0%, #fafaf8 50%, #ececea 100%);
+  background-size: 200% 100%;
+  animation: wowSkShimmer 1.4s ease-in-out infinite;
+}
+
+.wowPanelSkeleton__row--title {
+  height: 14px;
+  width: 48%;
+}
+
+.wowPanelSkeleton__row--wide {
+  width: 88%;
+}
+
+.wowPanelSkeleton__row--mid {
+  width: 64%;
+}
+
+.wowPanelSkeleton__ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid #ececea;
+  border-top-color: #111;
+  animation: wowRingSpin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes wowRingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reviewStudioAnalysis.wow-loading > :not(.wowPanelSkeleton) {
+  opacity: 0.35;
+  pointer-events: none;
+  filter: blur(0.4px);
+  transition: opacity 0.25s var(--wow-ease);
+}
+
+.reviewStudioCenter.wow-loading .suggestionsList,
+.reviewStudioCenter.wow-loading .toClassifyList {
+  min-height: 120px;
+  position: relative;
+}
+
+.reviewStudioCenter.wow-loading .suggestionsList::before,
+.reviewStudioCenter.wow-loading .toClassifyList::before {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 72%;
+  margin: 8px 0 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f0f0ee 0%, #fafaf8 50%, #ececea 100%);
+  background-size: 200% 100%;
+  animation: wowSkShimmer 1.4s ease-in-out infinite;
+}
+
+/* —— ATS score ring animation —— */
+.scoreRing.wow-score-animating {
+  transition: --score 0.08s linear;
+}
+
+.scoreRing.wow-score-settled {
+  animation: wowScorePop 0.45s var(--wow-ease-spring);
+}
+
+@keyframes wowScorePop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.reviewV2ScoreRing {
+  width: 64px !important;
+  height: 64px !important;
+  background: conic-gradient(
+    var(--score-accent, var(--ink)) calc(var(--score, 0) * 1%),
+    #ececea 0
+  ) !important;
+  transition: background 0.42s var(--wow-ease);
+}
+
+.reviewV2ScoreRing span {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ATS metric bars — staggered reveal */
+.reviewV2Metrics.metricScoreAnim .metric {
+  animation: wowMetricIn 0.38s var(--wow-ease) both;
+}
+
+.reviewV2Metrics.metricScoreAnim .metric:nth-child(1) {
+  animation-delay: 0ms;
+}
+.reviewV2Metrics.metricScoreAnim .metric:nth-child(2) {
+  animation-delay: 48ms;
+}
+.reviewV2Metrics.metricScoreAnim .metric:nth-child(3) {
+  animation-delay: 96ms;
+}
+.reviewV2Metrics.metricScoreAnim .metric:nth-child(4) {
+  animation-delay: 144ms;
+}
+.reviewV2Metrics.metricScoreAnim .metric:nth-child(5) {
+  animation-delay: 192ms;
+}
+
+@keyframes wowMetricIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reviewV2Metrics .bar span,
+#metrics .bar span,
+#studioMetrics .bar span {
+  transition: width 0.65s var(--wow-ease) !important;
+  background: linear-gradient(90deg, #111 0%, #3d3d3d 100%) !important;
+}
+
+/* Confidence visualization — extraction quality */
+.extractionQualityStep {
+  border-radius: 14px !important;
+  padding: 14px 16px !important;
+  background: linear-gradient(180deg, #fff 0%, #fafaf8 100%) !important;
+}
+
+.wowConfidenceHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line, #e6e6e3);
+}
+
+.wowConfidenceRing {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: conic-gradient(var(--wow-conf-color, #111) calc(var(--wow-conf, 0) * 1%), #ececea 0);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.wowConfidenceRing::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.wowConfidenceRing span {
+  position: relative;
+  z-index: 1;
+}
+
+.wowConfidenceCopy strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.wowConfidenceCopy p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.extractionQualityItem {
+  display: grid !important;
+  grid-template-columns: 18px 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.wowConfBar {
+  width: 48px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ececea;
+  overflow: hidden;
+}
+
+.wowConfBar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ink);
+  transition: width 0.5s var(--wow-ease);
+}
+
+.extractionQualityItem--ok .wowConfBar span {
+  background: #22c55e;
+}
+
+.extractionQualityItem--miss .wowConfBar span {
+  background: #f59e0b;
+}
+
+/* —— Template gallery (Pitch deck picker) —— */
+#templateGrid.premiumGalleryGrid {
+  scroll-snap-type: x proximity;
+  scroll-padding: 12px;
+}
+
+.premiumTplCard {
+  scroll-snap-align: center;
+  transition:
+    transform 0.2s var(--wow-ease),
+    box-shadow 0.2s var(--wow-ease),
+    border-color 0.2s var(--wow-ease) !important;
+}
+
+.premiumTplCard:hover {
+  transform: translateY(-2px) !important;
+}
+
+.premiumTplCard.active {
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+html:not(.debug-mode) #workspace[data-doc-step='style'] #templatePickerBar {
+  animation: wowStepIn 0.36s var(--wow-ease) both;
+}
+
+/* —— Tighter panels — avoid empty SaaS cards —— */
+.reviewStudioAnalysis,
+.reviewStudioCenter {
+  gap: 12px !important;
+}
+
+.reviewV2Block,
+.cvReviewBlock {
+  padding: 0;
+  margin: 0;
+}
+
+.cvReviewList li {
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.suggestionsEmpty,
+.toClassifyEmpty,
+.reviewV2Empty {
+  padding: 16px !important;
+  font-size: 12px !important;
+}
+
+/* Dashboard / hero — compact premium */
+.heroBadge {
+  animation: wowStepIn 0.5s var(--wow-ease) both;
+}
+
+.heroCopy h1 {
+  animation: wowStepIn 0.55s var(--wow-ease) 60ms both;
+}
+
+.heroPipeline--four .heroStep {
+  transition:
+    transform 0.2s var(--wow-ease),
+    box-shadow 0.2s var(--wow-ease);
+}
+
+.heroPipeline--four .heroStep:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Progress nav — live fill during import */
+.app--processing .hirelyProgressFill {
+  transition: width 0.42s var(--wow-ease);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .app.wow-workspace-reveal #hero,
+  #workspaceGrid.wow-step-enter *,
+  .cvReveal,
+  .cvSkBlock,
+  .wowPanelSkeleton__row,
+  .scoreRing.wow-score-settled,
+  .drop.drop--processing,
+  .importAnalysisStage.is-active .importAnalysisStage__dot,
+  #progressBar::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .reviewV2ScoreRing {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .wowConfidenceHeader {
+    flex-wrap: wrap;
+  }
+}

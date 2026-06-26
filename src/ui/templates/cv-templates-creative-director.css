@@ -1,0 +1,259 @@
+/**
+ * Creative Director — Kinfolk · Wallpaper · Aesop · Apple editorial.
+ * Luxury magazine portfolio CV for creative leadership roles.
+ */
+
+.cv.template-creative-director {
+  --cd-ink: #1a1a1a;
+  --cd-muted: #5c5c5c;
+  --cd-line: #e8e4df;
+  --cd-paper: #faf9f7;
+  --cd-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --cd-body: 'DM Sans', Inter, system-ui, sans-serif;
+  font-family: var(--cd-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--cd-ink);
+  background: var(--cd-paper);
+}
+
+.cv.template-creative-director .cvInner.cvLayout-director {
+  padding: 0;
+}
+
+.cv.template-creative-director .cvHead--director {
+  padding: 52px 56px 36px;
+  border-bottom: 1px solid var(--cd-line);
+  background: var(--cd-paper);
+}
+
+.cv.template-creative-director .cvDirectorIdentity {
+  max-width: 92%;
+}
+
+.cv.template-creative-director .cvName {
+  font-family: var(--cd-display);
+  font-size: 44pt;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--cd-ink);
+  margin: 0;
+}
+
+.cv.template-creative-director .cvTitle {
+  font-family: var(--cd-body);
+  font-size: 10.5pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cd-muted);
+  margin: 14px 0 0;
+}
+
+.cv.template-creative-director .cvDirectorLead {
+  font-family: var(--cd-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--cd-muted);
+  margin: 18px 0 0;
+  max-width: 68ch;
+}
+
+.cv.template-creative-director .cvDirectorContact {
+  font-size: 8.75pt;
+  letter-spacing: 0.04em;
+  color: var(--cd-muted);
+  margin: 16px 0 0;
+}
+
+.cv.template-creative-director .cvMain--director {
+  padding: 40px 56px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.cv.template-creative-director .cvSection {
+  margin: 0;
+  break-inside: avoid;
+}
+
+.cv.template-creative-director .cvSectionTitle {
+  font-family: var(--cd-body);
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cd-muted);
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cd-line);
+}
+
+.cv.template-creative-director .cvSection--clients-director .cvSectionTitle,
+.cv.template-creative-director .cvSection--projects-director .cvSectionTitle {
+  font-family: var(--cd-display);
+  font-size: 13pt;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--cd-ink);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 22px;
+}
+
+.cv.template-creative-director .cvDirectorClientGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 24px;
+}
+
+.cv.template-creative-director .cvDirectorClientName {
+  font-family: var(--cd-display);
+  font-size: 14pt;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--cd-ink);
+}
+
+.cv.template-creative-director .cvDirectorClientLogos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px 28px;
+  align-items: end;
+}
+
+.cv.template-creative-director .cvDirectorClientLogo {
+  margin: 0;
+  text-align: center;
+}
+
+.cv.template-creative-director .cvDirectorClientLogoImg {
+  display: block;
+  max-width: 88px;
+  max-height: 36px;
+  width: auto;
+  height: auto;
+  margin: 0 auto 8px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.88;
+}
+
+.cv.template-creative-director .cvDirectorClientLogoCap {
+  font-size: 7.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cd-muted);
+}
+
+.cv.template-creative-director .cvDirectorProjects {
+  display: grid;
+  gap: 22px;
+}
+
+.cv.template-creative-director .cvDirectorProject {
+  padding-top: 18px;
+  border-top: 1px solid var(--cd-line);
+}
+
+.cv.template-creative-director .cvDirectorProject:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cv.template-creative-director .cvDirectorProjectTitle {
+  font-family: var(--cd-display);
+  font-size: 16pt;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--cd-ink);
+}
+
+.cv.template-creative-director .cvDirectorProjectMeta {
+  font-size: 9pt;
+  color: var(--cd-muted);
+  margin: 6px 0 0;
+  letter-spacing: 0.03em;
+}
+
+.cv.template-creative-director .cvTimeline {
+  border-left: 1px solid var(--cd-line);
+  margin-left: 4px;
+  padding-left: 24px;
+}
+
+.cv.template-creative-director .cvTimelineItem {
+  position: relative;
+  margin-bottom: 22px;
+  padding-left: 0;
+  border-left: none;
+}
+
+.cv.template-creative-director .cvTimelineDot {
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cd-ink);
+  border: 2px solid var(--cd-paper);
+}
+
+.cv.template-creative-director .cvExpRole {
+  font-family: var(--cd-display);
+  font-size: 13pt;
+  font-weight: 500;
+  margin: 0;
+}
+
+.cv.template-creative-director .cvExpCompany,
+.cv.template-creative-director .cvExpDates {
+  font-size: 9pt;
+  color: var(--cd-muted);
+  margin: 4px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.cv.template-creative-director .cvExpBullet {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 8px 0 0;
+  color: var(--cd-ink);
+}
+
+.cv.template-creative-director .cvDirectorLine {
+  font-size: 9.5pt;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--cd-ink);
+}
+
+.cv.template-creative-director .cvEduSchool {
+  font-family: var(--cd-display);
+  font-size: 12pt;
+  margin: 0;
+}
+
+.cv.template-creative-director .cvEduProgram,
+.cv.template-creative-director .cvEduDates,
+.cv.template-creative-director .cvEduLine {
+  font-size: 9pt;
+  color: var(--cd-muted);
+  margin: 4px 0 0;
+}
+
+.cv.template-creative-director .cvClientChip,
+.cv.template-creative-director .cvSkillChip,
+.cv.template-creative-director .cvProgress {
+  display: none !important;
+}
+
+.tplMiniWrap--creative-director {
+  border-bottom: 3px solid #1a1a1a;
+  background: #faf9f7;
+}

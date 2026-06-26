@@ -1,0 +1,55 @@
+/**
+ * V1 scope lock — hide UI that promises OCR, scans, image CV, AI rewrite, ATS blockers.
+ */
+
+html:not(.debug-mode) [data-v1-hide="true"],
+html:not(.debug-mode) .v1ScopeHide {
+  display: none !important;
+}
+
+html:not(.debug-mode) .importFormatGuideList--unsupported {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+html:not(.debug-mode) #importOcrConfidence,
+html:not(.debug-mode) .importOcrConfidence,
+html:not(.debug-mode) #importAnalysisStages,
+html:not(.debug-mode) .importAnalysisStages,
+html:not(.debug-mode) .importLoadingPasteHint,
+html:not(.debug-mode) #openPasteBtn,
+html:not(.debug-mode) #sampleBtn,
+html:not(.debug-mode) #retryOcrBtn,
+html:not(.debug-mode) .smartRepairActions,
+html:not(.debug-mode) .reviewV2ReviewRequired,
+html:not(.debug-mode) .reviewV2ReviewRequiredBanner,
+html:not(.debug-mode) #extractionGate,
+html:not(.debug-mode) #extractionAlert {
+  display: none !important;
+}
+
+html:not(.debug-mode) .wsImport .importFormatGuide {
+  display: block !important;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #fafaf8;
+  font-size: 12px;
+}
+
+html:not(.debug-mode) .importFormatGuideList--ok li::before {
+  content: "✓ ";
+  color: var(--green, #059669);
+  font-weight: 700;
+}
+
+html:not(.debug-mode) .importFormatGuideList--no li::before {
+  content: "· ";
+  color: var(--muted);
+}
+
+html:not(.debug-mode) .heroBadge [data-i="badge"]::after {
+  content: none;
+}

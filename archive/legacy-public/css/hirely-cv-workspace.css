@@ -1,0 +1,256 @@
+/**
+ * CV Workspace — document-first preview (scoped to .cvWorkspaceSection only).
+ * Does not affect Hero, Analyze, Recruiter Read, or Pricing.
+ */
+
+.cvWorkspaceSection {
+  --cv-doc-w: 820px;
+  --cv-doc-h: 1160px; /* 820 × (1123 ÷ 794) — A4 proportions */
+  --cv-stage-bg: #f0f1f3;
+  --cv-mat-bg: #f7f8fa;
+}
+
+/* —— Section shell: light premium —— */
+.cvWorkspaceSection.col-preview,
+html.layout-stacked .cvWorkspaceSection {
+  background: #fafbfc !important;
+  border-color: #e8eaef !important;
+}
+
+.cvWorkspaceSection .workspacePreview {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 480px;
+  background: var(--cv-mat-bg) !important;
+  border: 1px solid #ebedf0 !important;
+  border-radius: 14px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  container-type: normal !important;
+  container-name: none !important;
+}
+
+.cvWorkspaceSection .workspacePreview.preview-locked .cvStage {
+  filter: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* —— Stage: soft mat, no dashboard chrome —— */
+.cvWorkspaceSection .cvStage {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  min-height: calc(var(--cv-doc-h) + 96px) !important;
+  max-height: none !important;
+  padding: 52px 44px 60px !important;
+  margin: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  background: var(--cv-stage-bg) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  perspective: none !important;
+  filter: none !important;
+}
+
+.cvWorkspaceSection .cvStage::before,
+.cvWorkspaceSection .cvCanvas::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* —— Canvas: center sheet, no width cap —— */
+.cvWorkspaceSection .cvCanvas {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  transform: none !important;
+}
+
+/* —— A4 sheet: full size, no scale miniature —— */
+.cvWorkspaceSection .cvStage .cvPage,
+.cvWorkspaceSection #cvPreview.cvPage {
+  --cv-scale: 1 !important;
+  width: var(--cv-doc-w) !important;
+  max-width: min(var(--cv-doc-w), calc(100% - 32px)) !important;
+  min-width: 0 !important;
+  min-height: var(--cv-doc-h) !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  margin-bottom: 0 !important;
+  transform: none !important;
+  transform-origin: top center !important;
+  background: #fff !important;
+  color: #0a0c10 !important;
+  font-size: 11.5pt !important;
+  line-height: 1.52 !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(15, 20, 25, 0.07) !important;
+  box-shadow:
+    0 0 0 1px rgba(15, 20, 25, 0.04),
+    0 1px 2px rgba(15, 20, 25, 0.05),
+    0 8px 24px rgba(15, 20, 25, 0.07),
+    0 28px 64px rgba(15, 20, 25, 0.09) !important;
+  transition: box-shadow 0.35s ease !important;
+  overflow: hidden;
+}
+
+.cvWorkspaceSection .cvStage:hover .cvPage,
+.cvWorkspaceSection .cvCanvas:hover .cvPage {
+  transform: none !important;
+  box-shadow:
+    0 0 0 1px rgba(15, 20, 25, 0.05),
+    0 2px 4px rgba(15, 20, 25, 0.06),
+    0 12px 32px rgba(15, 20, 25, 0.08),
+    0 32px 72px rgba(15, 20, 25, 0.11) !important;
+}
+
+.cvWorkspaceSection .cvPage.tpl-switch {
+  animation: cvWsFade 0.28s ease !important;
+}
+
+@keyframes cvWsFade {
+  from {
+    opacity: 0.92;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cvWorkspaceSection .cvPaper,
+.cvWorkspaceSection .cvPage .cvShell {
+  width: 100% !important;
+  min-height: var(--cv-doc-h) !important;
+  box-sizing: border-box !important;
+}
+
+.cvWorkspaceSection .cvPage .cvLayout {
+  min-height: var(--cv-doc-h) !important;
+}
+
+/* Typography: each tpl-* template owns sizing in hirely-templates-premium.css */
+
+/* —— No green / recruiter heatmap tint on the document —— */
+.cvWorkspaceSection .cvHeatmap,
+.cvWorkspaceSection .cvHeatmap__zone,
+.cvWorkspaceSection .cvHeatmap__zone--hot,
+.cvWorkspaceSection .cvHeatmap__zone--warm,
+.cvWorkspaceSection .cvHeatmap__zone--cold,
+.cvWorkspaceSection .cvHeatmap__scan,
+.cvWorkspaceSection .cvHeatmap__legend,
+.cvWorkspaceSection .cvStage.has-heatmap .cvHeatmap {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.cvWorkspaceSection .cvEmpty {
+  min-height: 360px;
+  color: #6b7280 !important;
+  background: transparent !important;
+}
+
+.cvWorkspaceSection .proLock.proLock--compact {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px dashed #d5dae3 !important;
+  border-radius: 12px !important;
+  margin: 24px auto 16px !important;
+  max-width: 420px;
+}
+
+/* —— Overrides: legacy stable / v3 / winning shrink rules —— */
+html.v3-classic-ui .cvWorkspaceSection .workspacePreview,
+html.winning-layout .cvWorkspaceSection .workspacePreview,
+body.stable-mode .cvWorkspaceSection .workspacePreview {
+  background: var(--cv-mat-bg) !important;
+  border: 1px solid #ebedf0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  container-type: normal !important;
+}
+
+html.v3-classic-ui .cvWorkspaceSection .cvStage,
+html.winning-layout .cvWorkspaceSection .cvStage,
+body.stable-mode .cvWorkspaceSection .cvStage {
+  background: var(--cv-stage-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-height: none !important;
+}
+
+html.v3-classic-ui .cvWorkspaceSection .cvStage .cvPage,
+html.v3-classic-ui .cvWorkspaceSection .cvStage:hover .cvPage,
+body.stable-mode .cvWorkspaceSection .cvCanvas,
+body.stable-mode.classic-layout .cvWorkspaceSection .cvCanvas,
+html.stable-mode.classic-layout .cvWorkspaceSection .cvCanvas {
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+}
+
+html.v3-classic-ui .cvWorkspaceSection .cvStage .cvPage,
+html.v3-classic-ui .cvWorkspaceSection .cvStage:hover .cvPage {
+  --cv-scale: 1 !important;
+  width: var(--cv-doc-w) !important;
+  max-width: min(var(--cv-doc-w), calc(100% - 32px)) !important;
+  min-height: var(--cv-doc-h) !important;
+  transform: none !important;
+  margin-bottom: 0 !important;
+}
+
+html.winning-layout .cvWorkspaceSection .cvPage,
+html.stable-mode.classic-layout .cvWorkspaceSection .cvPage {
+  width: var(--cv-doc-w) !important;
+  max-width: min(var(--cv-doc-w), calc(100% - 32px)) !important;
+  transform: none !important;
+}
+
+html.layout-stacked .cvWorkspaceSection .cvStage {
+  background: var(--cv-stage-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.layout-stacked .cvWorkspaceSection .cvPage {
+  transform: none !important;
+}
+
+/* —— Tablet / mobile: use width, keep ratio (no thumbnail scale) —— */
+@media (max-width: 920px) {
+  .cvWorkspaceSection {
+    --cv-doc-w: min(820px, calc(100vw - 56px));
+    --cv-doc-h: calc(var(--cv-doc-w) * 1123 / 794);
+  }
+
+  .cvWorkspaceSection .cvStage {
+    padding: 32px 20px 40px !important;
+    min-height: calc(var(--cv-doc-h) + 64px) !important;
+  }
+
+  .cvWorkspaceSection .cvStage .cvPage,
+  .cvWorkspaceSection #cvPreview.cvPage {
+    width: var(--cv-doc-w) !important;
+    max-width: 100% !important;
+    min-height: var(--cv-doc-h) !important;
+    transform: none !important;
+  }
+
+  .cvWorkspaceSection .cvPage .cvLayout {
+    min-height: var(--cv-doc-h) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvWorkspaceSection .cvPage.tpl-switch {
+    animation: none !important;
+  }
+}

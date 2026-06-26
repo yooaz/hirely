@@ -1,0 +1,962 @@
+/* Hirely — 8 distinct CV templates (A4 794px, PDF-safe, data-only sections) */
+
+.cvPage,
+.cvPage * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.cvPage {
+  width: 794px !important;
+  min-height: 1123px !important;
+  margin: 0 auto !important;
+  background: #fff !important;
+  color: #111 !important;
+  font-size: 11.5pt !important;
+  line-height: 1.48 !important;
+  box-sizing: border-box !important;
+}
+
+/* In-app preview: fit panel; export/PDF keeps full A4 */
+html.v3-classic-ui .cvStage .cvPage {
+  min-height: 0 !important;
+}
+
+.cvPage--export,
+.cvPage--export .cvShell {
+  min-height: 1123px !important;
+}
+
+.cvShell {
+  display: block !important;
+  width: 100% !important;
+  min-height: 1123px !important;
+  box-sizing: border-box !important;
+}
+
+.cvSection {
+  margin: 0 0 16px !important;
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.cvSection:last-child {
+  margin-bottom: 0 !important;
+}
+
+.cvSection h3 {
+  margin: 0 0 8px !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.cvSection p,
+.cvSection li {
+  font-size: 11.5px !important;
+  line-height: 1.52 !important;
+  margin: 0 !important;
+}
+
+.cvSkillLine {
+  font-size: 11.5px !important;
+  line-height: 1.55 !important;
+}
+
+
+.cvSection ul {
+  margin: 6px 0 0 18px !important;
+  padding: 0 !important;
+}
+
+.cvRole {
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  margin: 0 0 2px !important;
+}
+
+.cvMeta {
+  font-size: 11px !important;
+  opacity: 0.72 !important;
+  margin: 0 0 6px !important;
+}
+
+.cvExp {
+  margin: 0 0 14px !important;
+}
+
+.cvList,
+.cvTags {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Workspace: preserve per-template identity (no flattening) */
+.cvWorkspaceSection .cvPage[class*="tpl-"] .cvShell .cvSection p,
+.cvWorkspaceSection .cvPage[class*="tpl-"] .cvShell .cvSection li {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* ═══ 1 CORPORATE ATS — McKinsey/Bain: one column, recruiter-first ═══ */
+.tpl-ats {
+  font-family: "Segoe UI", Candara, "DejaVu Sans", Geneva, Tahoma, sans-serif !important;
+  color: #0f172a !important;
+  background: #fff !important;
+}
+
+.tpl-ats .cvShell--ats {
+  padding: 40px 52px 48px !important;
+  letter-spacing: 0.01em !important;
+  position: relative !important;
+}
+
+.tpl-ats .cvAtsRule {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 5px !important;
+  background: #0f172a !important;
+}
+
+.tpl-ats .cvBand--head {
+  margin-bottom: 22px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid #0f172a !important;
+}
+
+.tpl-ats .cvName {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 6px !important;
+  line-height: 1.15 !important;
+}
+
+.tpl-ats .cvTitle {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  margin: 0 0 8px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.tpl-ats .cvContactLine {
+  font-size: 10.5px !important;
+  color: #475569 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+.tpl-ats .cvStream {
+  font-size: 11.5px !important;
+  line-height: 1.58 !important;
+  max-width: 100% !important;
+}
+
+.tpl-ats .cvSection {
+  margin-bottom: 18px !important;
+}
+
+.tpl-ats .cvSection h3 {
+  font-size: 8px !important;
+  letter-spacing: 0.18em !important;
+  border-bottom: 1px solid #cbd5e1 !important;
+  padding-bottom: 5px !important;
+  color: #0f172a !important;
+}
+
+.tpl-ats .cvRole {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.tpl-ats .cvMeta {
+  font-size: 10.5px !important;
+  color: #64748b !important;
+}
+
+.tpl-ats .cvPhoto {
+  display: none !important;
+}
+
+/* ═══ 2 SWISS GRID — typographic grid, precision, modern ═══ */
+.tpl-swiss {
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding: 0 !important;
+}
+
+.tpl-swiss .cvShell--swiss {
+  padding: 0 !important;
+}
+
+.tpl-swiss .cvShell--swiss {
+  position: relative !important;
+}
+
+.tpl-swiss .cvGrid--swiss {
+  display: grid !important;
+  grid-template-columns: 188px 1fr !important;
+  min-height: 1123px !important;
+  column-gap: 0 !important;
+}
+
+.tpl-swiss .cvGrid--swiss-full {
+  grid-template-columns: 1fr !important;
+}
+
+.tpl-swiss .cvSwissBaseline {
+  position: absolute !important;
+  bottom: 48px !important;
+  left: 188px !important;
+  right: 48px !important;
+  height: 1px !important;
+  background: #0f172a !important;
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+}
+
+.tpl-swiss .cvRail {
+  border-right: 2px solid #0f172a !important;
+  padding: 44px 22px 48px 28px !important;
+  background: #f8fafc !important;
+}
+
+.tpl-swiss .cvRailContact,
+.tpl-swiss .cvRail .cvSkillLine,
+.tpl-swiss .cvRail .cvTags li {
+  font-size: 10.5px !important;
+  line-height: 1.5 !important;
+}
+
+.tpl-swiss .cvPane--offset {
+  padding-top: 52px !important;
+}
+
+.tpl-swiss .cvPane--offset .cvSection:first-of-type {
+  margin-top: 8px !important;
+}
+
+.tpl-swiss .cvGrid--swiss-full .cvPane {
+  padding: 40px 48px 48px !important;
+}
+
+.tpl-swiss .cvRailHead .cvName {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.2 !important;
+}
+
+.tpl-swiss .cvRailHead .cvTitle {
+  font-size: 9px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  color: #64748b !important;
+  margin-top: 10px !important;
+}
+
+.tpl-swiss .cvRail .cvSection h3 {
+  border: none !important;
+  padding: 0 !important;
+  letter-spacing: 0.22em !important;
+  font-size: 7px !important;
+  color: #94a3b8 !important;
+}
+
+.tpl-swiss .cvPane {
+  padding: 40px 44px 48px 36px !important;
+  background: #fff !important;
+}
+
+.tpl-swiss .cvPane .cvSection h3 {
+  color: #0f172a !important;
+  border-bottom: 2px solid #0f172a !important;
+  font-size: 8px !important;
+  letter-spacing: 0.16em !important;
+}
+
+.tpl-swiss .cvExp--timeline {
+  padding-left: 16px !important;
+  border-left: 1px solid #0f172a !important;
+  margin-left: 3px !important;
+}
+
+.tpl-swiss .cvPhoto {
+  display: none !important;
+}
+
+/* ═══ 3 EXECUTIVE MINIMAL — premium, senior, generous whitespace ═══ */
+.tpl-executive {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding: 0 !important;
+}
+
+.tpl-executive .cvBand--dark {
+  background: #0b0d10 !important;
+  color: #fafafa !important;
+  padding: 52px 56px 40px !important;
+}
+
+.tpl-executive .cvBand--dark .cvName {
+  font-size: 34px !important;
+  font-weight: 200 !important;
+  color: #fff !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.08 !important;
+}
+
+.tpl-executive .cvBand--dark .cvTitle {
+  color: #cbd5e1 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  margin-top: 12px !important;
+}
+
+.tpl-executive .cvBand--dark .cvContactLine {
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  margin-top: 16px !important;
+}
+
+.tpl-executive .cvBody {
+  padding: 56px 60px 60px !important;
+}
+
+.tpl-executive .cvPane--spacious .cvSection {
+  margin-bottom: 36px !important;
+}
+
+.tpl-executive .cvPane .cvSection {
+  margin-bottom: 32px !important;
+}
+
+.tpl-executive .cvPane .cvSection h3 {
+  font-size: 8px !important;
+  letter-spacing: 0.2em !important;
+  color: #64748b !important;
+  border: none !important;
+  margin-bottom: 12px !important;
+}
+
+.tpl-executive .cvPane .cvSection p,
+.tpl-executive .cvPane .cvSection li {
+  font-size: 11.5px !important;
+  line-height: 1.62 !important;
+  color: #1e293b !important;
+}
+
+.tpl-executive .cvFoot {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px 40px !important;
+  margin-top: 8px !important;
+  padding-top: 28px !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.tpl-executive .cvFoot .cvSection {
+  margin-bottom: 0 !important;
+}
+
+.tpl-executive .cvFoot .cvSection h3 {
+  border-bottom: 1px solid #0f172a !important;
+  padding-bottom: 6px !important;
+  color: #0f172a !important;
+  font-size: 8px !important;
+}
+
+/* ═══ 4 EDITORIAL DESIGNER — magazine, graphic, readable ═══ */
+.tpl-editorial {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif !important;
+}
+
+.tpl-editorial .cvShell--editorial {
+  padding: 44px 48px 48px !important;
+  background: #fdfcfa !important;
+}
+
+.tpl-editorial .cvMasthead {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  gap: 28px 32px !important;
+  align-items: end !important;
+  margin-bottom: 32px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 3px solid #1c1917 !important;
+}
+
+.tpl-editorial .cvMastheadMedia .cvPhoto {
+  width: 96px !important;
+  height: 96px !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  filter: grayscale(0.15) contrast(1.05) !important;
+}
+
+.tpl-editorial .cvName {
+  font-size: 40px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 0.98 !important;
+  color: #1c1917 !important;
+}
+
+.tpl-editorial .cvTitle {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 11px !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: #78716c !important;
+  margin-top: 10px !important;
+}
+
+.tpl-editorial .cvSplit {
+  display: grid !important;
+  grid-template-columns: 1.25fr 0.75fr !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+.tpl-editorial .cvSplit--full {
+  grid-template-columns: 1fr !important;
+}
+
+.tpl-editorial .cvPane--lead .cvSection:first-of-type p:first-of-type:first-letter {
+  font-size: 2.75em !important;
+  line-height: 0.9 !important;
+  font-weight: 600 !important;
+  float: left !important;
+  margin: 0 8px 0 0 !important;
+  color: #1c1917 !important;
+}
+
+.tpl-editorial .cvPane--meta {
+  font-family: Inter, system-ui, sans-serif !important;
+  border-left: 1px solid #e7e5e4 !important;
+  padding-left: 24px !important;
+}
+
+.tpl-editorial .cvPane--meta .cvSection h3 {
+  font-family: Inter, system-ui, sans-serif !important;
+  border-bottom: 2px solid #1c1917 !important;
+  padding-bottom: 6px !important;
+  font-size: 8px !important;
+  letter-spacing: 0.16em !important;
+}
+
+.tpl-editorial .cvExp--rule {
+  padding-bottom: 16px !important;
+  margin-bottom: 16px !important;
+  border-bottom: 1px solid #d6d3d1 !important;
+}
+
+/* ═══ 5 PORTFOLIO CREATIVE — visible clients, designer / illustrator ═══ */
+.tpl-portfolio {
+  font-family: Inter, system-ui, sans-serif !important;
+  padding: 0 !important;
+}
+
+.tpl-portfolio .cvGrid--deck {
+  display: grid !important;
+  grid-template-columns: 232px 1fr !important;
+  min-height: 1123px !important;
+}
+
+.tpl-portfolio .cvDeckContact {
+  font-size: 10.5px !important;
+  line-height: 1.55 !important;
+  color: #a1a1aa !important;
+  margin: 0 0 14px !important;
+}
+
+.tpl-portfolio .cvClientsFeatured {
+  margin: 16px 0 18px !important;
+  padding: 14px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+.tpl-portfolio .cvClientsLabel {
+  display: block !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #71717a !important;
+  margin-bottom: 10px !important;
+}
+
+.tpl-portfolio .cvClientsGrid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px 8px !important;
+}
+
+.tpl-portfolio .cvClientChip {
+  display: inline-block !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: #fafafa !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  padding: 5px 8px !important;
+  line-height: 1.3 !important;
+}
+
+.tpl-portfolio .cvGrid--deck-full {
+  grid-template-columns: 1fr !important;
+}
+
+.tpl-portfolio .cvDeck {
+  background: #09090b !important;
+  color: #fafafa !important;
+  padding: 36px 22px 40px !important;
+}
+
+.tpl-portfolio .cvDeck .cvName {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  color: #fff !important;
+  line-height: 1.1 !important;
+}
+
+.tpl-portfolio .cvDeck .cvTitle {
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  color: #a1a1aa !important;
+  margin-top: 8px !important;
+}
+
+.tpl-portfolio .cvClientBlock {
+  margin: 18px 0 20px !important;
+  padding: 12px 0 14px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.tpl-portfolio .cvClientBlock--labeled .cvClientLabel {
+  display: block !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #71717a !important;
+  margin-bottom: 8px !important;
+}
+
+.tpl-portfolio .cvClientLine {
+  font-size: 10.5px !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.03em !important;
+  color: #e4e4e7 !important;
+}
+
+.tpl-portfolio .cvDeck .cvSection h3 {
+  color: #a1a1aa !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  font-size: 8px !important;
+}
+
+.tpl-portfolio .cvStagePane {
+  padding: 36px 40px 44px !important;
+  background: #fff !important;
+}
+
+.tpl-portfolio .cvStagePane .cvSection h3 {
+  color: #18181b !important;
+  letter-spacing: 0.14em !important;
+  border-bottom: 1px solid #e4e4e7 !important;
+}
+
+.tpl-portfolio .cvPhoto {
+  border-radius: 2px !important;
+  margin-bottom: 14px !important;
+  width: 100% !important;
+  max-width: 176px !important;
+  height: auto !important;
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+}
+
+/* ═══ 6 LUXURY MONOCHROME — fashion / architecture, noir & blanc ═══ */
+.tpl-luxury {
+  font-family: "Didot", "Bodoni MT", "Noto Serif Display", Georgia, "Times New Roman", serif !important;
+  background: #fff !important;
+  color: #0a0a0a !important;
+}
+
+.tpl-luxury .cvShell--luxury {
+  padding: 52px 56px 60px !important;
+  background: #fff !important;
+  position: relative !important;
+}
+
+.tpl-luxury .cvLuxFrame {
+  position: absolute !important;
+  inset: 28px 32px 32px !important;
+  border: 1px solid #0a0a0a !important;
+  pointer-events: none !important;
+}
+
+.tpl-luxury .cvLuxClients {
+  margin: 28px 0 !important;
+  padding: 20px 0 !important;
+  border-top: 1px solid #0a0a0a !important;
+  border-bottom: 1px solid #0a0a0a !important;
+  text-align: center !important;
+}
+
+.tpl-luxury .cvLuxClientsLabel {
+  display: block !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 7px !important;
+  letter-spacing: 0.32em !important;
+  text-transform: uppercase !important;
+  color: #525252 !important;
+  margin-bottom: 10px !important;
+}
+
+.tpl-luxury .cvLuxClients p {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  color: #171717 !important;
+  line-height: 1.65 !important;
+}
+
+.tpl-luxury .cvMonogram {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  padding-bottom: 32px !important;
+  border-bottom: 1px solid #292524 !important;
+}
+
+.tpl-luxury .cvName {
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.32em !important;
+  text-transform: uppercase !important;
+  color: #0a0a0a !important;
+}
+
+.tpl-luxury .cvTitle {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #78716c !important;
+  margin-top: 14px !important;
+}
+
+.tpl-luxury .cvContactLine {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  color: #a8a29e !important;
+  margin-top: 12px !important;
+}
+
+.tpl-luxury .cvMeasure .cvSection {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+}
+
+.tpl-luxury .cvMeasure .cvSection h3 {
+  border: none !important;
+  color: #a8a29e !important;
+  letter-spacing: 0.28em !important;
+  font-size: 7px !important;
+}
+
+.tpl-luxury .cvMeasure .cvSection p,
+.tpl-luxury .cvMeasure .cvSection li,
+.tpl-luxury .cvExp--centered {
+  max-width: 52ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 11px !important;
+  line-height: 1.58 !important;
+}
+
+.tpl-luxury .cvPhoto {
+  display: none !important;
+}
+
+/* ═══ 7 MODERN SIDEBAR — clean rail, premium contrast ═══ */
+.tpl-sidebar,
+.tpl-startup {
+  font-family: Inter, system-ui, sans-serif !important;
+  padding: 0 !important;
+}
+
+.tpl-sidebar .cvShell--sidebar::before,
+.tpl-startup .cvShell--sidebar::before {
+  content: "" !important;
+  display: block !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #0f172a 0%, #334155 55%, #64748b 100%) !important;
+}
+
+.tpl-sidebar .cvGrid--sidebar,
+.tpl-startup .cvGrid--sidebar {
+  display: grid !important;
+  grid-template-columns: 212px 1fr !important;
+  min-height: calc(1123px - 4px) !important;
+}
+
+.tpl-sidebar .cvStackContact,
+.tpl-startup .cvStackContact {
+  font-size: 10.5px !important;
+  line-height: 1.55 !important;
+  color: #cbd5e1 !important;
+}
+
+.tpl-sidebar .cvGrid--sidebar-full,
+.tpl-startup .cvGrid--sidebar-full {
+  grid-template-columns: 1fr !important;
+}
+
+.tpl-sidebar .cvStack,
+.tpl-startup .cvStack {
+  background: #0f172a !important;
+  color: #f1f5f9 !important;
+  padding: 32px 18px 40px !important;
+}
+
+.tpl-sidebar .cvStack .cvName,
+.tpl-startup .cvStack .cvName {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.tpl-sidebar .cvStack .cvTitle,
+.tpl-startup .cvStack .cvTitle {
+  font-size: 10px !important;
+  color: #94a3b8 !important;
+  margin: 8px 0 16px !important;
+  letter-spacing: 0.06em !important;
+}
+
+.tpl-sidebar .cvStack .cvSection h3,
+.tpl-startup .cvStack .cvSection h3 {
+  color: #94a3b8 !important;
+  border-color: rgba(248, 250, 252, 0.12) !important;
+  font-size: 7px !important;
+  letter-spacing: 0.18em !important;
+}
+
+.tpl-sidebar .cvTags,
+.tpl-startup .cvTags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+}
+
+.tpl-sidebar .cvTags li,
+.tpl-startup .cvTags li {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 9px !important;
+  font-weight: 500 !important;
+}
+
+.tpl-sidebar .cvPane,
+.tpl-startup .cvPane {
+  padding: 36px 40px 44px !important;
+  background: #fff !important;
+}
+
+.tpl-sidebar .cvPane .cvSection h3,
+.tpl-startup .cvPane .cvSection h3 {
+  color: #0f172a !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.tpl-sidebar .cvPhoto,
+.tpl-startup .cvPhoto {
+  border-radius: 8px !important;
+  margin-bottom: 12px !important;
+  width: 100% !important;
+  max-width: 164px !important;
+}
+
+/* ═══ 8 ART DIRECTOR — strong graphic, still readable ═══ */
+.tpl-art {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding: 0 !important;
+}
+
+.tpl-art .cvGrid--art {
+  display: grid !important;
+  grid-template-columns: 236px 1fr !important;
+  min-height: 1123px !important;
+}
+
+.tpl-art .cvGrid--art-full {
+  grid-template-columns: 1fr !important;
+}
+
+.tpl-art .cvHeroSide {
+  background: #0a0a0a !important;
+  color: #fafafa !important;
+  padding: 36px 24px 44px !important;
+  border-right: 4px solid #fff !important;
+}
+
+.tpl-art .cvGrid--art-full .cvHeroMain {
+  border-left: 4px solid #0a0a0a !important;
+}
+
+.tpl-art .cvHeroSide .cvName {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  line-height: 0.95 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.04em !important;
+}
+
+.tpl-art .cvHeroSide .cvTitle {
+  font-size: 10px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #a3a3a3 !important;
+  margin: 10px 0 18px !important;
+}
+
+.tpl-art .cvHeroSide .cvSection h3 {
+  border-color: #404040 !important;
+  color: #d4d4d4 !important;
+  font-size: 8px !important;
+}
+
+.tpl-art .cvHeroSide .cvPhoto {
+  width: 100% !important;
+  max-width: 184px !important;
+  aspect-ratio: 1 !important;
+  object-fit: cover !important;
+  margin-bottom: 16px !important;
+  border-radius: 0 !important;
+  outline: 2px solid #fff !important;
+  outline-offset: 4px !important;
+  filter: grayscale(1) contrast(1.08) !important;
+}
+
+.tpl-art .cvHeroMain {
+  padding: 32px 36px 44px !important;
+  background: #fafafa !important;
+}
+
+.tpl-art .cvLead {
+  font-size: 13.5px !important;
+  line-height: 1.58 !important;
+  font-weight: 500 !important;
+  color: #262626 !important;
+}
+
+.tpl-art .cvExp--card {
+  background: #fff !important;
+  border: 1px solid #d4d4d4 !important;
+  border-left: 5px solid #0a0a0a !important;
+  padding: 14px 16px !important;
+  margin-bottom: 12px !important;
+  box-shadow: none !important;
+}
+
+.tpl-art .cvHeroMain .cvSection h3 {
+  letter-spacing: 0.12em !important;
+  border-bottom: 2px solid #171717 !important;
+  color: #171717 !important;
+}
+
+/* Template picker card skins */
+.tplCardPreview[data-tpl="ats"] {
+  background: #fff !important;
+  box-shadow: inset 0 0 0 2px #111;
+}
+
+.tplCardPreview[data-tpl="swiss"] {
+  background: linear-gradient(90deg, #fff 34%, #f4f4f4 34%, #f4f4f4 36%, #fff 36%) !important;
+  border-left: 4px solid #111;
+}
+
+.tplCardPreview[data-tpl="executive"] {
+  background: linear-gradient(180deg, #0d1016 36%, #fff 36%) !important;
+}
+
+.tplCardPreview[data-tpl="editorial"] {
+  background: linear-gradient(135deg, #fafaf9 0%, #fff 55%) !important;
+  box-shadow: inset 0 -3px 0 #111;
+}
+
+.tplCardPreview[data-tpl="portfolio"] {
+  background: linear-gradient(90deg, #0a0a0a 44%, #fff 44%) !important;
+}
+
+.tplCardPreview[data-tpl="luxury"] {
+  background: #fafaf9 !important;
+  box-shadow: inset 0 14px 0 #e5e5e5;
+}
+
+.tplCardPreview[data-tpl="sidebar"],
+.tplCardPreview[data-tpl="startup"] {
+  background: linear-gradient(90deg, #0d1016 42%, #fff 42%) !important;
+  box-shadow: inset 0 4px 0 #3d4a6b;
+}
+
+.tplCardPreview[data-tpl="art"] {
+  background: linear-gradient(90deg, #111 46%, #fff 46%) !important;
+}
+
+/* Minimum readable sizes (PDF-safe, no micro type) */
+.cvShell .cvSection p,
+.cvShell .cvSection li,
+.cvShell .cvSkillLine,
+.cvShell .cvMeta {
+  font-size: max(10.5px, 1em) !important;
+}
+
+.cvShell .cvSection h3 {
+  font-size: max(8px, 0.72em) !important;
+}
+
+@media print {
+  .cvPage,
+  .cvShell {
+    transform: none !important;
+    box-shadow: none !important;
+    width: 794px !important;
+    min-height: auto !important;
+  }
+
+  .tpl-executive .cvBand--dark,
+  .tpl-portfolio .cvDeck,
+  .tpl-sidebar .cvStack,
+  .tpl-startup .cvStack,
+  .tpl-art .cvHeroSide,
+  .tpl-ats .cvAtsRule {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .tpl-luxury .cvLuxFrame,
+  .tpl-swiss .cvSwissBaseline {
+    display: block !important;
+  }
+}

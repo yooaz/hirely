@@ -1,0 +1,58 @@
+/**
+ * P0 — Template gallery above CV (post-import vertical stack).
+ * Order: extraction summary → templates → CV preview → review panels.
+ */
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .extractionQualityStep {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .templatePickerBar {
+  flex: 0 0 auto;
+  position: sticky;
+  top: 64px;
+  z-index: 4;
+  margin: 0;
+  padding: 12px 14px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .templatePickerBar--aboveCv {
+  display: block !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumGalleryGrid {
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 10px;
+  max-height: min(228px, 36vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px 2px 6px;
+  scroll-snap-type: y proximity;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumTplCard {
+  padding: 8px;
+  border-radius: 14px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumTplPreview {
+  min-height: 72px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .workspaceCanvas {
+  flex: 0 1 auto;
+  min-height: 380px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .reviewStudioCenter,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .reviewStudioAnalysis {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/* Style step layout: see style-step-layout.css */

@@ -1,0 +1,1046 @@
+/* Hirely Premium Templates — typography · hierarchy · readability (text-only). */
+
+.cv .cvInner:not(.cvLayout-v2) .cvPhotoWrap,
+.cv .cvInner:not(.cvLayout-v2) .cvSkillBars,
+.cv .cvInner:not(.cvLayout-v2) .cvSkillBarFill,
+.cv .cvInner:not(.cvLayout-v2) .cvTimelineDot,
+.cv .cvInner:not(.cvLayout-v2) .cvSectionIcon,
+.cv .cvInner:not(.cvLayout-v2) .cvScore,
+.cv .cvInner:not(.cvLayout-v2) .cvDecor {
+  display: none !important;
+}
+
+.cv .cvSection:empty,
+.cv .cvSectionBody:empty,
+.cv .cvMetaFooter:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cv .cvInner {
+  min-height: 0;
+}
+
+.cv .cvClientLine,
+.cv .cvSkillLine,
+.cv .cvToolsLine,
+.cv .cvLangLine,
+.cv .cvEduLine {
+  margin: 0;
+  line-height: var(--typo-leading-body, 1.58);
+}
+
+.cv .cvInner:not(.cvLayout-v2) .chip {
+  display: none !important;
+}
+
+/* V2 families — show client/skill chips for graphic templates */
+.cv .cvInner.cvLayout-v2 .cvClientChip,
+.cv .cvInner.cvLayout-v2 .cvSkillChip {
+  display: inline-flex !important;
+}
+
+/* —— Shared hierarchy —— */
+.cvLayout-professional {
+  color: var(--cv-ink, #111827);
+}
+
+.cvLayout-professional .cvSection {
+  margin-bottom: 14px;
+}
+
+.cvLayout-professional .cvSection:last-child {
+  margin-bottom: 0;
+}
+
+.cvLayout-professional .cvSectionTitle {
+  font-size: var(--typo-cv-section, 7.5pt);
+  font-weight: var(--typo-weight-semibold, 600);
+  letter-spacing: var(--typo-tracking-kicker, 0.12em);
+  line-height: var(--typo-leading-tight, 1.22);
+  text-transform: uppercase;
+  color: var(--cv-muted, #6b7280);
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--cv-line, #e8e8e4);
+}
+
+.cvLayout-professional .cvSection--experience .cvExpRole {
+  font-weight: 600;
+  font-size: 10.5pt;
+  color: var(--cv-ink, #111827);
+}
+
+.cvLayout-professional .cvExpEntry {
+  margin-bottom: 8px;
+}
+
+.cvLayout-professional .cvExpEntry:last-child {
+  margin-bottom: 0;
+}
+
+.cvLayout-professional .cvExpEntry p,
+.cvLayout-professional .cvProjectEntry p,
+.cvLayout-professional .cvListEntry p {
+  margin: 0;
+  line-height: var(--typo-leading-body, 1.58);
+}
+
+.cv .cvLead {
+  margin: 8px 0 0;
+  max-width: 48em;
+  line-height: var(--typo-leading-relaxed, 1.65);
+  color: var(--cv-body, #374151);
+}
+
+.cv .cvContact p {
+  margin: 10px 0 0;
+  font-size: 9.5pt;
+  color: var(--cv-muted, #6b7280);
+  line-height: 1.5;
+}
+
+.cv .cvMetaFooter {
+  margin-top: 4px;
+}
+
+.cv .cvMetaGrid {
+  display: grid;
+  gap: 10px 20px;
+}
+
+.cv .cvMetaGrid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cv .cvMetaGrid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* —— 1 ATS Clean (Apple · Notion · Read.cv) —— */
+.cv.template-ats {
+  --cv-ink: #000000;
+  --cv-muted: #525252;
+  --cv-line: #e5e5e5;
+  --cv-body: #1a1a1a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.52;
+  color: var(--cv-body);
+}
+
+.cv.template-ats .cvHead--ats {
+  padding: 36px 48px 24px;
+  border-bottom: 1.5px solid var(--cv-ink);
+  background: #fff;
+}
+
+.cv.template-ats .cvName {
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: var(--cv-ink);
+}
+
+.cv.template-ats .cvTitle {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--cv-muted);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+.cv.template-ats .cvContact p {
+  font-size: 9pt;
+  color: var(--cv-muted);
+  letter-spacing: 0.01em;
+}
+
+.cv.template-ats .cvLead {
+  font-size: 10pt;
+  color: var(--cv-body);
+  line-height: 1.55;
+}
+
+.cv.template-ats .cvMain {
+  padding: 28px 48px 44px;
+}
+
+.cv.template-ats .cvSectionTitle {
+  letter-spacing: 0.16em;
+  font-size: 6.5pt;
+  font-weight: 600;
+  color: var(--cv-muted);
+  border-bottom-color: var(--cv-line);
+  border-bottom-width: 1px;
+}
+
+.cv.template-ats .cvExpList--tight .cvExpEntry {
+  margin-bottom: 9px;
+}
+
+.cv.template-ats .cvExpRole {
+  font-weight: 600;
+  color: var(--cv-ink);
+}
+
+.tplMiniWrap--ats {
+  border-bottom: 2.5px solid #000;
+}
+
+/* —— 2 Executive —— */
+.cv.template-executive {
+  --cv-ink: #0f172a;
+  --cv-muted: #64748b;
+  --cv-line: #e2e8f0;
+  --cv-body: #334155;
+  font-family: 'Source Serif 4', 'Libre Baskerville', Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.62;
+}
+
+.cv.template-executive .cvHead--center {
+  text-align: center;
+  padding: 40px 48px 26px;
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv.template-executive .cvName {
+  font-size: 24pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.cv.template-executive .cvTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 9.5pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-muted);
+  margin-top: 10px;
+}
+
+.cv.template-executive .cvLead {
+  font-size: 10.5pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv.template-executive .cvMain {
+  padding: 28px 48px 40px;
+  max-width: 52em;
+  margin: 0 auto;
+}
+
+.cv.template-executive .cvSection {
+  margin-bottom: 24px;
+}
+
+.cv.template-executive .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 12px;
+}
+
+.tplMiniWrap--executive {
+  border-bottom: 1px solid #cbd5e1;
+}
+
+/* —— 3 Swiss Editorial —— */
+.cv.template-swiss {
+  --cv-ink: #18181b;
+  --cv-muted: #71717a;
+  --cv-line: #e4e4e7;
+  --cv-body: #3f3f46;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.52;
+}
+
+.cv.template-swiss .cvHead--grid {
+  padding: 32px 40px 20px;
+  border-bottom: 2px solid var(--cv-ink);
+}
+
+.cv.template-swiss .cvName {
+  font-size: 18pt;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.cv.template-swiss .cvTitle {
+  font-size: 10pt;
+  color: var(--cv-muted);
+  margin-top: 6px;
+}
+
+.cv.template-swiss .cvHeadMeta .cvContact p {
+  text-align: right;
+  font-size: 9pt;
+  line-height: 1.55;
+}
+
+.cv.template-swiss .cvBody {
+  display: grid;
+  grid-template-columns: 176px 1fr;
+}
+
+.cv.template-swiss .cvSide--meta {
+  padding: 24px 16px 32px 40px;
+  border-right: 1px solid var(--cv-line);
+  background: #fafafa;
+}
+
+.cv.template-swiss .cvSide--meta .cvSection {
+  margin-bottom: 18px;
+}
+
+.cv.template-swiss .cvSide--meta .cvSectionTitle {
+  font-size: 6.5pt;
+  letter-spacing: 0.2em;
+  border-bottom-color: #d4d4d8;
+}
+
+.cv.template-swiss .cvMain {
+  padding: 24px 40px 32px 28px;
+}
+
+.cv.template-swiss .cvSectionTitle {
+  color: var(--cv-ink);
+  border-bottom-width: 1px;
+}
+
+.tplMiniWrap--swiss {
+  background: linear-gradient(90deg, #f4f4f5 26%, #fff 26%);
+}
+
+/* —— 4 Product Designer —— */
+.cv.template-productdesigner {
+  --cv-ink: #0f172a;
+  --cv-muted: #475569;
+  --cv-line: #e2e8f0;
+  --cv-body: #334155;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.58;
+}
+
+.cv.template-productdesigner .cvHead--product {
+  padding: 32px 44px 18px;
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv.template-productdesigner .cvName {
+  font-size: 21pt;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.cv.template-productdesigner .cvTitle {
+  font-size: 10.5pt;
+  color: var(--cv-muted);
+  margin-top: 5px;
+}
+
+.cv.template-productdesigner .cvSectionTitle {
+  letter-spacing: 0.12em;
+}
+
+.cv.template-productdesigner .cvMain {
+  padding: 24px 44px 36px;
+}
+
+.tplMiniWrap--productdesigner {
+  border-bottom: 2px solid #0f172a;
+}
+
+/* —— 6 Agency Portfolio —— */
+.cv.template-agencyportfolio {
+  --cv-ink: #18181b;
+  --cv-muted: #52525b;
+  --cv-line: #e4e4e7;
+  --cv-body: #3f3f46;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.56;
+}
+
+.cv.template-agencyportfolio .cvHead--agency {
+  padding: 32px 44px 20px;
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv.template-agencyportfolio .cvName {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cv.template-agencyportfolio .cvTitle {
+  font-size: 10.5pt;
+  color: var(--cv-muted);
+  margin-top: 6px;
+}
+
+.cv.template-agencyportfolio .cvMain {
+  padding: 22px 44px 36px;
+  border-left: 3px solid var(--cv-ink);
+  margin-left: 44px;
+}
+
+.cv.template-agencyportfolio .cvSection--projects .cvSectionTitle,
+.cv.template-agencyportfolio .cvSection--clients .cvSectionTitle {
+  color: var(--cv-ink);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--cv-ink);
+  letter-spacing: 0.1em;
+}
+
+.tplMiniWrap--agencyportfolio {
+  border-left: 3px solid #18181b;
+}
+
+/* —— Split / grid heads —— */
+.cv .cvHead--split,
+.cv .cvHead--grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.cv .cvHead--grid .cvHeadPrimary {
+  flex: 1 1 240px;
+}
+
+.cv .cvHead--grid .cvHeadMeta {
+  flex: 0 1 auto;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .cv.template-swiss .cvBody {
+    grid-template-columns: 1fr;
+  }
+  .cv.template-swiss .cvSide--meta {
+    border-right: 0;
+    border-bottom: 1px solid #e4e4e7;
+  }
+  .cv.template-agencyportfolio .cvMain {
+    margin-left: 0;
+    border-left: 0;
+    border-top: 3px solid var(--cv-ink);
+  }
+}
+
+body.export-pdf .cv[class*='template-'] {
+  width: 794px;
+  max-width: 794px;
+  box-shadow: none;
+}
+
+body.export-pdf .cv.template-swiss .cvBody {
+  display: grid !important;
+  grid-template-columns: 176px 1fr !important;
+}
+
+body.export-pdf .cv.template-swiss .cvSide--meta {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.export-pdf .cv.template-agencyportfolio .cvMain {
+  border-left: 3px solid var(--cv-ink);
+  margin-left: 44px;
+}
+
+/* —— V2: Minimal —— */
+.cv.template-minimal {
+  --cv-ink: #111827;
+  --cv-muted: #6b7280;
+  --cv-line: #e5e7eb;
+  --cv-body: #374151;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.cv.template-minimal .cvHead--minimal {
+  padding: 22px 36px 14px;
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv.template-minimal .cvName {
+  font-size: 18pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cv.template-minimal .cvTitle {
+  font-size: 9.5pt;
+  color: var(--cv-muted);
+  margin-top: 4px;
+}
+
+.cv.template-minimal .cvMain {
+  padding: 16px 36px 28px;
+}
+
+.cv.template-minimal .cvSection {
+  margin-bottom: 14px;
+}
+
+.cv.template-minimal .cvSectionTitle {
+  font-size: 6.5pt;
+  letter-spacing: 0.18em;
+}
+
+.tplMiniWrap--minimal {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* —— 2 Creative Portfolio (Pitch · Read.cv) —— */
+.cv.template-creative,
+.cv.template-creativedirector {
+  --cv-ink: #0a0a0a;
+  --cv-muted: #52525b;
+  --cv-line: #e4e4e7;
+  --cv-body: #3f3f46;
+  --cv-accent: #0a0a0a;
+  font-family: 'DM Sans', Inter, system-ui, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.54;
+}
+
+.cv.template-creative .cvHead--split,
+.cv.template-creative .cvHead--grid,
+.cv.template-creativedirector .cvHead--split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+  padding: 36px 48px 26px;
+  border-bottom: 3px solid var(--cv-ink);
+}
+
+.cv.template-creative .cvName,
+.cv.template-creativedirector .cvName {
+  font-family: 'Cormorant Garamond', 'DM Sans', Georgia, serif;
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.cv.template-creative .cvTitle,
+.cv.template-creativedirector .cvTitle {
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-muted);
+  margin-top: 12px;
+}
+
+.cv.template-creative .cvHeadSplitAside .cvContact p,
+.cv.template-creativedirector .cvHeadSplitAside .cvContact p {
+  text-align: right;
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+.cv.template-creative .cvLead,
+.cv.template-creativedirector .cvLead {
+  font-size: 10pt;
+  color: var(--cv-body);
+  margin-top: 12px;
+  max-width: 42em;
+}
+
+.cv.template-creative .cvSectionTitle,
+.cv.template-creativedirector .cvSectionTitle {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-ink);
+  border-bottom: 2px solid var(--cv-ink);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.cv.template-creative .cvSection--projects,
+.cv.template-creative .cvSection--clients,
+.cv.template-creative .cvSection--portfolio,
+.cv.template-creative .cvSection--software,
+.cv.template-creativedirector .cvSection--projects,
+.cv.template-creativedirector .cvSection--clients,
+.cv.template-creativedirector .cvSection--portfolio,
+.cv.template-creativedirector .cvSection--software {
+  margin-bottom: 22px;
+}
+
+.cv.template-creative .cvClientLine,
+.cv.template-creativedirector .cvClientLine {
+  font-size: 10.5pt;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+}
+
+.cv.template-creative .cvProjectEntry p,
+.cv.template-creativedirector .cvProjectEntry p {
+  font-size: 10.5pt;
+  font-weight: 500;
+  line-height: 1.55;
+  padding-left: 12px;
+  border-left: 2px solid var(--cv-line);
+}
+
+.cv.template-creative .cvPortfolioLink p,
+.cv.template-creativedirector .cvPortfolioLink p {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--cv-body);
+}
+
+.cv.template-creative .cvToolsLine,
+.cv.template-creativedirector .cvToolsLine {
+  font-size: 10pt;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.cv.template-creative .cvMain,
+.cv.template-creativedirector .cvMain {
+  padding: 24px 44px 36px;
+}
+
+.tplMiniWrap--creative,
+.tplMiniWrap--creativedirector {
+  border-bottom: 3px solid #09090b;
+}
+
+/* —— V2: Premium (luxury portfolio) —— */
+.cv.template-premium {
+  --cv-ink: #1c1917;
+  --cv-muted: #57534e;
+  --cv-line: #e7e5e4;
+  --cv-body: #44403c;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.62;
+}
+
+.cv.template-premium .cvHead--premium {
+  text-align: center;
+  padding: 36px 44px 22px;
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv.template-premium .cvName {
+  font-size: 24pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cv.template-premium .cvTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 9pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cv-muted);
+  margin-top: 10px;
+}
+
+.cv.template-premium .cvMain {
+  padding: 24px 44px 36px;
+}
+
+.cv.template-premium .cvSection--clients .cvSectionTitle,
+.cv.template-premium .cvSection--projects .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  border-bottom-color: var(--cv-ink);
+}
+
+.tplMiniWrap--premium {
+  border-bottom: 1px solid #d6d3d1;
+}
+
+body.export-pdf .cv.template-minimal .cvMain,
+body.export-pdf .cv.template-creative .cvMain,
+body.export-pdf .cv.template-premium .cvMain,
+body.export-pdf .cv.template-executive-minimal .cvMain {
+  width: 100%;
+  max-width: 794px;
+}
+
+/* ── 3 Executive Minimal (Apple restraint · Canva executive) ─────────── */
+.cv.template-executive-minimal {
+  --cv-ink: #1c1917;
+  --cv-muted: #78716c;
+  --cv-line: #e7e5e4;
+  --cv-body: #44403c;
+  --cv-bg: #fafaf9;
+  font-family: 'Source Serif 4', 'Libre Baskerville', Georgia, serif;
+  font-size: 9.75pt;
+  line-height: 1.58;
+  color: var(--cv-body);
+}
+
+.cv.template-executive-minimal .cvHead--executive-minimal,
+.cv.template-executive-minimal .cvHead--center {
+  text-align: center;
+  padding: 36px 48px 22px;
+  border-bottom: 1px solid var(--cv-line);
+  background: var(--cv-bg);
+}
+
+.cv.template-executive-minimal .cvName {
+  font-family: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+  font-size: 26pt;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--cv-ink);
+}
+
+.cv.template-executive-minimal .cvTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cv-muted);
+  margin-top: 10px;
+}
+
+.cv.template-executive-minimal .cvContact p {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 8.5pt;
+  color: var(--cv-muted);
+}
+
+.cv.template-executive-minimal .cvLead {
+  font-size: 9.25pt;
+  line-height: 1.52;
+  color: var(--cv-muted);
+  margin-top: 14px;
+  max-width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv.template-executive-minimal .cvMain {
+  padding: 18px 48px 36px;
+  max-width: 52em;
+  margin: 0 auto;
+}
+
+.cv.template-executive-minimal .cvSection {
+  margin-bottom: 12px;
+}
+
+.cv.template-executive-minimal .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: none;
+  color: var(--cv-ink);
+  margin-bottom: 8px;
+}
+
+.cv.template-executive-minimal .cvExpList--tight .cvExpEntry {
+  margin-bottom: 9px;
+}
+
+.tplMiniWrap--executive-minimal {
+  border-bottom: 1px solid #d6d3d1;
+}
+
+/* ── 4 Modern Two Column ─────────────────────────────────────────────── */
+.cv.template-modern-two-column {
+  --cv-ink: #0f172a;
+  --cv-muted: #64748b;
+  --cv-line: #e2e8f0;
+  --cv-body: #334155;
+  --cv-side-bg: #f8fafc;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-size: 10.25pt;
+  line-height: 1.52;
+}
+
+.cv.template-modern-two-column .cvHead--modern {
+  padding: 30px 40px 18px;
+  border-bottom: 1px solid var(--cv-ink);
+}
+
+.cv.template-modern-two-column .cvName {
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.cv.template-modern-two-column .cvTitle {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--cv-muted);
+  margin-top: 6px;
+}
+
+.cv.template-modern-two-column .cvBody {
+  display: grid;
+  grid-template-columns: 192px 1fr;
+}
+
+.cv.template-modern-two-column .cvSide--meta {
+  padding: 22px 18px 32px 40px;
+  background: var(--cv-side-bg);
+  border-right: 1px solid var(--cv-line);
+}
+
+.cv.template-modern-two-column .cvSide--meta .cvSection {
+  margin-bottom: 16px;
+}
+
+.cv.template-modern-two-column .cvSide--meta .cvSectionTitle {
+  font-size: 6.5pt;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--cv-ink);
+  border-bottom: 1px solid var(--cv-line);
+  padding-bottom: 5px;
+}
+
+.cv.template-modern-two-column .cvMain {
+  padding: 22px 40px 32px 28px;
+}
+
+.cv.template-modern-two-column .cvSectionTitle {
+  font-size: 7pt;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--cv-ink);
+}
+
+.tplMiniWrap--modern-two-column {
+  background: linear-gradient(90deg, #f1f5f9 24%, #fff 24%);
+}
+
+/* ── 5 Editorial Premium ─────────────────────────────────────────────── */
+.cv.template-editorial {
+  --cv-ink: #1c1917;
+  --cv-muted: #78716c;
+  --cv-line: #d6d3d1;
+  --cv-body: #44403c;
+  --cv-side-bg: #fafaf9;
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  font-size: 10.25pt;
+  line-height: 1.58;
+  color: var(--cv-body);
+}
+
+.cv.template-editorial .cvHead--grid {
+  padding: 34px 44px 22px;
+  border-bottom: 1px solid var(--cv-ink);
+}
+
+.cv.template-editorial .cvName {
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: var(--cv-ink);
+}
+
+.cv.template-editorial .cvTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-muted);
+  margin-top: 8px;
+}
+
+.cv.template-editorial .cvHeadMeta .cvContact p {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 8.5pt;
+  text-align: right;
+  line-height: 1.55;
+  color: var(--cv-muted);
+}
+
+.cv.template-editorial .cvLead {
+  font-size: 10pt;
+  font-style: italic;
+  color: var(--cv-body);
+}
+
+.cv.template-editorial .cvBody--editorial {
+  display: grid;
+  grid-template-columns: 184px 1fr;
+}
+
+.cv.template-editorial .cvSide--editorial {
+  padding: 24px 16px 32px 44px;
+  background: var(--cv-side-bg);
+  border-right: 1px solid var(--cv-line);
+}
+
+.cv.template-editorial .cvSide--editorial .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--cv-muted);
+  border-bottom-color: var(--cv-line);
+}
+
+.cv.template-editorial .cvMain--editorial {
+  padding: 24px 44px 36px 28px;
+}
+
+.cv.template-editorial .cvSectionTitle {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 7pt;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--cv-ink);
+  border-bottom: 1px solid var(--cv-ink);
+}
+
+.cv.template-editorial .cvSection--clients .cvClientLine,
+.cv.template-editorial .cvSection--projects .cvProjectEntry p {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.tplMiniWrap--editorial {
+  background: linear-gradient(90deg, #f5f5f4 26%, #fff 26%);
+  border-bottom: 1px solid #d6d3d1;
+}
+
+@media (max-width: 720px) {
+  .cv.template-modern-two-column .cvBody,
+  .cv.template-editorial .cvBody--editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .cv.template-modern-two-column .cvSide--meta,
+  .cv.template-editorial .cvSide--editorial {
+    border-right: 0;
+    border-bottom: 1px solid var(--cv-line);
+  }
+}
+
+body.export-pdf .cv.template-modern-two-column .cvBody,
+body.export-pdf .cv.template-editorial .cvBody--editorial {
+  display: grid !important;
+  grid-template-columns: 192px 1fr !important;
+}
+
+body.export-pdf .cv.template-editorial .cvBody--editorial {
+  grid-template-columns: 184px 1fr !important;
+}
+
+body.export-pdf .cv.template-modern-two-column .cvSide--meta,
+body.export-pdf .cv.template-editorial .cvSide--editorial {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ── UX P3 — A4 / preview / PDF overflow safety ────────────────────────── */
+.cv.template-ats,
+.cv.template-creative,
+.cv.template-executive-minimal,
+.cv.template-modern-two-column,
+.cv.template-editorial {
+  width: 100%;
+  max-width: 794px;
+  box-sizing: border-box;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.cv.template-ats .cvMain,
+.cv.template-creative .cvMain,
+.cv.template-executive-minimal .cvMain,
+.cv.template-modern-two-column .cvMain,
+.cv.template-editorial .cvMain,
+.cv.template-ats .cvHead,
+.cv.template-creative .cvHead,
+.cv.template-executive-minimal .cvHead,
+.cv.template-modern-two-column .cvHead,
+.cv.template-editorial .cvHead,
+.cv.template-modern-two-column .cvBody,
+.cv.template-editorial .cvBody--editorial {
+  max-width: 100%;
+  overflow: visible;
+}
+
+.cvPreviewWrap--90 .cv.template-ats,
+.cvPreviewWrap--90 .cv.template-creative,
+.cvPreviewWrap--90 .cv.template-executive-minimal,
+.cvPreviewWrap--90 .cv.template-modern-two-column,
+.cvPreviewWrap--90 .cv.template-editorial,
+.cvPreview--90 .cv.template-ats,
+.cvPreview--90 .cv.template-creative,
+.cvPreview--90 .cv.template-executive-minimal,
+.cvPreview--90 .cv.template-modern-two-column,
+.cvPreview--90 .cv.template-editorial {
+  font-size: max(9pt, 0.9em);
+}
+
+body.export-pdf .cv.template-ats,
+body.export-pdf .cv.template-creative,
+body.export-pdf .cv.template-executive-minimal,
+body.export-pdf .cv.template-modern-two-column,
+body.export-pdf .cv.template-editorial {
+  overflow: visible;
+  max-width: 210mm;
+}
+
+body.export-pdf .cv.template-modern-two-column .cvMain,
+body.export-pdf .cv.template-editorial .cvMain--editorial {
+  width: 100%;
+  max-width: 794px;
+}
+
+/* ── P1 premium trio — print-first readability ───────────────────────── */
+@media print {
+  .cv.template-ats,
+  .cv.template-creative,
+  .cv.template-executive-minimal {
+    max-width: 210mm;
+    color: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv.template-ats .cvSectionTitle,
+  .cv.template-creative .cvSectionTitle,
+  .cv.template-executive-minimal .cvSectionTitle {
+    color: #000;
+  }
+
+  .cv.template-executive-minimal .cvHead--executive-minimal,
+  .cv.template-executive-minimal .cvHead--center {
+    background: #fff;
+  }
+}

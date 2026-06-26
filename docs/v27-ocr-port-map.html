@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HIRELY V27 → STABLE OCR Port Map</title>
+  <style>
+    :root {
+      --bg: #0f1114;
+      --surface: #1a1d23;
+      --border: #2d333b;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --p0: #3fb950;
+      --p1: #d29922;
+      --p2: #8b949e;
+      --accent: #58a6ff;
+      --done: #3fb950;
+      --partial: #d29922;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    header h1 { margin: 0 0 0.25rem; font-size: 1.35rem; font-weight: 600; }
+    header p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem; font-size: 0.8rem; }
+    .meta span { color: var(--muted); }
+    .meta strong { color: var(--text); }
+    .status-banner {
+      margin: 1rem 2rem 0;
+      padding: 1rem 1.25rem;
+      background: rgba(63, 185, 80, 0.08);
+      border: 1px solid rgba(63, 185, 80, 0.35);
+      border-radius: 10px;
+      font-size: 0.85rem;
+    }
+    .status-banner h2 { margin: 0 0 0.5rem; font-size: 0.9rem; color: var(--done); }
+    .status-banner ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .status-banner li { margin: 0.2rem 0; }
+    nav.filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    nav.filters button {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    nav.filters button:hover { border-color: var(--accent); }
+    nav.filters button.active {
+      border-color: var(--accent);
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+    }
+    main { padding: 1.5rem 2rem 3rem; max-width: 1200px; }
+    section { margin-bottom: 2.5rem; }
+    section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge.p0 { background: rgba(63, 185, 80, 0.2); color: var(--p0); }
+    .badge.p1 { background: rgba(210, 153, 34, 0.2); color: var(--p1); }
+    .badge.p2 { background: rgba(139, 148, 158, 0.2); color: var(--p2); }
+    .badge.done { background: rgba(63, 185, 80, 0.2); color: var(--done); }
+    .badge.partial { background: rgba(210, 153, 34, 0.2); color: var(--partial); }
+    .badge.pending { background: rgba(139, 148, 158, 0.2); color: var(--p2); }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+    .summary-card.done { border-color: rgba(63, 185, 80, 0.4); }
+    .summary-card.partial { border-color: rgba(210, 153, 34, 0.4); }
+    .summary-card h3 { margin: 0 0 0.35rem; font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+    .summary-card p { margin: 0; font-size: 0.85rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    tr.done td { background: rgba(63, 185, 80, 0.04); }
+    tr.partial td { background: rgba(210, 153, 34, 0.04); }
+    tr:hover td { background: rgba(255,255,255,0.03); }
+    code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+    .risk-low { color: var(--p0); }
+    .risk-med { color: var(--p1); }
+    .risk-high { color: #f85149; }
+    .hidden { display: none !important; }
+    footer {
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HIRELY V27 → STABLE OCR Port Map</h1>
+    <p>Living status · canonical: hirely_FINAL_CURSOR_STABLE_UI · updated after OCR passes</p>
+    <div class="meta">
+      <span>Reference: <strong>HIRELY_V27_IMPORT_FIX (1)</strong> (read-only)</span>
+      <span>QA: <strong>qa:reliability · qa:preprocess · qa:fusion · qa:corruption</strong></span>
+    </div>
+  </header>
+
+  <div class="status-banner">
+    <h2>Shipped in STABLE (Jun 2026)</h2>
+    <ul>
+      <li><strong>Reliability</strong> — native PDF skips OCR; file-type detect (<code>file-type-detect.js</code>)</li>
+      <li><strong>Preprocess</strong> — rotate, deskew, contrast, adaptive threshold, 300 DPI, debug before/after (<code>ocr-preprocess.js</code>)</li>
+      <li><strong>Fusion</strong> — passes A–D, winner by confidence/corruption/language (<code>ocr-multipass.js</code>, <code>ocr-fusion.js</code>)</li>
+      <li><strong>Corruption</strong> — score + review queue; blocked from export (<code>corruption-detector.js</code>)</li>
+    </ul>
+  </div>
+
+  <nav class="filters" aria-label="Filter by area">
+    <button type="button" class="active" data-filter="all">All</button>
+    <button type="button" data-filter="done">Done</button>
+    <button type="button" data-filter="pending">Pending</button>
+    <button type="button" data-filter="p0">P0</button>
+    <button type="button" data-filter="p1">P1</button>
+    <button type="button" data-filter="p2">P2</button>
+    <button type="button" data-filter="corruption">Corruption</button>
+    <button type="button" data-filter="fusion">Fusion</button>
+    <button type="button" data-filter="preprocess">Preprocess</button>
+    <button type="button" data-filter="playwright">Playwright PDF</button>
+  </nav>
+
+  <main>
+    <div class="summary-grid">
+      <div class="summary-card done"><h3>Reliability</h3><p>Native PDF never OCR</p></div>
+      <div class="summary-card done"><h3>OCR fusion</h3><p>4 passes A–D + winner</p></div>
+      <div class="summary-card done"><h3>Preprocess</h3><p>Full browser pipeline</p></div>
+      <div class="summary-card done"><h3>Corruption</h3><p>Export gate + review</p></div>
+      <div class="summary-card partial"><h3>Semantic cleanup</h3><p>Partial vs V27 deep clean</p></div>
+      <div class="summary-card pending"><h3>PDF export</h3><p>Still html2pdf; Playwright TBD</p></div>
+    </div>
+
+    <section data-tier="shipped">
+      <h2><span class="badge done">Done</span> Ported / replaced in STABLE</h2>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>STABLE module</th><th>Replaces (V27)</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr class="done" data-area="backend done" data-status="done">
+            <td>REL</td>
+            <td><code>file-type-detect.js</code> + <code>enterprise-engine.js</code></td>
+            <td><code>document-detect.mjs</code></td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="done" data-area="preprocess done" data-status="done">
+            <td>PRE</td>
+            <td><code>ocr-preprocess.js</code>, <code>pdf-ocr-render.js</code></td>
+            <td><code>hirely-ocr-preprocess.js</code></td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="done" data-area="fusion done multipass" data-status="done">
+            <td>P0-1</td>
+            <td><code>ocr-fusion.js</code>, <code>ocr-multipass.js</code></td>
+            <td><code>hirely-ocr-fusion.js</code> + multipass idea</td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="done" data-area="corruption done semantic" data-status="done">
+            <td>COR</td>
+            <td><code>corruption-detector.js</code></td>
+            <td>yoaz garbage + V27 semantic patterns</td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="done" data-area="backend done p0" data-status="done">
+            <td>P0-3</td>
+            <td><code>pdf-text-quality.js</code> + classify</td>
+            <td><code>document-detect.mjs</code></td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="done" data-area="preprocess done p0" data-status="done">
+            <td>P0-4</td>
+            <td><code>getOcrDpiScale()</code> in render</td>
+            <td>300 DPI cap</td>
+            <td><span class="badge done">Done</span></td>
+          </tr>
+          <tr class="partial" data-area="multipass done p1" data-status="done">
+            <td>P1-1</td>
+            <td><code>ocr-multipass.js</code> (4 variants)</td>
+            <td><code>runMultiPassOcr</code> (5+ V27 passes)</td>
+            <td><span class="badge partial">Partial</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section data-tier="p0">
+      <h2><span class="badge p0">P0</span> Original plan — remaining</h2>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Target</th><th>Status</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr class="done" data-area="semantic p0" data-status="done">
+            <td>P0-2</td>
+            <td><code>garbagePatterns.js</code> + <code>ocr-postprocess.js</code></td>
+            <td><span class="badge done">Done</span></td>
+            <td>Unicode/garbage cleanup + creative brand protection (P0 scope)</td>
+          </tr>
+          <tr data-area="playwright p0" data-status="pending">
+            <td>P0-5</td>
+            <td><code>qa-playwright-pdf-export.mjs</code></td>
+            <td><span class="badge pending">Pending</span></td>
+            <td>Test harness before P1-4 product route</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section data-tier="p1">
+      <h2><span class="badge p1">P1</span> Second wave — still open</h2>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Source (V27)</th><th>Target (STABLE)</th><th>Status</th><th>Risk</th></tr>
+        </thead>
+        <tbody>
+          <tr data-area="semantic p1" data-status="pending">
+            <td>P1-2</td>
+            <td><code>hirely-ocr-semantic.js</code></td>
+            <td>Forensic rejected-line UX</td>
+            <td><span class="badge partial">Partial</span></td>
+            <td class="risk-med">Med</td>
+          </tr>
+          <tr data-area="backend p1" data-status="pending">
+            <td>P1-3</td>
+            <td><code>layout-order.mjs</code></td>
+            <td><code>section-mapper.js</code></td>
+            <td><span class="badge pending">Pending</span></td>
+            <td class="risk-med">Med</td>
+          </tr>
+          <tr data-area="playwright p1" data-status="pending">
+            <td>P1-4</td>
+            <td><code>render-pdf.mjs</code></td>
+            <td><code>api/export-pdf.js</code></td>
+            <td><span class="badge pending">Pending</span></td>
+            <td class="risk-med">Med</td>
+          </tr>
+          <tr data-area="fusion p1" data-status="pending">
+            <td>P1-5</td>
+            <td><code>fuseMultiPageOcr</code></td>
+            <td><code>pdf-ocr-pages.js</code></td>
+            <td><span class="badge pending">Pending</span></td>
+            <td class="risk-low">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section data-tier="p2">
+      <h2><span class="badge p2">P2</span> Defer</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Why later</th></tr></thead>
+        <tbody>
+          <tr data-area="backend p2" data-status="pending"><td>Full V27 <code>backend/</code></td><td>Browser-canonical architecture</td></tr>
+          <tr data-area="preprocess p2" data-status="pending"><td>Sharp <code>preprocess.mjs</code></td><td>Node-only; Vercel limits</td></tr>
+          <tr data-area="multipass p2" data-status="pending"><td>Paddle OCR, region LRU</td><td>After correctness stable</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Next recommended</h2>
+      <ol style="color: var(--muted); padding-left: 1.25rem;">
+        <li>P0-5 Playwright PDF test → P1-4 export API</li>
+        <li>P0-2 remaining V27 cleanup classifiers (if yoaz fixture still fails)</li>
+        <li>P1-3 multi-column layout order</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    Refresh this page after each OCR pass · Templates untouched · V27 folder read-only
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('nav.filters button');
+    const rows = document.querySelectorAll('tbody tr[data-area]');
+    const sections = document.querySelectorAll('section[data-tier]');
+
+    function applyFilter(key) {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.filter === key));
+      const tierOnly = ['p0', 'p1', 'p2', 'shipped'].includes(key);
+      if (key === 'done') {
+        sections.forEach(s => s.classList.remove('hidden'));
+        rows.forEach(row => {
+          row.classList.toggle('hidden', row.dataset.status !== 'done' && !row.classList.contains('done'));
+        });
+        return;
+      }
+      if (key === 'pending') {
+        sections.forEach(s => s.classList.remove('hidden'));
+        rows.forEach(row => {
+          row.classList.toggle('hidden', row.dataset.status === 'done' || row.classList.contains('done'));
+        });
+        return;
+      }
+      sections.forEach(s => {
+        if (!tierOnly) s.classList.remove('hidden');
+        else s.classList.toggle('hidden', s.dataset.tier !== key);
+      });
+      rows.forEach(row => {
+        if (key === 'all') { row.classList.remove('hidden'); return; }
+        if (tierOnly) { row.classList.remove('hidden'); return; }
+        const areas = (row.dataset.area || '').split(' ');
+        row.classList.toggle('hidden', !areas.includes(key));
+      });
+    }
+    buttons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+  </script>
+</body>
+</html>

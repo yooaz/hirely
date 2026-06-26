@@ -1,0 +1,670 @@
+/* Hirely OS — editorial recruiter workspace (layout + type + density) */
+
+:root {
+  --os-max: 1240px;
+  --os-gutter: 16px;
+  --os-gap: 12px;
+  --os-unit: 8px;
+  --os-radius: 10px;
+  --os-font-display: "Instrument Serif", Georgia, serif;
+  --os-font-ui: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --os-ink: #0b0d12;
+  --os-muted: #64748b;
+  --os-line: rgba(12, 14, 20, 0.08);
+  --os-surface: #ffffff;
+  --os-canvas: #eceef2;
+  --os-shadow-paper:
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 12px 28px rgba(12, 14, 20, 0.08),
+    0 40px 80px rgba(12, 14, 20, 0.12);
+}
+
+/* —— Typography roles —— */
+body,
+.nav,
+.card,
+input,
+textarea,
+select,
+button,
+.btn,
+.tab,
+.status,
+.label,
+.metaHint,
+.small,
+.scorePanel,
+.workspaceHead,
+.uploadBand,
+.toolbarLabel,
+.tplCardBody strong,
+.intelSecondary li p,
+#primaryInsight {
+  font-family: var(--os-font-ui);
+}
+
+h1,
+.hero h1,
+.hero h1 .grad {
+  font-family: var(--os-font-display);
+  font-weight: 400;
+}
+
+.heroLead,
+.heroTrust,
+.kicker--elite,
+.sectionHead h2,
+.workspaceHead h2,
+.uploadBand h2,
+.scorePanel .cardHead h2,
+.intelLabel {
+  font-family: var(--os-font-ui);
+}
+
+.sectionHead h2,
+.workspaceHead h2,
+.uploadBand h2 {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+
+#primaryInsight {
+  font-family: var(--os-font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.cvPage,
+.cvPage .cvName,
+.cvPage .cvTitle,
+.cvPage .cvSection h3 {
+  font-family: "Inter", var(--os-font-ui);
+}
+
+.tpl-editorial .cvName,
+.tpl-luxury .cvName {
+  font-family: var(--os-font-display);
+}
+
+/* —— Global compression —— */
+body {
+  background: var(--os-canvas);
+  font-size: 14px;
+}
+
+.wrap,
+.wrap--wide {
+  max-width: var(--os-max);
+}
+
+.nav {
+  padding: 10px 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.card {
+  border: none;
+  box-shadow: none;
+  border-radius: var(--os-radius);
+  padding: 14px;
+}
+
+.cardHead {
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+  margin-bottom: 4px;
+}
+
+textarea,
+input,
+select {
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--os-line);
+  box-shadow: none;
+}
+
+textarea#cvText,
+textarea#jobText {
+  min-height: 72px;
+  max-height: 120px;
+}
+
+.btn {
+  font-size: 13px;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+
+.btn.small {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+/* —— Hero: stable minimal —— */
+.hero.hero--compact {
+  padding: 48px 0 28px;
+  text-align: center;
+}
+
+.hero .kicker--elite {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.06;
+  margin-bottom: 12px;
+}
+
+.heroLead {
+  max-width: 38ch;
+  margin-inline: auto;
+  font-size: 15px;
+  color: var(--os-muted);
+}
+
+.heroTrust {
+  margin: 12px auto 0;
+  max-width: 42ch;
+  font-size: 12px;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+}
+
+.hero .actions {
+  margin-top: 20px;
+}
+
+.heroInsight {
+  display: none !important;
+}
+
+/* —— 12-column OS grid —— */
+.productShell.os-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--os-gap);
+  row-gap: var(--os-gap);
+  padding: var(--os-gutter);
+  max-width: var(--os-max);
+  margin-inline: auto;
+  background: var(--os-surface);
+  border: 1px solid var(--os-line);
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85), 0 20px 48px rgba(12, 14, 20, 0.06);
+}
+
+.productShell.os-layout .prepSection,
+.productShell.os-layout .workspaceSection,
+.productShell.os-layout .transformStack,
+.productShell.os-layout .cinemaGrid,
+.productShell.os-layout .workspace.workspaceZone,
+.productShell.os-layout #procv.panel {
+  display: contents;
+}
+
+.productShell.os-layout .prepSection .sectionHead {
+  display: none;
+}
+
+.productShell.os-layout .workspaceHead {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 2px 4px;
+  margin: 0;
+  border: none;
+}
+
+.productShell.os-layout .workspaceHead h2 {
+  margin: 0;
+}
+
+.productShell.os-layout .workspaceHead .label,
+.productShell.os-layout .workspaceMeta {
+  display: none;
+}
+
+.productShell.os-layout .uploadBand {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+  align-self: start;
+  padding: 0;
+  background: transparent;
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.productShell.os-layout .uploadBand .cardHead h2 {
+  font-size: 12px;
+}
+
+.productShell.os-layout .uploadBox {
+  border: 1px dashed rgba(37, 99, 235, 0.22);
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.productShell.os-layout .miniGrid {
+  gap: 8px;
+}
+
+.productShell.os-layout .osCol--center {
+  grid-column: 4 / span 6;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: min(78vh, 820px);
+  min-width: 0;
+}
+
+.productShell.os-layout .osCol--center .profileRecBanner {
+  margin: 0;
+  border: none;
+  background: #f8fafc;
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.productShell.os-layout .osCol--center .tabRow {
+  margin: 0;
+}
+
+.productShell.os-layout .osCol--center .workspaceToolbar,
+.productShell.os-layout .osCol--center #proToolbar {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f6f7f9;
+  border: none;
+}
+
+.productShell.os-layout .osCol--center .visionBar {
+  margin: 0;
+  padding: 6px 10px;
+  border: none;
+  background: #f6f7f9;
+  border-radius: 8px;
+}
+
+.productShell.os-layout .osCol--center .workspacePreview {
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  background: var(--os-canvas);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.productShell.os-layout .scorePanel {
+  grid-column: 10 / span 3;
+  grid-row: 2;
+  align-self: start;
+  position: sticky;
+  top: 72px;
+  max-height: calc(100vh - 88px);
+  overflow: auto;
+  padding: 14px !important;
+  border-radius: 12px;
+  scrollbar-width: thin;
+}
+
+.productShell.os-layout .scorePanel .cardHead {
+  margin-bottom: 8px;
+}
+
+.productShell.os-layout .scorePanel .ring {
+  width: 56px;
+  height: 56px;
+  font-size: 18px;
+}
+
+.productShell.os-layout .scorePanel .scoreHero {
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.productShell.os-layout .intelSummary {
+  gap: 14px;
+}
+
+.productShell.os-layout .intelBlock--primary {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.productShell.os-layout #primaryInsight {
+  font-size: 13px;
+}
+
+.productShell.os-layout .intelSecondary {
+  gap: 10px;
+}
+
+.productShell.os-layout .intelSecondary li p {
+  font-size: 12px;
+}
+
+.productShell.os-layout .intelActions li {
+  font-size: 12px;
+  padding: 8px 0 8px 16px;
+}
+
+.productShell.os-layout .osTplSlot {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.productShell.os-layout .osTplSlot .toolbarLabel {
+  display: block;
+  font-size: 9px;
+  margin-bottom: 8px;
+  color: #94a3b8;
+}
+
+.productShell.os-layout .osTplSlot .templateGallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.productShell.os-layout .osTplSlot .templateCard {
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.productShell.os-layout .osTplSlot .tplPreview {
+  height: 36px;
+}
+
+.productShell.os-layout .osTplSlot .tplMeta,
+.productShell.os-layout .osTplSlot .tplTag {
+  display: none;
+}
+
+.productShell.os-layout .osTplSlot .tplCardBody strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* —— CV hero —— */
+.productShell.os-layout .cvStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(72vh, 760px);
+  padding: 20px 16px 28px;
+  perspective: 1200px;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 40%, rgba(255, 255, 255, 0.9), transparent),
+    var(--os-canvas);
+}
+
+.productShell.os-layout .cvCanvas {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.productShell.os-layout .cvPage {
+  transform-origin: center top;
+  box-shadow: var(--os-shadow-paper);
+  border-radius: 2px;
+  border: 1px solid rgba(12, 14, 20, 0.06);
+}
+
+.productShell.os-layout .proLock {
+  border: none;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 14px;
+  max-width: 320px;
+}
+
+.productShell.os-layout .proLock h3 {
+  font-size: 14px;
+  font-family: var(--os-font-ui);
+  font-weight: 600;
+}
+
+.productShell.os-layout .proLock p {
+  font-size: 12px;
+}
+
+/* —— Border diet —— */
+.productShell.os-layout .card.dark.scorePanel {
+  border: none;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.productShell.os-layout .tabs {
+  gap: 16px;
+  padding: 0;
+}
+
+.productShell.os-layout .tab {
+  border: none !important;
+  padding: 6px 0 !important;
+  font-size: 12px;
+}
+
+.productShell.os-layout .toolbarSep {
+  display: none;
+}
+
+.productShell.os-layout .workspaceToolbar .toolbarGroup .btn.ghost {
+  opacity: 0.5;
+  border: none;
+  background: transparent;
+}
+
+.productShell.os-layout #downloadPdfToolbar,
+.productShell.os-layout .workspaceHead .btn.blue {
+  font-weight: 600;
+}
+
+/* Audit panels span below on wide screens */
+.productShell.os-layout #audit,
+.productShell.os-layout #linkedin,
+.productShell.os-layout #letter {
+  grid-column: 1 / -1;
+  margin-top: var(--os-gap);
+}
+
+.productShell.os-layout #audit:not(.active),
+.productShell.os-layout #linkedin:not(.active),
+.productShell.os-layout #letter:not(.active) {
+  display: none;
+}
+
+.productShell.os-layout #procv.panel.active {
+  display: contents;
+}
+
+/* —— Prep section calm —— */
+.prepSection {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.workspaceSection {
+  padding: 0;
+  border: none;
+}
+
+/* —— Vision heatmap (elegant) —— */
+.cvVisionOverlay {
+  border-radius: 2px;
+}
+
+.cvVisionOverlay::before {
+  background:
+    radial-gradient(ellipse 88% 28% at 50% 14%, rgba(251, 113, 133, 0.28), transparent 70%),
+    radial-gradient(ellipse 75% 35% at 48% 42%, rgba(251, 191, 36, 0.12), transparent 72%),
+    linear-gradient(180deg, transparent 58%, rgba(148, 163, 184, 0.14) 100%);
+  mix-blend-mode: multiply;
+}
+
+.cvVisionOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 520' fill='none'%3E%3Cpath d='M72 48 C140 52 200 58 328 44' stroke='rgba(239,68,68,0.35)' stroke-width='1.5' stroke-dasharray='4 6'/%3E%3Cpath d='M328 44 L300 120 L120 130 L72 48' stroke='rgba(251,191,36,0.25)' stroke-width='1' stroke-dasharray='3 5'/%3E%3Ccircle cx='72' cy='48' r='4' fill='rgba(239,68,68,0.6)'/%3E%3Ccircle cx='328' cy='44' r='3' fill='rgba(251,191,36,0.5)'/%3E%3Ccircle cx='120' cy='130' r='3' fill='rgba(148,163,184,0.4)'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.cvVisionZone {
+  position: absolute;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.cvVisionZone--hot {
+  left: 6%;
+  right: 6%;
+  top: 4%;
+  height: 20%;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  background: rgba(244, 63, 94, 0.06);
+  box-shadow: inset 0 0 24px rgba(244, 63, 94, 0.08);
+}
+
+.cvVisionZone--warm {
+  left: 5%;
+  right: 5%;
+  top: 26%;
+  height: 34%;
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  background: rgba(251, 191, 36, 0.04);
+}
+
+.cvVisionZone--cold {
+  left: 4%;
+  right: 4%;
+  top: 62%;
+  height: 32%;
+  border: 1px dashed rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.04);
+}
+
+.cvVisionFlow {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.72);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 4px 8px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.cvVisionHot,
+.cvVisionWarm,
+.cvVisionLabel {
+  display: none;
+}
+
+.visionBar {
+  border: none;
+  background: transparent;
+  padding: 4px 0;
+}
+
+.visionToggle {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--os-line);
+  background: #fff;
+}
+
+.visionToggle.is-on {
+  background: #0f172a;
+  color: #fff;
+  border-color: #0f172a;
+}
+
+.visionLegend {
+  font-size: 11px;
+  gap: 12px;
+}
+
+/* —— Responsive —— */
+@media (max-width: 1100px) {
+  .productShell.os-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .productShell.os-layout .uploadBand {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-height: none;
+  }
+
+  .productShell.os-layout .osCol--center {
+    grid-column: 1;
+  }
+
+  .productShell.os-layout .scorePanel {
+    grid-column: 2;
+    grid-row: 2 / span 4;
+    position: static;
+    max-height: none;
+  }
+
+  .productShell.os-layout .workspacePreview {
+    min-height: 56vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .productShell.os-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .productShell.os-layout .scorePanel,
+  .productShell.os-layout .workspacePreview,
+  .productShell.os-layout .uploadBand {
+    grid-column: 1 / -1;
+  }
+}

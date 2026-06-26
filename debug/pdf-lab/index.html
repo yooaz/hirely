@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hirely PDF Accuracy Lab</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="stylesheet" href="../../src/ui/templates/cv-templates-premium.css" />
+<link rel="stylesheet" href="../../src/ui/hirely-document.css" />
+<style>
+:root{
+  --bg:#0b0f14;--panel:#141b26;--panel2:#1c2738;--ink:#e6edf7;--muted:#8b9cb3;--accent:#6eb5ff;--ok:#34d399;--warn:#fbbf24;--err:#f87171;--line:rgba(255,255,255,.08);
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:13px;line-height:1.45}
+a{color:var(--accent)}
+.pal-header{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.pal-header h1{margin:0;font-size:15px;font-weight:600}
+.pal-badge{font-size:11px;padding:3px 8px;border-radius:6px;background:rgba(110,181,255,.12);color:var(--accent)}
+.pal-badge--ok{background:rgba(52,211,153,.12);color:var(--ok)}
+.pal-badge--warn{background:rgba(251,191,36,.12);color:var(--warn)}
+.pal-toolbar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pal-toolbar label,.pal-toolbar button,.pal-toolbar select{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer}
+.pal-toolbar button:hover{border-color:var(--accent)}
+.pal-layout{display:grid;grid-template-columns:minmax(280px,340px) 1fr;gap:0;min-height:calc(100vh - 52px)}
+@media(max-width:900px){.pal-layout{grid-template-columns:1fr}}
+.pal-sidebar{border-right:1px solid var(--line);background:var(--panel);padding:12px;display:flex;flex-direction:column;gap:12px}
+.pal-drop{border:2px dashed var(--line);border-radius:12px;padding:24px 16px;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .15s}
+.pal-drop:hover,.pal-drop.drag{border-color:var(--accent);color:var(--ink)}
+.pal-drop strong{display:block;color:var(--ink);margin-bottom:4px}
+.pal-main{overflow:auto;padding:16px 20px 48px}
+.pal-metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:16px;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.pal-metric{padding:8px 10px;background:var(--panel2);border-radius:8px}
+.pal-metric-k{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.pal-metric-v{font-size:15px;font-weight:600;font-family:var(--mono)}
+.pal-metric--warn .pal-metric-v{color:var(--warn)}
+.pal-metric--err .pal-metric-v{color:var(--err)}
+.pal-pipeline{max-width:1100px}
+.pal-stage{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:0}
+.pal-stage-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.pal-stage-head h2{margin:0;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--accent)}
+.pal-stage-head span{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.pal-stage-body{padding:12px 14px;max-height:320px;overflow:auto}
+.pal-stage-body--pdf{max-height:420px;background:#1a1a1a}
+.pal-stage-body--cv{max-height:none;background:#e8ecf2;display:flex;justify-content:center;padding:20px}
+.pal-arrow{text-align:center;padding:6px 0;color:var(--muted);font-size:18px}
+.pal-pre{margin:0;font-family:var(--mono);font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.pal-pre--json{font-size:10px}
+.pal-pre-inline{margin:0;font-family:var(--mono);font-size:10px;white-space:pre-wrap}
+.pal-pdf-preview iframe,.pal-pdf-preview embed{width:100%;min-height:360px;border:0;border-radius:8px}
+.pal-cv-preview .cv{margin:0;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.pal-table{width:100%;border-collapse:collapse;font-size:11px}
+.pal-table th,.pal-table td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.pal-table th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10px}
+.pal-lines{max-height:200px;overflow:auto;font-family:var(--mono);font-size:11px}
+.pal-line{padding:3px 0;border-bottom:1px solid var(--line)}
+.pal-line-meta{color:var(--muted);margin-right:8px}
+.pal-details{border-top:1px solid var(--line)}
+.pal-details summary{padding:8px 14px;cursor:pointer;color:var(--muted);font-size:11px}
+.pal-errors,.pal-dropped{padding:10px 14px;border-top:1px solid var(--line);font-size:11px}
+.pal-errors h3,.pal-dropped h3{margin:0 0 8px;font-size:11px;color:var(--warn)}
+.pal-err--review{color:var(--warn)}
+.pal-err--leak,.pal-err--corrected{color:var(--accent)}
+.pal-drop{color:var(--err)}
+.pal-compare{margin-top:20px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pal-compare-grid{max-height:480px;overflow:auto}
+.pal-cmp-row{display:grid;grid-template-columns:1fr 1fr 72px;gap:8px;padding:8px 14px;border-bottom:1px solid var(--line);font-size:11px;font-family:var(--mono)}
+.pal-cmp-row--dropped{background:rgba(248,113,113,.08)}
+.pal-cmp-row--missing{background:rgba(248,113,113,.05)}
+.pal-cmp-row--changed{background:rgba(251,191,36,.08)}
+.pal-cmp-row--added{background:rgba(52,211,153,.06)}
+.pal-cmp-tag{display:block;font-size:9px;color:var(--muted);text-transform:uppercase;margin-bottom:2px}
+.pal-cmp-status{font-size:10px;text-align:right;color:var(--muted);align-self:center}
+.pal-empty{color:var(--muted);font-style:italic}
+.pal-status{font-size:11px;color:var(--muted);padding:8px 0}
+.pal-err-msg{color:var(--err);font-size:12px;padding:8px;background:rgba(248,113,113,.1);border-radius:8px}
+</style>
+</head>
+<body>
+<header class="pal-header">
+  <h1>PDF Accuracy Lab</h1>
+  <span class="pal-badge">document understanding</span>
+  <span id="statusBadge" class="pal-badge">upload a PDF</span>
+  <div class="pal-toolbar">
+    <label>Fixture
+      <select id="fixturePick">
+        <option value="">— PDF upload —</option>
+        <option value="yoaz">Yoaz two-column (geometry)</option>
+      </select>
+    </label>
+    <label style="cursor:pointer">PDF file
+      <input type="file" id="fileInput" accept=".pdf,application/pdf" hidden />
+    </label>
+    <button type="button" id="runBtn" disabled>Analyze</button>
+    <button type="button" id="exportJsonBtn" disabled>Export report JSON</button>
+    <a href="../../index.html">← App</a>
+    <a href="../../parser-lab/index.html">Parser Lab</a>
+  </div>
+</header>
+
+<div class="pal-layout">
+  <aside class="pal-sidebar">
+    <div class="pal-drop" id="dropZone">
+      <strong>Drop PDF here</strong>
+      <span>or click to browse</span>
+    </div>
+    <div id="sidebarMeta" class="pal-status">No file loaded</div>
+    <div id="sidebarErr" class="pal-err-msg" hidden></div>
+    <p class="pal-status" style="margin:0">
+      Pipeline trace:<br />
+      PDF → raw text → layout blocks → classified → JSON → CV preview
+    </p>
+  </aside>
+  <main class="pal-main">
+    <div id="labMount">
+      <p class="pal-empty">Upload any PDF to measure extraction quality — pages, columns, sections, confidence, text loss, and classification errors.</p>
+    </div>
+  </main>
+</div>
+
+<script>
+window.HirelyLazy={
+ _p:{},
+ load(src,id){
+  if(this._p[id])return this._p[id];
+  this._p[id]=new Promise((res,rej)=>{
+   const s=document.createElement('script');
+   s.src=src;s.async=true;s.onload=()=>res();s.onerror=rej;
+   document.head.appendChild(s);
+  });
+  return this._p[id];
+ },
+ async ensurePdf(){
+  await this.load('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js','pdf');
+  if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+ }
+};
+</script>
+<script src="../../src/ui/templates/cv-templates.js"></script>
+<script type="module">
+import { extractFromFileDetailed } from '../../src/core/extraction/extract-file.js';
+import { runP0Pipeline } from '../../src/core/pipeline/p0-pipeline.js';
+import { runProductionExtractionPipeline } from '../../src/core/pipeline/production-pipeline.js';
+import { structuredToCvData } from '../../src/core/parsing/structured-resume.js';
+import {
+  buildPdfAccuracyReport,
+  renderPdfAccuracyLab,
+} from '../../src/debug/pdf-accuracy-lab.js';
+
+const $ = (id) => document.getElementById(id);
+const labMount = $('labMount');
+const statusBadge = $('statusBadge');
+const fileInput = $('fileInput');
+const dropZone = $('dropZone');
+const runBtn = $('runBtn');
+const exportJsonBtn = $('exportJsonBtn');
+const fixturePick = $('fixturePick');
+const sidebarMeta = $('sidebarMeta');
+const sidebarErr = $('sidebarErr');
+
+let currentFile = null;
+let pdfObjectUrl = null;
+let lastReport = null;
+
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+}
+function sectionLabel(k) {
+  const d = { profile: 'Profile', clients: 'Clients', experience: 'Experience', education: 'Education', skills: 'Skills', tools: 'Tools', languages: 'Languages' };
+  return d[k] || k;
+}
+function cvBlock(title, html) {
+  if (!html || !String(html).replace(/<[^>]+>/g, '').trim()) return '';
+  return `<section class="cvSection"><h3 class="cvSectionTitle">${esc(title)}</h3><div class="cvSectionBody">${html}</div></section>`;
+}
+function cvSkillsHtml(skills, asChips) {
+  if (!skills?.length) return '';
+  if (asChips) return `<div>${skills.slice(0, 14).map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div>`;
+  return `<p class="cvSkillLine">${esc(skills.join(' · '))}</p>`;
+}
+if (typeof initHirelyTemplates === 'function') {
+  initHirelyTemplates({ esc, sectionLabel, cvBlock, cvSkillsHtml, getPhotoHtml: () => '' });
+}
+
+function setStatus(kind, text) {
+  statusBadge.textContent = text;
+  statusBadge.className = 'pal-badge ' + (kind === 'ok' ? 'pal-badge--ok' : kind === 'warn' ? 'pal-badge--warn' : '');
+}
+
+function showErr(msg) {
+  sidebarErr.hidden = !msg;
+  sidebarErr.textContent = msg || '';
+}
+
+function bindPdfPreview(file) {
+  if (pdfObjectUrl) URL.revokeObjectURL(pdfObjectUrl);
+  pdfObjectUrl = file ? URL.createObjectURL(file) : null;
+}
+
+function renderCvPreview(cvData) {
+  const host = $('palCvPreview');
+  if (!host || !window.HirelyTemplates?.render) return;
+  try {
+    host.innerHTML = '';
+    const el = document.createElement('div');
+    el.className = 'cv template-ats spacing-normal cv--live';
+    el.innerHTML = HirelyTemplates.render({ ...cvData, extra: [], raw: '', cleanText: '' }, 'ats');
+    host.appendChild(el);
+  } catch (e) {
+    host.innerHTML = `<p class="pal-err-msg">${esc(e.message)}</p>`;
+  }
+}
+
+function mountPdfPreview() {
+  const host = $('palPdfPreview');
+  if (!host || !pdfObjectUrl) {
+    if (host) host.innerHTML = '<p class="pal-empty">No PDF preview</p>';
+    return;
+  }
+  host.innerHTML = `<iframe src="${pdfObjectUrl}" title="Original PDF"></iframe>`;
+}
+
+async function loadFixtureYoaz() {
+  const res = await fetch('../../tests/fixtures/yoaz-cv/two-column-lines.json');
+  const json = await res.json();
+  const lines = json.lines.map((l, i) => ({
+    ...l,
+    cleanedText: l.text,
+    rawExtraction: l.text,
+    confidence: 92,
+    source: 'native',
+    line: i,
+    pdfIndex: i,
+  }));
+  const rawText = lines.map((l) => l.text).join('\n');
+  return {
+    text: rawText,
+    method: 'native_pdf',
+    fileType: 'pdf_text',
+    enterprise: {
+      rawExtraction: rawText,
+      cleanedText: rawText,
+      lines,
+      method: 'native_pdf',
+      metadata: { pages: 1, fileType: 'pdf_text', layoutType: json.layoutType },
+    },
+    pdfExtraction: { method: 'native_pdf', pages: 1 },
+    metadata: { pages: 1 },
+    _fixture: true,
+    _fileName: 'fixture:yoaz-two-column',
+    _pageCount: 1,
+  };
+}
+
+async function analyzePdf(fileOrFixture) {
+  setStatus('', 'analyzing…');
+  showErr('');
+  runBtn.disabled = true;
+
+  try {
+    await window.HirelyLazy.ensurePdf();
+
+    let detailed;
+    let fileName;
+    let pageCount = 1;
+
+    if (fileOrFixture?._fixture) {
+      detailed = fileOrFixture;
+      fileName = fileOrFixture._fileName;
+      pageCount = fileOrFixture._pageCount;
+    } else {
+      const file = fileOrFixture;
+      fileName = file.name;
+      bindPdfPreview(file);
+      const buffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(buffer) }).promise;
+      pageCount = pdf.numPages;
+      detailed = await extractFromFileDetailed(file);
+    }
+
+    const p0 = runP0Pipeline(
+      {
+        lines: detailed.lines || detailed.enterprise?.lines,
+        rawText: detailed.text || detailed.enterprise?.rawExtraction,
+        cleanedText: detailed.enterprise?.cleanedText,
+        source: 'pdf',
+        ocrLayout: detailed.enterprise?.metadata?.ocrLayout,
+      },
+      { debug: true }
+    );
+
+    const production = await runProductionExtractionPipeline(detailed.text || detailed.enterprise?.rawExtraction, {
+      extractionMethod: detailed.method || 'pdf',
+      enterpriseExtraction: detailed.enterprise,
+      pdfExtraction: detailed.pdfExtraction,
+    });
+
+    lastReport = buildPdfAccuracyReport({
+      detailed,
+      p0,
+      production,
+      fileName,
+      pageCount,
+    });
+
+    labMount.innerHTML = renderPdfAccuracyLab(lastReport);
+    mountPdfPreview();
+    renderCvPreview(lastReport.stages.cvData || structuredToCvData(lastReport.stages.structuredResume));
+
+    const m = lastReport.metrics;
+    sidebarMeta.innerHTML = `
+      <strong>${esc(fileName)}</strong><br />
+      ${m.pages} pages · ${m.rawChars} raw chars<br />
+      Layout: ${esc(m.layoutType)}<br />
+      Loss: ${m.textLossPct}% · Errors: ${m.classificationErrorCount}`;
+    setStatus(m.textLossPct > 25 || m.classificationErrorCount > 3 ? 'warn' : 'ok', 'analysis complete');
+    exportJsonBtn.disabled = false;
+  } catch (e) {
+    console.error(e);
+    showErr(e.message || String(e));
+    setStatus('warn', 'failed');
+    labMount.innerHTML = `<p class="pal-err-msg">${esc(e.message)}</p>`;
+  } finally {
+    runBtn.disabled = !currentFile && !fixturePick.value;
+  }
+}
+
+function onFile(file) {
+  if (!file || !/\.pdf$/i.test(file.name)) {
+    showErr('Please upload a PDF file.');
+    return;
+  }
+  currentFile = file;
+  fixturePick.value = '';
+  bindPdfPreview(file);
+  sidebarMeta.textContent = `${file.name} · ${(file.size / 1024).toFixed(1)} KB`;
+  runBtn.disabled = false;
+  exportJsonBtn.disabled = true;
+  setStatus('', 'ready');
+  showErr('');
+}
+
+dropZone.onclick = () => fileInput.click();
+fileInput.onchange = () => {
+  const f = fileInput.files?.[0];
+  if (f) onFile(f);
+};
+dropZone.ondragover = (e) => {
+  e.preventDefault();
+  dropZone.classList.add('drag');
+};
+dropZone.ondragleave = () => dropZone.classList.remove('drag');
+dropZone.ondrop = (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('drag');
+  const f = e.dataTransfer?.files?.[0];
+  if (f) onFile(f);
+};
+
+runBtn.onclick = async () => {
+  if (fixturePick.value === 'yoaz') {
+    const fx = await loadFixtureYoaz();
+    await analyzePdf(fx);
+    return;
+  }
+  if (currentFile) await analyzePdf(currentFile);
+};
+
+fixturePick.onchange = async () => {
+  if (fixturePick.value === 'yoaz') {
+    currentFile = null;
+    if (pdfObjectUrl) {
+      URL.revokeObjectURL(pdfObjectUrl);
+      pdfObjectUrl = null;
+    }
+    runBtn.disabled = false;
+    sidebarMeta.textContent = 'Fixture: yoaz two-column geometry';
+    await analyzePdf(await loadFixtureYoaz());
+  }
+};
+
+exportJsonBtn.onclick = () => {
+  if (!lastReport) return;
+  const { p0, production, ...exportable } = lastReport;
+  const blob = new Blob([JSON.stringify(exportable, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `pdf-accuracy-${Date.now()}.json`;
+  a.click();
+};
+
+globalThis.HIRELY_DOC_DEBUG = true;
+</script>
+</body>
+</html>

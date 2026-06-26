@@ -1,0 +1,24 @@
+Emma Johnson
+Computer Science Student
+emma.johnson@university.edu · +44 7700 900123 · London
+
+Summary
+Final-year computer science student seeking a software engineering internship with interest in backend systems.
+
+Experience
+Software Engineering Intern — Monzo — London — 2024 – 2025
+
+Teaching Assistant — University College London — London — 2024 – Present
+
+Education
+University College London — BSc Computer Science — 2022 – 2026
+
+Skills
+Algorithms, databases, teamwork, technical writing
+
+Tools
+Python, Java, Git, PostgreSQL, Linux
+
+Languages
+English — native
+Spanish — intermediate

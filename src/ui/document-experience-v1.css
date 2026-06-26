@@ -1,0 +1,412 @@
+/**
+ * DOCUMENT EXPERIENCE V1 — Apple Keynote / Pages / Pitch / Linear
+ * Less dashboard · more document · large canvas · floating controls · smooth transitions
+ */
+
+:root {
+  --dex-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dex-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dex-duration: 0.34s;
+  --dex-duration-fast: 0.22s;
+
+  --dex-canvas: #dddcd8;
+  --dex-canvas-deep: #d4d3cf;
+  --dex-float-bg: rgba(255, 255, 255, 0.88);
+  --dex-float-border: rgba(17, 17, 16, 0.08);
+  --dex-float-shadow:
+    0 2px 8px rgba(17, 17, 16, 0.06),
+    0 16px 40px rgba(17, 17, 16, 0.1);
+  --dex-float-blur: saturate(180%) blur(20px);
+
+  --dex-toolbar-top: 12px;
+  --dex-dock-bottom: 20px;
+  --dex-inspector-width: 300px;
+  --dex-import-float-width: 272px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dex-duration: 0.01ms;
+    --dex-duration-fast: 0.01ms;
+  }
+}
+
+/* —— Document shell (not a dashboard) —— */
+html.dex-document .app--workspace {
+  width: min(100%, 100vw);
+  max-width: none;
+  padding-bottom: 0;
+}
+
+html.dex-document .workspaceZone,
+html.dex-document #workspace {
+  min-height: calc(100vh - 52px);
+}
+
+html.dex-document .workspaceGrid--ready {
+  gap: 0 !important;
+  max-width: none !important;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+/* —— Floating step toolbar (Keynote) —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsDocNav {
+  position: fixed !important;
+  top: var(--dex-toolbar-top);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  width: auto;
+  max-width: calc(100vw - 24px);
+  margin: 0 !important;
+  padding: 4px 6px !important;
+  background: var(--dex-float-bg) !important;
+  backdrop-filter: var(--dex-float-blur);
+  border: 0 !important;
+  border-radius: 14px !important;
+  box-shadow: var(--dex-float-shadow) !important;
+  transition:
+    opacity var(--dex-duration) var(--dex-ease),
+    transform var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .hirelyProgressTrack {
+  display: none;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .hirelyProgressSteps {
+  gap: 2px;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .hirelyProgressHint {
+  display: none !important;
+}
+
+/* —— Hide SaaS step headers — editorial canvas wins —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .resumeStudioHead,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .styleStepHead,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .exportStepHead,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .extractionQualityStep,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .cvProductHead {
+  display: none !important;
+}
+
+/* —— CV always visible (all ready steps) —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsProduct {
+  display: flex !important;
+  flex-direction: column;
+  min-height: calc(100vh - 56px);
+  width: 100%;
+  grid-area: canvas !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .studioPreview {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  opacity: 1;
+  transition: opacity var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-import,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-style,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-export {
+  grid-template-columns: 1fr !important;
+  grid-template-areas: "canvas" !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsCenterStack,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .workspaceCanvas {
+  flex: 1;
+  min-height: calc(100vh - 100px) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* —— Large document canvas (Pages / Pitch) —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .cvStage,
+html.dex-document:not(.debug-mode) .app--workspace .cvFocus {
+  flex: 1;
+  min-height: calc(100vh - 88px) !important;
+  padding: 32px 24px 48px !important;
+  background: var(--dex-canvas) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: background var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready #a4Viewport {
+  min-height: calc(100vh - 120px) !important;
+}
+
+@container cv-canvas (min-width: 900px) {
+  html.dex-document .cvStageInner {
+    --cv-preview-scale: min(1.18, calc((100cqi - 24px) / 794));
+  }
+}
+
+@container cv-canvas (min-width: 1200px) {
+  html.dex-document .cvStageInner {
+    --cv-preview-scale: min(1.28, calc((100cqi - 32px) / 794));
+  }
+}
+
+/* —— Live document updates —— */
+html.dex-document #cvDoc.cv--live,
+html.dex-document .cvA4Sheet__surface {
+  transition:
+    box-shadow var(--dex-duration-fast) var(--dex-ease),
+    opacity var(--dex-duration-fast) var(--dex-ease);
+}
+
+html.dex-document .cvDocWrap--fade {
+  opacity: 0.42;
+  transform: scale(0.992);
+  transition:
+    opacity var(--dex-duration-fast) var(--dex-ease),
+    transform var(--dex-duration) var(--dex-ease-out);
+}
+
+html.dex-document .cvDocWrap--in {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity var(--dex-duration) var(--dex-ease-out),
+    transform var(--dex-duration) var(--dex-ease-out);
+}
+
+html.dex-document .cvDocWrap--keynoteOut {
+  opacity: 0;
+  transform: scale(0.97) translateY(8px);
+  transition:
+    opacity 0.28s var(--dex-ease),
+    transform 0.34s var(--dex-ease);
+}
+
+html.dex-document .cvDocWrap--keynoteIn {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition:
+    opacity 0.38s var(--dex-ease-out),
+    transform 0.42s var(--dex-ease-out);
+}
+
+/* —— Floating template strip —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .templatePickerBar {
+  position: sticky;
+  top: 56px;
+  z-index: 12;
+  margin: 0 0 8px;
+  padding: 8px 10px !important;
+  background: var(--dex-float-bg) !important;
+  backdrop-filter: var(--dex-float-blur);
+  border: 0 !important;
+  border-radius: 14px !important;
+  box-shadow: var(--dex-float-shadow) !important;
+  transition: box-shadow var(--dex-duration-fast) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .templatePickerHead strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .premiumGalleryGrid {
+  scroll-behavior: smooth;
+}
+
+/* —— Floating export dock (Keynote share bar) —— */
+html.dex-document:not(.debug-mode) #workspace[data-doc-step="export"] .cvExportBar,
+html.dex-document:not(.debug-mode) #workspace[data-doc-step="style"] .cvExportBar {
+  position: fixed !important;
+  bottom: var(--dex-dock-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 95;
+  width: auto;
+  min-width: min(480px, calc(100vw - 32px));
+  max-width: calc(100vw - 24px);
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  background: var(--dex-float-bg) !important;
+  backdrop-filter: var(--dex-float-blur);
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: var(--dex-float-shadow) !important;
+  transition:
+    opacity var(--dex-duration) var(--dex-ease),
+    transform var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) #workspace[data-doc-step="export"] .cvStage,
+html.dex-document:not(.debug-mode) #workspace[data-doc-step="style"] .cvStage {
+  padding-bottom: 96px !important;
+}
+
+/* —— Import: compact floating card, not a form page —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsImport {
+  position: fixed !important;
+  top: 56px;
+  left: 14px;
+  z-index: 80;
+  width: var(--dex-import-float-width) !important;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100vh - 72px);
+  overflow: auto;
+  padding: 12px 14px !important;
+  background: var(--dex-float-bg) !important;
+  backdrop-filter: var(--dex-float-blur);
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: var(--dex-float-shadow) !important;
+  transition:
+    opacity var(--dex-duration) var(--dex-ease),
+    transform var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-style .wsImport,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-export .wsImport,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsImport {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-import .wsImport {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .importPanel .sub,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .importPanel .importActions,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .importPanel .statusRow {
+  display: none !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .drop {
+  min-height: 64px;
+  padding: 14px !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .dropLabel {
+  font-size: 14px;
+}
+
+/* —— Floating inspector (review / suggestions) —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsInsights {
+  position: fixed !important;
+  top: 56px;
+  right: 14px;
+  left: auto !important;
+  width: var(--dex-inspector-width) !important;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100vh - 80px) !important;
+  overflow: auto;
+  padding: 12px !important;
+  background: var(--dex-float-bg) !important;
+  backdrop-filter: var(--dex-float-blur);
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: var(--dex-float-shadow) !important;
+  z-index: 70;
+  transition:
+    opacity var(--dex-duration) var(--dex-ease),
+    transform var(--dex-duration) var(--dex-ease);
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStage {
+  padding-right: max(24px, calc(var(--dex-inspector-width) + 20px)) !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-style .wsInsights,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-export .wsInsights {
+  display: none !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .reviewStudioCenter,
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .reviewStudioAnalysis {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+html.dex-document:not(.debug-mode) .workspaceGrid--ready .resumeEditorPanel {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* —— Less form chrome in inspector —— */
+html.dex-document:not(.debug-mode) .reviewV2Head h3 {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+html.dex-document:not(.debug-mode) .suggestionCard,
+html.dex-document:not(.debug-mode) .toClassifyCard {
+  border-radius: 12px !important;
+  transition: background var(--dex-duration-fast) var(--dex-ease);
+}
+
+/* —— Step transitions —— */
+html.dex-document .workspaceGrid--ready .wsProduct {
+  animation: dexCanvasIn var(--dex-duration) var(--dex-ease-out);
+}
+
+@keyframes dexCanvasIn {
+  from {
+    opacity: 0.88;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* —— Mobile: stack floats —— */
+@media (max-width: 900px) {
+  html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsInsights {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 14px;
+    right: 14px;
+    left: 14px !important;
+    width: auto !important;
+    max-height: 38vh !important;
+  }
+
+  html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStage {
+    padding-right: 24px !important;
+    padding-bottom: calc(38vh + 24px) !important;
+  }
+
+  html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsImport {
+    top: auto;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    width: auto !important;
+    max-height: 36vh;
+  }
+}
+
+@media (max-width: 640px) {
+  html.dex-document:not(.debug-mode) .workspaceGrid--ready .wsDocNav {
+    top: 8px;
+    padding: 3px 4px !important;
+  }
+
+  html.dex-document:not(.debug-mode) .hirelyProgressLabel {
+    display: none;
+  }
+}

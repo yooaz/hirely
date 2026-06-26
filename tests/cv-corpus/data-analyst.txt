@@ -1,0 +1,25 @@
+Nina Kowalski
+Data Analyst
+nina.kowalski@analytics.pl · +48 22 555 0199 · Warsaw
+
+Summary
+Data analyst with 6 years turning product and operations data into leadership dashboards.
+
+Experience
+Data Analyst — Allegro — Warsaw — 2020 – Present
+
+Junior Data Analyst — Asseco Poland — Warsaw — 2018 – 2020
+
+Education
+University of Warsaw — M.Sc. Econometrics — 2016 – 2018
+University of Warsaw — B.Sc. Mathematics — 2013 – 2016
+
+Skills
+SQL, dashboard design, A/B testing, cohort analysis, data storytelling
+
+Tools
+Python, SQL, Tableau, dbt, BigQuery, Excel
+
+Languages
+Polish — native
+English — fluent

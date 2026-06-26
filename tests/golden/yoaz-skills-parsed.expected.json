@@ -1,0 +1,44 @@
+{
+  "fixture": "yoaz-pdf-benchmark/skills-section",
+  "parser": "SKILLS_BLOCK_PARSER_V2",
+  "tools": [
+    "Photoshop",
+    "Illustrator",
+    "InDesign",
+    "Affinity Designer",
+    "Procreate",
+    "After Effects"
+  ],
+  "items": [
+    {
+      "name": "Photoshop",
+      "category": "tools",
+      "source_block_ids": ["line-0"]
+    },
+    {
+      "name": "Illustrator",
+      "category": "tools",
+      "source_block_ids": ["line-1"]
+    },
+    {
+      "name": "InDesign",
+      "category": "tools",
+      "source_block_ids": ["line-2"]
+    },
+    {
+      "name": "Affinity Designer",
+      "category": "tools",
+      "source_block_ids": ["line-3"]
+    },
+    {
+      "name": "Procreate",
+      "category": "tools",
+      "source_block_ids": ["line-4"]
+    },
+    {
+      "name": "After Effects",
+      "category": "tools",
+      "source_block_ids": ["line-5"]
+    }
+  ]
+}

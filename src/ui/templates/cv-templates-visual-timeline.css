@@ -1,0 +1,263 @@
+/**
+ * Visual Timeline — Apple keynote quality · premium minimalism.
+ * Vertical career spine · connected clients & projects.
+ */
+
+.cv.template-visual-timeline {
+  --vt-ink: #1d1d1f;
+  --vt-muted: #6e6e73;
+  --vt-line: #d2d2d7;
+  --vt-accent: #0071e3;
+  --vt-paper: #ffffff;
+  --vt-body: Inter, 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  font-family: var(--vt-body);
+  font-size: 10pt;
+  line-height: 1.48;
+  color: var(--vt-ink);
+  background: var(--vt-paper);
+}
+
+.cv.template-visual-timeline .cvInner.cvLayout-visual-timeline {
+  padding: 0;
+}
+
+.cv.template-visual-timeline .cvHead--visual-timeline {
+  padding: 44px 48px 28px;
+  border-bottom: 1px solid var(--vt-line);
+}
+
+.cv.template-visual-timeline .cvName {
+  font-size: 24pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.cv.template-visual-timeline .cvTitle {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--vt-muted);
+  margin: 8px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.cv.template-visual-timeline .cvVtLead {
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--vt-muted);
+  margin: 14px 0 0;
+  max-width: 68ch;
+}
+
+.cv.template-visual-timeline .cvVtContact {
+  font-size: 8.75pt;
+  color: var(--vt-muted);
+  margin: 12px 0 0;
+}
+
+.cv.template-visual-timeline .cvMain--visual-timeline {
+  padding: 32px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cv.template-visual-timeline .cvSectionTitle {
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vt-muted);
+  margin: 0 0 18px;
+}
+
+.cv.template-visual-timeline .cvVtRail {
+  position: relative;
+  padding-left: 28px;
+}
+
+.cv.template-visual-timeline .cvVtRail::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--vt-accent) 0%, var(--vt-line) 100%);
+  border-radius: 2px;
+}
+
+.cv.template-visual-timeline .cvVtNode {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.cv.template-visual-timeline .cvVtNode:last-child {
+  margin-bottom: 0;
+}
+
+.cv.template-visual-timeline .cvVtSpine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.cv.template-visual-timeline .cvVtDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--vt-paper);
+  border: 3px solid var(--vt-accent);
+  box-shadow: 0 0 0 1px var(--vt-line);
+}
+
+.cv.template-visual-timeline .cvVtRole {
+  font-size: 12pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--vt-ink);
+}
+
+.cv.template-visual-timeline .cvVtCompany {
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: var(--vt-ink);
+  margin: 4px 0 0;
+}
+
+.cv.template-visual-timeline .cvVtYears {
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vt-accent);
+  margin: 4px 0 0;
+}
+
+.cv.template-visual-timeline .cvVtHighlights {
+  margin: 10px 0 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.cv.template-visual-timeline .cvVtHighlights li {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--vt-ink);
+  margin-bottom: 4px;
+}
+
+.cv.template-visual-timeline .cvVtConnected {
+  display: grid;
+  gap: 16px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.cv.template-visual-timeline .cvVtConnected::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--vt-line);
+}
+
+.cv.template-visual-timeline .cvVtBranch {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.cv.template-visual-timeline .cvVtBranchConnector {
+  width: 14px;
+  height: 2px;
+  background: var(--vt-accent);
+  margin-top: 12px;
+  position: relative;
+}
+
+.cv.template-visual-timeline .cvVtBranchConnector::before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  top: 0;
+  width: 21px;
+  height: 2px;
+  background: var(--vt-accent);
+}
+
+.cv.template-visual-timeline .cvVtBranchTitle {
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vt-muted);
+  margin: 0 0 8px;
+}
+
+.cv.template-visual-timeline .cvVtBranchItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.cv.template-visual-timeline .cvVtBranchTag {
+  font-size: 9pt;
+  font-weight: 500;
+  padding: 4px 10px;
+  border: 1px solid var(--vt-line);
+  border-radius: 999px;
+  color: var(--vt-ink);
+  background: #f5f5f7;
+}
+
+.cv.template-visual-timeline .cvVtBranchProject {
+  font-size: 9.5pt;
+  line-height: 1.4;
+  margin: 0 0 6px;
+  color: var(--vt-ink);
+}
+
+.cv.template-visual-timeline .cvVtLine,
+.cv.template-visual-timeline .cvVtLangLine {
+  font-size: 9.5pt;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+
+.cv.template-visual-timeline .cvEduSchool {
+  font-size: 10.5pt;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cv.template-visual-timeline .cvEduProgram,
+.cv.template-visual-timeline .cvEduDates,
+.cv.template-visual-timeline .cvEduLine {
+  font-size: 9pt;
+  color: var(--vt-muted);
+  margin: 3px 0 0;
+}
+
+.cv.template-visual-timeline .cvClientChip,
+.cv.template-visual-timeline .cvSkillChip,
+.cv.template-visual-timeline .cvProgress,
+.cv.template-visual-timeline:not(.cv--with-photo) .cvPhoto,
+.cv.template-visual-timeline:not(.cv--with-photo) .cvPhotoWrap,
+.cv.template-visual-timeline .cvTimelineDot {
+  display: none !important;
+}
+
+.tplMiniWrap--visual-timeline {
+  border-left: 3px solid #0071e3;
+  background: #fff;
+}

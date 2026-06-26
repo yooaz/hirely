@@ -1,0 +1,66 @@
+{
+  "version": "2",
+  "description": "Golden CV regression — universal structural bars only.",
+  "cases": [
+    {
+      "id": "YOAZ_CV_DESIGNER",
+      "label": "Yohann Azancot creative CV (structure + classification golden)",
+      "fixture": "tests/fixtures/yoaz-cv/fixture.txt",
+      "pipeline": "section_engine_v2",
+      "classificationGolden": "tests/golden/yoaz-cv-classification.json",
+      "expect": {
+        "experienceCountMin": 1,
+        "skillsCountMin": 3,
+        "languageCountMin": 1,
+        "coveragePercentMin": 75
+      }
+    },
+    {
+      "id": "YOAZ_PDF_BENCHMARK",
+      "label": "cv. Yohann azancot.pdf — PDF parsing benchmark (page-1 CV, page-2 portfolio isolation)",
+      "fixture": "tests/fixtures/yoaz-pdf-benchmark/fixture.txt",
+      "fixturePdf": "tests/fixtures/yoaz-pdf-benchmark/document.pdf",
+      "pipeline": "production_import",
+      "parsingGolden": "tests/golden/yoaz-pdf-benchmark.expected.json",
+      "expect": {
+        "experienceCountMin": 3,
+        "educationCountMin": 4,
+        "skillsCountMin": 6,
+        "languageCountMin": 2
+      }
+    },
+    {
+      "id": "CREATIVE_DESIGNER_SAMPLE",
+      "label": "Creative designer text CV (structure only)",
+      "fixture": "tests/fixtures/yoaz-cv/fixture.txt",
+      "pipeline": "section_engine_v2",
+      "expect": {
+        "experienceCountMin": 1,
+        "skillsCountMin": 3,
+        "coveragePercentMin": 75
+      }
+    },
+    {
+      "id": "CORPORATE_DEVELOPER",
+      "label": "Developer corporate CV",
+      "fixture": "tests/fixtures/developer-cv/fixture.txt",
+      "pipeline": "section_engine_v2",
+      "expect": {
+        "experienceCountMin": 1,
+        "skillsCountMin": 2,
+        "coveragePercentMin": 70
+      }
+    },
+    {
+      "id": "STUDENT_PASTE",
+      "label": "Student pasted CV",
+      "fixture": "tests/fixtures/student-cv/fixture.txt",
+      "pipeline": "section_engine_v2",
+      "expect": {
+        "experienceCountMin": 0,
+        "skillsCountMin": 1,
+        "coveragePercentMin": 65
+      }
+    }
+  ]
+}

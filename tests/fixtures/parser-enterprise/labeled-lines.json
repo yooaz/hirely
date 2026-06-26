@@ -1,0 +1,22 @@
+[
+  { "line": "Freelance Illustrator / Graphic Designer", "bucket": "experience" },
+  { "line": "Independent / Freelance · 2011 — Present", "bucket": "experience" },
+  { "line": "LISAA — Web & Motion Design", "bucket": "education" },
+  { "line": "Créapole — Visual Communication / Product Design", "bucket": "education" },
+  { "line": "Photoshop, Illustrator, InDesign", "bucket": "tools" },
+  { "line": "French — native", "bucket": "languages" },
+  { "line": "English — fluent", "bucket": "languages" },
+  { "line": "Nike, Adobe, Louis Vuitton", "bucket": "clients" },
+  { "line": "Illustration, Graphic Design, Visual Identity", "bucket": "skills" },
+  { "line": "Music, Movies, Nature", "bucket": "interests" },
+  { "line": "Yohann Azancot", "bucket": "identity" },
+  { "line": "Graphic Designer & Illustrator", "bucket": "identity" },
+  { "line": "yoaz@hotmail.fr", "bucket": "contact" },
+  { "line": "Creative professional specializing in illustration", "bucket": "summary" },
+  { "line": "Data Analyst — FinTech Co — 2019 – Present", "bucket": "experience" },
+  { "line": "Master Statistics — Sorbonne — 2018", "bucket": "education" },
+  { "line": "Python, SQL, Tableau", "bucket": "skills" },
+  { "line": "Ce Frei Re", "bucket": "unsorted" },
+  { "line": "A>o N'$ak6", "bucket": "unsorted" },
+  { "line": "Muse album cover artwork", "bucket": "projects" }
+]

@@ -1,0 +1,186 @@
+{
+  "version": "PRODUCTION_IMPORT_TRACE_V1",
+  "capturedAt": "2026-06-09T14:08:07.878Z",
+  "path": "browser-production",
+  "meta": {
+    "fileName": "fixture.pdf",
+    "extractionMethod": null,
+    "importStatus": "IMPORT_NEEDS_PASTE",
+    "importFailed": true,
+    "failureReason": "IMPORT_NEEDS_PASTE",
+    "templateId": "ats",
+    "rawChars": 0,
+    "cleanChars": 0
+  },
+  "RAW_TEXT_CAPTURE": {
+    "rawText": "",
+    "cleanedText": "",
+    "lineCount": 0,
+    "preview": ""
+  },
+  "IDENTITY_CANDIDATES": {
+    "selected": {
+      "name": "",
+      "title": ""
+    },
+    "nameCandidates": [],
+    "titleCandidates": [],
+    "detection": null
+  },
+  "EXPERIENCE_CANDIDATES": [],
+  "EDUCATION_CANDIDATES": [],
+  "SKILL_CANDIDATES": [],
+  "CLASSIFIED_BLOCKS": [],
+  "FINAL_RESUME_DATA": {
+    "identity": {
+      "name": "",
+      "title": "",
+      "email": "",
+      "phone": "",
+      "location": "",
+      "linkedin": "",
+      "website": ""
+    },
+    "summary": "",
+    "experiences": [],
+    "education": [],
+    "skills": [],
+    "tools": [],
+    "languages": [],
+    "unsorted": [],
+    "contract": {
+      "ok": true,
+      "renderable": true,
+      "version": "final-resume-v2",
+      "dataContractVersion": "data-contract-v1",
+      "reasons": [],
+      "warnings": [],
+      "soft": [
+        "education_or_skills"
+      ],
+      "missing": [],
+      "empty": [],
+      "forbidden": [],
+      "consumerViolations": [],
+      "sections": {
+        "identity": "object",
+        "summary": "nonempty",
+        "experiences": 1,
+        "education": 0,
+        "skills": 0,
+        "tools": 0,
+        "languages": 0,
+        "clients": 0,
+        "projects": 0,
+        "unsorted": 4
+      }
+    }
+  },
+  "REVIEW_QUEUE": [
+    {
+      "id": "rq-1781014052747-1",
+      "field": "summary",
+      "detectedType": "unknown",
+      "sourceText": "Product manager with 8 years in B2B SaaS, focused on roadmap delivery and cross-functional - Shipped billing module used by 120k users. - Reduced churn by 12% through onboarding redesign. - Launched mobile app with 50k MAU in year one.",
+      "status": "pending",
+      "confidence": 86,
+      "reason": "Detected as JOB_TITLE (86%) — not valid for summary",
+      "origin": null
+    },
+    {
+      "id": "rq-1781014052757-5",
+      "field": "skills",
+      "detectedType": "unknown",
+      "sourceText": "User Research",
+      "status": "pending",
+      "confidence": 88,
+      "reason": "Detected as PERSON_NAME (88%) — not valid for skills",
+      "origin": null
+    },
+    {
+      "id": "rq-1781014052751-2",
+      "field": "experiences",
+      "detectedType": "unknown",
+      "sourceText": "Product Manager — Acme SaaS — 2019–Present",
+      "status": "pending",
+      "confidence": 92,
+      "reason": "Detected as JOB_TITLE (92%) — not valid for experiences",
+      "origin": null
+    },
+    {
+      "id": "rq-1781014052753-3",
+      "field": "experiences",
+      "detectedType": "unknown",
+      "sourceText": "Product Manager — Beta Corp — 2015–2019",
+      "status": "pending",
+      "confidence": 92,
+      "reason": "Detected as JOB_TITLE (92%) — not valid for experiences",
+      "origin": null
+    },
+    {
+      "id": "rq-1781014052755-4",
+      "field": "skills",
+      "detectedType": "unknown",
+      "sourceText": "Product Strategy",
+      "status": "pending",
+      "confidence": 92,
+      "reason": "Detected as JOB_TITLE (92%) — not valid for skills",
+      "origin": null
+    }
+  ],
+  "FINAL_PREVIEW": {
+    "plainText": "",
+    "htmlChars": 0,
+    "fields": []
+  },
+  "informationLoss": [
+    {
+      "stage": "upload → OCR/extraction",
+      "field": "raw_text",
+      "detail": "IMPORT_NEEDS_PASTE"
+    },
+    {
+      "stage": "review gate",
+      "field": "pending_review",
+      "detail": "5 review item(s), 0 unsorted line(s)"
+    }
+  ],
+  "traceability": {
+    "pass": false,
+    "tracedCount": 0,
+    "violationCount": 5,
+    "traced": [],
+    "violations": [
+      {
+        "path": "reviewQueue.summary",
+        "value": "Product manager with 8 years in B2B SaaS, focused on roadmap delivery and cross-functional - Shipped billing module used by 120k users. - Reduced churn by 12% t",
+        "reason": "review_item_not_in_raw_text",
+        "source": "GENERATED_OR_PHANTOM"
+      },
+      {
+        "path": "reviewQueue.skills",
+        "value": "User Research",
+        "reason": "review_item_not_in_raw_text",
+        "source": "GENERATED_OR_PHANTOM"
+      },
+      {
+        "path": "reviewQueue.experiences",
+        "value": "Product Manager — Acme SaaS — 2019–Present",
+        "reason": "review_item_not_in_raw_text",
+        "source": "GENERATED_OR_PHANTOM"
+      },
+      {
+        "path": "reviewQueue.experiences",
+        "value": "Product Manager — Beta Corp — 2015–2019",
+        "reason": "review_item_not_in_raw_text",
+        "source": "GENERATED_OR_PHANTOM"
+      },
+      {
+        "path": "reviewQueue.skills",
+        "value": "Product Strategy",
+        "reason": "review_item_not_in_raw_text",
+        "source": "GENERATED_OR_PHANTOM"
+      }
+    ]
+  }
+}

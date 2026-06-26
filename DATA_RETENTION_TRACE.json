@@ -1,0 +1,3643 @@
+{
+  "version": "DATA_RETENTION_TRACE_V1",
+  "generatedAt": "2026-06-10T20:48:32.171Z",
+  "stages": [
+    "RAW_TEXT_COUNT",
+    "NORMALIZED_TEXT_COUNT",
+    "SECTION_CANDIDATES_COUNT",
+    "STRUCTURED_RESUME_COUNT",
+    "RESUME_DATA_COUNT",
+    "FINAL_RESUME_DATA_COUNT",
+    "RENDERED_DOM_COUNT"
+  ],
+  "sections": [
+    "identity",
+    "summary",
+    "experience",
+    "education",
+    "skills",
+    "tools",
+    "languages",
+    "clients",
+    "projects",
+    "portfolio"
+  ],
+  "imports": [
+    {
+      "id": "creative-cv",
+      "templateId": "ats",
+      "extractionMethod": "paste",
+      "rawTextLength": 1003,
+      "normalizedTextLength": 981,
+      "reviewQueueSize": 5,
+      "stageTraces": {
+        "RAW_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 18,
+            "examples": [
+              "Freelance Illustrator",
+              "Graphic Designer",
+              "Independent",
+              "Freelance",
+              "2011 — Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design Créapole — Visual Communication",
+              "Product Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 8,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "NORMALIZED_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 5,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+              "- Collaborated with recognized brands and cultural clients including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 1,
+            "examples": [
+              "Independent / Freelance · 2011 — Present"
+            ],
+            "lostExamples": [
+              "Graphic Designer",
+              "- Created high-impact illustration and graphic design work across posters",
+              "packaging",
+              "logos and brand assets.",
+              "- Collaborated with recognized brands and cultural clients including Nike",
+              "Louis Vuitton",
+              "Marvel",
+              "Cadillac",
+              "Fortune",
+              "Converse"
+            ]
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design Créapole — Visual Communication",
+              "Product Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 8,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "SECTION_CANDIDATES_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 5,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+              "- Collaborated with recognized brands and cultural clients including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Independent / Freelance · 2011 — Present"
+            ]
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design Créapole — Visual Communication",
+              "Product Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 8,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "STRUCTURED_RESUME_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+              "- Collaborated with recognized brands and cultural clients including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+            ]
+          },
+          "experience": {
+            "count": 4,
+            "examples": [
+              "2011 — Present — 2011–Present",
+              "2011 — Present Graphic Designer & Illustrator — 2011–Present",
+              "Independent / Freelance — Independent / Freelance — 2011–Present",
+              "Independent / Freelance · — Independent / Freelance — 2011–Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design Créapole — Visual Communication / Product Design",
+              "Créapole — LISAA — Web & Motion Design — Visual Communication / Product Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 8,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 9,
+            "examples": [
+              "Pantone",
+              "Adobe",
+              "Arte",
+              "Nike",
+              "Converse"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Graphic Designer and Illustrator specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging and brand assets for cultural and commercial projects."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Graphic Designer & Illustrator — 2011 — 2011–2011",
+              "Graphic Designer — Independent / Freelance — 2011–2022",
+              "Freelance Professional — Freelance Professional — 2011–Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "Créapole",
+              "LISAA"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 10,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Editorial Design",
+              "Logo Design",
+              "Brand Identity"
+            ],
+            "lostExamples": [
+              "Packaging"
+            ]
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign",
+              "Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": [
+              "Adobe",
+              "Arte"
+            ]
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "FINAL_RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Graphic Designer and Illustrator specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging and brand assets for cultural and commercial projects."
+            ]
+          },
+          "experience": {
+            "count": 2,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer — Independent / Freelance — 2011–2022",
+              "Graphic Designer & Illustrator — 2011 — 2011–2011"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design — 2011–2012",
+              "Créapole — Visual Communication — 2008–2011"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 11,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Packaging",
+              "Logo Design",
+              "Visual Identity"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RENDERED_DOM_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 2,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer - Independent / Freelance - 2011-2022",
+              "Graphic Designer & Illustrator - 2011 - 2011-2011"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA - Web & Motion Design - 2011-2012",
+              "Créapole - Visual Communication - 2008-2011"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 14,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Packaging",
+              "Logo Design",
+              "Visual Identity"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French - native",
+              "English - fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        }
+      },
+      "transitions": [
+        {
+          "from": "RAW_TEXT_COUNT",
+          "to": "NORMALIZED_TEXT_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 17,
+              "fromCount": 18,
+              "toCount": 1,
+              "lostExamples": [
+                "Graphic Designer",
+                "- Created high-impact illustration and graphic design work across posters",
+                "packaging",
+                "logos and brand assets.",
+                "- Collaborated with recognized brands and cultural clients including Nike",
+                "Louis Vuitton",
+                "Marvel",
+                "Cadillac",
+                "Fortune",
+                "Converse"
+              ]
+            }
+          }
+        },
+        {
+          "from": "NORMALIZED_TEXT_COUNT",
+          "to": "SECTION_CANDIDATES_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 1,
+              "fromCount": 1,
+              "toCount": 0,
+              "lostExamples": [
+                "Independent / Freelance · 2011 — Present"
+              ]
+            }
+          }
+        },
+        {
+          "from": "SECTION_CANDIDATES_COUNT",
+          "to": "STRUCTURED_RESUME_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 5,
+              "fromCount": 5,
+              "toCount": 0,
+              "lostExamples": [
+                "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+                "Freelance Illustrator / Graphic Designer",
+                "Independent / Freelance · 2011 — Present",
+                "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+                "- Collaborated with recognized brands and cultural clients including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+              ]
+            }
+          }
+        },
+        {
+          "from": "STRUCTURED_RESUME_COUNT",
+          "to": "RESUME_DATA_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 1,
+              "fromCount": 4,
+              "toCount": 3,
+              "lostExamples": []
+            },
+            "skills": {
+              "dropped": 0,
+              "fromCount": 8,
+              "toCount": 10,
+              "lostExamples": [
+                "Packaging"
+              ]
+            },
+            "clients": {
+              "dropped": 2,
+              "fromCount": 9,
+              "toCount": 7,
+              "lostExamples": [
+                "Adobe",
+                "Arte"
+              ]
+            }
+          }
+        },
+        {
+          "from": "RESUME_DATA_COUNT",
+          "to": "FINAL_RESUME_DATA_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 1,
+              "fromCount": 1,
+              "toCount": 0,
+              "lostExamples": [
+                "Graphic Designer and Illustrator specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging and brand assets for cultural and commercial projects."
+              ]
+            },
+            "experience": {
+              "dropped": 1,
+              "fromCount": 3,
+              "toCount": 2,
+              "lostExamples": []
+            },
+            "tools": {
+              "dropped": 1,
+              "fromCount": 4,
+              "toCount": 3,
+              "lostExamples": []
+            }
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "stage": "RAW_TEXT_COUNT → NORMALIZED_TEXT_COUNT",
+          "section": "experience",
+          "dropped": 17,
+          "fromCount": 18,
+          "toCount": 1,
+          "lostExamples": [
+            "Graphic Designer",
+            "- Created high-impact illustration and graphic design work across posters",
+            "packaging",
+            "logos and brand assets.",
+            "- Collaborated with recognized brands and cultural clients including Nike",
+            "Louis Vuitton",
+            "Marvel",
+            "Cadillac",
+            "Fortune",
+            "Converse"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "summary",
+          "dropped": 5,
+          "fromCount": 5,
+          "toCount": 0,
+          "lostExamples": [
+            "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+            "Freelance Illustrator / Graphic Designer",
+            "Independent / Freelance · 2011 — Present",
+            "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+            "- Collaborated with recognized brands and cultural clients including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "clients",
+          "dropped": 2,
+          "fromCount": 9,
+          "toCount": 7,
+          "lostExamples": [
+            "Adobe",
+            "Arte"
+          ]
+        },
+        {
+          "stage": "NORMALIZED_TEXT_COUNT → SECTION_CANDIDATES_COUNT",
+          "section": "experience",
+          "dropped": 1,
+          "fromCount": 1,
+          "toCount": 0,
+          "lostExamples": [
+            "Independent / Freelance · 2011 — Present"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 1,
+          "fromCount": 4,
+          "toCount": 3,
+          "lostExamples": []
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "summary",
+          "dropped": 1,
+          "fromCount": 1,
+          "toCount": 0,
+          "lostExamples": [
+            "Graphic Designer and Illustrator specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging and brand assets for cultural and commercial projects."
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 1,
+          "fromCount": 3,
+          "toCount": 2,
+          "lostExamples": []
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "tools",
+          "dropped": 1,
+          "fromCount": 4,
+          "toCount": 3,
+          "lostExamples": []
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "skills",
+          "dropped": 0,
+          "fromCount": 8,
+          "toCount": 10,
+          "lostExamples": [
+            "Packaging"
+          ]
+        }
+      ],
+      "summary": {
+        "clients": {
+          "raw": 0,
+          "structured": 9,
+          "resumeData": 7,
+          "final": 7,
+          "rendered": 7
+        },
+        "projects": {
+          "raw": 0,
+          "structured": 0,
+          "resumeData": 0,
+          "final": 0,
+          "rendered": 0
+        }
+      }
+    },
+    {
+      "id": "yoaz-cv",
+      "templateId": "ats",
+      "extractionMethod": "paste",
+      "rawTextLength": 2511,
+      "normalizedTextLength": 2471,
+      "reviewQueueSize": 47,
+      "stageTraces": {
+        "RAW_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 67,
+            "examples": [
+              "Freelance Illustrator",
+              "Graphic Designer",
+              "Independent",
+              "Freelance",
+              "2011 — Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 4,
+            "examples": [
+              "LISAA — Web & Motion Design",
+              "Créapole — Visual Communication",
+              "Product Design",
+              "École supérieure — Visual Communication"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 12,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 5,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Affinity Designer",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 9,
+            "examples": [
+              "Nike",
+              "Adobe",
+              "Louis Vuitton",
+              "Marvel",
+              "Converse"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "NORMALIZED_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 30,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+              "- Collaborated with recognized brands including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 9,
+            "examples": [
+              "Independent / Freelance · 2011 — Present",
+              "Lead Illustrator · 2011 — 2014",
+              "Art Director — Illustration · 2014 — 2016",
+              "Senior Illustrator · 2016 — 2018",
+              "Independent · 2018 — 2020"
+            ],
+            "lostExamples": [
+              "packaging",
+              "logos and brand assets.",
+              "- Collaborated with recognized brands including Nike",
+              "Louis Vuitton",
+              "Marvel",
+              "Cadillac",
+              "Fortune",
+              "Converse",
+              "Pantone",
+              "Adobe"
+            ]
+          },
+          "education": {
+            "count": 4,
+            "examples": [
+              "LISAA — Web & Motion Design",
+              "Créapole — Visual Communication",
+              "Product Design",
+              "École supérieure — Visual Communication"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 12,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 5,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Affinity Designer",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 11,
+            "examples": [
+              "French — native",
+              "English — fluent",
+              "Nike",
+              "Adobe",
+              "Louis Vuitton"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Nike",
+              "Adobe",
+              "Louis Vuitton",
+              "Marvel",
+              "Converse",
+              "Pantone",
+              "Cadillac",
+              "Arte",
+              "Fortune"
+            ]
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "SECTION_CANDIDATES_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 30,
+            "examples": [
+              "Creative professional specializing in illustration, graphic design and visual storytelling, with experience delivering posters, packaging, identities and visual assets for cultural and commercial projects.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Created high-impact illustration and graphic design work across posters, packaging, logos and brand assets.",
+              "- Collaborated with recognized brands including Nike, Louis Vuitton, Marvel, Cadillac, Fortune, Converse, Pantone, Adobe, Arte and McCann."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Independent / Freelance · 2011 — Present",
+              "Lead Illustrator · 2011 — 2014",
+              "Art Director — Illustration · 2014 — 2016",
+              "Senior Illustrator · 2016 — 2018",
+              "Independent · 2018 — 2020",
+              "Illustrator / Designer · 2020 — 2021",
+              "Visual Designer · 2021 — 2022",
+              "Lead Visual Designer · 2022 — 2023",
+              "Creative Director · 2023 — Present"
+            ]
+          },
+          "education": {
+            "count": 4,
+            "examples": [
+              "LISAA — Web & Motion Design",
+              "Créapole — Visual Communication",
+              "Product Design",
+              "École supérieure — Visual Communication"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 12,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity",
+              "Poster Design",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 5,
+            "examples": [
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Affinity Designer",
+              "Adobe Creative Suite"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 11,
+            "examples": [
+              "French — native",
+              "English — fluent",
+              "Nike",
+              "Adobe",
+              "Louis Vuitton"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "STRUCTURED_RESUME_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Directed visual campaigns for luxury and lifestyle brands.\n- Led art direction for print and digital campaigns.\n- Delivered key visuals for FMCG and automotive clients.\n- Built reusable asset libraries for agency studios.\n- Brand identity and packaging for beauty and fashion labels.\n- Storyboard and style frames for motion pitches.\n- Campaign illustration for entertainment and tech launches.\n- Iconography and editorial illustration for social formats.\n- Mentoring junior designers on craft and presentation."
+            ],
+            "lostExamples": [
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "Lead Illustrator · 2011 — 2014",
+              "- Produced illustration systems for multi-market advertising.",
+              "Art Director — Illustration · 2014 — 2016",
+              "Senior Illustrator · 2016 — 2018",
+              "- Delivered key visuals for FMCG and automotive clients.",
+              "- Built reusable asset libraries for agency studios.",
+              "Freelance — Senior Art Director",
+              "Independent · 2018 — 2020"
+            ]
+          },
+          "experience": {
+            "count": 31,
+            "examples": [
+              "Art Director Independent · — Independent / Freelance — 2018–2020",
+              "illustrators on seasonal brand pushes. Havas Paris Senior Illustrator · — Independent / Freelance — 2016–2018",
+              "Illustrator / Designer · — Independent / Freelance — 2020–2021",
+              "Designer · — Independent / Freelance — 2022–2023",
+              "Produced Illustration Systems For Multi — Produced illustration systems for multi — 2014–2016"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design",
+              "Créapole — Visual Communication / Product Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 13,
+            "examples": [
+              "- Produced illustration systems for multi-market advertising.",
+              "- Illustration for product storytelling pages.",
+              "Illustration",
+              "Graphic Design",
+              "Visual Identity"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 6,
+            "examples": [
+              "Motion Design",
+              "Photoshop",
+              "Illustrator",
+              "InDesign",
+              "Affinity Designer"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": [
+              "Nike",
+              "Adobe",
+              "Louis Vuitton",
+              "Marvel",
+              "Converse",
+              "Pantone",
+              "Cadillac",
+              "Arte",
+              "Fortune"
+            ]
+          },
+          "clients": {
+            "count": 16,
+            "examples": [
+              "Pantone",
+              "Adobe",
+              "Arte",
+              "McCann",
+              "AKQA"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Directed visual campaigns for luxury and lifestyle brands.\n- Led art direction for print and digital campaigns.\n- Delivered key visuals for FMCG and automotive clients.\n- Built reusable asset libraries for agency studios.\n- Brand identity and packaging for beauty and fashion labels.\n- Storyboard and style frames for motion pitches.\n- Campaign illustration for entertainment and tech launches.\n- Iconography and editorial illustration for social formats.\n- Mentoring junior designers on craft and presentation."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 12,
+            "examples": [
+              "Art Director Independent — Art Director Independent — 2018–2020",
+              "Illustrators on Seasonal Brand Pushes. Havas Paris Senior Illustrator — Illustrators on Seasonal Brand Pushes. Havas Paris Senior Illustrator — 2016–2018",
+              "Illustrator / Designer — Independent / Freelance — 2020–2021",
+              "Designer — Independent / Freelance — 2022–2023",
+              "Produced Illustration Systems For Multi — Produced illustration systems for multi — 2014–2016"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA",
+              "Créapole"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 13,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Editorial Design",
+              "Logo Design",
+              "Brand Identity"
+            ],
+            "lostExamples": [
+              "Packaging"
+            ]
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign",
+              "Illustrator"
+            ],
+            "lostExamples": [
+              "Affinity Designer"
+            ]
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": [
+              "Adobe",
+              "Arte",
+              "McCann",
+              "AKQA",
+              "Storyboard",
+              "Iconography",
+              "Designer",
+              "Culture",
+              "Sport"
+            ]
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Brand identity and packaging for beauty and fashion labels",
+              "Campaign illustration for entertainment and tech launches"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "FINAL_RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "- Directed visual campaigns for luxury and lifestyle brands.\n- Led art direction for print and digital campaigns.\n- Delivered key visuals for FMCG and automotive clients.\n- Built reusable asset libraries for agency studios.\n- Brand identity and packaging for beauty and fashion labels.\n- Storyboard and style frames for motion pitches.\n- Campaign illustration for entertainment and tech launches.\n- Iconography and editorial illustration for social formats.\n- Mentoring junior designers on craft and presentation."
+            ]
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer — Independent / Freelance — 2018–2020",
+              "2011 — 2014 — 2011–2014",
+              "2014 — 2016 — 2014–2016"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA — Web & Motion Design — 2011–2012",
+              "Créapole — Visual Communication — 2008–2011"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 14,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Packaging",
+              "Logo Design",
+              "Visual Identity"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French — native",
+              "English — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Brand identity and packaging for beauty and fashion labels",
+              "Campaign illustration for entertainment and tech launches"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RENDERED_DOM_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer - Independent / Freelance - 2018-2020",
+              "2011 - 2014 - 2011-2014",
+              "2014 - 2016 - 2014-2016"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "LISAA - Web & Motion Design - 2011-2012",
+              "Créapole - Visual Communication - 2008-2011"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 17,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Packaging",
+              "Logo Design",
+              "Visual Identity"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "InDesign"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "French - native",
+              "English - fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 7,
+            "examples": [
+              "Pantone",
+              "Nike",
+              "Converse",
+              "Louis Vuitton",
+              "Marvel"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Brand identity and packaging for beauty and fashion labels",
+              "Campaign illustration for entertainment and tech launches"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        }
+      },
+      "transitions": [
+        {
+          "from": "RAW_TEXT_COUNT",
+          "to": "NORMALIZED_TEXT_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 58,
+              "fromCount": 67,
+              "toCount": 9,
+              "lostExamples": [
+                "packaging",
+                "logos and brand assets.",
+                "- Collaborated with recognized brands including Nike",
+                "Louis Vuitton",
+                "Marvel",
+                "Cadillac",
+                "Fortune",
+                "Converse",
+                "Pantone",
+                "Adobe"
+              ]
+            },
+            "clients": {
+              "dropped": 9,
+              "fromCount": 9,
+              "toCount": 0,
+              "lostExamples": [
+                "Nike",
+                "Adobe",
+                "Louis Vuitton",
+                "Marvel",
+                "Converse",
+                "Pantone",
+                "Cadillac",
+                "Arte",
+                "Fortune"
+              ]
+            }
+          }
+        },
+        {
+          "from": "NORMALIZED_TEXT_COUNT",
+          "to": "SECTION_CANDIDATES_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 9,
+              "fromCount": 9,
+              "toCount": 0,
+              "lostExamples": [
+                "Independent / Freelance · 2011 — Present",
+                "Lead Illustrator · 2011 — 2014",
+                "Art Director — Illustration · 2014 — 2016",
+                "Senior Illustrator · 2016 — 2018",
+                "Independent · 2018 — 2020",
+                "Illustrator / Designer · 2020 — 2021",
+                "Visual Designer · 2021 — 2022",
+                "Lead Visual Designer · 2022 — 2023",
+                "Creative Director · 2023 — Present"
+              ]
+            }
+          }
+        },
+        {
+          "from": "SECTION_CANDIDATES_COUNT",
+          "to": "STRUCTURED_RESUME_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 29,
+              "fromCount": 30,
+              "toCount": 1,
+              "lostExamples": [
+                "Freelance Illustrator / Graphic Designer",
+                "Independent / Freelance · 2011 — Present",
+                "Lead Illustrator · 2011 — 2014",
+                "- Produced illustration systems for multi-market advertising.",
+                "Art Director — Illustration · 2014 — 2016",
+                "Senior Illustrator · 2016 — 2018",
+                "- Delivered key visuals for FMCG and automotive clients.",
+                "- Built reusable asset libraries for agency studios.",
+                "Freelance — Senior Art Director",
+                "Independent · 2018 — 2020"
+              ]
+            },
+            "education": {
+              "dropped": 2,
+              "fromCount": 4,
+              "toCount": 2,
+              "lostExamples": []
+            },
+            "languages": {
+              "dropped": 9,
+              "fromCount": 11,
+              "toCount": 2,
+              "lostExamples": [
+                "Nike",
+                "Adobe",
+                "Louis Vuitton",
+                "Marvel",
+                "Converse",
+                "Pantone",
+                "Cadillac",
+                "Arte",
+                "Fortune"
+              ]
+            }
+          }
+        },
+        {
+          "from": "STRUCTURED_RESUME_COUNT",
+          "to": "RESUME_DATA_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 19,
+              "fromCount": 31,
+              "toCount": 12,
+              "lostExamples": []
+            },
+            "skills": {
+              "dropped": 0,
+              "fromCount": 13,
+              "toCount": 13,
+              "lostExamples": [
+                "Packaging"
+              ]
+            },
+            "tools": {
+              "dropped": 2,
+              "fromCount": 6,
+              "toCount": 4,
+              "lostExamples": [
+                "Affinity Designer"
+              ]
+            },
+            "clients": {
+              "dropped": 9,
+              "fromCount": 16,
+              "toCount": 7,
+              "lostExamples": [
+                "Adobe",
+                "Arte",
+                "McCann",
+                "AKQA",
+                "Storyboard",
+                "Iconography",
+                "Designer",
+                "Culture",
+                "Sport"
+              ]
+            }
+          }
+        },
+        {
+          "from": "RESUME_DATA_COUNT",
+          "to": "FINAL_RESUME_DATA_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 1,
+              "fromCount": 1,
+              "toCount": 0,
+              "lostExamples": [
+                "- Directed visual campaigns for luxury and lifestyle brands.\n- Led art direction for print and digital campaigns.\n- Delivered key visuals for FMCG and automotive clients.\n- Built reusable asset libraries for agency studios.\n- Brand identity and packaging for beauty and fashion labels.\n- Storyboard and style frames for motion pitches.\n- Campaign illustration for entertainment and tech launches.\n- Iconography and editorial illustration for social formats.\n- Mentoring junior designers on craft and presentation."
+              ]
+            },
+            "experience": {
+              "dropped": 9,
+              "fromCount": 12,
+              "toCount": 3,
+              "lostExamples": []
+            },
+            "tools": {
+              "dropped": 1,
+              "fromCount": 4,
+              "toCount": 3,
+              "lostExamples": []
+            }
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "stage": "RAW_TEXT_COUNT → NORMALIZED_TEXT_COUNT",
+          "section": "experience",
+          "dropped": 58,
+          "fromCount": 67,
+          "toCount": 9,
+          "lostExamples": [
+            "packaging",
+            "logos and brand assets.",
+            "- Collaborated with recognized brands including Nike",
+            "Louis Vuitton",
+            "Marvel",
+            "Cadillac",
+            "Fortune",
+            "Converse",
+            "Pantone",
+            "Adobe"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "summary",
+          "dropped": 29,
+          "fromCount": 30,
+          "toCount": 1,
+          "lostExamples": [
+            "Freelance Illustrator / Graphic Designer",
+            "Independent / Freelance · 2011 — Present",
+            "Lead Illustrator · 2011 — 2014",
+            "- Produced illustration systems for multi-market advertising.",
+            "Art Director — Illustration · 2014 — 2016",
+            "Senior Illustrator · 2016 — 2018",
+            "- Delivered key visuals for FMCG and automotive clients.",
+            "- Built reusable asset libraries for agency studios.",
+            "Freelance — Senior Art Director",
+            "Independent · 2018 — 2020"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 19,
+          "fromCount": 31,
+          "toCount": 12,
+          "lostExamples": []
+        },
+        {
+          "stage": "RAW_TEXT_COUNT → NORMALIZED_TEXT_COUNT",
+          "section": "clients",
+          "dropped": 9,
+          "fromCount": 9,
+          "toCount": 0,
+          "lostExamples": [
+            "Nike",
+            "Adobe",
+            "Louis Vuitton",
+            "Marvel",
+            "Converse",
+            "Pantone",
+            "Cadillac",
+            "Arte",
+            "Fortune"
+          ]
+        },
+        {
+          "stage": "NORMALIZED_TEXT_COUNT → SECTION_CANDIDATES_COUNT",
+          "section": "experience",
+          "dropped": 9,
+          "fromCount": 9,
+          "toCount": 0,
+          "lostExamples": [
+            "Independent / Freelance · 2011 — Present",
+            "Lead Illustrator · 2011 — 2014",
+            "Art Director — Illustration · 2014 — 2016",
+            "Senior Illustrator · 2016 — 2018",
+            "Independent · 2018 — 2020",
+            "Illustrator / Designer · 2020 — 2021",
+            "Visual Designer · 2021 — 2022",
+            "Lead Visual Designer · 2022 — 2023",
+            "Creative Director · 2023 — Present"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "languages",
+          "dropped": 9,
+          "fromCount": 11,
+          "toCount": 2,
+          "lostExamples": [
+            "Nike",
+            "Adobe",
+            "Louis Vuitton",
+            "Marvel",
+            "Converse",
+            "Pantone",
+            "Cadillac",
+            "Arte",
+            "Fortune"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "clients",
+          "dropped": 9,
+          "fromCount": 16,
+          "toCount": 7,
+          "lostExamples": [
+            "Adobe",
+            "Arte",
+            "McCann",
+            "AKQA",
+            "Storyboard",
+            "Iconography",
+            "Designer",
+            "Culture",
+            "Sport"
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 9,
+          "fromCount": 12,
+          "toCount": 3,
+          "lostExamples": []
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "education",
+          "dropped": 2,
+          "fromCount": 4,
+          "toCount": 2,
+          "lostExamples": []
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "tools",
+          "dropped": 2,
+          "fromCount": 6,
+          "toCount": 4,
+          "lostExamples": [
+            "Affinity Designer"
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "summary",
+          "dropped": 1,
+          "fromCount": 1,
+          "toCount": 0,
+          "lostExamples": [
+            "- Directed visual campaigns for luxury and lifestyle brands.\n- Led art direction for print and digital campaigns.\n- Delivered key visuals for FMCG and automotive clients.\n- Built reusable asset libraries for agency studios.\n- Brand identity and packaging for beauty and fashion labels.\n- Storyboard and style frames for motion pitches.\n- Campaign illustration for entertainment and tech launches.\n- Iconography and editorial illustration for social formats.\n- Mentoring junior designers on craft and presentation."
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "tools",
+          "dropped": 1,
+          "fromCount": 4,
+          "toCount": 3,
+          "lostExamples": []
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "skills",
+          "dropped": 0,
+          "fromCount": 13,
+          "toCount": 13,
+          "lostExamples": [
+            "Packaging"
+          ]
+        }
+      ],
+      "summary": {
+        "clients": {
+          "raw": 9,
+          "structured": 16,
+          "resumeData": 7,
+          "final": 7,
+          "rendered": 7
+        },
+        "projects": {
+          "raw": 0,
+          "structured": 0,
+          "resumeData": 2,
+          "final": 2,
+          "rendered": 2
+        }
+      }
+    },
+    {
+      "id": "creative-experience-rich",
+      "templateId": "ats",
+      "extractionMethod": "paste",
+      "rawTextLength": 714,
+      "normalizedTextLength": 696,
+      "reviewQueueSize": 8,
+      "stageTraces": {
+        "RAW_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Illustrator / Art Director"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Creative illustrator and designer with agency and freelance experience for global brands."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 21,
+            "examples": [
+              "Freelance Illustrator",
+              "Graphic Designer",
+              "Independent",
+              "Freelance",
+              "2011 — Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA — Web & Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 3,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "NORMALIZED_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Illustrator / Art Director"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 10,
+            "examples": [
+              "Creative illustrator and designer with agency and freelance experience for global brands.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Collaborated with Nike, Adobe, PlayStation, Marvel, Converse, Cadillac, Fortune, Visa, Arte and McCann.",
+              "Art Director — McCann Paris — 2018 — 2020"
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 5,
+            "examples": [
+              "Independent / Freelance · 2011 — Present",
+              "Art Director — McCann Paris — 2018 — 2020",
+              "Creative Director — BETC Agency — 2020 — 2023",
+              "Illustration — Nike projects — 2016 — 2020",
+              "Design — Adobe — 2019 — 2021"
+            ],
+            "lostExamples": [
+              "Graphic Designer",
+              "PlayStation",
+              "Marvel",
+              "Converse",
+              "Cadillac",
+              "Fortune",
+              "Visa",
+              "Arte and McCann.",
+              "- Led visual campaigns for luxury and entertainment clients."
+            ]
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA — Web & Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 3,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "SECTION_CANDIDATES_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Illustrator / Art Director"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 10,
+            "examples": [
+              "Creative illustrator and designer with agency and freelance experience for global brands.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Collaborated with Nike, Adobe, PlayStation, Marvel, Converse, Cadillac, Fortune, Visa, Arte and McCann.",
+              "Art Director — McCann Paris — 2018 — 2020"
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Independent / Freelance · 2011 — Present",
+              "Art Director — McCann Paris — 2018 — 2020",
+              "Creative Director — BETC Agency — 2020 — 2023",
+              "Illustration — Nike projects — 2016 — 2020",
+              "Design — Adobe — 2019 — 2021"
+            ]
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA — Web & Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 3,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "STRUCTURED_RESUME_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Illustrator / Art Director"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Led visual campaigns for luxury and entertainment clients."
+            ],
+            "lostExamples": [
+              "Creative illustrator and designer with agency and freelance experience for global brands.",
+              "Freelance Illustrator / Graphic Designer",
+              "Independent / Freelance · 2011 — Present",
+              "- Collaborated with Nike, Adobe, PlayStation, Marvel, Converse, Cadillac, Fortune, Visa, Arte and McCann.",
+              "Art Director — McCann Paris — 2018 — 2020",
+              "Creative Director — BETC Agency — 2020 — 2023",
+              "- Directed multidisciplinary design teams.",
+              "Illustration — Nike projects — 2016 — 2020",
+              "Design — Adobe — 2019 — 2021"
+            ]
+          },
+          "experience": {
+            "count": 16,
+            "examples": [
+              "Art Director — McCann Paris — 2018–2020",
+              "Creative Director — BETC Agency — 2020–2023",
+              "Illustrator — Creative illustrator and designer with agency and freelance experience for globa — Date à confirmer",
+              "2011 — Present — 2011–Present",
+              "2018 — 2020 — 2018–2020"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA — Web & Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 3,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 9,
+            "examples": [
+              "Nike",
+              "Converse",
+              "Marvel",
+              "Cadillac",
+              "Fortune"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Led visual campaigns for luxury and entertainment clients."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 10,
+            "examples": [
+              "Designer — McCann G. Agency — 2018–2020",
+              "Creative Director — BETC Agency — 2020–2023",
+              "2018 — 2020 — 2018–2020",
+              "2018 — BETC Agency — 2018–2020",
+              "2020 — 2023 — 2020–2023"
+            ],
+            "lostExamples": [
+              "Illustration — Nike projects — 2016–2020"
+            ]
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction",
+              "Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 2,
+            "examples": [
+              "Adobe Illustrator",
+              "Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 6,
+            "examples": [
+              "Nike",
+              "Converse",
+              "Marvel",
+              "Cadillac",
+              "Fortune"
+            ],
+            "lostExamples": [
+              "Arte",
+              "Adobe",
+              "Visa"
+            ]
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "FINAL_RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Led visual campaigns for luxury and entertainment clients."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 8,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer — Independent / Freelance — 2011–2022",
+              "Designer — McCann G. Agency — 2018–2020",
+              "Creative Director — BETC Agency — 2020–2023",
+              "2018 — 2020 — 2018–2020",
+              "2018 — BETC Agency — 2018–2020"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA — Web & Motion Design — 2011–2012"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction",
+              "Motion Design"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 1,
+            "examples": [
+              "Adobe Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 6,
+            "examples": [
+              "Nike",
+              "Converse",
+              "Marvel",
+              "Cadillac",
+              "Fortune"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        },
+        "RENDERED_DOM_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Yohann Azancot",
+              "Graphic Designer & Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "- Led visual campaigns for luxury and entertainment clients."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 8,
+            "examples": [
+              "Freelance Illustrator / Graphic Designer - Independent / Freelance - 2011-2022",
+              "Designer - McCann G. Agency - 2018-2020",
+              "Creative Director - BETC Agency - 2020-2023",
+              "2018 - 2020 - 2018-2020",
+              "2018 - BETC Agency - 2018-2020"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "LISAA - Web & Motion Design - 2011-2012"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 5,
+            "examples": [
+              "Illustration",
+              "Graphic Design",
+              "Art Direction",
+              "Motion Design",
+              "Adobe Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 1,
+            "examples": [
+              "Adobe Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 6,
+            "examples": [
+              "Nike",
+              "Converse",
+              "Marvel",
+              "Cadillac",
+              "Fortune"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        }
+      },
+      "transitions": [
+        {
+          "from": "RAW_TEXT_COUNT",
+          "to": "NORMALIZED_TEXT_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 16,
+              "fromCount": 21,
+              "toCount": 5,
+              "lostExamples": [
+                "Graphic Designer",
+                "PlayStation",
+                "Marvel",
+                "Converse",
+                "Cadillac",
+                "Fortune",
+                "Visa",
+                "Arte and McCann.",
+                "- Led visual campaigns for luxury and entertainment clients."
+              ]
+            }
+          }
+        },
+        {
+          "from": "NORMALIZED_TEXT_COUNT",
+          "to": "SECTION_CANDIDATES_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 5,
+              "fromCount": 5,
+              "toCount": 0,
+              "lostExamples": [
+                "Independent / Freelance · 2011 — Present",
+                "Art Director — McCann Paris — 2018 — 2020",
+                "Creative Director — BETC Agency — 2020 — 2023",
+                "Illustration — Nike projects — 2016 — 2020",
+                "Design — Adobe — 2019 — 2021"
+              ]
+            }
+          }
+        },
+        {
+          "from": "SECTION_CANDIDATES_COUNT",
+          "to": "STRUCTURED_RESUME_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 9,
+              "fromCount": 10,
+              "toCount": 1,
+              "lostExamples": [
+                "Creative illustrator and designer with agency and freelance experience for global brands.",
+                "Freelance Illustrator / Graphic Designer",
+                "Independent / Freelance · 2011 — Present",
+                "- Collaborated with Nike, Adobe, PlayStation, Marvel, Converse, Cadillac, Fortune, Visa, Arte and McCann.",
+                "Art Director — McCann Paris — 2018 — 2020",
+                "Creative Director — BETC Agency — 2020 — 2023",
+                "- Directed multidisciplinary design teams.",
+                "Illustration — Nike projects — 2016 — 2020",
+                "Design — Adobe — 2019 — 2021"
+              ]
+            }
+          }
+        },
+        {
+          "from": "STRUCTURED_RESUME_COUNT",
+          "to": "RESUME_DATA_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 6,
+              "fromCount": 16,
+              "toCount": 10,
+              "lostExamples": [
+                "Illustration — Nike projects — 2016–2020"
+              ]
+            },
+            "clients": {
+              "dropped": 3,
+              "fromCount": 9,
+              "toCount": 6,
+              "lostExamples": [
+                "Arte",
+                "Adobe",
+                "Visa"
+              ]
+            }
+          }
+        },
+        {
+          "from": "RESUME_DATA_COUNT",
+          "to": "FINAL_RESUME_DATA_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 2,
+              "fromCount": 10,
+              "toCount": 8,
+              "lostExamples": []
+            },
+            "tools": {
+              "dropped": 1,
+              "fromCount": 2,
+              "toCount": 1,
+              "lostExamples": []
+            }
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "stage": "RAW_TEXT_COUNT → NORMALIZED_TEXT_COUNT",
+          "section": "experience",
+          "dropped": 16,
+          "fromCount": 21,
+          "toCount": 5,
+          "lostExamples": [
+            "Graphic Designer",
+            "PlayStation",
+            "Marvel",
+            "Converse",
+            "Cadillac",
+            "Fortune",
+            "Visa",
+            "Arte and McCann.",
+            "- Led visual campaigns for luxury and entertainment clients."
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "summary",
+          "dropped": 9,
+          "fromCount": 10,
+          "toCount": 1,
+          "lostExamples": [
+            "Creative illustrator and designer with agency and freelance experience for global brands.",
+            "Freelance Illustrator / Graphic Designer",
+            "Independent / Freelance · 2011 — Present",
+            "- Collaborated with Nike, Adobe, PlayStation, Marvel, Converse, Cadillac, Fortune, Visa, Arte and McCann.",
+            "Art Director — McCann Paris — 2018 — 2020",
+            "Creative Director — BETC Agency — 2020 — 2023",
+            "- Directed multidisciplinary design teams.",
+            "Illustration — Nike projects — 2016 — 2020",
+            "Design — Adobe — 2019 — 2021"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 6,
+          "fromCount": 16,
+          "toCount": 10,
+          "lostExamples": [
+            "Illustration — Nike projects — 2016–2020"
+          ]
+        },
+        {
+          "stage": "NORMALIZED_TEXT_COUNT → SECTION_CANDIDATES_COUNT",
+          "section": "experience",
+          "dropped": 5,
+          "fromCount": 5,
+          "toCount": 0,
+          "lostExamples": [
+            "Independent / Freelance · 2011 — Present",
+            "Art Director — McCann Paris — 2018 — 2020",
+            "Creative Director — BETC Agency — 2020 — 2023",
+            "Illustration — Nike projects — 2016 — 2020",
+            "Design — Adobe — 2019 — 2021"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "clients",
+          "dropped": 3,
+          "fromCount": 9,
+          "toCount": 6,
+          "lostExamples": [
+            "Arte",
+            "Adobe",
+            "Visa"
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 2,
+          "fromCount": 10,
+          "toCount": 8,
+          "lostExamples": []
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "tools",
+          "dropped": 1,
+          "fromCount": 2,
+          "toCount": 1,
+          "lostExamples": []
+        }
+      ],
+      "summary": {
+        "clients": {
+          "raw": 0,
+          "structured": 9,
+          "resumeData": 6,
+          "final": 6,
+          "rendered": 6
+        },
+        "projects": {
+          "raw": 0,
+          "structured": 0,
+          "resumeData": 0,
+          "final": 0,
+          "rendered": 0
+        }
+      }
+    },
+    {
+      "id": "designer-cv-rich",
+      "templateId": "ats",
+      "extractionMethod": "paste",
+      "rawTextLength": 910,
+      "normalizedTextLength": 855,
+      "reviewQueueSize": 11,
+      "stageTraces": {
+        "RAW_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Alex Brand",
+              "Brand Designer & UI Designer"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Brand and interface designer crafting visual systems for global clients."
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 10,
+            "examples": [
+              "Senior Brand Designer",
+              "Studio North",
+              "2019 — Present",
+              "- Led brand identity and UI design for cultural and tech clients.",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "RISD — Graphic Design",
+              "2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Branding",
+              "UI Design",
+              "Typography",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Figma",
+              "Illustrator",
+              "Photoshop"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "English — fluent",
+              "French — conversational"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 4,
+            "examples": [
+              "Nike",
+              "Adobe",
+              "Spotify",
+              "Airbnb"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Nike Air Max campaign — packaging and retail visuals",
+              "Adobe Creative Cloud rebrand — UI design system"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 1,
+            "examples": [
+              "https://alexbrand.design"
+            ],
+            "lostExamples": []
+          }
+        },
+        "NORMALIZED_TEXT_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Alex Brand",
+              "Brand Designer & UI Designer"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 2,
+            "examples": [
+              "Brand and interface designer crafting visual systems for global clients.",
+              "Nike · Adobe · Spotify · Airbnb"
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 10,
+            "examples": [
+              "Senior Brand Designer",
+              "Studio North",
+              "2019 — Present",
+              "- Led brand identity and UI design for cultural and tech clients.",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "RISD — Graphic Design",
+              "2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Branding",
+              "UI Design",
+              "Typography",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Figma",
+              "Illustrator",
+              "Photoshop"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "English — fluent",
+              "French — conversational"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Nike",
+              "Adobe",
+              "Spotify",
+              "Airbnb"
+            ]
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Nike Air Max campaign — packaging and retail visuals",
+              "Adobe Creative Cloud rebrand — UI design system"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 1,
+            "examples": [
+              "https://alexbrand.design"
+            ],
+            "lostExamples": []
+          }
+        },
+        "SECTION_CANDIDATES_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Alex Brand",
+              "Brand Designer & UI Designer"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 2,
+            "examples": [
+              "Brand and interface designer crafting visual systems for global clients.",
+              "Nike · Adobe · Spotify · Airbnb"
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 4,
+            "examples": [
+              "Senior Brand Designer",
+              "Studio North",
+              "2019 — Present",
+              "- Led brand identity and UI design for cultural and tech clients."
+            ],
+            "lostExamples": [
+              "Solo show — Galerie Perrotin, Paris · 2023"
+            ]
+          },
+          "education": {
+            "count": 2,
+            "examples": [
+              "RISD — Graphic Design",
+              "2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Branding",
+              "UI Design",
+              "Typography",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Figma",
+              "Illustrator",
+              "Photoshop"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "English — fluent",
+              "French — conversational"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 2,
+            "examples": [
+              "Nike Air Max campaign — packaging and retail visuals",
+              "Adobe Creative Cloud rebrand — UI design system"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "https://alexbrand.design"
+            ]
+          }
+        },
+        "STRUCTURED_RESUME_COUNT": {
+          "identity": {
+            "count": 2,
+            "examples": [
+              "Alex Brand",
+              "Brand Designer & UI Designer"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "alex@studio.com · behance.net/alexbrand · dribbble.com/alexbrand\nBrand and interface designer crafting visual systems for global clients.\nSolo show — Galerie Perrotin, Paris · 2023\n- Led brand identity and UI design for cultural and tech clients."
+            ],
+            "lostExamples": [
+              "Nike · Adobe · Spotify · Airbnb"
+            ]
+          },
+          "experience": {
+            "count": 10,
+            "examples": [
+              "Digital Design — ADC Young Guns — 2021–Present",
+              "d&ad Pencil — Brand identity — 2022–Present",
+              "Adc Young Guns — Digital design — 2021–Present",
+              "Solo Show — Galerie Perrotin, Paris — 2023–Present",
+              "Group Exhibition — MoMA Design Store — 2022–Present"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "RISD — Graphic Design · 2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 4,
+            "examples": [
+              "Branding",
+              "UI Design",
+              "Typography",
+              "Packaging"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 1,
+            "examples": [
+              "Nike · Adobe · Spotify · Airbnb"
+            ],
+            "lostExamples": [
+              "Figma",
+              "Illustrator",
+              "Photoshop"
+            ]
+          },
+          "languages": {
+            "count": 1,
+            "examples": [
+              "English — fluent"
+            ],
+            "lostExamples": [
+              "French — conversational"
+            ]
+          },
+          "clients": {
+            "count": 6,
+            "examples": [
+              "Adobe",
+              "Nike",
+              "Spotify",
+              "Airbnb",
+              "Brand"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 3,
+            "examples": [
+              "packaging and retail visuals — Nike",
+              "UI design system — Adobe",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 1,
+            "examples": [
+              "https://behance.net/alexbrand"
+            ],
+            "lostExamples": []
+          }
+        },
+        "RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 1,
+            "examples": [
+              "Alex Brand"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 1,
+            "examples": [
+              "Brand and interface designer crafting visual systems for global clients. Nike · Adobe · Spotify · Airbnb Nike Air Max campaign — packaging and retail visuals Adobe Creative Cloud rebrand — UI design system D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Digital Design — ADC Young Guns — 2021–Present",
+              "d&ad Pencil — Brand identity — 2022–Present",
+              "Studio North — 2019 — 2019–2019"
+            ],
+            "lostExamples": [
+              "Solo Show — Galerie Perrotin, Paris — 2023–Present",
+              "Designer — 2019–Present"
+            ]
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "RISD — Graphic Design — 2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 5,
+            "examples": [
+              "Graphic Design",
+              "Brand Identity",
+              "Typography",
+              "Branding",
+              "UI Design"
+            ],
+            "lostExamples": [
+              "Packaging"
+            ]
+          },
+          "tools": {
+            "count": 4,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "Figma",
+              "Illustrator"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 3,
+            "examples": [
+              "English — fluent",
+              "French — fluent",
+              "French — native"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 4,
+            "examples": [
+              "Nike",
+              "Spotify",
+              "Adobe",
+              "Airbnb"
+            ],
+            "lostExamples": [
+              "Brand",
+              "Paris"
+            ]
+          },
+          "projects": {
+            "count": 3,
+            "examples": [
+              "packaging and retail visuals — Nike",
+              "UI design system — Adobe",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 4,
+            "examples": [
+              "Behance — https://behance.net/alexbrand",
+              "Dribbble — https://dribbble.com/alexbrand",
+              "Portfolio — https://alexbrand.design",
+              "https://behance.net/alexbrand"
+            ],
+            "lostExamples": []
+          }
+        },
+        "FINAL_RESUME_DATA_COUNT": {
+          "identity": {
+            "count": 1,
+            "examples": [
+              "Alex Brand"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Brand and interface designer crafting visual systems for global clients. Nike · Adobe · Spotify · Airbnb Nike Air Max campaign — packaging and retail visuals Adobe Creative Cloud rebrand — UI design system D&AD Pencil — Brand identity · 2022"
+            ]
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Digital Design — ADC Young Guns — 2021–Present",
+              "d&ad Pencil — Brand identity — 2022–Present",
+              "Studio North — 2019 — 2019–2019"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "RISD — Graphic Design — 2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 6,
+            "examples": [
+              "Graphic Design",
+              "Packaging",
+              "Brand Identity",
+              "Typography",
+              "Branding"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "Figma"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "English — fluent",
+              "French — fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 4,
+            "examples": [
+              "Nike",
+              "Spotify",
+              "Adobe",
+              "Airbnb"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 3,
+            "examples": [
+              "packaging and retail visuals — Nike",
+              "UI design system — Adobe",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": [
+              "Behance — https://behance.net/alexbrand",
+              "Dribbble — https://dribbble.com/alexbrand",
+              "Portfolio — https://alexbrand.design",
+              "https://behance.net/alexbrand"
+            ]
+          }
+        },
+        "RENDERED_DOM_COUNT": {
+          "identity": {
+            "count": 1,
+            "examples": [
+              "Alex Brand"
+            ],
+            "lostExamples": []
+          },
+          "summary": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          },
+          "experience": {
+            "count": 3,
+            "examples": [
+              "Digital Design - ADC Young Guns - 2021-Present",
+              "d&ad Pencil - Brand identity - 2022-Present",
+              "Studio North - 2019 - 2019-2019"
+            ],
+            "lostExamples": []
+          },
+          "education": {
+            "count": 1,
+            "examples": [
+              "RISD - Graphic Design - 2018"
+            ],
+            "lostExamples": []
+          },
+          "skills": {
+            "count": 9,
+            "examples": [
+              "Graphic Design",
+              "Packaging",
+              "Brand Identity",
+              "Typography",
+              "Branding"
+            ],
+            "lostExamples": []
+          },
+          "tools": {
+            "count": 3,
+            "examples": [
+              "Adobe Illustrator",
+              "Photoshop",
+              "Figma"
+            ],
+            "lostExamples": []
+          },
+          "languages": {
+            "count": 2,
+            "examples": [
+              "English - fluent",
+              "French - fluent"
+            ],
+            "lostExamples": []
+          },
+          "clients": {
+            "count": 4,
+            "examples": [
+              "Nike",
+              "Spotify",
+              "Adobe",
+              "Airbnb"
+            ],
+            "lostExamples": []
+          },
+          "projects": {
+            "count": 3,
+            "examples": [
+              "packaging and retail visuals — Nike",
+              "UI design system — Adobe",
+              "D&AD Pencil — Brand identity · 2022"
+            ],
+            "lostExamples": []
+          },
+          "portfolio": {
+            "count": 0,
+            "examples": [],
+            "lostExamples": []
+          }
+        }
+      },
+      "transitions": [
+        {
+          "from": "RAW_TEXT_COUNT",
+          "to": "NORMALIZED_TEXT_COUNT",
+          "losses": {
+            "clients": {
+              "dropped": 4,
+              "fromCount": 4,
+              "toCount": 0,
+              "lostExamples": [
+                "Nike",
+                "Adobe",
+                "Spotify",
+                "Airbnb"
+              ]
+            }
+          }
+        },
+        {
+          "from": "NORMALIZED_TEXT_COUNT",
+          "to": "SECTION_CANDIDATES_COUNT",
+          "losses": {
+            "experience": {
+              "dropped": 6,
+              "fromCount": 10,
+              "toCount": 4,
+              "lostExamples": [
+                "Solo show — Galerie Perrotin, Paris · 2023"
+              ]
+            },
+            "portfolio": {
+              "dropped": 1,
+              "fromCount": 1,
+              "toCount": 0,
+              "lostExamples": [
+                "https://alexbrand.design"
+              ]
+            }
+          }
+        },
+        {
+          "from": "SECTION_CANDIDATES_COUNT",
+          "to": "STRUCTURED_RESUME_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 1,
+              "fromCount": 2,
+              "toCount": 1,
+              "lostExamples": [
+                "Nike · Adobe · Spotify · Airbnb"
+              ]
+            },
+            "education": {
+              "dropped": 1,
+              "fromCount": 2,
+              "toCount": 1,
+              "lostExamples": []
+            },
+            "tools": {
+              "dropped": 2,
+              "fromCount": 3,
+              "toCount": 1,
+              "lostExamples": [
+                "Figma",
+                "Illustrator",
+                "Photoshop"
+              ]
+            },
+            "languages": {
+              "dropped": 1,
+              "fromCount": 2,
+              "toCount": 1,
+              "lostExamples": [
+                "French — conversational"
+              ]
+            }
+          }
+        },
+        {
+          "from": "STRUCTURED_RESUME_COUNT",
+          "to": "RESUME_DATA_COUNT",
+          "losses": {
+            "identity": {
+              "dropped": 1,
+              "fromCount": 2,
+              "toCount": 1,
+              "lostExamples": []
+            },
+            "experience": {
+              "dropped": 7,
+              "fromCount": 10,
+              "toCount": 3,
+              "lostExamples": [
+                "Solo Show — Galerie Perrotin, Paris — 2023–Present",
+                "Designer — 2019–Present"
+              ]
+            },
+            "skills": {
+              "dropped": 0,
+              "fromCount": 4,
+              "toCount": 5,
+              "lostExamples": [
+                "Packaging"
+              ]
+            },
+            "clients": {
+              "dropped": 2,
+              "fromCount": 6,
+              "toCount": 4,
+              "lostExamples": [
+                "Brand",
+                "Paris"
+              ]
+            }
+          }
+        },
+        {
+          "from": "RESUME_DATA_COUNT",
+          "to": "FINAL_RESUME_DATA_COUNT",
+          "losses": {
+            "summary": {
+              "dropped": 1,
+              "fromCount": 1,
+              "toCount": 0,
+              "lostExamples": [
+                "Brand and interface designer crafting visual systems for global clients. Nike · Adobe · Spotify · Airbnb Nike Air Max campaign — packaging and retail visuals Adobe Creative Cloud rebrand — UI design system D&AD Pencil — Brand identity · 2022"
+              ]
+            },
+            "tools": {
+              "dropped": 1,
+              "fromCount": 4,
+              "toCount": 3,
+              "lostExamples": []
+            },
+            "languages": {
+              "dropped": 1,
+              "fromCount": 3,
+              "toCount": 2,
+              "lostExamples": []
+            },
+            "portfolio": {
+              "dropped": 4,
+              "fromCount": 4,
+              "toCount": 0,
+              "lostExamples": [
+                "Behance — https://behance.net/alexbrand",
+                "Dribbble — https://dribbble.com/alexbrand",
+                "Portfolio — https://alexbrand.design",
+                "https://behance.net/alexbrand"
+              ]
+            }
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "experience",
+          "dropped": 7,
+          "fromCount": 10,
+          "toCount": 3,
+          "lostExamples": [
+            "Solo Show — Galerie Perrotin, Paris — 2023–Present",
+            "Designer — 2019–Present"
+          ]
+        },
+        {
+          "stage": "NORMALIZED_TEXT_COUNT → SECTION_CANDIDATES_COUNT",
+          "section": "experience",
+          "dropped": 6,
+          "fromCount": 10,
+          "toCount": 4,
+          "lostExamples": [
+            "Solo show — Galerie Perrotin, Paris · 2023"
+          ]
+        },
+        {
+          "stage": "RAW_TEXT_COUNT → NORMALIZED_TEXT_COUNT",
+          "section": "clients",
+          "dropped": 4,
+          "fromCount": 4,
+          "toCount": 0,
+          "lostExamples": [
+            "Nike",
+            "Adobe",
+            "Spotify",
+            "Airbnb"
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "portfolio",
+          "dropped": 4,
+          "fromCount": 4,
+          "toCount": 0,
+          "lostExamples": [
+            "Behance — https://behance.net/alexbrand",
+            "Dribbble — https://dribbble.com/alexbrand",
+            "Portfolio — https://alexbrand.design",
+            "https://behance.net/alexbrand"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "tools",
+          "dropped": 2,
+          "fromCount": 3,
+          "toCount": 1,
+          "lostExamples": [
+            "Figma",
+            "Illustrator",
+            "Photoshop"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "clients",
+          "dropped": 2,
+          "fromCount": 6,
+          "toCount": 4,
+          "lostExamples": [
+            "Brand",
+            "Paris"
+          ]
+        },
+        {
+          "stage": "NORMALIZED_TEXT_COUNT → SECTION_CANDIDATES_COUNT",
+          "section": "portfolio",
+          "dropped": 1,
+          "fromCount": 1,
+          "toCount": 0,
+          "lostExamples": [
+            "https://alexbrand.design"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "summary",
+          "dropped": 1,
+          "fromCount": 2,
+          "toCount": 1,
+          "lostExamples": [
+            "Nike · Adobe · Spotify · Airbnb"
+          ]
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "education",
+          "dropped": 1,
+          "fromCount": 2,
+          "toCount": 1,
+          "lostExamples": []
+        },
+        {
+          "stage": "SECTION_CANDIDATES_COUNT → STRUCTURED_RESUME_COUNT",
+          "section": "languages",
+          "dropped": 1,
+          "fromCount": 2,
+          "toCount": 1,
+          "lostExamples": [
+            "French — conversational"
+          ]
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "identity",
+          "dropped": 1,
+          "fromCount": 2,
+          "toCount": 1,
+          "lostExamples": []
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "summary",
+          "dropped": 1,
+          "fromCount": 1,
+          "toCount": 0,
+          "lostExamples": [
+            "Brand and interface designer crafting visual systems for global clients. Nike · Adobe · Spotify · Airbnb Nike Air Max campaign — packaging and retail visuals Adobe Creative Cloud rebrand — UI design system D&AD Pencil — Brand identity · 2022"
+          ]
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "tools",
+          "dropped": 1,
+          "fromCount": 4,
+          "toCount": 3,
+          "lostExamples": []
+        },
+        {
+          "stage": "RESUME_DATA_COUNT → FINAL_RESUME_DATA_COUNT",
+          "section": "languages",
+          "dropped": 1,
+          "fromCount": 3,
+          "toCount": 2,
+          "lostExamples": []
+        },
+        {
+          "stage": "STRUCTURED_RESUME_COUNT → RESUME_DATA_COUNT",
+          "section": "skills",
+          "dropped": 0,
+          "fromCount": 4,
+          "toCount": 5,
+          "lostExamples": [
+            "Packaging"
+          ]
+        }
+      ],
+      "summary": {
+        "clients": {
+          "raw": 4,
+          "structured": 6,
+          "resumeData": 4,
+          "final": 4,
+          "rendered": 4
+        },
+        "projects": {
+          "raw": 2,
+          "structured": 3,
+          "resumeData": 3,
+          "final": 3,
+          "rendered": 3
+        }
+      }
+    }
+  ]
+}

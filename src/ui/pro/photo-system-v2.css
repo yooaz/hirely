@@ -1,0 +1,90 @@
+/**
+ * PHOTO_SYSTEM_V2 — safe zone layout (no overlap with text).
+ */
+
+.cv.cv--with-photo .cvPhotoWrap,
+.cv.cv--with-photo .cvPhotoWrap--safe {
+  display: block !important;
+  overflow: hidden !important;
+  flex-shrink: 0;
+  position: relative;
+  isolation: isolate;
+  width: 88px;
+  height: 88px;
+  max-width: 88px;
+  max-height: 88px;
+  margin: 0 0 12px;
+  border-radius: 50%;
+}
+
+.cv.cv--with-photo .cvPhotoWrap .cvPhoto,
+.cv.cv--with-photo .cvPhoto {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50%;
+  transform: none !important;
+  transform-origin: center center !important;
+}
+
+.cv.cv--with-photo .cvHead--grid .cvPhotoWrap {
+  justify-self: end;
+  margin: 0 0 0 12px;
+}
+
+.cv.cv--with-photo .cvHead--grid {
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.cv.cv--with-photo .cvHead--split .cvPhotoWrap {
+  margin-right: 12px;
+}
+
+.cv.cv--with-photo .cvHead--center .cvPhotoWrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.export-pdf .cv.cv--with-photo .cvPhotoWrap,
+body.export-pdf-v2 .cv.cv--with-photo .cvPhotoWrap {
+  display: block !important;
+  overflow: hidden !important;
+  width: 88px !important;
+  height: 88px !important;
+  max-width: 88px !important;
+  margin: 0 auto 12px !important;
+  border-radius: 50% !important;
+}
+
+body.export-pdf .cv.cv--with-photo .cvPhoto,
+body.export-pdf-v2 .cv.cv--with-photo .cvPhoto {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+body.export-pdf .cv:not(.cv--with-photo) .cvPhotoWrap,
+body.export-pdf .cv:not(.cv--with-photo) .cvPhoto,
+body.export-pdf-v2 .cv:not(.cv--with-photo) .cvPhotoWrap,
+body.export-pdf-v2 .cv:not(.cv--with-photo) .cvPhoto {
+  display: none !important;
+}
+
+.cv.cv--with-photo .cvHead--ats-recruiter .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--mckinsey .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--apple-minimal .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--classic-corporate .cvPhotoWrap {
+  float: none;
+}
+
+.cv.cv--with-photo .cvHead:has(.cvPhotoWrap) .cvName,
+.cv.cv--with-photo .cvHead:has(.cvPhotoWrap) .cvTitle {
+  min-width: 0;
+}

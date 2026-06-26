@@ -1,0 +1,42 @@
+---
+description: Scanned PDFs — nativeTextLength 0 is normal; OCR usability drives import decision
+alwaysApply: true
+---
+
+# Scanned PDF — native text is not a stop condition
+
+For **scanned / image-only PDFs**, `nativeTextLength === 0` (and `pdfJsTotalLength === 0`) is **expected and normal**.
+
+## Hard rules
+
+1. **Never** route to paste, `IMPORT_NEEDS_PASTE`, or block import **solely** because native text is zero.
+2. **Never** return `IMPORT_NEEDS_PASTE` after `OCR_DONE` when OCR output is usable — `guardPasteImportResult` / `logImportFinal` enforce this; discarding OCR then asking for paste is a product bug.
+3. **Final import decision** must use **OCR output usability only** — not native text availability (`resolveFinalImportState` in `ocr-import-usability.js`).
+   - OCR text length
+   - line / word counts
+   - page coverage
+   - confidence (when available)
+3. `PDF_IMAGE_ONLY` is a **routing label** (scan detected → run OCR → continue), **not** a paste failure by itself.
+4. Native text thresholds (300 chars) apply only when a **usable native text layer** exists.
+
+## Correct fallback ladder
+
+1. Native text if good (≥ 300 chars)
+2. OCR auto
+3. Exact transcription auto (exact mode)
+4. Structured parse from OCR (structured mode)
+5. Recovery UI if parse quality is weak
+6. Manual paste **only** if OCR truly fails / is unusable
+
+## Implementation anchors
+
+- `src/core/import/ocr-import-usability.js` — `assessOcrImportUsability`, `resolveFinalImportState`, `importMustNotPasteAfterUsableOcr`
+- `src/core/import/import-decision-final.js` — `resolveImportDecision`
+- `src/core/import/universal-import-pipeline.js` — `resolveUniversalImportDecision`
+- `src/core/extraction/pdf-extraction-debug.js` — `resolveImportNeedsPasteReason`, `needsPaste`
+
+## Verification
+
+```bash
+npm run qa:pdf-image-ocr-decision
+```

@@ -1,0 +1,221 @@
+/**
+ * Art Director Portfolio — luxury portfolio document (not a classic CV).
+ * Hero · clients · projects · awards · press · experience · education · links.
+ */
+
+.cv.template-art-director-portfolio {
+  --adp-ink: #141414;
+  --adp-muted: #5c5c5c;
+  --adp-line: #e6e0d6;
+  --adp-accent: #8b7355;
+  --adp-paper: #f7f4ef;
+  --adp-display: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --adp-body: 'DM Sans', Inter, system-ui, sans-serif;
+  font-family: var(--adp-body);
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--adp-ink);
+  background: var(--adp-paper);
+}
+
+.cv.template-art-director-portfolio .cvInner.cvLayout-art-director-portfolio {
+  padding: 0;
+}
+
+.cv.template-art-director-portfolio .cvAdpHero,
+.cv.template-art-director-portfolio .cvHead--art-director-portfolio {
+  padding: 56px 56px 40px;
+  background: var(--adp-ink);
+  color: #f7f4ef;
+  border-bottom: 4px solid var(--adp-accent);
+}
+
+.cv.template-art-director-portfolio .cvAdpHero .cvName {
+  font-family: var(--adp-display);
+  font-size: 40pt;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.cv.template-art-director-portfolio .cvAdpHero .cvTitle {
+  font-family: var(--adp-body);
+  font-size: 10pt;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4c4b0;
+  margin: 14px 0 0;
+}
+
+.cv.template-art-director-portfolio .cvAdpHeroLead {
+  font-size: 11pt;
+  line-height: 1.58;
+  color: #e8dfd2;
+  margin: 22px 0 0;
+  max-width: 62ch;
+}
+
+.cv.template-art-director-portfolio .cvAdpHeroContact {
+  font-size: 8.5pt;
+  letter-spacing: 0.06em;
+  color: #b8a998;
+  margin: 18px 0 0;
+}
+
+.cv.template-art-director-portfolio .cvMain--art-director-portfolio {
+  padding: 40px 56px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.cv.template-art-director-portfolio .cvSection {
+  margin: 0;
+  break-inside: avoid;
+}
+
+.cv.template-art-director-portfolio .cvSectionTitle {
+  font-family: var(--adp-display);
+  font-size: 14pt;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--adp-ink);
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--adp-line);
+}
+
+.cv.template-art-director-portfolio .cvSection--clients-director .cvSectionTitle,
+.cv.template-art-director-portfolio .cvSection--projects-director .cvSectionTitle {
+  font-size: 15pt;
+}
+
+.cv.template-art-director-portfolio .cvDirectorClientGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 28px;
+}
+
+.cv.template-art-director-portfolio .cvDirectorClientName {
+  font-family: var(--adp-display);
+  font-size: 15pt;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--adp-ink);
+}
+
+.cv.template-art-director-portfolio .cvDirectorProject {
+  padding-top: 16px;
+  border-top: 1px solid var(--adp-line);
+}
+
+.cv.template-art-director-portfolio .cvDirectorProject:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cv.template-art-director-portfolio .cvDirectorProjectTitle {
+  font-family: var(--adp-display);
+  font-size: 15pt;
+  margin: 0;
+}
+
+.cv.template-art-director-portfolio .cvDirectorProjectMeta {
+  font-size: 9pt;
+  color: var(--adp-muted);
+  margin: 6px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.cv.template-art-director-portfolio .cvAdpAward,
+.cv.template-art-director-portfolio .cvAdpPress {
+  font-family: var(--adp-display);
+  font-size: 11.5pt;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: var(--adp-ink);
+}
+
+.cv.template-art-director-portfolio .cvExpList--airy .cvExpEntry {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--adp-line);
+}
+
+.cv.template-art-director-portfolio .cvExpRole {
+  font-family: var(--adp-display);
+  font-size: 12pt;
+  margin: 0;
+}
+
+.cv.template-art-director-portfolio .cvExpCompany,
+.cv.template-art-director-portfolio .cvExpDates {
+  font-size: 8.75pt;
+  color: var(--adp-muted);
+  margin: 4px 0 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cv.template-art-director-portfolio .cvExpBullet {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 6px 0 0;
+}
+
+.cv.template-art-director-portfolio .cvEduSchool {
+  font-family: var(--adp-display);
+  font-size: 12pt;
+  margin: 0;
+}
+
+.cv.template-art-director-portfolio .cvEduProgram,
+.cv.template-art-director-portfolio .cvEduDates,
+.cv.template-art-director-portfolio .cvEduLine {
+  font-size: 9pt;
+  color: var(--adp-muted);
+  margin: 4px 0 0;
+}
+
+.cv.template-art-director-portfolio .cvAdpLinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+}
+
+.cv.template-art-director-portfolio .cvAdpLinkRow {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--adp-line);
+}
+
+.cv.template-art-director-portfolio .cvAdpLinkLabel {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--adp-accent);
+}
+
+.cv.template-art-director-portfolio .cvAdpLinkUrl {
+  font-size: 9pt;
+  color: var(--adp-ink);
+}
+
+.cv.template-art-director-portfolio .cvClientChip,
+.cv.template-art-director-portfolio .cvSkillChip,
+.cv.template-art-director-portfolio .cvProgress,
+.cv.template-art-director-portfolio:not(.cv--with-photo) .cvPhoto,
+.cv.template-art-director-portfolio:not(.cv--with-photo) .cvPhotoWrap {
+  display: none !important;
+}
+
+.tplMiniWrap--art-director-portfolio {
+  border-bottom: 4px solid #8b7355;
+  background: #141414;
+}

@@ -1,0 +1,517 @@
+/* Hirely Restore — foundation correction (loads last) */
+
+:root {
+  --restore-intel: #0f1117;
+  --restore-intel-soft: #1a1f26;
+  --restore-accent: #4f6bff;
+  --restore-col-left: 300px;
+  --restore-col-intel: 320px;
+  --restore-doc: 800px;
+}
+
+/* —— Kill failed minimalism / phase hiding —— */
+html.stable-mode[data-hp-phase="upload"] .workspaceGrid,
+html.stable-mode[data-hp-phase="analyze"] .workspaceGrid,
+html.stable-mode[data-hp-phase="transform"] .workspaceGrid,
+html.stable-mode[data-hp-phase="preview"] .workspaceGrid,
+html.stable-mode[data-hp-phase="export"] .workspaceGrid {
+  grid-template-columns: var(--restore-col-left) minmax(0, 1fr) var(--restore-col-intel) !important;
+  max-width: 1440px !important;
+  justify-content: stretch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html.stable-mode[data-hp-phase="upload"] .col-preview,
+html.stable-mode[data-hp-phase="upload"] .col-intel,
+html.stable-mode[data-hp-phase="preview"] .col-upload,
+html.stable-mode[data-hp-phase="preview"] .col-intel,
+html.stable-mode[data-hp-phase="export"] .col-upload,
+html.stable-mode[data-hp-phase="export"] .col-intel {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+html.stable-mode .templatesBand {
+  opacity: 1 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin-top: 20px !important;
+  padding: 16px 0 0 !important;
+  border-top: 1px solid #dde2e8 !important;
+}
+
+html.stable-mode .cvCanvas {
+  animation: none !important;
+}
+
+html.stable-mode .uploadAdvanced {
+  display: none !important;
+}
+
+/* Neutralize premium/elite phase hiding */
+html.stable-mode[data-hp-phase="upload"] .tabRow,
+html.stable-mode[data-hp-phase="analyze"] .tabRow,
+html.stable-mode[data-hp-phase="transform"] .tabRow,
+html.stable-mode[data-hp-phase="upload"] #proToolbar,
+html.stable-mode[data-hp-phase="analyze"] #proToolbar {
+  display: flex !important;
+}
+
+html.stable-mode .col-intel.scorePanel,
+html.stable-mode .col-intel {
+  background: linear-gradient(165deg, var(--restore-intel-soft) 0%, var(--restore-intel) 55%) !important;
+}
+
+html.stable-mode .cvPage .cvExp {
+  border-bottom: 1px solid #f0f1f3 !important;
+}
+
+html.stable-mode .cvPage .cvSection h3 {
+  border-bottom: 1px solid #e8eaed !important;
+}
+
+html.stable-mode .transformRail {
+  max-width: 1440px;
+}
+
+/* —— Page: functional, not landing-page empty —— */
+html.stable-mode body {
+  background: #f3f4f6 !important;
+}
+
+html.stable-mode .prepSection .sectionHead {
+  display: block !important;
+  margin-bottom: 12px;
+}
+
+html.stable-mode .prepSection .sectionHead h2 {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f1117;
+}
+
+html.stable-mode .prepSection .sectionHead .small {
+  font-size: 13px;
+  color: #5c6570;
+}
+
+/* —— Hero: compact + high impact (classic) —— */
+html.stable-mode .hero.hero--compact {
+  padding: 28px 20px 20px;
+  text-align: center;
+}
+
+html.stable-mode .hero .kicker {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+html.stable-mode .hero h1 {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: clamp(2.25rem, 5vw, 3.25rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  max-width: none !important;
+}
+
+html.stable-mode .hero h1 .grad {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-style: normal !important;
+  background: linear-gradient(90deg, #4f6bff, #7c5cff) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+html.stable-mode .heroLead {
+  font-size: 15px;
+  max-width: 52ch;
+  margin-bottom: 14px;
+}
+
+html.stable-mode .hero .actions .btn.ghost {
+  display: inline-flex !important;
+}
+
+html.stable-mode .transformRail {
+  margin: 0 auto 16px;
+  opacity: 0.9;
+}
+
+/* —— Left panel: dense, real —— */
+html.stable-mode .col-upload {
+  padding: 14px !important;
+  border-radius: 10px !important;
+  border: 1px solid #dde2e8 !important;
+  background: #fff !important;
+}
+
+html.stable-mode .uploadBand .cardHead .label,
+html.stable-mode .uploadBand .stepHint {
+  display: none !important;
+}
+
+html.stable-mode .uploadBand .cardHead h2 {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0f1117 !important;
+  margin-bottom: 10px !important;
+}
+
+html.stable-mode .field {
+  margin-bottom: 10px !important;
+}
+
+html.stable-mode .field label {
+  font-size: 11px !important;
+  margin-bottom: 4px !important;
+}
+
+html.stable-mode .metaHint,
+html.stable-mode .fileNote {
+  display: none;
+}
+
+html.stable-mode textarea#cvText {
+  min-height: 88px;
+  max-height: 120px;
+  font-size: 12px;
+}
+
+html.stable-mode textarea#jobText {
+  min-height: 56px;
+  max-height: 80px;
+}
+
+html.stable-mode .uploadBox {
+  padding: 12px !important;
+  background: #f8f9fb !important;
+  border: 1px dashed #c5cad1 !important;
+}
+
+html.stable-mode #generateBtn {
+  width: 100%;
+  border-radius: 8px !important;
+  font-weight: 600;
+}
+
+/* —— Center: CV hero —— */
+html.stable-mode .col-preview {
+  border-radius: 10px !important;
+  border: 1px solid #dde2e8 !important;
+  background: #fff !important;
+  min-height: min(82vh, 900px) !important;
+}
+
+html.stable-mode .previewChrome {
+  padding: 10px 14px !important;
+  background: #fafbfc !important;
+}
+
+html.stable-mode .previewChrome .label,
+html.stable-mode .previewChrome .workspaceMeta {
+  display: none;
+}
+
+html.stable-mode .previewChrome .workspaceHead h2 {
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: -0.02em !important;
+  color: #0f1117 !important;
+}
+
+html.stable-mode .workspacePreview {
+  background: linear-gradient(180deg, #1a1f26 0%, #0f1117 42%, #0f1117 100%) !important;
+  padding: 20px 16px 28px !important;
+  flex: 1;
+}
+
+html.stable-mode .cvStage {
+  min-height: 520px;
+  align-items: center;
+}
+
+html.stable-mode .cvCanvas {
+  max-width: var(--restore-doc);
+}
+
+html.stable-mode .cvCanvas:hover {
+  transform: translateY(-3px) !important;
+}
+
+html.stable-mode .cvPage {
+  max-width: var(--restore-doc) !important;
+  min-height: 880px !important;
+  padding: 48px 52px !important;
+  background: #fffffe !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    0 40px 80px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 2px !important;
+}
+
+html.stable-mode .cvPage .cvName {
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: 26pt !important;
+  font-weight: 400 !important;
+  line-height: 1.08 !important;
+}
+
+html.stable-mode .cvPage .cvSection {
+  margin-bottom: 20px !important;
+}
+
+html.stable-mode .cvPage .cvSection p,
+html.stable-mode .cvPage .cvSection li {
+  font-size: 10.75pt !important;
+  line-height: 1.58 !important;
+  font-weight: 400 !important;
+}
+
+html.stable-mode .transformProof {
+  margin: 0 12px 14px;
+  border-radius: 8px;
+}
+
+/* —— Dark recruiter panel (restored) —— */
+html.stable-mode .col-intel {
+  display: flex !important;
+  flex-direction: column !important;
+  background: linear-gradient(165deg, var(--restore-intel-soft) 0%, var(--restore-intel) 55%) !important;
+  color: #e8eaed !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  opacity: 1 !important;
+}
+
+html.stable-mode .col-intel .cardHead {
+  order: 0;
+}
+
+html.stable-mode .col-intel .scoreTop {
+  order: 1;
+}
+
+html.stable-mode .col-intel #bars {
+  order: 2;
+}
+
+html.stable-mode .col-intel .insightGrid {
+  order: 3;
+}
+
+html.stable-mode .col-intel #intelSummary {
+  order: 4;
+}
+
+html.stable-mode .col-intel .recruiterHeatmap {
+  order: 5;
+}
+
+html.stable-mode .col-intel #heatmapInsight {
+  order: 6;
+}
+
+html.stable-mode .col-intel .fixBox {
+  order: 7;
+}
+
+html.stable-mode .col-intel .recruiterQuote {
+  order: 8;
+}
+
+html.stable-mode .col-intel .cardHead h2 {
+  color: #94a3b8 !important;
+  font-size: 10px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+html.stable-mode .col-intel .ring {
+  border-color: var(--restore-accent) !important;
+  color: #fff !important;
+  width: 56px !important;
+  height: 56px !important;
+  font-size: 18px !important;
+}
+
+html.stable-mode .col-intel .scoreLabel {
+  color: #94a3b8 !important;
+}
+
+html.stable-mode .col-intel .scoreDelta {
+  color: #c4cad4 !important;
+  font-size: 11px !important;
+}
+
+html.stable-mode .col-intel #bars {
+  display: block !important;
+  margin: 12px 0;
+}
+
+html.stable-mode .col-intel .barRow {
+  margin-bottom: 8px;
+}
+
+html.stable-mode .col-intel .barTop {
+  color: #c4cad4;
+  font-size: 11px;
+}
+
+html.stable-mode .col-intel .bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 3px;
+}
+
+html.stable-mode .col-intel .bar i {
+  background: linear-gradient(90deg, #5d7cff, #8b6bff);
+  border-radius: 3px;
+}
+
+html.stable-mode .col-intel .insightGrid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+html.stable-mode .col-intel .insightBox {
+  background: #fff;
+  color: #0f1117;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 11px;
+}
+
+html.stable-mode .col-intel .insightBox h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 6px;
+  color: #5c6570;
+}
+
+html.stable-mode .col-intel .insightBox li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+html.stable-mode .col-intel #primaryInsight {
+  color: #f3f4f6 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+html.stable-mode .col-intel .intelLabel {
+  color: #64748b !important;
+}
+
+html.stable-mode .col-intel .fixBox {
+  background: #fff;
+  color: #0f1117;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+html.stable-mode .col-intel .fixBox .intelLabel,
+html.stable-mode .col-intel .fixBox b {
+  color: #0f1117;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+html.stable-mode .col-intel .fixBox li {
+  color: #3d4450;
+  font-size: 12px;
+  line-height: 1.45;
+  border: none;
+  padding: 6px 0;
+}
+
+html.stable-mode .col-intel .recruiterHeatmap {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.stable-mode .col-intel .recruiterHeatmap__title,
+html.stable-mode .col-intel .recruiterHeatmap__row {
+  color: #94a3b8;
+}
+
+html.stable-mode .col-intel .heatmapInsight {
+  background: rgba(79, 107, 255, 0.12);
+  color: #c7d2fe;
+  border-left-color: var(--restore-accent);
+}
+
+html.stable-mode .col-intel .recruiterQuote {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--restore-accent);
+}
+
+/* —— Tabs: functional, not giant pills —— */
+html.stable-mode .tabRow {
+  display: flex !important;
+  padding: 0 12px;
+  background: #fafbfc;
+  border-bottom: 1px solid #dde2e8;
+}
+
+html.stable-mode .tab {
+  border-radius: 0 !important;
+  font-size: 12px !important;
+  padding: 10px 14px !important;
+}
+
+html.stable-mode .btn {
+  border-radius: 8px !important;
+}
+
+html.stable-mode .btn.small {
+  border-radius: 6px !important;
+  font-size: 12px !important;
+}
+
+/* Hide duplicate template pills in toolbar */
+html.stable-mode #proToolbar .toolbarGroup:first-of-type,
+html.stable-mode #proToolbar .toolbarLabel:first-of-type {
+  display: none !important;
+}
+
+/* —— Template editorial cards —— */
+html.stable-mode .templateGallery {
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+}
+
+html.stable-mode .templateCard {
+  border-radius: 8px !important;
+}
+
+html.stable-mode .tplCardPreview {
+  height: 120px !important;
+  min-height: 120px !important;
+}
+
+@media (max-width: 1100px) {
+  html.stable-mode .workspaceGrid {
+    grid-template-columns: 1fr !important;
+  }
+  html.stable-mode .col-preview {
+    order: -1;
+  }
+}

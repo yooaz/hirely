@@ -1,0 +1,31 @@
+{
+  "version": "1",
+  "description": "Parser contract — cleaned text in, structuredResume out. No UI, no OCR.",
+  "cases": [
+    {
+      "id": "corporate",
+      "label": "Corporate CV",
+      "fixture": "tests/fixtures/consultant-cv/fixture.txt"
+    },
+    {
+      "id": "creative",
+      "label": "Creative CV",
+      "fixture": "tests/fixtures/creative-cv/fixture.txt"
+    },
+    {
+      "id": "ats",
+      "label": "ATS CV",
+      "fixture": "tests/fixtures/text-pdf/fixture.txt"
+    },
+    {
+      "id": "education-heavy",
+      "label": "Education-heavy CV",
+      "fixture": "tests/fixtures/student-cv/fixture.txt"
+    },
+    {
+      "id": "skills-heavy",
+      "label": "Skills-heavy CV",
+      "fixture": "tests/fixtures/developer-cv/fixture.txt"
+    }
+  ]
+}

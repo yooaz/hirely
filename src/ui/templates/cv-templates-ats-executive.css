@@ -1,0 +1,131 @@
+/**
+ * Executive Minimal — board-ready mono layout · tight meta · page-1 density.
+ */
+
+.cv.template-ats-executive {
+  --ex-ink: #0f172a;
+  --ex-muted: #475569;
+  --ex-line: #cbd5e1;
+  --ex-body: #1e293b;
+  font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  font-size: 9.75pt;
+  line-height: 1.44;
+  color: var(--ex-body);
+  background: #ffffff;
+}
+
+.cv.template-ats-executive .cvInner.cvLayout-ats-exec {
+  padding: 0;
+}
+
+.cv.template-ats-executive .cvHead--ats-exec {
+  padding: 36px 44px 20px;
+  border-bottom: 2px solid var(--ex-ink);
+  background: #fff;
+}
+
+.cv.template-ats-executive .cvName {
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: var(--ex-ink);
+  margin: 0;
+}
+
+.cv.template-ats-executive .cvTitle {
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ex-muted);
+  margin: 8px 0 0;
+}
+
+.cv.template-ats-executive .cvContact,
+.cv.template-ats-executive .cvMeta {
+  font-size: 8.5pt;
+  color: var(--ex-muted);
+  margin: 10px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.cv.template-ats-executive .cvMain--ats-exec {
+  padding: 22px 44px 40px;
+}
+
+.cv.template-ats-executive .cvBody--ats-exec {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.cv.template-ats-executive .cvSection {
+  margin-bottom: 16px;
+  break-inside: avoid;
+}
+
+.cv.template-ats-executive .cvSectionTitle {
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ex-ink);
+  border-bottom: 1px solid var(--ex-line);
+  padding-bottom: 5px;
+  margin: 0 0 10px;
+}
+
+.cv.template-ats-executive .cvSection--summary .cvSectionBody p {
+  font-size: 9.75pt;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 62ch;
+}
+
+.cv.template-ats-executive .cvExpItem {
+  margin-bottom: 12px;
+}
+
+.cv.template-ats-executive .cvExpRole {
+  font-weight: 600;
+  font-size: 10pt;
+  color: var(--ex-ink);
+}
+
+.cv.template-ats-executive .cvExpCompany {
+  font-size: 9.25pt;
+  color: var(--ex-muted);
+}
+
+.cv.template-ats-executive .cvExpDates {
+  font-size: 8.25pt;
+  color: var(--ex-muted);
+  letter-spacing: 0.04em;
+}
+
+.cv.template-ats-executive .cvMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 16px;
+  margin-top: 4px;
+}
+
+.cv.template-ats-executive .cvMetaGrid .cvSection {
+  margin-bottom: 0;
+}
+
+.cv.template-ats-executive .cvSection:empty,
+.cv.template-ats-executive .cvSectionBody:empty {
+  display: none !important;
+}
+
+@media print {
+  .cv.template-ats-executive .cvHead--ats-exec {
+    padding-top: 28px;
+  }
+}
+
+.tplMiniWrap--ats-executive {
+  border-left: 4px solid #1e3a5f;
+}

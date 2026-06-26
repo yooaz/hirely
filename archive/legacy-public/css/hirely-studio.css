@@ -1,0 +1,250 @@
+/* Hirely CV Studio — working V3 flow (loads last) */
+
+:root {
+  --studio-dark: #0f1117;
+  --studio-line: rgba(255, 255, 255, 0.09);
+  --studio-paper-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.75) inset,
+    0 28px 72px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* Unified right column: intel + preview = one studio */
+html.stable-mode.classic-layout .v3Studio {
+  grid-area: studio !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  background: var(--studio-dark) !important;
+  border: 1px solid #252a36 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 64px rgba(8, 10, 16, 0.4) !important;
+  overflow: hidden !important;
+}
+
+html.stable-mode.classic-layout .workspaceGrid {
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr) !important;
+  grid-template-rows: minmax(640px, auto) !important;
+  grid-template-areas: "upload studio" !important;
+  align-items: stretch !important;
+}
+
+html.stable-mode.classic-layout .v3Studio .col-intel {
+  flex: 0 0 auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--studio-line) !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+html.stable-mode.classic-layout .v3Studio .col-preview {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 480px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  padding: 0 16px 16px !important;
+}
+
+html.stable-mode.classic-layout .col-upload {
+  grid-area: upload !important;
+}
+
+/* Intel hierarchy */
+html.stable-mode.classic-layout .col-intel .cardHead h2 {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #9ca3af !important;
+}
+
+html.stable-mode.classic-layout .col-intel .scoreTop {
+  display: grid !important;
+  grid-template-columns: 112px minmax(0, 1fr) !important;
+  gap: 16px !important;
+}
+
+/* Template rail — between analysis and CV */
+html.stable-mode.classic-layout .templateRail {
+  flex: 0 0 auto;
+  padding: 12px 0 14px;
+  border-bottom: 1px solid var(--studio-line);
+  margin-bottom: 8px;
+}
+
+html.stable-mode.classic-layout .templateRailLabel {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+html.stable-mode.classic-layout .templateRail .templateGallery,
+html.stable-mode.classic-layout .templateRail .templateGallery--studio {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  overflow-x: auto !important;
+  padding: 2px 2px 8px !important;
+  scroll-snap-type: x proximity;
+}
+
+html.stable-mode.classic-layout .templateRail .templateCard {
+  flex: 0 0 156px !important;
+  min-width: 156px !important;
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--studio-line) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+}
+
+html.stable-mode.classic-layout .templateRail .templateCard.active {
+  border-color: rgba(91, 108, 255, 0.7) !important;
+  box-shadow: 0 0 0 1px rgba(91, 108, 255, 0.35) !important;
+  background: rgba(91, 108, 255, 0.12) !important;
+}
+
+html.stable-mode.classic-layout .templateRail .tplCardPreview {
+  height: 64px !important;
+  min-height: 64px !important;
+  border-bottom: 1px solid var(--studio-line);
+}
+
+html.stable-mode.classic-layout .templateRail .tplCardBody {
+  padding: 8px 10px 10px !important;
+}
+
+html.stable-mode.classic-layout .templateRail .tplCardBody strong {
+  font-size: 11px !important;
+  color: #f3f4f6 !important;
+}
+
+html.stable-mode.classic-layout .templateRail .tplCardMeta span {
+  font-size: 8px !important;
+  padding: 2px 5px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #9ca3af !important;
+  border-radius: 4px;
+}
+
+/* Hide chips when gallery active */
+html.stable-mode.classic-layout .templateRail .chip {
+  display: none !important;
+}
+
+html.stable-mode.classic-layout #proToolbar .toolbarGroup:first-of-type,
+html.stable-mode.classic-layout #proToolbar > .toolbarLabel:first-of-type,
+html.stable-mode.classic-layout #proToolbar > .toolbarSep:first-of-type {
+  display: none !important;
+}
+
+html.stable-mode.classic-layout #proToolbar {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Pro CV panel = CV hero */
+html.stable-mode.classic-layout #procv.panel.active {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+html.stable-mode.classic-layout .workspacePreview {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 420px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+html.stable-mode.classic-layout .cvStage {
+  flex: 1 1 auto !important;
+  min-height: 480px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 20px 16px 24px !important;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(255, 255, 255, 0.1), transparent 55%),
+    linear-gradient(165deg, #c4c9d2 0%, #a6aeb8 50%, #b4bac4 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+}
+
+html.stable-mode.classic-layout .cvPage {
+  width: min(794px, 100%) !important;
+  max-width: 794px !important;
+  min-height: 1123px;
+  transform: none !important;
+  box-shadow: var(--studio-paper-shadow) !important;
+}
+
+html.stable-mode.classic-layout .cvCanvas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Don't block CV with lock when document exists */
+html.stable-mode.classic-layout .workspacePreview.has-cv #proLock,
+html.stable-mode.classic-layout .workspacePreview.has-cv .proLock {
+  display: none !important;
+}
+
+html.stable-mode.classic-layout .previewChrome {
+  padding-top: 12px;
+  border-bottom: 1px solid var(--studio-line);
+  margin-bottom: 8px;
+}
+
+html.stable-mode.classic-layout .previewChrome .workspaceHead h2 {
+  color: #f9fafb !important;
+  font-size: 15px !important;
+}
+
+html.stable-mode.classic-layout .tabRow {
+  margin-bottom: 0 !important;
+}
+
+html.stable-mode.classic-layout .tabs {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--studio-line) !important;
+}
+
+html.stable-mode.classic-layout .tab.active {
+  background: #5b6cff !important;
+  color: #fff !important;
+}
+
+@media (max-width: 900px) {
+  html.stable-mode.classic-layout .workspaceGrid {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "upload" "studio" !important;
+  }
+
+  html.stable-mode.classic-layout .cvStage {
+    min-height: 360px !important;
+  }
+
+  html.stable-mode.classic-layout .cvPage {
+    min-height: auto !important;
+  }
+}

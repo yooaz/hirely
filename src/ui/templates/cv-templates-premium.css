@@ -1,0 +1,321 @@
+/* Hirely — Premium CV pack (4 styles). Sans-serif, 12-col grid, ATS-safe text. */
+
+/* —— Shared premium grid (text-only sections) —— */
+.cvLayout-premium {
+  --cv-grid-max: 720px;
+  --cv-pad-x: clamp(24px, 4vw, 44px);
+  --cv-pad-y: clamp(20px, 3.5vw, 36px);
+}
+
+.cvLayout-premium .cvMain--premium,
+.cvLayout-premium .cvMain--minimal,
+.cvLayout-premium .cvMain--magazine {
+  padding: var(--cv-pad-y) var(--cv-pad-x);
+  max-width: var(--cv-grid-max);
+}
+
+.cvLayout-premium .cvSection:empty,
+.cvLayout-premium .cvSectionCard:empty {
+  display: none;
+}
+
+.cvLayout-premium .cvSkillBars,
+.cvLayout-premium .cvSectionIcon,
+.cvLayout-premium .cvTimelineDot {
+  display: none !important;
+}
+
+/* ═══ 1 · Corporate moderne (bleu) ═══ */
+.cv.template-premium-moderne {
+  --primaryColor: #0f172a;
+  --secondaryColor: #475569;
+  --accentColor: #2563eb;
+  --surfaceColor: #ffffff;
+  --surfaceMuted: #f1f5f9;
+  --borderColor: #e2e8f0;
+  --fontSans: Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--fontSans);
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--primaryColor);
+  background: var(--surfaceColor);
+}
+
+.cv.template-premium-moderne .cvHead--premiumMod {
+  padding: var(--cv-pad-y) var(--cv-pad-x) 20px;
+  border-bottom: 1px solid var(--borderColor);
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+}
+
+.cv.template-premium-moderne .cvName {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.cv.template-premium-moderne .cvTitle {
+  font-size: 1.0625rem;
+  color: var(--secondaryColor);
+}
+
+.cv.template-premium-moderne .cvSectionCard {
+  background: var(--surfaceMuted);
+  border-color: var(--borderColor);
+}
+
+.tplMiniWrap--premium-moderne {
+  background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+  border-bottom: 2px solid #2563eb;
+}
+
+/* ═══ 2 · Minimaliste (beige · gris) ═══ */
+.cv.template-premium-classique {
+  --primaryColor: #292524;
+  --secondaryColor: #78716c;
+  --accentColor: #a8a29e;
+  --surfaceColor: #faf8f5;
+  --surfaceMuted: #f5f0e8;
+  --borderColor: #e7e5e4;
+  --fontSans: Inter, system-ui, sans-serif;
+  font-family: var(--fontSans);
+  font-size: 14px;
+  line-height: 1.68;
+  color: var(--primaryColor);
+  background: var(--surfaceColor);
+}
+
+.cv.template-premium-classique .cvHead--premiumMinimal {
+  padding: var(--cv-pad-y) var(--cv-pad-x) 16px;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.cv.template-premium-classique .cvName {
+  font-size: clamp(1.85rem, 3.5vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.cv.template-premium-classique .cvTitle {
+  font-size: 0.9375rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondaryColor);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.cv.template-premium-classique .cvMain--minimal {
+  padding-top: 28px;
+}
+
+.cv.template-premium-classique .cvSectionCard {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--borderColor);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cv.template-premium-classique .cvSectionTitle--card {
+  letter-spacing: 0.2em;
+  color: var(--secondaryColor);
+}
+
+.tplMiniWrap--premium-classique {
+  background: #faf8f5;
+  border-bottom: 1px solid #d6d3d1;
+}
+
+/* ═══ 3 · Créatif (graphique · gris foncé) ═══ */
+.cv.template-premium-creatif {
+  --primaryColor: #18181b;
+  --secondaryColor: #52525b;
+  --accentColor: #18181b;
+  --surfaceColor: #ffffff;
+  --surfaceMuted: #fafafa;
+  --borderColor: #e4e4e7;
+  --fontSans: "DM Sans", Inter, system-ui, sans-serif;
+  font-family: var(--fontSans);
+  font-size: 14px;
+  line-height: 1.58;
+  color: var(--primaryColor);
+}
+
+.cv.template-premium-creatif .cvHead--split {
+  padding: var(--cv-pad-y) var(--cv-pad-x) 18px;
+  border-bottom: 3px solid var(--primaryColor);
+}
+
+.cv.template-premium-creatif .cvName {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.cv.template-premium-creatif .cvTitle {
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+
+.cv.template-premium-creatif .cvMain--magazine {
+  padding: 24px var(--cv-pad-x) var(--cv-pad-y);
+}
+
+.cv.template-premium-creatif .cvSectionCard {
+  border-width: 2px;
+  border-color: var(--primaryColor);
+  border-radius: 0;
+}
+
+.cv.template-premium-creatif .cvClientsRibbon {
+  border-color: var(--primaryColor);
+  gap: 8px 14px;
+}
+
+.tplMiniWrap--premium-creatif {
+  background: #fff;
+  border-bottom: 4px solid #18181b;
+}
+
+/* ═══ 4 · Luxe (beige chaud · accent or) ═══ */
+.cv.template-premium-luxe {
+  --primaryColor: #1c1917;
+  --secondaryColor: #a8a29e;
+  --accentColor: #b45309;
+  --surfaceColor: #faf7f2;
+  --surfaceMuted: #f3ede4;
+  --borderColor: #e7e0d5;
+  --fontSans: Inter, system-ui, sans-serif;
+  font-family: var(--fontSans);
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--primaryColor);
+  background: var(--surfaceColor);
+}
+
+.cv.template-premium-luxe .cvHead--premiumLuxe {
+  padding: var(--cv-pad-y) var(--cv-pad-x);
+  background: #1c1917;
+  color: #faf7f2;
+  border-bottom: 3px solid var(--accentColor);
+}
+
+.cv.template-premium-luxe .cvHead--premiumLuxe .cvName {
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #faf7f2;
+}
+
+.cv.template-premium-luxe .cvHead--premiumLuxe .cvTitle {
+  color: #d6d3d1;
+  font-size: 0.875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.cv.template-premium-luxe .cvHead--premiumLuxe .cvContact,
+.cv.template-premium-luxe .cvHead--premiumLuxe .cvLead {
+  color: #e7e5e4;
+}
+
+.cv.template-premium-luxe .cvBody--luxe {
+  display: grid;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+}
+
+.cv.template-premium-luxe .cvSide--luxe {
+  padding: 28px 24px var(--cv-pad-y);
+  background: var(--surfaceMuted);
+  border-right: 1px solid var(--borderColor);
+  min-height: 100%;
+}
+
+.cv.template-premium-luxe .cvMain--luxe {
+  padding: 28px var(--cv-pad-x) var(--cv-pad-y);
+}
+
+.cv.template-premium-luxe .cvSectionCard {
+  background: transparent;
+  border: none;
+  padding: 0 0 20px;
+  margin-bottom: 8px;
+}
+
+.cv.template-premium-luxe .cvSectionTitle--card {
+  color: var(--accentColor);
+  letter-spacing: 0.18em;
+}
+
+.tplMiniWrap--premium-luxe {
+  background: linear-gradient(90deg, #f3ede4 32%, #faf7f2 32%);
+  border-bottom: 2px solid #b45309;
+}
+
+/* —— Adaptive: short vs long content —— */
+.cvLayout-premium .cvExpList--airy .cvExpEntry:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.cvLayout-premium .cvSection {
+  margin-bottom: 22px;
+}
+
+.cvLayout-premium .cvSection:last-child {
+  margin-bottom: 0;
+}
+
+.cvLayout-premium.spacing-compact .cvMain--premium,
+.cvLayout-premium.spacing-compact .cvMain--minimal {
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+
+.cvLayout-premium.spacing-compact .cvSectionCard {
+  margin-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* —— PDF export (html2pdf) —— */
+body.export-pdf .cv.template-premium-moderne,
+body.export-pdf .cv.template-premium-classique,
+body.export-pdf .cv.template-premium-creatif,
+body.export-pdf .cv.template-premium-luxe {
+  width: 794px;
+  max-width: 794px;
+  min-height: 0;
+  box-shadow: none;
+}
+
+body.export-pdf .cv.template-premium-luxe .cvBody--luxe {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+@media (max-width: 900px) {
+  .cv.template-premium-luxe .cvBody--luxe {
+    grid-template-columns: 1fr;
+  }
+  .cv.template-premium-luxe .cvSide--luxe {
+    border-right: 0;
+    border-bottom: 1px solid var(--borderColor);
+  }
+}
+
+@media print {
+  .cv.template-premium-luxe .cvBody--luxe {
+    grid-template-columns: 220px 1fr;
+  }
+}

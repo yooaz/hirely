@@ -1,0 +1,386 @@
+/* Hirely — final UI polish (visual only) */
+
+:root {
+  --ease-out: cubic-bezier(0.22, 0.8, 0.2, 1);
+  --text-tertiary: #8b939e;
+  --text-secondary: #4b5563;
+  --blue-glow: 0 8px 32px rgba(37, 99, 235, 0.14);
+}
+
+/* Typography & hierarchy */
+.hero {
+  padding: 24px 0 18px;
+}
+.heroLead {
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+.sectionHead .small,
+.card--input .uploadBox > .small:not(.fileNote),
+.card--input .field > .small:not(.status) {
+  font-size: 11px !important;
+  color: var(--text-tertiary) !important;
+  line-height: 1.45 !important;
+  max-width: 48ch;
+}
+.fileNote {
+  margin-top: 4px !important;
+}
+.prepSection {
+  padding: var(--space-lg) var(--space-xl);
+}
+.prepGrid {
+  gap: var(--space-lg);
+}
+
+/* Flow indicator */
+.flow {
+  margin-top: 18px;
+  padding: 5px;
+  max-width: min(720px, 100%);
+}
+@media (min-width: 901px) {
+  .flowArrow {
+    display: inline;
+    color: #c4c9d4;
+    font-size: 11px;
+    padding: 0 2px;
+    user-select: none;
+  }
+}
+.flowStep {
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.flowStep.done b {
+  color: var(--green);
+}
+
+/* Free / Pro hints */
+.stepHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.stepHint--free {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+.stepHint--pro {
+  color: #1d4ed8;
+  background: var(--blue-soft);
+  border: 1px solid #bfdbfe;
+}
+
+/* Scoring — recruiter impression */
+.card.dark .cardHead h2 {
+  font-size: 18px;
+}
+#verdict {
+  font-size: 17px;
+  line-height: 1.35;
+}
+.recruiterImpression {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 0 0 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.recruiterImpression svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #93c5fd;
+}
+.recruiterImpression p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #c4c9d4;
+}
+.ring {
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+.scoreHero .scoreLabel {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.fixBox b {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Profile recommendation strip */
+.profileRecBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-md);
+  padding: 10px 14px;
+  background: linear-gradient(135deg, var(--blue-soft) 0%, #fff 100%);
+  border: 1px solid #c7d9fc;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e40af;
+  line-height: 1.45;
+  box-shadow: var(--soft);
+}
+.profileRecBanner::before {
+  content: '✦';
+  font-size: 11px;
+  opacity: 0.85;
+}
+.profileRecBanner.is-empty {
+  display: none;
+}
+
+/* Workspace — design tool feel */
+.workspaceSection {
+  padding-bottom: var(--space-md);
+}
+.workspaceZone {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl) !important;
+}
+.workspaceHead {
+  margin-bottom: var(--space-md);
+}
+.workspaceHead h2 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.editHint {
+  font-size: 11px !important;
+  color: var(--text-tertiary) !important;
+}
+#proToolbar.workspaceToolbar {
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
+}
+#templateButtons {
+  max-width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+#templateButtons .chip {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.templateRec {
+  margin-left: auto;
+}
+.chip--rec {
+  border-color: #60a5fa !important;
+  background: linear-gradient(180deg, #eff6ff, #fff) !important;
+  box-shadow: 0 0 0 1px #bfdbfe, var(--blue-glow) !important;
+}
+.chip .recTag {
+  color: #2563eb;
+}
+
+/* CV canvas — A4 paper */
+.cvStage {
+  position: relative;
+}
+.cvCanvas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 440px;
+  padding: 20px 16px 28px !important;
+}
+.cvCanvas::after {
+  content: 'A4 preview';
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(55, 65, 81, 0.55);
+  pointer-events: none;
+}
+.cvPage {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 12px 40px rgba(15, 17, 23, 0.14),
+    0 2px 8px rgba(15, 17, 23, 0.06) !important;
+}
+.cvPage.tpl-switch {
+  animation: tplSwitch 0.42s var(--ease-out);
+}
+@keyframes tplSwitch {
+  from {
+    opacity: 0.55;
+    transform: translateY(6px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.cvSection {
+  transition: box-shadow 0.18s var(--ease-out);
+  border-radius: 2px;
+}
+@media (hover: hover) {
+  .cvSection:hover {
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.14);
+  }
+  .cvSection [contenteditable='true']:focus {
+    outline: none;
+    background: rgba(37, 99, 235, 0.04);
+    border-radius: 2px;
+  }
+}
+.cvEmpty {
+  min-height: 360px;
+  background: linear-gradient(180deg, #fafbfc, #fff);
+  border-radius: 4px;
+}
+.cvEmpty p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Pro lock — lighter */
+.proLock.proLock--banner {
+  padding: 20px 18px;
+  background: linear-gradient(180deg, #f8fafc, #fff);
+  border-style: solid;
+  border-color: var(--line);
+}
+.proLock h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.proLock p {
+  font-size: 13px;
+  max-width: 38ch;
+}
+.proLock .freeList {
+  display: none;
+}
+
+/* Template refinements */
+.tpl-swiss .cvMain {
+  border-left: 1px solid #e5e7eb;
+}
+.tpl-swiss .cvSide::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #111;
+  margin-top: 12px;
+}
+.tpl-startup .cvSkillLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tpl-startup .cvSkillLine::before {
+  content: none;
+}
+.tpl-luxury .cvHeader::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #d4d4d4;
+  margin: 16px auto 0;
+}
+.tpl-editorial .cvHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: end;
+}
+.tpl-portfolio .cvSide .cvSection:first-of-type {
+  margin-top: 8px;
+}
+.tpl-art .cvName {
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+/* Pricing — distinct from workspace */
+.pricingBand {
+  margin-top: var(--space-md);
+}
+.pricingHead .small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-tertiary);
+}
+
+/* Buttons */
+.btn {
+  letter-spacing: -0.01em;
+}
+.btn.blue:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+#generateBtn {
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero {
+    padding: 16px 0 12px;
+  }
+  .prepSection {
+    padding: var(--space-md);
+  }
+  .workspaceZone {
+    padding: var(--space-md) !important;
+  }
+  .workspaceHead .actions {
+    width: 100%;
+  }
+  .workspaceHead .actions .btn {
+    flex: 1;
+  }
+  .profileRecBanner {
+    font-size: 11px;
+  }
+  .cvCanvas::after {
+    display: none;
+  }
+  .mobileCta .btn {
+    font-weight: 700;
+    box-shadow: var(--blue-glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvPage.tpl-switch {
+    animation: none !important;
+  }
+}

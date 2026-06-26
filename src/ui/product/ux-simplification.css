@@ -1,0 +1,49 @@
+/**
+ * UX simplification — 60s onboarding: Upload → Analyze → Template → Download.
+ * Hides technical chrome; recruiter-facing copy only.
+ */
+
+html:not(.debug-mode) #linkedinImportBlock,
+html:not(.debug-mode) #detectedDetails,
+html:not(.debug-mode) .wsImport .toolsField,
+html:not(.debug-mode) .wsImport .toolsMore,
+html:not(.debug-mode) #mvpImportBanner,
+html:not(.debug-mode) #extractionQualityStep,
+html:not(.debug-mode) #resumeStudioHead,
+html:not(.debug-mode) #styleStepHead,
+html:not(.debug-mode) #exportStepHead,
+html:not(.debug-mode) #importAnalysisStages,
+html:not(.debug-mode) #importOcrConfidence,
+html:not(.debug-mode) #importDebugPanel,
+html:not(.debug-mode) .importFormatGuide,
+html:not(.debug-mode) .wsCommandBar .kicker[data-i="import"] {
+  display: none !important;
+}
+
+html:not(.debug-mode) .wsImport .importLead.sub {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+html:not(.debug-mode) .wsImport .wsCommandBarTitle {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-import .wsImport {
+  max-width: min(560px, 100%);
+  margin: 0 auto;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioAnalysis .rccTop h3 {
+  font-size: 15px;
+}
+
+html:not(.debug-mode) .flowPrimaryCtaBtn {
+  min-width: min(280px, 100%);
+}
+
+html:not(.debug-mode) .heroHow {
+  font-weight: 600;
+  color: var(--ink);
+}

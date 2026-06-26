@@ -1,0 +1,107 @@
+/**
+ * LinkedIn import panel — multi-source merge status.
+ */
+
+.liImportBlock {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line, #e6e6e3);
+  background: #fafaf8;
+}
+
+.liImportTitle {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.liImportSub,
+.liImportEmpty .liImportSub {
+  font-size: 12px;
+  color: #6e6e73;
+  margin: 0 0 8px;
+  line-height: 1.45;
+}
+
+.liImportPick {
+  margin-top: 8px;
+}
+
+.liImportKicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6e6e73;
+  margin: 0 0 6px;
+}
+
+.liImportConfidence {
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+.liImportSources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.liImportSource {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #ebebea;
+}
+
+.liImportSourceName {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liImportSourceType {
+  color: #6e6e73;
+}
+
+.liImportSourceScore {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.liImportLbl {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 10px 0 4px;
+  color: #3a3a3c;
+}
+
+.liImportWinners,
+.liImportDupes {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 11px;
+  color: #3a3a3c;
+}
+
+.liImportDupeLbl {
+  color: #6e6e73;
+  font-size: 10px;
+}
+
+.drop .dropHint--li {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #6e6e73;
+}

@@ -1,0 +1,321 @@
+/**
+ * PDF Export V2 — fixed A4 pages, locked typography, export packet styling.
+ */
+
+.pdfExportV2Root {
+  background: #fff;
+}
+
+.pdfV2Page {
+  width: 794px;
+  height: 1123px;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.pdfV2Page--cv {
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdfV2Page--cv .cvA4Sheet {
+  width: 794px !important;
+  height: 1123px !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.pdfV2Page--cv .cvA4Sheet__surface {
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.pdfV2Sheet {
+  height: 100%;
+  padding: 56px 52px 48px;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #111;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pdfV2Cover {
+  height: 100%;
+  padding: 64px 56px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: linear-gradient(165deg, #fafaf8 0%, #fff 42%, #f5f5f2 100%);
+}
+
+.pdfV2Brand {
+  margin: 0 0 32px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.pdfV2CoverKicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.pdfV2CoverName {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: #111;
+}
+
+.pdfV2CoverTitle {
+  margin: 10px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #3d3d3d;
+}
+
+.pdfV2CoverScore {
+  margin: 36px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pdfV2CoverScoreVal {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: #111;
+}
+
+.pdfV2CoverScoreLbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.pdfV2CoverMeta {
+  margin: auto 0 0;
+  display: grid;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.pdfV2CoverMeta dt {
+  margin: 0;
+  color: #6e6e73;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+}
+
+.pdfV2CoverMeta dd {
+  margin: 2px 0 0;
+  color: #111;
+  font-weight: 600;
+}
+
+.pdfV2Kicker {
+  margin: 0 0 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.pdfV2H2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.pdfV2H3 {
+  margin: 18px 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.pdfV2Sub {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #3d3d3d;
+}
+
+.pdfV2Contact {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.pdfV2Stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 14px 0;
+  border-top: 1px solid #e6e6e3;
+  border-bottom: 1px solid #e6e6e3;
+}
+
+.pdfV2StatVal {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.pdfV2StatLbl {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6e6e73;
+}
+
+.pdfV2Body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #222;
+}
+
+.pdfV2Muted {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.pdfV2ScoreHero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.pdfV2ScoreBlock {
+  padding: 12px;
+  border: 1px solid #e6e6e3;
+  border-radius: 10px;
+  background: #fafaf8;
+  text-align: center;
+}
+
+.pdfV2ScoreNum {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.pdfV2ScoreLbl {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6e6e73;
+}
+
+.pdfV2BarRow {
+  margin-bottom: 8px;
+}
+
+.pdfV2BarMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #6e6e73;
+  margin-bottom: 4px;
+}
+
+.pdfV2BarTrack {
+  height: 4px;
+  background: #ececea;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pdfV2BarTrack span {
+  display: block;
+  height: 100%;
+  background: #111;
+  border-radius: 999px;
+}
+
+.pdfV2Twin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pdfV2List {
+  margin: 0;
+  padding: 0 0 0 16px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #222;
+}
+
+.pdfV2List li {
+  margin-bottom: 5px;
+}
+
+.pdfV2Disclaimer {
+  margin: 24px 0 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #6e6e73;
+  font-style: italic;
+}
+
+body.export-pdf-v2 .pdfExportV2Root {
+  position: static !important;
+  left: auto !important;
+}
+
+body.export-pdf-v2 .pdfV2Page {
+  margin: 0;
+  box-shadow: none;
+}
+
+body.export-pdf-v2 .pdfV2Page--cv .cv,
+body.export-pdf-v2 .pdfV2Page--cv .cv--pdf-export {
+  transform: none !important;
+  width: 794px !important;
+  max-width: 794px !important;
+}
+
+@media print {
+  .pdfV2Page {
+    width: 210mm;
+    height: 297mm;
+  }
+}

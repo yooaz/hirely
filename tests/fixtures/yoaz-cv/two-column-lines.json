@@ -1,0 +1,29 @@
+{
+  "description": "Yohann Azancot two-column PDF layout (simulated x/y from native text positions)",
+  "layoutType": "left_sidebar",
+  "lines": [
+    { "text": "Yohann Azancot", "x": 80, "y": 780, "width": 200, "height": 16, "page": 1 },
+    { "text": "Graphic Designer & Illustrator", "x": 80, "y": 760, "width": 220, "height": 14, "page": 1 },
+    { "text": "yoaz@hotmail.fr · +33 6 49 43 48 39", "x": 70, "y": 740, "width": 240, "height": 12, "page": 1 },
+    { "text": "Profile", "x": 72, "y": 700, "width": 80, "height": 14, "page": 1 },
+    { "text": "Creative professional specializing in illustration, graphic design and visual storytelling.", "x": 72, "y": 670, "width": 210, "height": 40, "page": 1 },
+    { "text": "Languages", "x": 72, "y": 600, "width": 90, "height": 14, "page": 1 },
+    { "text": "French — native", "x": 72, "y": 580, "width": 120, "height": 12, "page": 1 },
+    { "text": "English — fluent", "x": 72, "y": 560, "width": 120, "height": 12, "page": 1 },
+    { "text": "Experience", "x": 380, "y": 700, "width": 110, "height": 14, "page": 1 },
+    { "text": "Freelance Illustrator / Graphic Designer", "x": 380, "y": 675, "width": 280, "height": 14, "page": 1 },
+    { "text": "Independent / Freelance · 2011 — Present", "x": 380, "y": 655, "width": 260, "height": 12, "page": 1 },
+    { "text": "Collaborated with Nike, Louis Vuitton, Marvel, Cadillac.", "x": 380, "y": 630, "width": 300, "height": 12, "page": 1 },
+    { "text": "Education", "x": 380, "y": 580, "width": 100, "height": 14, "page": 1 },
+    { "text": "LISAA — Web & Motion Design", "x": 380, "y": 560, "width": 220, "height": 12, "page": 1 },
+    { "text": "Créapole — Visual Communication / Product Design", "x": 380, "y": 540, "width": 280, "height": 12, "page": 1 },
+    { "text": "Skills", "x": 380, "y": 500, "width": 70, "height": 14, "page": 1 },
+    { "text": "Illustration, Graphic Design, Visual Identity, Poster Design", "x": 380, "y": 480, "width": 320, "height": 12, "page": 1 },
+    { "text": "Tools", "x": 380, "y": 450, "width": 60, "height": 14, "page": 1 },
+    { "text": "Photoshop, Illustrator, InDesign, Affinity Designer", "x": 380, "y": 430, "width": 280, "height": 12, "page": 1 },
+    { "text": "Clients", "x": 380, "y": 400, "width": 70, "height": 14, "page": 1 },
+    { "text": "Nike, Adobe, Louis Vuitton, Marvel, Converse", "x": 380, "y": 380, "width": 300, "height": 12, "page": 1 },
+    { "text": "Interests", "x": 380, "y": 350, "width": 80, "height": 14, "page": 1 },
+    { "text": "Music, Movies, Nature", "x": 380, "y": 330, "width": 180, "height": 12, "page": 1 }
+  ]
+}

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hirely Parser Lab</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="stylesheet" href="../src/ui/templates/cv-templates-premium.css" />
+<link rel="stylesheet" href="../src/ui/hirely-document.css" />
+<style>
+:root{
+  --bg:#0f1419;--panel:#1a2332;--panel2:#243044;--ink:#e8eef7;--muted:#8b9cb3;--accent:#5b9cff;--ok:#34d399;--warn:#fbbf24;--removed:#f87171;--added:#34d399;--reclass:#fbbf24;--line:rgba(255,255,255,.08);
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:13px;line-height:1.45;min-height:100vh}
+a{color:var(--accent)}
+.lab-header{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.lab-header h1{margin:0;font-size:15px;font-weight:600;letter-spacing:.02em}
+.lab-badge{font-size:11px;padding:3px 8px;border-radius:6px;background:rgba(91,156,255,.15);color:var(--accent)}
+.lab-badge--ok{background:rgba(52,211,153,.15);color:var(--ok)}
+.lab-badge--warn{background:rgba(251,191,36,.15);color:var(--warn)}
+.lab-toolbar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.lab-toolbar select,.lab-toolbar button,.lab-mode-btn{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lab-toolbar button:hover,.lab-mode-btn:hover{border-color:var(--accent)}
+.lab-mode{display:flex;gap:4px;padding:3px;background:var(--bg);border-radius:10px;border:1px solid var(--line)}
+.lab-mode-btn{border:0;background:transparent}
+.lab-mode-btn.active{background:var(--accent);color:#0f1419;font-weight:600}
+.lab-view{display:none;min-height:calc(100vh - 49px)}
+.lab-view.active{display:contents}
+.lab-grid{display:grid;grid-template-columns:minmax(240px,1fr) minmax(320px,1.1fr) minmax(280px,0.95fr);gap:0;min-height:calc(100vh - 49px)}
+.lab-trace-grid{display:grid;grid-template-columns:minmax(260px,0.75fr) minmax(400px,1.5fr);gap:0;min-height:calc(100vh - 49px)}
+@media(max-width:1000px){.lab-grid,.lab-trace-grid{grid-template-columns:1fr;min-height:auto}}
+.lab-col{display:flex;flex-direction:column;border-right:1px solid var(--line);min-height:calc(100vh - 49px)}
+@media(max-width:1000px){.lab-col{min-height:auto;border-right:none;border-bottom:1px solid var(--line)}}
+.lab-col-head{padding:10px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--panel);border-bottom:1px solid var(--line)}
+.lab-raw{flex:1;width:100%;resize:none;border:0;background:var(--bg);color:var(--ink);padding:12px;font-family:var(--mono);font-size:12px;line-height:1.5;min-height:280px}
+.lab-raw:focus{outline:none;background:#121820}
+.lab-center{flex:1;overflow:auto;display:flex;flex-direction:column;min-height:0}
+.lab-decisions{flex:0 0 auto;max-height:42vh;overflow:auto;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--panel)}
+.lab-json-wrap{flex:1;min-height:200px;display:flex;flex-direction:column}
+.lab-json{flex:1;margin:0;padding:12px;overflow:auto;background:#0d1117;color:#c9d1d9;font-family:var(--mono);font-size:11px;line-height:1.45;border:0;white-space:pre}
+.lab-preview{flex:1;overflow:auto;padding:16px;background:#e8ecf2;display:flex;justify-content:center;align-items:flex-start}
+.lab-preview .cv{margin:0;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.lab-section{margin-bottom:14px}
+.lab-section h3{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.lab-row{display:grid;grid-template-columns:88px 1fr;gap:8px;padding:4px 0;border-bottom:1px solid var(--line);font-size:12px}
+.lab-k{color:var(--muted)}
+.lab-v{word-break:break-word}
+.lab-meta{display:block;font-size:10px;color:var(--warn);margin-top:2px}
+.lab-empty{color:var(--muted);font-style:italic}
+.lab-list{margin:0;padding-left:18px}
+.lab-status{padding:8px 12px;font-size:11px;color:var(--muted);border-top:1px solid var(--line)}
+.lab-err{color:var(--removed)}
+#traceMount{flex:1;overflow:auto;padding:12px 16px 32px;background:var(--bg)}
+.trace-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;font-size:11px;color:var(--muted)}
+.trace-legend span{display:inline-flex;align-items:center;gap:6px}
+.trace-swatch{width:10px;height:10px;border-radius:2px}
+.trace-swatch--removed{background:rgba(248,113,113,.5)}
+.trace-swatch--added{background:rgba(52,211,153,.5)}
+.trace-swatch--reclass{background:rgba(251,191,36,.5)}
+.trace-swatch--section{background:rgba(91,156,255,.5)}
+.trace-summary{display:flex;flex-wrap:wrap;gap:16px;padding:10px 12px;margin-bottom:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;font-size:12px}
+.trace-summary strong{color:var(--ink)}
+.trace-warnings{margin-bottom:12px;padding:10px 12px;border-radius:8px;background:rgba(251,191,36,.1);color:var(--warn);font-size:12px}
+.trace-pipeline{max-width:920px}
+.trace-stage{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:0;overflow:hidden}
+.trace-stage-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.trace-stage-head h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--accent)}
+.trace-metrics{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+.trace-stage-body{max-height:220px;overflow:auto;padding:10px 12px;font-family:var(--mono);font-size:11px;line-height:1.5;background:#0d1117}
+.trace-line{padding:1px 4px;border-radius:3px}
+.trace-line--section{color:var(--accent);font-weight:600;margin-top:6px}
+.trace-line--removed{background:rgba(248,113,113,.18);color:#fecaca;text-decoration:line-through;text-decoration-color:rgba(248,113,113,.6)}
+.trace-line--added{background:rgba(52,211,153,.15);color:#a7f3d0}
+.trace-line--modified{background:rgba(251,191,36,.2);color:#fde68a;border-left:2px solid var(--reclass)}
+.trace-chip-list--modified li{color:var(--reclass)}
+.trace-swatch--modified{background:rgba(251,191,36,.55)}
+.trace-corruption{margin-bottom:12px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;font-size:11px}
+.trace-corruption strong{display:block;margin-bottom:8px;color:var(--accent)}
+.trace-corr-stage{display:inline-block;margin:4px 8px 0 0;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,.06)}
+.trace-corr-stage[data-ok="true"]{border:1px solid rgba(52,211,153,.35)}
+.trace-corr-stage[data-ok="false"]{border:1px solid rgba(248,113,113,.35)}
+.trace-corr-verdict{margin:8px 0 0;color:var(--warn)}
+.trace-substep{margin:8px 0;padding:8px;background:rgba(0,0,0,.2);border-radius:6px}
+.trace-substep pre{max-height:100px;overflow:auto;margin:6px 0 0;font-size:10px}
+.trace-details{border-top:1px solid var(--line);font-size:11px}
+.trace-details summary{padding:8px 12px;cursor:pointer;color:var(--muted);user-select:none}
+.trace-details[open] summary{color:var(--ink)}
+.trace-chip-list{margin:0;padding:8px 12px 12px 24px;max-height:140px;overflow:auto}
+.trace-chip-list--removed li{color:var(--removed)}
+.trace-chip-list--added li{color:var(--added)}
+.trace-chip-list--reclassified li{color:var(--reclass)}
+.trace-from{text-transform:uppercase;font-size:10px;opacity:.85}
+.trace-to{font-weight:600}
+.trace-chip-empty{margin:0;padding:8px 12px;color:var(--muted);font-style:italic}
+.trace-more{color:var(--muted);font-style:italic}
+.trace-arrow{text-align:center;padding:8px 0 16px;color:var(--muted);font-size:18px;line-height:1.2}
+.trace-arrow-meta{display:block;font-size:10px;font-family:var(--mono);margin-top:4px;color:var(--warn)}
+#cvDocTraceHost{display:none}
+</style>
+</head>
+<body>
+<header class="lab-header">
+  <h1>Parser Lab</h1>
+  <span class="lab-badge" id="labModeBadge">paste · file</span>
+  <span id="statusBadge" class="lab-badge lab-badge--ok">ready</span>
+  <nav class="lab-mode" aria-label="Lab mode">
+    <button type="button" class="lab-mode-btn active" data-mode="parser" id="modeParser">Parser</button>
+    <button type="button" class="lab-mode-btn" data-mode="trace" id="modeTrace">OCR Forensic</button>
+  </nav>
+  <div class="lab-toolbar">
+    <label class="lab-badge">Fixture
+      <select id="fixturePick" aria-label="Load fixture">
+        <option value="">— paste below —</option>
+        <option value="developer-cv">Developer CV</option>
+        <option value="consultant-cv">Consultant CV</option>
+        <option value="student-cv">Student CV</option>
+        <option value="creative-cv">Designer CV</option>
+      </select>
+    </label>
+    <label class="lab-badge" style="cursor:pointer">Import file
+      <input type="file" id="fileInput" accept=".pdf,.docx,.doc,.txt,.png,.jpg,.jpeg,.webp" hidden />
+    </label>
+    <button type="button" id="clearBtn">Clear</button>
+    <a href="../debug/pdf-lab/index.html">PDF Lab</a>
+    <a href="../index.html">← App</a>
+  </div>
+</header>
+
+<div id="viewParser" class="lab-view active">
+  <div class="lab-grid">
+    <div class="lab-col">
+      <div class="lab-col-head">Raw text</div>
+      <textarea id="rawInput" class="lab-raw" spellcheck="false" placeholder="Paste clean CV text here…"></textarea>
+      <div id="rawStats" class="lab-status">0 chars · 0 lines</div>
+    </div>
+    <div class="lab-col lab-center">
+      <div class="lab-col-head">Parser output</div>
+      <div id="decisions" class="lab-decisions" aria-live="polite"></div>
+      <div class="lab-json-wrap">
+        <div class="lab-col-head" style="border-top:1px solid var(--line)">structuredResume JSON</div>
+        <pre id="jsonOut" class="lab-json">{}</pre>
+      </div>
+    </div>
+    <div class="lab-col">
+      <div class="lab-col-head">Rendered CV <span class="lab-badge" style="font-weight:400">ats · read-only</span></div>
+      <div class="lab-preview">
+        <div id="cvDoc" class="cv template-ats spacing-normal cv--live"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="viewTrace" class="lab-view">
+  <div class="lab-trace-grid">
+    <div class="lab-col">
+      <div class="lab-col-head">Raw text (source)</div>
+      <textarea id="rawInputTrace" class="lab-raw" spellcheck="false" placeholder="Paste clean CV text…" aria-label="Raw CV text"></textarea>
+      <div id="rawStatsTrace" class="lab-status">0 chars · 0 lines</div>
+    </div>
+    <div class="lab-col" style="border-right:0">
+      <div class="lab-col-head">OCR Forensic pipeline</div>
+      <div id="traceMount">
+        <div class="trace-legend">
+          <span><i class="trace-swatch trace-swatch--removed"></i> Removed</span>
+          <span><i class="trace-swatch trace-swatch--modified"></i> Modified</span>
+          <span><i class="trace-swatch trace-swatch--added"></i> Added</span>
+          <span><i class="trace-swatch trace-swatch--section"></i> Section</span>
+        </div>
+        <p class="lab-empty">Paste text or import a file (PDF/DOCX/image)…</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cvDocTraceHost" aria-hidden="true"><div id="cvDocTrace" class="cv template-ats spacing-normal"></div></div>
+
+<script src="../src/ui/templates/cv-templates.js"></script>
+<script type="module">
+import { runExtractionPipeline } from '../src/core/parsing/pipeline.js';
+import { structuredToCvData } from '../src/core/parsing/structured-resume.js';
+import { buildParserLabSnapshot, renderParserLabDecisions } from '../src/debug/parser-lab-report.js';
+import { buildOcrForensic, renderOcrForensic } from '../src/debug/ocr-forensic.js';
+import { extractFromFileDetailed } from '../src/core/extraction/extract-file.js';
+import { peekLastOcrForensic } from '../src/core/extraction/extraction-session.js';
+
+const $ = (id) => document.getElementById(id);
+const rawInput = $('rawInput');
+const rawInputTrace = $('rawInputTrace');
+const jsonOut = $('jsonOut');
+const decisions = $('decisions');
+const cvDoc = $('cvDoc');
+const cvDocTrace = $('cvDocTrace');
+const statusBadge = $('statusBadge');
+const rawStats = $('rawStats');
+const rawStatsTrace = $('rawStatsTrace');
+const traceMount = $('traceMount');
+
+let labMode = location.hash === '#trace' ? 'trace' : 'parser';
+let debounce = null;
+let lastSnap = null;
+let lastTrace = null;
+let lastPipe = null;
+let lastImportMethod = 'paste';
+globalThis.HIRELY_OCR_FORENSIC = true;
+
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+}
+function sectionLabel(k) {
+  const d = {
+    profile: 'Profile',
+    clients: 'Clients',
+    experience: 'Experience',
+    education: 'Education',
+    skills: 'Skills',
+    tools: 'Tools',
+    languages: 'Languages',
+    location: 'Location',
+  };
+  return d[k] || k;
+}
+function cvBlock(title, html) {
+  if (!html || !String(html).replace(/<[^>]+>/g, '').trim()) return '';
+  return `<section class="cvSection"><h3 class="cvSectionTitle">${esc(title)}</h3><div class="cvSectionBody">${html}</div></section>`;
+}
+function cvSkillsHtml(skills, asChips) {
+  if (!skills?.length) return '';
+  if (asChips) {
+    return `<div>${skills.slice(0, 14).map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div>`;
+  }
+  return `<p class="cvSkillLine">${esc(skills.join(' · '))}</p>`;
+}
+
+if (typeof initHirelyTemplates === 'function') {
+  initHirelyTemplates({ esc, sectionLabel, cvBlock, cvSkillsHtml, getPhotoHtml: () => '' });
+}
+
+function activeRawEl() {
+  return labMode === 'trace' ? rawInputTrace : rawInput;
+}
+
+function syncRawInputs(from, to) {
+  if (to.value !== from.value) to.value = from.value;
+}
+
+function setMode(mode) {
+  labMode = mode;
+  document.querySelectorAll('.lab-mode-btn').forEach((b) => {
+    b.classList.toggle('active', b.dataset.mode === mode);
+  });
+  $('viewParser').classList.toggle('active', mode === 'parser');
+  $('viewTrace').classList.toggle('active', mode === 'trace');
+  if (mode === 'trace') {
+    syncRawInputs(rawInput, rawInputTrace);
+    location.hash = 'trace';
+  } else {
+    syncRawInputs(rawInputTrace, rawInput);
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  runParse();
+}
+
+document.querySelectorAll('.lab-mode-btn').forEach((b) => {
+  b.onclick = () => setMode(b.dataset.mode);
+});
+
+function setStatus(kind, text) {
+  statusBadge.textContent = text;
+  statusBadge.className = 'lab-badge ' + (kind === 'ok' ? 'lab-badge--ok' : kind === 'warn' ? 'lab-badge--warn' : '');
+}
+
+function renderPreview(cvData, targetEl) {
+  const el = targetEl || cvDoc;
+  if (!window.HirelyTemplates?.render) {
+    el.innerHTML = '<p class="lab-err">Templates not loaded</p>';
+    return { html: '', plain: '' };
+  }
+  const safe = {
+    ...cvData,
+    extra: (cvData.extra || []).filter(Boolean),
+    raw: '',
+    cleanText: '',
+  };
+  try {
+    el.className = 'cv template-ats spacing-normal cv--live';
+    const html = HirelyTemplates.render(safe, 'ats');
+    el.innerHTML = html;
+    return { html, plain: el.textContent?.trim() || '' };
+  } catch (e) {
+    el.innerHTML = `<p class="lab-err">${esc(e.message)}</p>`;
+    return { html: '', plain: '' };
+  }
+}
+
+async function runParse() {
+  const rawText = activeRawEl().value || '';
+  syncRawInputs(activeRawEl(), activeRawEl() === rawInput ? rawInputTrace : rawInput);
+
+  const lines = rawText.split(/\n/).length;
+  const statsLine = `${rawText.length} chars · ${lines} lines`;
+  rawStats.textContent = statsLine;
+  rawStatsTrace.textContent = statsLine;
+
+  if (rawText.trim().length < 10) {
+    decisions.innerHTML = '<p class="lab-empty">Paste at least 10 characters…</p>';
+    jsonOut.textContent = '{}';
+    cvDoc.innerHTML = '';
+    traceMount.innerHTML =
+      '<div class="trace-legend"><span><i class="trace-swatch trace-swatch--removed"></i> Removed</span><span><i class="trace-swatch trace-swatch--added"></i> Added</span></div><p class="lab-empty">Paste at least 10 characters…</p>';
+    setStatus('warn', 'waiting');
+    lastSnap = null;
+    lastTrace = null;
+    lastPipe = null;
+    return;
+  }
+
+  try {
+    const method = lastImportMethod || 'paste';
+    const pipe = await runExtractionPipeline(rawText, { extractionMethod: method, documentType: 'cv' });
+    lastPipe = pipe;
+    const snap = buildParserLabSnapshot(rawText, pipe);
+    lastSnap = snap;
+    const cvData = structuredToCvData(snap.structuredResume);
+    const { plain, html } = renderPreview(cvData, cvDoc);
+    renderPreview(cvData, cvDocTrace);
+
+    const forensic = buildOcrForensic(rawText, pipe, {
+      templatePlainText: plain,
+      templateHtmlChars: html?.length || cvDocTrace.innerHTML.length,
+      forensicMeta: peekLastOcrForensic(),
+      extractionMethod: pipe.extractionMethod,
+    });
+    lastTrace = forensic;
+
+    if (labMode === 'parser') {
+      decisions.innerHTML = renderParserLabDecisions(snap);
+      jsonOut.textContent = JSON.stringify(snap.structuredResume, null, 2);
+    } else {
+      traceMount.innerHTML =
+        '<div class="trace-legend"><span><i class="trace-swatch trace-swatch--removed"></i> Removed</span><span><i class="trace-swatch trace-swatch--modified"></i> Modified</span><span><i class="trace-swatch trace-swatch--added"></i> Added</span><span><i class="trace-swatch trace-swatch--section"></i> Section</span></div>' +
+        renderOcrForensic(forensic);
+    }
+
+    const drop = forensic.summary?.largestDrop;
+    const issues = [];
+    if (snap.name?.uncertain) issues.push('name uncertain');
+    if (!snap.contact?.email) issues.push('no email');
+    if (drop?.charLossPct >= 30) issues.push(`loss ${drop.from}→${drop.to}`);
+
+    if (issues.length) setStatus('warn', issues.join(' · '));
+    else {
+      const verdict = forensic.summary?.corruptionVerdict;
+      setStatus(verdict ? 'warn' : 'ok', verdict || `${pipe.audit?.timingMs ?? '?'}ms · loss ${forensic.summary?.totalLossPct ?? 0}%`);
+    }
+  } catch (e) {
+    console.error(e);
+    decisions.innerHTML = `<p class="lab-err">${esc(e.message)}</p>`;
+    jsonOut.textContent = JSON.stringify({ error: e.message }, null, 2);
+    traceMount.innerHTML = `<p class="lab-err">${esc(e.message)}</p>`;
+    setStatus('warn', 'error');
+  }
+}
+
+function scheduleParse() {
+  clearTimeout(debounce);
+  debounce = setTimeout(runParse, 180);
+}
+
+rawInput.addEventListener('input', scheduleParse);
+rawInputTrace.addEventListener('input', scheduleParse);
+
+$('fileInput')?.addEventListener('change', async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+  setStatus('warn', 'extracting…');
+  try {
+    const detailed = await extractFromFileDetailed(file);
+    const text = detailed.text || '';
+    lastImportMethod = detailed.method || 'file';
+    rawInput.value = text;
+    rawInputTrace.value = text;
+    $('labModeBadge').textContent = lastImportMethod;
+    setMode('trace');
+    runParse();
+  } catch (err) {
+    setStatus('warn', err.message || 'extract failed');
+    traceMount.innerHTML = `<p class="lab-err">${esc(err.message)}</p>`;
+  }
+  e.target.value = '';
+});
+
+$('clearBtn').onclick = () => {
+  rawInput.value = '';
+  rawInputTrace.value = '';
+  $('fixturePick').value = '';
+  runParse();
+};
+
+$('fixturePick').onchange = async () => {
+  const id = $('fixturePick').value;
+  if (!id) return;
+  try {
+    const res = await fetch(`../tests/fixtures/${id}/fixture.txt`);
+    if (!res.ok) throw new Error(res.statusText);
+    const t = await res.text();
+    rawInput.value = t;
+    rawInputTrace.value = t;
+    scheduleParse();
+  } catch (e) {
+    setStatus('warn', 'fixture load failed');
+    console.error(e);
+  }
+};
+
+if (labMode === 'trace') setMode('trace');
+
+fetch('../tests/fixtures/developer-cv/fixture.txt')
+  .then((r) => r.text())
+  .then((t) => {
+    if (!rawInput.value.trim()) {
+      rawInput.value = t;
+      rawInputTrace.value = t;
+      $('fixturePick').value = 'developer-cv';
+      runParse();
+    }
+  })
+  .catch(() => runParse());
+
+window.HirelyParserLab = {
+  runParse,
+  getLastSnapshot: () => lastSnap,
+  getLastTrace: () => lastTrace,
+  getLastPipeline: () => lastPipe,
+  setMode,
+};
+</script>
+</body>
+</html>

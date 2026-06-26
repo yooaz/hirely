@@ -1,0 +1,40 @@
+---
+description: Browser boot must never load Node-only modules or persistence helpers
+alwaysApply: true
+---
+
+# Browser / Node boundary
+
+Any module reachable from **browser boot** must be **100% browser-safe**.
+
+## Boot entry points (must stay clean)
+
+- `src/core/boot/core-boot-loader.mjs` and its import graph
+- `src/core/index.js` barrel and everything it re-exports (`export *` / `export { } from`)
+- `src/core/boot/minimal-import-core.mjs` fallback chain
+- Exact transcription UI: `src/ui/exact-transcription-panel.js`, `exact-transcription-pdf-preview.js`
+
+## Hard rules
+
+1. **No top-level** `node:fs`, `node:path`, `fs`, or `path` imports in browser-reachable `src/core` or `src/ui` modules.
+2. **No `.node.js` imports** anywhere in the boot chain — not even behind dynamic `import()`.
+3. **Barrel exports** (`export * from`, `export { x } from`) must not re-export node-only modules into client code.
+4. **Node persistence** lives in separate files:
+   - `*.node.js` or `*.persist.node.js`
+   - QA scripts under `src/tests/` only
+5. **Never** patch CSP to allow `node:` scheme imports. Fix the module graph instead.
+
+## Pattern
+
+| Browser-safe | Node-only |
+|--------------|-----------|
+| `exact-transcription-artifacts.client.js` | `exact-transcription-persist.node.js` |
+| `buildExtractionDebugBundle()` | `extraction-debug-bundle.persist.node.js` |
+
+## Verification
+
+```bash
+npm run qa:browser-import-guard
+```
+
+Fails on static scan **and** full boot-chain BFS from entry points above.

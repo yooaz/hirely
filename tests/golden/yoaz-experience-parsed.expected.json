@@ -1,0 +1,73 @@
+{
+  "fixture": "yoaz-pdf-benchmark/experience-section",
+  "parser": "EXPERIENCE_BLOCK_PARSER_V2",
+  "items": [
+    {
+      "job_title": "Freelancer Illustrator, Graphic Designer",
+      "company": "Independent / Freelance",
+      "clients": [
+        "Nike",
+        "Converse",
+        "Arte",
+        "Pantone",
+        "Adobe"
+      ],
+      "client": [
+        "Nike",
+        "Converse",
+        "Arte",
+        "Pantone",
+        "Adobe"
+      ],
+      "location": "",
+      "start_date": "2011",
+      "end_date": "2023",
+      "is_current": false,
+      "description": [],
+      "skills": [],
+      "entry_type": "freelance",
+      "confidence": 1,
+      "source_block_ids": [
+        "line-0",
+        "line-1",
+        "line-2"
+      ]
+    },
+    {
+      "job_title": "Internship",
+      "company": "McCann G. Agency",
+      "clients": [],
+      "client": [],
+      "location": "",
+      "start_date": "2011",
+      "end_date": "2011",
+      "is_current": false,
+      "description": [],
+      "skills": [],
+      "entry_type": "internship",
+      "confidence": 0.98,
+      "source_block_ids": [
+        "line-3",
+        "line-4"
+      ]
+    },
+    {
+      "job_title": "Internship",
+      "company": "3B impressions",
+      "clients": [],
+      "client": [],
+      "location": "",
+      "start_date": "2010",
+      "end_date": "2010",
+      "is_current": false,
+      "description": [],
+      "skills": [],
+      "entry_type": "internship",
+      "confidence": 0.98,
+      "source_block_ids": [
+        "line-5",
+        "line-6"
+      ]
+    }
+  ]
+}

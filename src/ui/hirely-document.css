@@ -1,0 +1,638 @@
+/* Hirely — document editor shell (visual only) */
+
+:root {
+  --bg: #f5f5f2;
+  --paper: #ffffff;
+  --ink: #171717;
+  --muted: #6b7280;
+  --line: #e8e8e4;
+  --accent: #171717;
+  --blue: var(--accent);
+  --blue-soft: #f4f4f1;
+  --shadow-sm: 0 1px 2px rgba(23, 23, 23, 0.04);
+  --shadow-md: 0 8px 28px rgba(23, 23, 23, 0.06);
+  --shadow-cv:
+    0 1px 1px rgba(17, 17, 17, 0.03),
+    0 2px 6px rgba(17, 17, 17, 0.04),
+    0 8px 24px rgba(17, 17, 17, 0.06),
+    0 24px 48px rgba(17, 17, 17, 0.07);
+  --cv-ink: #171717;
+  --cv-body: #374151;
+  --cv-muted: #6b7280;
+  --cv-line: #e5e7eb;
+  --cv-pad-x: 48px;
+  --cv-pad-y: 48px;
+  --cv-section-gap: 36px;
+  --cv-item-gap: 18px;
+  --cv-bullet-gap: 10px;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* —— Chrome: calm, not SaaS dashboard —— */
+.top {
+  background: rgba(250, 250, 248, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  margin-top: 0;
+  height: 52px;
+  top: 0;
+}
+
+.logo {
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+.nav a.active {
+  border-bottom-color: var(--accent);
+}
+
+.btn.primary {
+  background: var(--accent);
+}
+.btn.primary:hover {
+  background: #262626;
+}
+
+.parseFeedItem.active,
+.parseFeedItem.active::before {
+  color: var(--ink) !important;
+}
+.parseFeedItem.active::before {
+  background: var(--ink) !important;
+  animation: none !important;
+}
+
+.scoreBandLabel {
+  color: var(--muted) !important;
+}
+
+.wsInsights .cvReadyHint,
+.wsInsights .recruiterInsights li,
+.wsInsights .recsBlock {
+  color: inherit !important;
+  border-top-color: var(--line) !important;
+}
+
+.wsInsights .recruiterInsights li.insightPos .insMark {
+  color: var(--green) !important;
+}
+
+/* —— Landing: document-first —— */
+.hero {
+  padding: 48px 0 40px;
+  max-width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.heroBadge {
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.heroBadgeDot {
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.heroCopy h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.heroCopy h1 .heroLine2 {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.heroCopy .lead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.heroVisual {
+  display: none;
+}
+
+.heroStep {
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+}
+
+.heroStepNum {
+  background: #f4f4f1;
+  color: var(--ink);
+}
+
+.heroStep--audit {
+  background: var(--paper) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.heroStep--audit .heroStepNum {
+  background: #f4f4f1 !important;
+  color: var(--ink) !important;
+}
+
+.heroStep--audit .heroStepTitle {
+  color: var(--ink) !important;
+}
+
+.heroStep--audit .heroStepDesc {
+  color: var(--muted) !important;
+}
+
+/* —— Step navigation —— */
+.docNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  margin: 0 auto 20px;
+  max-width: min(920px, 100%);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.docNavItem {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.docNavItem:hover {
+  color: var(--ink);
+  background: #f4f4f1;
+}
+
+.docNavItem.active {
+  color: var(--ink);
+  background: #efefeb;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.docSourceEditor {
+  max-width: min(920px, 100%);
+  margin: 0 auto 16px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.app--workspace .docSourceEditor.hidden {
+  display: none !important;
+}
+
+.docSourceEditor textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1px var(--line);
+  font-size: 14px;
+  line-height: 1.55;
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* —— Workspace —— */
+.app--workspace .workspaceZone {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.app--workspace .workspaceGrid--ready {
+  max-width: min(920px, 100%);
+}
+
+.app--workspace .wsProduct {
+  background: transparent;
+  box-shadow: none;
+}
+
+.app--workspace .wsCenterStack {
+  min-height: min(78vh, 880px);
+  gap: 0;
+}
+
+.app--workspace .workspace:not([data-doc-step="style"]) .templatePickerBar {
+  display: none !important;
+}
+
+.app--workspace .templatePickerBar {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  backdrop-filter: none;
+}
+
+.app--workspace .templatePickerHead .level1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app--workspace .spacingGroup {
+  background: #f4f4f1;
+}
+
+/* Document canvas — off-white surround, white paper */
+.app--workspace .cvFocus,
+.workspaceGrid--ready .cvStage {
+  background: #efefeb !important;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 44px 40px 52px !important;
+}
+
+.app--workspace .cvStage {
+  padding: 0;
+  min-height: min(68vh, 760px);
+  align-items: flex-start;
+}
+
+.app--workspace .cvStageInner {
+  width: 794px;
+  max-width: 794px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+.app--workspace .cvDocWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app--workspace #cvStage .cv,
+#cvStage .cv {
+  width: 794px;
+  max-width: 794px;
+  min-height: 1123px;
+  aspect-ratio: 210 / 297;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid #e8e8e4;
+  box-shadow: var(--shadow-cv);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--cv-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#cvStage .cv.cv--a4 {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+#cvStage .cvA4Sheet {
+  width: 794px;
+  height: 1123px;
+  min-height: 1123px;
+  max-width: 794px;
+  max-height: 1123px;
+  aspect-ratio: 210 / 297;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* Live preview typography — fixed px (preview ≡ PDF, no clamp stretch) */
+#cvStage .cv .cvName,
+#cvStage .cvA4Sheet .cvName {
+  font-size: 2.75rem !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em !important;
+  font-weight: 600 !important;
+  color: var(--cv-ink) !important;
+}
+
+#cvStage .cv .cvTitle,
+#cvStage .cvA4Sheet .cvTitle {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  color: var(--cv-body) !important;
+  margin-top: 0.4em !important;
+}
+
+#cvStage .cv .cvName--placeholder,
+#cvStage .cv .cvTitle--placeholder {
+  color: var(--cv-muted) !important;
+  font-style: italic;
+  font-weight: 500 !important;
+}
+
+#cvStage .cv .cvContact,
+#cvStage .cv .cvContact p,
+#cvStage .cv .cvLead {
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+  color: var(--cv-muted) !important;
+}
+
+#cvStage .cv .cvSectionTitle {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--cv-muted) !important;
+  border-color: var(--cv-line) !important;
+  margin-bottom: 12px !important;
+}
+
+#cvStage .cv .cvSection--experience {
+  margin-bottom: var(--cv-section-gap) !important;
+}
+
+#cvStage .cv .cvSection {
+  margin-bottom: 28px !important;
+}
+
+#cvStage .cv .cvExpEntry {
+  padding-bottom: var(--cv-item-gap) !important;
+  margin-bottom: var(--cv-item-gap) !important;
+  border-bottom-color: #f0f0ed !important;
+}
+
+#cvStage .cv .cvExpEntry--stacked p {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  margin: 0 0 3px !important;
+}
+
+#cvStage .cv .cvExpEntry--stacked .cvExpRole {
+  font-weight: 600 !important;
+}
+
+#cvStage .cv .cvExpEntry--stacked .cvExpDates {
+  color: var(--cv-muted, #6b7280) !important;
+}
+
+#cvStage .cv .cvExpEntry--stacked .cvExpSpecialties {
+  color: var(--cv-muted, #6b7280) !important;
+  font-style: italic !important;
+}
+
+#cvStage .cv .cvEduEntry--stacked .cvEduSchool {
+  font-weight: 600 !important;
+}
+
+#cvStage .cv .cvEduEntry--stacked .cvEduDates {
+  color: var(--cv-muted, #6b7280) !important;
+}
+
+#cvStage .cv .cvEduList .cvEduLine,
+#cvStage .cv .cvLangList .cvLangLine {
+  margin: 0 0 4px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+#cvStage .cv .cvExpEntry p,
+#cvStage .cv .cvEduLine,
+#cvStage .cv .cvSkillLine,
+#cvStage .cv .cvLangLine,
+#cvStage .cv .cvToolsLine,
+#cvStage .cv .cvClientsElegant {
+  font-size: 0.9375rem !important;
+  line-height: 1.62 !important;
+  color: var(--cv-ink) !important;
+}
+
+#cvStage .cv .cvSectionBody li {
+  margin-bottom: var(--cv-bullet-gap) !important;
+}
+
+#cvStage .cv .cvHead,
+#cvStage .cv .cvTopBand {
+  padding-left: var(--cv-pad-x) !important;
+  padding-right: var(--cv-pad-x) !important;
+}
+
+#cvStage .cv .cvMain,
+#cvStage .cv .cvMain--dominant,
+#cvStage .cv .cvMain-band,
+#cvStage .cv .cvMain--magazine,
+#cvStage .cv .cvMain--rail {
+  padding-left: var(--cv-pad-x) !important;
+  padding-right: var(--cv-pad-x) !important;
+}
+
+#cvStage .cv .chip {
+  border-color: #e5e7eb;
+  background: #fafaf8;
+  color: var(--cv-body);
+  font-weight: 500;
+}
+
+/* Review column — quiet sidebar, not dashboard */
+.app--workspace .wsInsights {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 16px 14px;
+}
+
+.app--workspace .scoreRing,
+.app--workspace .scoreMetricsGrid,
+.app--workspace #score {
+  display: none !important;
+}
+
+.app--workspace .scoreCardCopy h3 {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.app--workspace .scoreCardCopy .insightLead {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.app--workspace .scoreCardCopy .insightSub {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.app--workspace .recsBlock {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.app--workspace .recsBlock h4 {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.app--workspace .recruiterInsights li {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.app--workspace .wsImport {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+}
+
+.app--workspace .drop {
+  background: #fafaf8;
+  border-color: var(--line);
+}
+
+.app--workspace .importPanel--workspaceSplit {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Export bar */
+.docFooter {
+  max-width: min(920px, 100%);
+  margin: 20px auto 0;
+  padding: 0;
+}
+
+.app--workspace .docFooter .cvExportBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.app--workspace .docFooter .cvExportBar .btn.primary {
+  min-width: 220px;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+.app--workspace .cvProductHead--sub {
+  display: none;
+}
+
+.app--workspace #pricing,
+.app--workspace .footer {
+  display: none;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.tplCard {
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.tplCard:hover {
+  border-color: #d4d4ce;
+  box-shadow: var(--shadow-sm);
+}
+
+.tplCard.active {
+  border: 2px solid #171717 !important;
+  box-shadow: 0 4px 14px rgba(23, 23, 23, 0.08) !important;
+}
+
+.trustStrip {
+  background: #fafaf8;
+  border-color: var(--line);
+}
+
+body.export-pdf .top,
+body.export-pdf .docNav,
+body.export-pdf .templatePickerBar,
+body.export-pdf .wsImport,
+body.export-pdf .docFooter,
+body.export-pdf .hero {
+  visibility: hidden;
+}
+
+@media (max-width: 960px) {
+  .docNav {
+    flex-wrap: wrap;
+  }
+
+  .docNavItem {
+    flex: 1 1 45%;
+  }
+
+  #cvStage .cv .cvHead,
+  #cvStage .cv .cvTopBand,
+  #cvStage .cv .cvMain {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .app--workspace .cvStageInner {
+    width: 794px;
+    max-width: 794px;
+  }
+
+  #cvStage .cv,
+  #cvStage .cvA4Sheet {
+    width: 794px;
+    max-width: 794px;
+    min-height: 1123px;
+    aspect-ratio: 210 / 297;
+  }
+}

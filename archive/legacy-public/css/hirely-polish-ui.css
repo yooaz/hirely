@@ -1,0 +1,259 @@
+/* Hirely Polish UI — premium refinement (functional density preserved) */
+
+/* —— Workspace: 3 colonnes visibles, pas page upload seule —— */
+html.stable-mode .prepSection {
+  padding: 16px 20px 20px !important;
+  background: #f3f4f6 !important;
+  border-bottom: none !important;
+}
+
+html.stable-mode .sectionHead .label {
+  display: none;
+}
+
+html.stable-mode .sectionHead h2 {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  margin-bottom: 2px !important;
+}
+
+html.stable-mode .sectionHead .small {
+  font-size: 12px !important;
+}
+
+/* —— Inputs premium —— */
+html.stable-mode input[type="file"] {
+  font-size: 12px;
+  max-width: 100%;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #d8dde3;
+  border-radius: 8px;
+}
+
+html.stable-mode input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #0f1117;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* —— Preview: moins de chrome, CV plus haut —— */
+html.stable-mode .previewChrome .workspaceMeta,
+html.stable-mode .previewChrome .editHint,
+html.stable-mode .previewChrome .label,
+html.stable-mode #previewPdfBtn {
+  display: none !important;
+}
+
+html.stable-mode .profileRecBanner:not(.is-empty) {
+  margin: 0 12px 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a5f;
+}
+
+/* Toolbar: masquer pills + doublons PDF — garder Edit seulement */
+html.stable-mode #proToolbar {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+  background: #fafbfc !important;
+  border-bottom: 1px solid #e2e5eb !important;
+}
+
+html.stable-mode #proToolbar .toolbarLabel:first-of-type,
+html.stable-mode #proToolbar .toolbarGroup:first-of-type,
+html.stable-mode #proToolbar .toolbarSep,
+html.stable-mode #proToolbar .toolbarGroup:last-of-type,
+html.stable-mode #proToolbar #templateRec {
+  display: none !important;
+}
+
+html.stable-mode #proToolbar .toolbarLabel,
+html.stable-mode #proToolbar .toolbarSep {
+  display: none !important;
+}
+
+html.stable-mode #proToolbar .btn.small {
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+}
+
+/* Jamais afficher des chips template dans la toolbar */
+html.stable-mode #proToolbar .chip,
+html.stable-mode #templateButtons .chip {
+  display: none !important;
+}
+
+html.stable-mode #templatesSlot .templateGallery,
+html.stable-mode .templatesBand .templateGallery {
+  display: grid !important;
+}
+
+/* —— Recruiter panel: dense, score en tête —— */
+html.stable-mode .col-intel .scoreTop {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.stable-mode .col-intel .scoreHero {
+  flex: 0 0 auto;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 !important;
+}
+
+html.stable-mode .col-intel .scoreTop .scoreHero + div,
+html.stable-mode .col-intel .scoreTop > div:not(.scoreHero) {
+  display: none;
+}
+
+html.stable-mode .col-intel #bars {
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+}
+
+html.stable-mode .col-intel .barRow {
+  margin-bottom: 6px !important;
+}
+
+html.stable-mode .col-intel .barTop span:last-child {
+  font-weight: 600;
+  color: #e8eaed;
+}
+
+html.stable-mode .col-intel .insightGrid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  margin: 0 0 10px !important;
+}
+
+html.stable-mode .col-intel .insightGrid ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  color: #0f1117;
+  font-size: 11px;
+  line-height: 1.45;
+  min-height: 72px;
+}
+
+html.stable-mode .col-intel .insightGrid ul::before {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c6570;
+  margin-bottom: 6px;
+}
+
+html.stable-mode .col-intel #strengthList::before {
+  content: "Strengths";
+}
+
+html.stable-mode .col-intel #weaknessList::before {
+  content: "Needs work";
+}
+
+html.stable-mode .col-intel .insightGrid li {
+  margin-bottom: 4px;
+  color: #3d4450;
+}
+
+html.stable-mode .col-intel #intelSummary {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.stable-mode .col-intel .intelBlock--primary .intelLabel {
+  color: #64748b !important;
+}
+
+html.stable-mode .col-intel .fixBox {
+  margin-top: 0 !important;
+}
+
+html.stable-mode .col-intel .fixBox .intelLabel::before {
+  content: "";
+}
+
+/* —— Templates band —— */
+html.stable-mode .templatesBand h2 {
+  margin-bottom: 10px;
+}
+
+html.stable-mode .templateCard {
+  border: 1px solid #dde2e8 !important;
+  background: #fff !important;
+  text-align: left;
+  cursor: pointer;
+}
+
+html.stable-mode .templateCard--rec {
+  border-color: #4f6bff !important;
+}
+
+/* —— Pricing premium compact —— */
+html.stable-mode .pricingBand {
+  padding: 32px 20px 48px !important;
+  background: #f3f4f6 !important;
+}
+
+html.stable-mode .pricingHead h2 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+
+html.stable-mode .pricing .price {
+  border-radius: 10px !important;
+  padding: 20px !important;
+}
+
+html.stable-mode .pricing .price h3 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+
+html.stable-mode .pricing .price.pro {
+  border: 2px solid #4f6bff !important;
+  box-shadow: 0 8px 28px rgba(79, 107, 255, 0.12) !important;
+}
+
+/* —— Tabs compacts —— */
+html.stable-mode .tabs {
+  gap: 0 !important;
+}
+
+html.stable-mode .tab {
+  border-radius: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  background: transparent !important;
+}
+
+html.stable-mode .tab.active {
+  border-bottom-color: #4f6bff !important;
+  color: #0f1117 !important;
+  background: transparent !important;
+}

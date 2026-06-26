@@ -1,0 +1,100 @@
+{
+  "version": "1",
+  "id": "YOAZ_CV_DESIGNER",
+  "label": "Yohann Azancot — golden classification reference",
+  "fixture": "tests/fixtures/yoaz-cv/fixture.txt",
+  "confidenceMin": 80,
+  "classifications": [
+    {
+      "id": "lisaa",
+      "term": "LISAA",
+      "bucket": "education",
+      "canonicalLines": ["LISAA — Web & Motion Design"],
+      "forbiddenBuckets": ["clients", "tools", "languages", "skills", "interests"]
+    },
+    {
+      "id": "creapole",
+      "term": "Créapole",
+      "bucket": "education",
+      "canonicalLines": ["Créapole — Visual Communication / Product Design"],
+      "forbiddenBuckets": ["clients", "tools", "languages", "skills", "interests"]
+    },
+    {
+      "id": "adobe_illustrator",
+      "term": "Adobe Illustrator",
+      "bucket": "tools",
+      "canonicalLines": [
+        "Adobe Illustrator",
+        "Photoshop, Illustrator, InDesign, Affinity Designer, Adobe Creative Suite"
+      ],
+      "forbiddenBuckets": ["clients", "education", "languages", "skills", "interests"]
+    },
+    {
+      "id": "english",
+      "term": "English",
+      "bucket": "languages",
+      "canonicalLines": ["English — fluent"],
+      "forbiddenBuckets": ["tools", "clients", "education", "skills", "interests"]
+    },
+    {
+      "id": "french",
+      "term": "French",
+      "bucket": "languages",
+      "canonicalLines": ["French — native"],
+      "forbiddenBuckets": ["tools", "clients", "education", "skills", "interests"]
+    },
+    {
+      "id": "nike",
+      "term": "Nike",
+      "bucket": "clients",
+      "canonicalLines": ["Nike"],
+      "forbiddenBuckets": ["tools", "education", "languages", "skills", "interests"]
+    },
+    {
+      "id": "adobe_client",
+      "term": "Adobe",
+      "bucket": "clients",
+      "canonicalLines": ["Adobe"],
+      "forbiddenBuckets": ["education", "languages", "skills", "interests"],
+      "note": "Standalone brand in Clients section — not Adobe Illustrator or Creative Suite"
+    },
+    {
+      "id": "marvel",
+      "term": "Marvel",
+      "bucket": "clients",
+      "canonicalLines": ["Marvel"],
+      "forbiddenBuckets": ["tools", "education", "languages", "skills", "interests"]
+    },
+    {
+      "id": "packaging",
+      "term": "Packaging",
+      "bucket": "skills",
+      "canonicalLines": [
+        "Packaging",
+        "Illustration, Graphic Design, Visual Identity, Poster Design, Packaging, Logo Design, Art Direction, Print Production, Typography, Branding, Editorial Design, Motion Design"
+      ],
+      "forbiddenBuckets": ["clients", "tools", "education", "languages", "interests"]
+    },
+    {
+      "id": "branding",
+      "term": "Branding",
+      "bucket": "skills",
+      "canonicalLines": ["Branding"],
+      "forbiddenBuckets": ["clients", "tools", "education", "languages", "interests"]
+    },
+    {
+      "id": "music",
+      "term": "Music",
+      "bucket": "interests",
+      "canonicalLines": ["Music", "Music, Movies, Nature"],
+      "forbiddenBuckets": ["languages", "tools", "clients", "education", "skills"]
+    },
+    {
+      "id": "movies",
+      "term": "Movies",
+      "bucket": "interests",
+      "canonicalLines": ["Movies", "Music, Movies, Nature"],
+      "forbiddenBuckets": ["languages", "tools", "clients", "education", "skills"]
+    }
+  ]
+}

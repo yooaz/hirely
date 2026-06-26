@@ -1,0 +1,289 @@
+.exactTranscriptionView {
+  margin: 0;
+  padding: 16px 18px 24px;
+  background: var(--paper, #fff);
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.06));
+}
+
+.exactTranscriptionView.hidden {
+  display: none !important;
+}
+
+html.exact-transcription-mode #importPasteFallback,
+html.exact-transcription-mode #extractionRecoveryPanel,
+html.exact-transcription-mode .importRecoveryPanel {
+  display: none !important;
+}
+html.exact-transcription-mode .templatePickerBar,
+html.exact-transcription-mode #cvPanel,
+html.exact-transcription-mode .extractionQualityStep,
+html.exact-transcription-mode #resumeStudioHead,
+html.exact-transcription-mode #styleStepHead,
+html.exact-transcription-mode #exportStepHead,
+html.exact-transcription-mode #studioPreview .trustStrip {
+  display: none !important;
+}
+
+html.exact-transcription-mode #exactTranscriptionView {
+  display: block !important;
+}
+
+.exactTranscriptionHead h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.exactTranscriptionMeta {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted, #6b7280);
+  line-height: 1.45;
+}
+
+.exactTranscriptionLayout {
+  display: grid;
+  grid-template-columns: minmax(220px, 42%) 1fr;
+  gap: 16px;
+  margin-top: 14px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .exactTranscriptionLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exactTranscriptionDoc {
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 360px;
+  background: #f8fafc;
+}
+
+.exactTranscriptionToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 12px;
+}
+
+.exactTranscriptionToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.exactTranscriptionPdfCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: #fff;
+}
+
+.exactWeakTag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #ffedd5;
+  color: #9a3412;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.exactTranscriptionDoc embed,
+.exactTranscriptionDoc iframe,
+.exactTranscriptionDoc object {
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+
+.exactTranscriptionDocPlaceholder {
+  padding: 24px 16px;
+  font-size: 13px;
+  color: var(--muted, #6b7280);
+  text-align: center;
+}
+
+.exactTranscriptionText {
+  min-width: 0;
+}
+
+.exactTranscriptionPageNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.exactTranscriptionPageBtn {
+  border: 1px solid var(--line, #e5e7eb);
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.exactTranscriptionPageBtn[aria-current='page'] {
+  border-color: #0f766e;
+  background: #ecfdf5;
+  color: #115e59;
+}
+
+.exactTranscriptionPageBtn--weak {
+  border-color: #f59e0b;
+}
+
+.exactTranscriptionPageBtn--portfolio {
+  border-color: #6366f1;
+}
+
+.exactTranscriptionSummary {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--line, #e5e7eb);
+  font-size: 12px;
+}
+
+.exactTranscriptionLines {
+  max-height: 62vh;
+  overflow: auto;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.exactTranscriptionLine {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.exactTranscriptionLine:last-child {
+  border-bottom: 0;
+}
+
+.exactTranscriptionLineIndex {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  color: var(--muted, #6b7280);
+  min-width: 52px;
+}
+
+.exactTranscriptionLineText {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.exactTranscriptionLineMeta {
+  font-size: 11px;
+  color: var(--muted, #6b7280);
+  text-align: right;
+  min-width: 88px;
+}
+
+.exactTranscriptionLine--low {
+  background: #fff7ed;
+}
+
+.exactTranscriptionCoords {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.exactTranscriptionWords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.exactTranscriptionWord {
+  font-size: 10px;
+  line-height: 1.35;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #334155;
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.exactTranscriptionWord--inferred {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.exactTranscriptionWord--zero {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.exactRealTag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-bottom: 4px;
+}
+
+.importModeFieldset {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+html:not(.debug-mode) .importModeFieldset,
+html:not(.debug-mode) #importModeDebugHost {
+  display: none !important;
+}
+
+.importModeFieldset legend {
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.importModeFieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 14px;
+  cursor: pointer;
+}

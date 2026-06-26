@@ -1,0 +1,479 @@
+/**
+ * HIRELY UI REBALANCE — scale −17%, denser rhythm, wider canvas, narrower rails.
+ * Load last (after hirely-premium-polish.css).
+ */
+
+:root {
+  /* —— Typography scale —— */
+  --hirely-h1: 36px;
+  --hirely-h2: 28px;
+  --hirely-h3: 22px;
+  --hirely-body: 15px;
+  --hirely-caption: 13px;
+  --hirely-line-tight: 1.45;
+  --hirely-line-body: 1.55;
+
+  /* —— Layout —— */
+  --hirely-max: 1440px;
+  --hirely-gutter: 32px;
+  --hirely-aside-max: 168px;
+  --hirely-aside-import-max: 220px;
+
+  /* —— Spacing (−17% vs premium polish defaults) —— */
+  --space-1: 3px;
+  --space-2: 7px;
+  --space-3: 10px;
+  --space-4: 13px;
+  --space-5: 17px;
+  --space-6: 20px;
+  --space-8: 26px;
+
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 13px;
+  --radius-xl: 16px;
+
+  /* CV preview fit (logical 794px A4) */
+  --cv-preview-scale: 1;
+}
+
+/* —— Base typography —— */
+body {
+  font-size: var(--hirely-body);
+  line-height: var(--hirely-line-body);
+}
+
+h1,
+.heroCopy h1,
+.importPanel h2,
+.styleStepHead h2,
+.exportStepHead h2 {
+  font-size: var(--hirely-h1);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+h2,
+.reviewV2Head h3,
+.coverLetterHead h3,
+.importPanel--compact h2 {
+  font-size: var(--hirely-h2);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+h3,
+.reviewStudioCenter .suggestionsTitle,
+.reviewV2Block h4,
+.blkCanvasHead h3 {
+  font-size: var(--hirely-h3);
+  line-height: 1.25;
+}
+
+.caption,
+.importPanel .sub,
+.heroHow,
+.trustStrip,
+.hirelyProgressHint,
+.exportStepLead,
+.premiumTplHiring,
+.premiumTplStyle,
+.reviewV2ScoreDesc {
+  font-size: var(--hirely-caption);
+  line-height: var(--hirely-line-tight);
+}
+
+/* —— App shell —— */
+.app {
+  width: min(var(--hirely-max), calc(100% - var(--hirely-gutter)));
+}
+
+.top {
+  height: 46px;
+  margin-top: 10px;
+  padding: 0 4px;
+}
+
+.brand {
+  font-size: 15px;
+  gap: 7px;
+}
+
+.logo {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+  border-radius: 7px;
+}
+
+.nav {
+  gap: 18px;
+  font-size: var(--hirely-caption);
+}
+
+.btn {
+  padding: 7px 12px;
+  font-size: var(--hirely-caption);
+  border-radius: 8px;
+}
+
+.btn.small {
+  padding: 5px 9px;
+  font-size: 12px;
+}
+
+/* —— Landing / Dashboard (hero) —— */
+.hero {
+  padding: 28px 0 32px;
+  width: 100%;
+  max-width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.heroCopy h1 {
+  font-size: var(--hirely-h1);
+  margin: 0 0 10px;
+}
+
+.heroCopy .lead {
+  font-size: var(--hirely-body);
+  line-height: var(--hirely-line-body);
+}
+
+.heroBadge {
+  margin: 0 0 12px;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+.heroStep {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.heroPipeline--three .heroStep {
+  min-height: 88px;
+}
+
+.heroUploadBtn {
+  padding: 11px 18px;
+  font-size: var(--hirely-body);
+}
+
+.workspaceZone {
+  margin-bottom: 28px;
+  padding-bottom: 4px;
+}
+
+/* —— Workspace grid —— */
+.workspaceGrid {
+  gap: var(--space-3);
+  max-width: min(var(--hirely-max), 100%);
+  grid-template-columns: minmax(0, 1fr) minmax(200px, var(--hirely-aside-import-max));
+}
+
+.workspaceGrid--ready {
+  gap: var(--space-2);
+  max-width: min(var(--hirely-max), 100%);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready:not(.docStep-edit) {
+  grid-template-columns: minmax(0, 1fr) minmax(148px, var(--hirely-aside-max));
+  gap: var(--space-2) var(--space-3);
+  max-width: min(var(--hirely-max), 100%);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit,
+html:not(.debug-mode) .app--workspace .workspaceGrid--ready.docStep-edit {
+  max-width: min(var(--hirely-max), 100%);
+  gap: var(--space-4);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export {
+  max-width: min(var(--hirely-max), 100%);
+}
+
+.hirelyProgressNav {
+  max-width: min(var(--hirely-max), 100%);
+  margin-bottom: var(--space-4);
+}
+
+.hirelyProgressBtn {
+  padding: 9px 8px;
+}
+
+.hirelyProgressLabel {
+  font-size: 11px;
+}
+
+.hirelyProgressHint {
+  padding: 9px 12px;
+  margin-top: var(--space-2);
+}
+
+/* —— Import —— */
+.wsInsights,
+.wsImport {
+  padding: var(--space-4) var(--space-3);
+}
+
+.workspaceGrid--ready .wsImport {
+  padding: var(--space-3) var(--space-4);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready:not(.docStep-edit) .wsInsights {
+  padding: var(--space-3) var(--space-2);
+  top: 64px;
+  max-height: calc(100vh - 80px);
+}
+
+.app--workspace .wsImport,
+.importPanel--workspaceSplit,
+.importPanel--compact {
+  padding: var(--space-4);
+}
+
+.app--workspace .drop,
+.drop {
+  min-height: 88px;
+  padding: var(--space-4);
+}
+
+.importPanel h2,
+.importPanel--compact h2 {
+  font-size: var(--hirely-h3);
+  margin: 0 0 var(--space-2);
+}
+
+.importPasteFallback {
+  padding: var(--space-4) var(--space-5);
+}
+
+.importPasteFallback textarea {
+  min-height: 180px;
+}
+
+.trustStrip {
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-2) var(--space-3);
+  font-size: 12px;
+}
+
+/* —— Analysis / Review —— */
+.reviewStudioCenter,
+.reviewStudioAnalysis {
+  padding: var(--space-4) !important;
+  border-radius: var(--radius-md) !important;
+  gap: var(--space-3) !important;
+}
+
+.reviewStudioCenter .suggestionCard {
+  padding: var(--space-3);
+}
+
+.reviewV2ScoreRing {
+  width: 52px;
+  height: 52px;
+  font-size: 1rem;
+}
+
+.reviewV2Block h4 {
+  font-size: 11px;
+  margin: 0 0 8px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioCenter,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioAnalysis {
+  padding: var(--space-4) !important;
+}
+
+/* —— Templates —— */
+.templatePickerBar {
+  padding: var(--space-3) var(--space-4) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.premiumGalleryGrid {
+  grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+  gap: var(--space-3);
+}
+
+.premiumTplCard {
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.premiumTplName {
+  font-size: var(--hirely-caption);
+}
+
+.premiumGalleryFilter {
+  padding: 6px 11px;
+  font-size: 12px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .templatePickerBar {
+  top: 52px;
+  padding: var(--space-2) var(--space-3) var(--space-2);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumGalleryGrid {
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 8px;
+  max-height: min(196px, 32vh);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumTplCard {
+  padding: 6px;
+  border-radius: 10px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .premiumTplPreview {
+  min-height: 64px;
+}
+
+.workspaceGrid--ready .tplCard {
+  flex: 0 0 108px;
+}
+
+/* —— CV preview (larger, less chrome padding) —— */
+.app--workspace .cvFocus,
+.workspaceGrid--ready .cvStage {
+  padding: 18px 14px 22px !important;
+  border-radius: var(--radius-md);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStage {
+  padding: 12px 10px 16px;
+  min-height: min(62vh, 760px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview #a4Viewport {
+  min-height: min(54vh, 680px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .workspaceCanvas {
+  min-height: 320px;
+}
+
+.workspaceGrid--ready .wsCenterStack {
+  min-height: min(50vh, 600px);
+}
+
+.workspaceGrid--ready .workspaceCanvas {
+  min-height: min(44vh, 540px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack {
+  gap: var(--space-3);
+}
+
+/* Container-based CV scale — preview uses available width */
+.studioPreview .workspaceCanvas,
+.workspaceGrid--ready .workspaceCanvas {
+  container-type: inline-size;
+  container-name: cv-canvas;
+}
+
+@container cv-canvas (min-width: 720px) {
+  .cvStageInner {
+    --cv-preview-scale: min(1.12, calc((100cqi - 20px) / 794));
+    transform: scale(var(--cv-preview-scale));
+    transform-origin: top center;
+    margin-bottom: calc(1123px * (var(--cv-preview-scale) - 1) * 0.45);
+  }
+}
+
+@container cv-canvas (min-width: 1100px) {
+  .cvStageInner {
+    --cv-preview-scale: min(1.18, calc((100cqi - 24px) / 794));
+  }
+}
+
+/* —— Export —— */
+.docFooter .cvExportBar {
+  padding: var(--space-3) var(--space-4) !important;
+  border-radius: var(--radius-md);
+  max-width: min(var(--hirely-max), 100%);
+}
+
+.docFooter .cvExportBar .btn.primary {
+  min-width: 168px;
+  padding: 10px 18px;
+  font-size: var(--hirely-body);
+}
+
+.coverLetterWorkspace {
+  padding: var(--space-4) !important;
+}
+
+.coverLetterHead h3 {
+  font-size: var(--hirely-h3);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview {
+  min-height: min(64vh, 780px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cvStage {
+  padding: 10px 12px 14px;
+}
+
+/* —— Editor rail (narrower when visible) —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel {
+  padding: var(--space-3) var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioScorePanel {
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+}
+
+.cvEmptyState {
+  padding: 48px 28px !important;
+}
+
+.cvEmptyState strong {
+  font-size: var(--hirely-h3) !important;
+}
+
+/* —— Pricing cards —— */
+.price {
+  padding: var(--space-5);
+}
+
+.price h3 {
+  font-size: var(--hirely-h3);
+}
+
+/* —— Responsive —— */
+@media (max-width: 960px) {
+  :root {
+    --hirely-gutter: 20px;
+    --hirely-h1: 32px;
+    --hirely-h2: 24px;
+    --hirely-h3: 20px;
+  }
+
+  .cvStageInner {
+    --cv-preview-scale: 1 !important;
+    transform: none !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .app {
+    width: calc(100% - 20px);
+  }
+
+  .app--workspace .cvFocus,
+  .workspaceGrid--ready .cvStage {
+    padding: 14px 10px 18px !important;
+  }
+}

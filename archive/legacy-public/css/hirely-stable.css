@@ -1,0 +1,714 @@
+/* Hirely Stable — hard reset layout & calm UI (loads last) */
+
+:root {
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --stable-font: "Inter", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --stable-display: "Instrument Serif", Georgia, serif;
+  --stable-ink: #0f1419;
+  --stable-muted: #5c6570;
+  --stable-line: #e8eaed;
+  --stable-bg: #f4f5f7;
+  --stable-surface: #ffffff;
+  --stable-intel: #0f1117;
+  --stable-col-upload: 280px;
+  --stable-col-intel: 240px;
+  --stable-max: 1280px;
+}
+
+/* —— Kill experimental layers —— */
+body.stable-mode .bgBlob,
+body.stable-mode .flow,
+body.stable-mode .narrativeArc,
+body.stable-mode .trustBadge,
+body.stable-mode .trustStrip,
+body.stable-mode .intelCompanion,
+body.stable-mode .visionBar,
+body.stable-mode .cvVisionOverlay,
+body.stable-mode .cvVisionWrap .cvVisionOverlay,
+body.stable-mode .companionPulse,
+body.stable-mode .canvasControls,
+body.stable-mode .livePulse::after,
+body.stable-mode .heroInsight,
+body.stable-mode .stepHint,
+body.stable-mode .recruiterImpression,
+body.stable-mode #bars,
+body.stable-mode .insightGrid,
+body.stable-mode .readinessGrid,
+body.stable-mode .transformPanel,
+body.stable-mode .scoreTop > div:last-child,
+body.stable-mode .workspaceBadge,
+body.stable-mode .editHint,
+body.stable-mode .metaHint,
+body.stable-mode .intelSecondary {
+  display: none !important;
+}
+
+body.stable-mode {
+  font-family: var(--stable-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--stable-ink);
+  background: var(--stable-bg);
+}
+
+body.stable-mode .bgBlob {
+  display: none !important;
+}
+
+/* —— Neutralize legacy CSS (elite/os/editorial) still in cache —— */
+html.stable-mode .productShell,
+html.stable-mode .productShell.stable-layout,
+html.stable-mode .productShell.os-layout {
+  display: block !important;
+  max-width: var(--stable-max) !important;
+  margin: 0 auto var(--s-6) !important;
+  padding: 0 var(--s-4) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html.stable-mode .transformStack,
+html.stable-mode .cinemaGrid,
+html.stable-mode .prepSection,
+html.stable-mode .workspaceSection {
+  display: block !important;
+}
+
+html.stable-mode .workspaceGrid {
+  display: grid !important;
+  grid-template-columns: var(--stable-col-upload) minmax(0, 1fr) var(--stable-col-intel) !important;
+  gap: var(--s-4) !important;
+  width: 100% !important;
+  align-items: start !important;
+}
+
+html.stable-mode .col-upload {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: var(--stable-col-upload) !important;
+  max-width: var(--stable-col-upload) !important;
+}
+
+html.stable-mode .col-preview {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+html.stable-mode .col-intel {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  width: var(--stable-col-intel) !important;
+  max-width: var(--stable-col-intel) !important;
+}
+
+/* —— Typography —— */
+body.stable-mode h1,
+body.stable-mode .hero h1 {
+  font-family: var(--stable-display);
+  font-weight: 400;
+}
+
+body.stable-mode,
+body.stable-mode .nav,
+body.stable-mode .card,
+body.stable-mode input,
+body.stable-mode textarea,
+body.stable-mode select,
+body.stable-mode button,
+body.stable-mode .btn,
+body.stable-mode .tab,
+body.stable-mode .scorePanel,
+body.stable-mode .uploadBand,
+body.stable-mode .label,
+body.stable-mode .intelLabel,
+body.stable-mode #primaryInsight,
+body.stable-mode .sectionHead h2,
+body.stable-mode .workspaceHead h2,
+body.stable-mode .templatesBand h2 {
+  font-family: var(--stable-font);
+}
+
+body.stable-mode .heroLead,
+body.stable-mode .heroTrust {
+  font-family: var(--stable-font);
+  color: var(--stable-muted);
+}
+
+/* —— Hero —— */
+body.stable-mode .hero.hero--compact {
+  padding: var(--s-7) 0 var(--s-6);
+  text-align: center;
+  max-width: var(--stable-max);
+  margin: 0 auto;
+}
+
+body.stable-mode .hero h1 {
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  line-height: 1.08;
+  margin: 0 0 var(--s-4);
+}
+
+body.stable-mode .heroLead {
+  max-width: 36ch;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+body.stable-mode .heroTrust {
+  margin-top: var(--s-3);
+  font-size: 12px;
+}
+
+body.stable-mode .hero .actions {
+  margin-top: var(--s-5);
+}
+
+body.stable-mode .hero .actions .btn.ghost {
+  display: none;
+}
+
+body.stable-mode .kicker--elite {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stable-muted);
+  margin-bottom: var(--s-3);
+}
+
+/* —— Shell —— */
+body.stable-mode .productShell.stable-layout {
+  max-width: var(--stable-max);
+  margin: 0 auto var(--s-6);
+  padding: 0 var(--s-4);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+body.stable-mode .prepSection {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+body.stable-mode .sectionHead {
+  display: none;
+}
+
+/* —— Workspace grid: 320 | flex | 340 —— */
+body.stable-mode .workspaceGrid {
+  display: grid;
+  grid-template-columns: var(--stable-col-upload) minmax(0, 1fr) var(--stable-col-intel);
+  gap: var(--s-4);
+  align-items: start;
+  width: 100%;
+}
+
+body.stable-mode .col-upload {
+  grid-column: 1;
+  background: var(--stable-surface);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+  padding: var(--s-4);
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+body.stable-mode .col-preview {
+  grid-column: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+body.stable-mode .col-intel {
+  grid-column: 3;
+  background: var(--stable-intel);
+  color: #e8eaed;
+  border-radius: var(--s-3);
+  padding: var(--s-4);
+  border: none;
+  box-shadow: none;
+  position: sticky;
+  top: var(--s-5);
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+}
+
+body.stable-mode .col-intel.scorePanel {
+  background: var(--stable-intel);
+}
+
+body.stable-mode .col-intel .cardHead {
+  border: none;
+  padding: 0 0 var(--s-3);
+  margin: 0;
+}
+
+body.stable-mode .col-intel .cardHead h2 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin: 0;
+}
+
+body.stable-mode .col-intel .label {
+  display: none;
+}
+
+/* —— Upload panel —— */
+body.stable-mode .uploadBand {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  background: transparent;
+}
+
+body.stable-mode .uploadBand .cardHead h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 var(--s-3);
+  color: var(--stable-ink);
+}
+
+body.stable-mode .field {
+  margin-bottom: var(--s-3);
+}
+
+body.stable-mode .field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--stable-muted);
+  margin-bottom: var(--s-1);
+}
+
+body.stable-mode textarea,
+body.stable-mode input,
+body.stable-mode select {
+  font-size: 13px;
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-2);
+  box-shadow: none;
+}
+
+body.stable-mode textarea#cvText,
+body.stable-mode textarea#jobText {
+  min-height: 64px;
+  max-height: 100px;
+}
+
+body.stable-mode .uploadBox {
+  border: 1px dashed #c5cad1;
+  border-radius: var(--s-2);
+  padding: var(--s-3);
+  background: #fafbfc;
+}
+
+body.stable-mode .btn {
+  font-size: 13px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--s-2);
+}
+
+/* —— Preview column —— */
+body.stable-mode .previewChrome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: 0 var(--s-1);
+}
+
+body.stable-mode .previewChrome .workspaceHead {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+  min-width: 160px;
+}
+
+body.stable-mode .previewChrome .workspaceHead h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--stable-ink);
+}
+
+body.stable-mode .previewChrome .workspaceHead .label,
+body.stable-mode .previewChrome .workspaceMeta {
+  display: none;
+}
+
+body.stable-mode .previewChrome .actions .btn.ghost {
+  font-size: 12px;
+  opacity: 0.7;
+  border: none;
+  background: transparent;
+}
+
+body.stable-mode .tabRow {
+  width: 100%;
+  margin: 0;
+}
+
+body.stable-mode .tabs {
+  gap: var(--s-4);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+body.stable-mode .tab {
+  padding: var(--s-2) 0;
+  font-size: 13px;
+  border: none;
+  background: transparent;
+  color: var(--stable-muted);
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+
+body.stable-mode .tab.active {
+  color: var(--stable-ink);
+  border-bottom-color: var(--stable-ink);
+  background: transparent;
+}
+
+body.stable-mode #proToolbar.workspaceToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  background: var(--stable-surface);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-2);
+}
+
+body.stable-mode .workspacePreview {
+  flex: 1;
+  min-height: 520px;
+  background: var(--stable-bg);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+  padding: var(--s-5);
+  position: relative;
+  overflow: auto;
+}
+
+body.stable-mode .cvStage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 480px;
+  padding: var(--s-4) 0;
+  transform: none !important;
+  perspective: none !important;
+}
+
+body.stable-mode .cvCanvas {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  transform: none !important;
+}
+
+body.stable-mode .cvPage {
+  transform: none !important;
+  box-shadow:
+    0 1px 2px rgba(15, 20, 25, 0.06),
+    0 8px 24px rgba(15, 20, 25, 0.1);
+  border: 1px solid rgba(15, 20, 25, 0.08);
+  border-radius: 2px;
+  background: #fff;
+}
+
+body.stable-mode .proLock {
+  position: static;
+  margin: var(--s-5) auto;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--stable-surface);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+  padding: var(--s-5);
+}
+
+body.stable-mode .proLock h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body.stable-mode .proLock p {
+  font-size: 13px;
+  color: var(--stable-muted);
+  max-width: 28ch;
+}
+
+/* —— Intel panel compact —— */
+body.stable-mode .scoreTop {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+
+body.stable-mode .scorePanel .ring {
+  width: 52px;
+  height: 52px;
+  font-size: 17px;
+  flex-shrink: 0;
+  box-shadow: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+body.stable-mode .scorePulse,
+body.stable-mode .scoreBlock--alive,
+body.stable-mode .reveal,
+body.stable-mode .is-transforming::after {
+  animation: none !important;
+}
+
+html.stable-mode .workspacePreview.preview-locked .cvStage,
+html.stable-mode .workspacePreview.preview-locked-edit .cvStage {
+  filter: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+html.stable-mode .proLock.proLock--overlay {
+  position: static !important;
+  inset: auto !important;
+  backdrop-filter: none !important;
+}
+
+html.stable-mode .card:hover,
+html.stable-mode .productShell:hover,
+html.stable-mode .price:hover {
+  transform: none !important;
+}
+
+html.stable-mode .col-intel .ring {
+  width: 52px !important;
+  height: 52px !important;
+  margin: 0 !important;
+}
+
+html.stable-mode .col-intel .ring::after {
+  inset: 7px !important;
+}
+
+html.stable-mode .col-intel .ring span {
+  font-size: 17px !important;
+}
+
+html.stable-mode #proToolbar .toolbarGroup:first-of-type {
+  display: none;
+}
+
+html.stable-mode .templatesBand {
+  display: block !important;
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--stable-line);
+  max-width: var(--stable-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--s-4);
+  padding-right: var(--s-4);
+}
+
+body.stable-mode .scorePanel .scoreLabel {
+  font-size: 11px;
+  text-align: left;
+  color: #94a3b8;
+}
+
+body.stable-mode .scorePanel .scoreDelta {
+  font-size: 11px;
+  text-align: left;
+  color: #94a3b8;
+}
+
+body.stable-mode .intelSummary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+body.stable-mode .intelBlock--primary {
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.stable-mode .intelLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: var(--s-2);
+}
+
+body.stable-mode #primaryInsight {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+body.stable-mode .intelActions {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+body.stable-mode .intelActions li,
+body.stable-mode #fixList li {
+  font-size: 12px;
+  line-height: 1.45;
+  padding: var(--s-2) 0 var(--s-2) var(--s-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+
+body.stable-mode .osTplSlot {
+  display: none !important;
+}
+
+/* —— Templates band —— */
+body.stable-mode .templatesBand {
+  margin-top: var(--s-6);
+  padding: var(--s-5) 0 0;
+  border-top: 1px solid var(--stable-line);
+}
+
+body.stable-mode .templatesBand h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--stable-muted);
+  margin: 0 0 var(--s-4);
+}
+
+body.stable-mode .templatesBand .templateGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--s-3);
+}
+
+body.stable-mode .templatesBand .templateCard {
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-2);
+  padding: var(--s-2);
+  background: var(--stable-surface);
+  box-shadow: none;
+}
+
+body.stable-mode .templatesBand .templateCard.active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+body.stable-mode .templatesBand .tplTag {
+  display: none;
+}
+
+/* —— Pricing —— */
+body.stable-mode .pricingBand {
+  max-width: var(--stable-max);
+  margin: var(--s-8) auto;
+  padding: 0 var(--s-4);
+}
+
+body.stable-mode .pricing {
+  gap: var(--s-4);
+}
+
+body.stable-mode .price {
+  border: 1px solid var(--stable-line);
+  box-shadow: none;
+  border-radius: var(--s-3);
+  padding: var(--s-5);
+}
+
+body.stable-mode #procv.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--s-3);
+}
+
+body.stable-mode #audit,
+body.stable-mode #linkedin,
+body.stable-mode #letter {
+  padding: var(--s-4);
+  background: var(--stable-surface);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+}
+
+body.stable-mode .col-preview.workspace {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+body.stable-mode .nav {
+  border: none;
+  box-shadow: none;
+  background: var(--stable-surface);
+  border-bottom: 1px solid var(--stable-line);
+}
+
+/* —— Responsive —— */
+@media (max-width: 1100px) {
+  body.stable-mode .workspaceGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  body.stable-mode .col-upload {
+    grid-column: 1 / -1;
+    max-height: none;
+  }
+  body.stable-mode .col-preview {
+    grid-column: 1;
+  }
+  body.stable-mode .col-intel {
+    grid-column: 2;
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 720px) {
+  body.stable-mode .workspaceGrid {
+    grid-template-columns: 1fr;
+  }
+  body.stable-mode .col-preview,
+  body.stable-mode .col-intel {
+    grid-column: 1;
+  }
+}

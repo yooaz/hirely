@@ -1,0 +1,102 @@
+[
+  {
+    "id": "text-pdf",
+    "documentType": "pdf",
+    "expectedMethod": "pdf-text",
+    "binary": ["document.pdf"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "scanned-pdf",
+    "documentType": "pdf",
+    "expectedMethod": "pdf-ocr",
+    "binary": ["document.pdf"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "docx",
+    "documentType": "docx",
+    "expectedMethod": "docx",
+    "binary": ["document.docx", "document.doc"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "image-cv",
+    "documentType": "image",
+    "expectedMethod": "image-ocr",
+    "binary": ["document.png", "document.jpg", "document.jpeg", "document.webp"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "two-column-cv",
+    "documentType": "pdf",
+    "expectedMethod": "pdf-text",
+    "binary": ["document.pdf"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "creative-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.pdf", "document.docx", "document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "yoaz-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "developer-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "consultant-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "student-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "executive-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "marketing-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "recruiter-cv",
+    "documentType": "cv",
+    "expectedMethod": "paste",
+    "binary": ["document.txt"],
+    "fallback": "fixture.txt"
+  },
+  {
+    "id": "yoaz-pdf-benchmark",
+    "documentType": "pdf",
+    "expectedMethod": "pdf-ocr",
+    "binary": ["document.pdf"],
+    "fallback": "fixture.txt",
+    "golden": "tests/golden/yoaz-pdf-benchmark.expected.json",
+    "label": "cv. Yohann azancot.pdf — two-column creative CV parsing benchmark"
+  }
+]

@@ -1,0 +1,173 @@
+/**
+ * Hirely product stepper — TurboTax / Canva style flow.
+ */
+
+.hirelyProgressNav {
+  width: 100%;
+  max-width: min(960px, 100%);
+  margin: 0 auto 20px;
+  padding: 0;
+}
+
+.hirelyProgressTrack {
+  height: 4px;
+  background: #e8e8e4;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.hirelyProgressFill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #171717 0%, #404040 100%);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.hirelyProgressSteps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.hirelyProgressStep {
+  min-width: 0;
+}
+
+.hirelyProgressBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.hirelyProgressBtn:hover:not(:disabled) {
+  border-color: #c8c8c4;
+  color: var(--ink);
+}
+
+.hirelyProgressBtn:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.hirelyProgressStep.is-active .hirelyProgressBtn {
+  border-color: var(--ink);
+  background: #fafaf8;
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
+}
+
+.hirelyProgressStep.is-done .hirelyProgressBtn {
+  border-color: var(--line);
+  background: var(--wash, #f3f3f0);
+  color: var(--ink);
+}
+
+.hirelyProgressIcon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 999px;
+  background: #f0f0ec;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.hirelyProgressStep.is-done .hirelyProgressIcon {
+  background: var(--ink);
+  color: #fff;
+}
+
+.hirelyProgressStep.is-active .hirelyProgressIcon {
+  background: var(--ink);
+  color: #fff;
+}
+
+.hirelyProgressLabel {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.hirelyProgressStep.is-active .hirelyProgressLabel {
+  font-weight: 700;
+}
+
+.hirelyProgressHint {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: #fafaf8;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.hirelyProgressHint strong {
+  font-weight: 650;
+}
+
+.hirelyProgressHint.hidden {
+  display: none !important;
+}
+
+html:not(.debug-mode) .docNav.docNav--legacy {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .hirelyProgressSteps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hirelyProgressLabel {
+    font-size: 10px;
+  }
+
+  .hirelyProgressBtn {
+    padding: 8px 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hirelyProgressSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .hirelyProgressBtn {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 10px 12px;
+  }
+
+  .hirelyProgressLabel {
+    text-align: left;
+    font-size: 12px;
+  }
+}

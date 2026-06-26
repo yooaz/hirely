@@ -1,0 +1,27 @@
+/**
+ * Export simple — one Download PDF control; hide duplicate export UI.
+ */
+html:not(.debug-mode) .exportMoreWrap,
+html:not(.debug-mode) #exportMoreBtn,
+html:not(.debug-mode) #exportMoreMenu,
+html:not(.debug-mode) #emailCvBtn,
+html:not(.debug-mode) #downloadTxt,
+html:not(.debug-mode) .exportFinalPanel,
+html:not(.debug-mode) #exportFinalCvPdf,
+html:not(.debug-mode) #exportFinalLetterPdf,
+html:not(.debug-mode) #exportFinalCopyCv {
+  display: none !important;
+}
+
+html:not(.debug-mode) #cvExportBar {
+  justify-content: center;
+}
+
+html:not(.debug-mode) #cvExportBar #downloadBtn {
+  min-width: min(280px, 100%);
+}
+
+html:not(.debug-mode) #reviewV2BlockedBadge,
+html:not(.debug-mode) #reviewV2ReviewRequiredBadge.export-blocker {
+  display: none !important;
+}

@@ -1,0 +1,12 @@
+Hirely patched build
+
+Changes:
+- better OCR route inference when OCR text/lines exist
+- synthesize structured payload from OCR text before final route
+- expose last import route/status globals
+- longer PDF OCR extraction budget default (45s)
+
+Run:
+npm install
+npm run dev:ui
+open http://127.0.0.1:4321/

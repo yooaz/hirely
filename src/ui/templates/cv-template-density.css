@@ -1,0 +1,245 @@
+/**
+ * P0/P1 — Template density: tighter rhythm, stronger experience, compact meta rows.
+ */
+
+.cvInner.cvDensity--sparse,
+.cvInner.cvDensity--filled {
+  --cv-density-section-gap: var(--typo-cv-block-gap, 10px);
+  --cv-density-block-gap: var(--typo-cv-tight-gap, 6px);
+  --cv-density-line: var(--typo-leading-body, 1.58);
+}
+
+.cvInner.cvDensity--filled {
+  --cv-density-section-gap: var(--typo-cv-section-gap, 18px);
+  --cv-density-block-gap: var(--typo-cv-block-gap, 10px);
+  --cv-density-line: var(--typo-leading-body, 1.58);
+}
+
+/* Pack content from the top — no vertical stretch into blank footer */
+.cvInner.cvDensity--sparse .cvMain,
+.cvInner.cvDensity--filled .cvMain,
+.cvInner.cvDensity--sparse .cvBody,
+.cvInner.cvDensity--filled .cvBody {
+  justify-content: flex-start !important;
+  align-content: flex-start !important;
+}
+
+.cvInner.cvDensity--sparse .cvMain,
+.cvInner.cvDensity--filled .cvMain {
+  gap: var(--cv-density-section-gap);
+}
+
+.cvInner.cvDensity--sparse .cvSection,
+.cvInner.cvDensity--filled .cvSection {
+  margin-bottom: var(--cv-density-block-gap);
+}
+
+.cvInner.cvDensity--sparse .cvSection:last-child,
+.cvInner.cvDensity--filled .cvSection:last-child {
+  margin-bottom: 0;
+}
+
+.cvInner.cvDensity--sparse .cvSectionBody,
+.cvInner.cvDensity--filled .cvSectionBody {
+  line-height: var(--cv-density-line);
+}
+
+/* Sparse CVs: tighter shell padding, no forced full-page stretch in live preview */
+.cvInner.cvDensity--sparse .cvHead {
+  padding-bottom: 12px;
+}
+
+.cvInner.cvDensity--sparse .cvMain {
+  padding-bottom: 20px;
+}
+
+#cvStage .cv:has(.cvDensity--sparse):not(.cv--a4),
+#cvDoc.cv:has(.cvDensity--sparse):not(.cv--a4) {
+  min-height: auto !important;
+  aspect-ratio: auto !important;
+}
+
+/* Filled CVs (5+ sections): use vertical space with readable rhythm */
+.cvInner.cvDensity--filled .cvExpList .cvExpEntry + .cvExpEntry {
+  margin-top: 10px;
+}
+
+.cvInner.cvDensity--filled .cvExpBullet,
+.cvInner.cvDensity--filled .cvProjectEntry p,
+.cvInner.cvDensity--filled .cvEduLine,
+.cvInner.cvDensity--filled .cvEduEntry {
+  margin-top: 4px;
+}
+
+.cvInner.cvDensity--filled .cvMetaFooter {
+  margin-top: 4px;
+  gap: 12px;
+}
+
+.cvInner.cvDensity--filled .cvClientGrid {
+  gap: 8px 10px;
+}
+
+/* A4 sheets: content height drives perceived density, not empty sheet chrome */
+.cvA4Sheet .cvInner.cvDensity--filled {
+  max-height: var(--cv-a4-height);
+}
+
+body.export-pdf .cvInner.cvDensity--sparse .cvMain,
+body.export-pdf .cvInner.cvDensity--filled .cvMain {
+  justify-content: flex-start !important;
+}
+
+/* Magazine 3-column: keep spread on page 1 — no forced min-height stretch */
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvBody--magazine,
+.cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvBody--magazine {
+  flex: 0 1 auto;
+  min-height: 0;
+  padding-bottom: 12px;
+}
+
+/* A4 sheets: no min-height stretch or extra padding that clips inside the page */
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine,
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial {
+  min-height: 0 !important;
+}
+
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvBody--magazine,
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvBody--magazine {
+  min-height: 0;
+  padding-bottom: 8px;
+}
+
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvHead--magazine,
+.cvA4Sheet .cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvHead--magazine {
+  padding-bottom: 12px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvHead--magazine,
+.cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvHead--magazine {
+  padding-bottom: 26px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvCol,
+.cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cv-density-section-gap);
+  justify-content: flex-start;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-editorial-magazine .cvExpList--airy .cvExpEntry + .cvExpEntry,
+.cvInner.cvDensity--filled.cvLayout-h20-magazine-editorial .cvExpList--airy .cvExpEntry + .cvExpEntry {
+  margin-top: 14px;
+}
+
+/* Filled CVs — tighten headers so page 1 reaches 55%+ without losing identity */
+.cvInner.cvDensity--filled.cvLayout-h20-ats-elite .cvHead--ats-elite {
+  padding: 22px 36px 12px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-ats-elite .cvMain--ats-elite {
+  padding: 14px 36px 22px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-ats-elite .cvSection {
+  margin-bottom: 10px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-startup-builder .cvHead--startup-builder,
+.cvInner.cvDensity--filled.cvLayout-h20-startup-builder .cvSbHero {
+  padding: 24px 36px 18px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-startup-builder .cvMain--startup-builder {
+  padding: 16px 36px 24px;
+  gap: 14px;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-swiss-editorial .cvHead--swiss-editorial {
+  padding: 28px 40px 14px !important;
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-swiss-editorial .cvMain--swiss-stacked {
+  padding: 14px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cv-density-section-gap);
+}
+
+.cvInner.cvDensity--filled.cvLayout-h20-swiss-editorial .cvClientGrid {
+  gap: 8px 10px;
+}
+
+.cvInner.cvDensity--filled .cvMetaFooter,
+.cvInner.cvDensity--filled .cvMetaGrid {
+  gap: 8px 10px;
+}
+
+.cvInner.cvDensity--filled .cvSection--compact .cvSectionTitle {
+  margin-bottom: 4px;
+}
+
+.cvInner.cvDensity--sparse .cvSkillLine,
+.cvInner.cvDensity--sparse .cvToolsLine,
+.cvInner.cvDensity--filled .cvSkillLine,
+.cvInner.cvDensity--filled .cvToolsLine {
+  line-height: 1.4;
+  font-size: 9.5pt;
+}
+
+.cvInner.cvDensity--sparse .cvClientLine,
+.cvInner.cvDensity--filled .cvClientLine {
+  font-size: 9.5pt;
+  line-height: 1.4;
+}
+
+.cvInner.cvDensity--sparse .cvClientGrid,
+.cvInner.cvDensity--filled .cvClientGrid {
+  gap: 6px 8px;
+}
+
+.cvInner.cvDensity--sparse .cvClientChip,
+.cvInner.cvDensity--filled .cvClientChip {
+  font-size: 9pt;
+  padding: 2px 8px;
+  line-height: 1.35;
+}
+
+/* Experience — primary visual weight on page 1 */
+.cvInner .cvSection--primary .cvSectionTitle {
+  font-weight: var(--typo-weight-bold, 700);
+  letter-spacing: var(--typo-tracking-kicker, 0.12em);
+  line-height: var(--typo-leading-tight, 1.22);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+}
+
+.cvInner .cvSection--experience .cvExpRole {
+  font-weight: var(--typo-weight-semibold, 600);
+  font-size: 10.5pt;
+  line-height: var(--typo-leading-tight, 1.22);
+  letter-spacing: var(--typo-tracking-subtitle, -0.02em);
+  color: var(--cv-ink, #111827);
+}
+
+.cvInner .cvSection--experience .cvExpCompany {
+  font-weight: var(--typo-weight-medium, 500);
+  line-height: var(--typo-leading-snug, 1.38);
+}
+
+.cvInner .cvSection--experience .cvExpDates {
+  font-size: 9pt;
+  font-variant-numeric: tabular-nums;
+  line-height: var(--typo-leading-tight, 1.22);
+  opacity: 0.85;
+}
+
+.cvInner .cvExpList--tight .cvExpEntry + .cvExpEntry {
+  margin-top: 8px;
+}
+
+.cvInner .cvSection--compact .cvSectionTitle {
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+}

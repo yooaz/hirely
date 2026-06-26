@@ -1,0 +1,11 @@
+{
+  "description": "Yohann Azancot cv — page 2 portfolio captions (grid layout benchmark)",
+  "lines": [
+    { "text": "--- PAGE 2 PORTFOLIO ---", "x": 200, "y": 800, "width": 180, "height": 14, "page": 2 },
+    { "text": "Personal Project Sunglass Man Illustration", "x": 80, "y": 720, "width": 320, "height": 12, "page": 2 },
+    { "text": "Personal Cubist Art personal artwork in a cubist style", "x": 400, "y": 720, "width": 340, "height": 12, "page": 2 },
+    { "text": "T-shirt design for adidas creation of an illustration for adidas", "x": 90, "y": 520, "width": 360, "height": 12, "page": 2 },
+    { "text": "Fortune 500 Cover Portrait of Elon Musk", "x": 420, "y": 520, "width": 300, "height": 12, "page": 2 },
+    { "text": "PlayStation God of War Metro Display compelling illustration for PlayStation", "x": 100, "y": 320, "width": 400, "height": 12, "page": 2 }
+  ]
+}

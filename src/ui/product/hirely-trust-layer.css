@@ -1,0 +1,205 @@
+/**
+ * Trust layer — immediate credibility: privacy, ATS, recruiter, confidence, success checks.
+ */
+
+.hirelyTrustHost {
+  margin: 0;
+}
+
+.hirelyTrustHost.hidden {
+  display: none !important;
+}
+
+#hirelyTrustHero {
+  margin-top: 12px;
+}
+
+#hirelyTrustImport {
+  margin: 12px 0 0;
+}
+
+#hirelyTrustAnalyze {
+  margin: 0 0 14px;
+}
+
+#trustStrip.hirelyTrustHost {
+  display: block;
+  margin: 0 0 12px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.hirelyTrustLayer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: var(--radius-md, 10px);
+  font-size: 12px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.hirelyTrustLayer--hero {
+  padding: 10px 12px;
+  background: #fafaf8;
+}
+
+.hirelyTrustLayer--analyze {
+  background: #fff;
+}
+
+.hirelyTrustPrivacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  font-size: 12px;
+  color: #475569;
+}
+
+.hirelyTrustPrivacyIcon {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: #64748b;
+}
+
+.hirelyTrustBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hirelyTrustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+}
+
+.hirelyTrustBadgeIcon {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.hirelyTrustBadge--ats {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.hirelyTrustBadge--recruiter {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.hirelyTrustBadge--recruiterPending {
+  background: #f8fafc;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.hirelyTrustConfidenceHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hirelyTrustConfidenceLabel {
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.hirelyTrustConfidenceValue {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+
+.hirelyTrustConfidence--high .hirelyTrustConfidenceValue {
+  color: #047857;
+}
+
+.hirelyTrustConfidence--medium .hirelyTrustConfidenceValue {
+  color: #b45309;
+}
+
+.hirelyTrustConfidence--low .hirelyTrustConfidenceValue {
+  color: #b91c1c;
+}
+
+.hirelyTrustConfidenceMeter {
+  width: 100%;
+  height: 6px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.hirelyTrustConfidenceMeter::-webkit-meter-bar {
+  background: #e2e8f0;
+  border-radius: 999px;
+}
+
+.hirelyTrustConfidence--high .hirelyTrustConfidenceMeter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, #34d399, #059669);
+}
+
+.hirelyTrustConfidence--medium .hirelyTrustConfidenceMeter::-webkit-meter-suboptimum-value {
+  background: linear-gradient(90deg, #fbbf24, #d97706);
+}
+
+.hirelyTrustConfidence--low .hirelyTrustConfidenceMeter::-webkit-meter-even-less-good-value {
+  background: linear-gradient(90deg, #f87171, #dc2626);
+}
+
+.hirelyTrustIndicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hirelyTrustIndicator {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.hirelyTrustIndicatorMark {
+  flex: 0 0 auto;
+  width: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.hirelyTrustIndicator--ok .hirelyTrustIndicatorMark {
+  color: var(--green, #059669);
+}
+
+.hirelyTrustIndicator--warn .hirelyTrustIndicatorMark {
+  color: var(--amber, #d97706);
+}
+
+.hirelyTrustIndicator--miss {
+  color: var(--muted, #94a3b8);
+}
+
+html:not(.debug-mode) .tplAts {
+  display: inline-block !important;
+}

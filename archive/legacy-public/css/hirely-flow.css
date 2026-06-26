@@ -1,0 +1,426 @@
+/* Hirely Flow — CV transformation experience */
+
+:root {
+  --flow-col-side: 280px;
+  --flow-max: 1240px;
+}
+
+/* —— Compact hero —— */
+html.stable-mode .hero.hero--compact {
+  max-height: 52vh;
+  padding: var(--s-6) var(--s-4) var(--s-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+html.stable-mode .hero h1 {
+  font-size: clamp(1.85rem, 3.8vw, 2.5rem);
+  margin-bottom: var(--s-3);
+}
+
+html.stable-mode .heroLead {
+  font-size: 15px;
+  max-width: 40ch;
+}
+
+html.stable-mode .heroTrust {
+  margin-top: var(--s-2);
+}
+
+html.stable-mode .hero .actions {
+  margin-top: var(--s-4);
+}
+
+/* —— Transformation rail —— */
+.transformRail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  max-width: var(--flow-max);
+  margin: 0 auto var(--s-5);
+  padding: 0 var(--s-4);
+}
+
+.transformRail__step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--stable-muted, #5c6570);
+  letter-spacing: 0.02em;
+  padding: var(--s-2) var(--s-3);
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.transformRail__step b {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  background: #e8eaed;
+  color: #5c6570;
+}
+
+.transformRail__step.is-active {
+  color: var(--stable-ink, #0f1419);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 20, 25, 0.06);
+}
+
+.transformRail__step.is-active b {
+  background: #2563eb;
+  color: #fff;
+}
+
+.transformRail__step.is-done {
+  color: var(--stable-ink, #0f1419);
+}
+
+.transformRail__step.is-done b {
+  background: #0f1419;
+  color: #fff;
+}
+
+.transformRail__arrow {
+  color: #c5cad1;
+  font-size: 11px;
+  user-select: none;
+}
+
+/* —— Grid: equal side columns —— */
+html.stable-mode {
+  --stable-col-upload: 280px;
+  --stable-col-intel: 240px;
+}
+
+html.stable-mode .workspaceGrid {
+  min-height: min(72vh, 720px);
+  align-items: stretch !important;
+}
+
+html.stable-mode .col-upload,
+html.stable-mode .col-intel {
+  background: var(--stable-surface, #fff);
+  border: 1px solid var(--stable-line, #e8eaed);
+  border-radius: var(--s-3);
+  padding: var(--s-4);
+}
+
+html.stable-mode .col-intel {
+  background: var(--stable-intel, #1a1f26);
+  border: none;
+}
+
+/* —— Upload: focused, not a giant card —— */
+html.stable-mode .uploadBand .cardHead .label,
+html.stable-mode .uploadBand .stepHint {
+  display: none !important;
+}
+
+html.stable-mode .uploadBand .cardHead h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--stable-muted);
+}
+
+html.stable-mode .uploadBox {
+  padding: var(--s-4);
+  text-align: center;
+}
+
+html.stable-mode .uploadBox label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stable-ink);
+}
+
+html.stable-mode .fileNote {
+  margin-top: var(--s-2);
+}
+
+html.stable-mode .generateBtnPrimary {
+  width: 100%;
+  margin-top: var(--s-2);
+  font-weight: 600;
+}
+
+/* —— Preview column = hero —— */
+html.stable-mode .col-preview {
+  display: flex !important;
+  flex-direction: column;
+  min-height: min(72vh, 760px);
+  background: var(--stable-surface);
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+  overflow: hidden;
+}
+
+html.stable-mode .previewChrome {
+  flex-shrink: 0;
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--stable-line);
+  background: #fafbfc;
+}
+
+html.stable-mode .previewChrome .workspaceHead h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+html.stable-mode .tabRow {
+  padding: 0 var(--s-4);
+  border-bottom: 1px solid var(--stable-line);
+}
+
+html.stable-mode #procv.panel {
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+  min-height: 0;
+}
+
+html.stable-mode #proToolbar {
+  display: none !important;
+}
+
+html.stable-mode .workspacePreview {
+  flex: 1;
+  min-height: 0 !important;
+  padding: var(--s-4) !important;
+  background: #eceef2 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+html.stable-mode .proLock {
+  display: none !important;
+}
+
+html.stable-mode .cvStage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  padding: var(--s-4);
+}
+
+html.stable-mode .cvCanvas {
+  width: 100%;
+  max-width: 560px;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+html.stable-mode .cvPage {
+  width: 100% !important;
+  max-width: 520px;
+  min-height: 680px;
+  margin: 0 auto;
+  box-shadow:
+    0 1px 2px rgba(15, 20, 25, 0.05),
+    0 12px 32px rgba(15, 20, 25, 0.12),
+    0 40px 64px rgba(15, 20, 25, 0.08);
+  border: 1px solid rgba(15, 20, 25, 0.08);
+}
+
+html.stable-mode .cvEmpty,
+html.stable-mode .cvEmpty--premium {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-6);
+  background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
+}
+
+html.stable-mode .cvEmpty strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--stable-ink);
+  margin-bottom: var(--s-3);
+}
+
+html.stable-mode .cvEmpty p {
+  font-size: 14px;
+  color: var(--stable-muted);
+  max-width: 28ch;
+}
+
+html.stable-mode .previewBanner {
+  flex-shrink: 0;
+  margin-bottom: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  background: #fff;
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-2);
+  font-size: 13px;
+  color: var(--stable-muted);
+  text-align: center;
+}
+
+html.stable-mode .previewBanner.hidden {
+  display: none;
+}
+
+html.stable-mode .previewBanner .btn {
+  margin-top: var(--s-2);
+}
+
+/* —— Intel sidebar —— */
+html.stable-mode .col-intel .cardHead h2 {
+  font-size: 11px;
+  margin-bottom: var(--s-4);
+}
+
+html.stable-mode .col-intel .scoreTop {
+  margin-bottom: var(--s-4);
+}
+
+html.stable-mode .intelSecondary {
+  display: none !important;
+}
+
+html.stable-mode .intelActions li:nth-child(n + 4) {
+  display: none;
+}
+
+/* —— Template gallery: mini previews —— */
+html.stable-mode .templatesBand {
+  margin-top: var(--s-7);
+  padding-top: var(--s-6);
+}
+
+html.stable-mode .templatesBand h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--s-4);
+}
+
+html.stable-mode .templatesBand .templateGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--s-4);
+}
+
+html.stable-mode .templateCard {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--stable-line);
+  border-radius: var(--s-3);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+html.stable-mode .templateCard:hover {
+  border-color: #c5cad1;
+  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.06);
+}
+
+html.stable-mode .templateCard.active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+html.stable-mode .templateCard .tplPreview,
+html.stable-mode .templateCard .tplCardPreview {
+  height: 112px;
+  min-height: 112px;
+  border-radius: 0;
+  border-bottom: 1px solid var(--stable-line);
+  background: #f4f5f7;
+}
+
+html.stable-mode .templateCard .tplCardBody {
+  padding: var(--s-3);
+}
+
+html.stable-mode .templateCard .tplCardBody strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: var(--s-1);
+}
+
+html.stable-mode .templateCard .tplCardFit {
+  font-size: 11px;
+  color: var(--stable-muted);
+}
+
+html.stable-mode .templateCard .tplMeta,
+html.stable-mode .templateCard .tplTag {
+  display: none !important;
+}
+
+html.stable-mode .templateCard.templateCard--rec::after {
+  content: "Recommended";
+  position: absolute;
+  top: var(--s-2);
+  right: var(--s-2);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #2563eb;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+html.stable-mode .templateCard {
+  position: relative;
+}
+
+/* Template preview skins */
+.tplCardPreview.tplPreview--sidebar {
+  background: linear-gradient(90deg, #1a1f26 38%, #f4f5f7 38%);
+}
+.tplCardPreview.tplPreview--luxury {
+  background: linear-gradient(180deg, #faf9f7 0%, #fff 40%);
+}
+.tplCardPreview.tplPreview--ats {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e8eaed;
+}
+.tplCardPreview[data-tpl="editorial"] {
+  background: linear-gradient(135deg, #fafafa 0%, #fff 50%);
+}
+.tplCardPreview[data-tpl="swiss"] {
+  background: repeating-linear-gradient(180deg, #fff, #fff 8px, #f0f0f0 8px, #f0f0f0 9px);
+}
+
+/* —— Pricing calmer —— */
+html.stable-mode .pricingBand {
+  margin-top: var(--s-8);
+}
+
+@media (max-width: 1100px) {
+  html.stable-mode .col-preview {
+    min-height: 56vh;
+  }
+  html.stable-mode .cvPage {
+    min-height: 560px;
+  }
+}

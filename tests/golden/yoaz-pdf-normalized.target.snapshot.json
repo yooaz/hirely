@@ -1,0 +1,87 @@
+{
+  "schema": "hirely.yoaz_normalized.v1",
+  "fixture": "yoaz-pdf-benchmark",
+  "description": "Target normalized parse output for Yohann Azancot PDF — regression north star",
+  "contact": {
+    "full_name": "Yohann Azancot",
+    "title": "Graphic Designer & Illustrator",
+    "phone": "+336494344839",
+    "email": "yoaz@hotmail.fr",
+    "address": "176 Boulevard de Charonne, Paris 75020"
+  },
+  "summary": "35 years old illustrator and graphic designer",
+  "languages": ["French native", "English fluent"],
+  "experiences": [
+    {
+      "role": "Freelancer Illustrator, Graphic Designer",
+      "company": "Independent / Freelance",
+      "start_date": "2011",
+      "end_date": "2023",
+      "clients": ["Nike", "Converse", "Pantone", "Adobe", "Arte"]
+    },
+    {
+      "role": "Internship",
+      "company": "McCann G. Agency",
+      "start_date": "2011",
+      "end_date": "2011",
+      "clients": []
+    },
+    {
+      "role": "Internship",
+      "company": "3B impressions",
+      "start_date": "2010",
+      "end_date": "2010",
+      "clients": []
+    }
+  ],
+  "education": [
+    {
+      "school": "LISAA",
+      "degree": "web and motion design",
+      "start_date": "2011",
+      "end_date": "2012"
+    },
+    {
+      "school": "Créapôle",
+      "degree": "visual communication",
+      "start_date": "2009",
+      "end_date": "2011"
+    },
+    {
+      "school": "Créapôle",
+      "degree": "product design",
+      "start_date": "2008",
+      "end_date": "2009"
+    },
+    {
+      "school": "Créapôle",
+      "degree": "multisectoral year",
+      "start_date": "2007",
+      "end_date": "2009"
+    }
+  ],
+  "skills": [
+    "Photoshop",
+    "Illustrator",
+    "Indesign",
+    "Affinity designer",
+    "Procreate",
+    "After effect"
+  ],
+  "interests": [
+    "Photography",
+    "Art",
+    "Snowboard",
+    "Soccer",
+    "Drawing",
+    "Movies",
+    "Reading",
+    "Music",
+    "Nature"
+  ],
+  "portfolio_items": [],
+  "page_classification": {
+    "resume_core_pages": [1],
+    "portfolio_pages": [2]
+  }
+}

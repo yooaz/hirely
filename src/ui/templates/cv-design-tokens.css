@@ -1,0 +1,126 @@
+/**
+ * Premium CV design tokens — light / dark via [data-cv-theme="dark"] on .cv or #cvStage.
+ */
+.cv,
+.cvInner {
+  --primaryColor: #171717;
+  --secondaryColor: #4b5563;
+  --accentColor: #171717;
+  --surfaceColor: #ffffff;
+  --surfaceMuted: #f5f5f2;
+  --borderColor: #e8e8e4;
+  --fontSans: var(--typo-font-ui, Inter, system-ui, -apple-system, sans-serif);
+  --fontDisplay: var(--typo-font-display-serif, 'Source Serif 4', Georgia, serif);
+  --fontMono: var(--typo-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  --spaceSection: var(--typo-cv-section-gap, 18px);
+  --spaceBlock: var(--typo-cv-block-gap, 10px);
+  --spaceTight: var(--typo-cv-tight-gap, 6px);
+  --radiusCard: 12px;
+  --titleSize: var(--typo-cv-section, 8pt);
+  --nameSize: var(--typo-cv-masthead, 28pt);
+  --cvLeadingBody: var(--typo-leading-body, 1.58);
+  --cvLeadingRelaxed: var(--typo-leading-relaxed, 1.65);
+  --cvTrackingKicker: var(--typo-tracking-kicker, 0.12em);
+}
+
+.cv[data-cv-theme='dark'],
+#cvStage[data-cv-theme='dark'] .cv,
+.cvInner[data-cv-theme='dark'] {
+  --primaryColor: #f5f5f2;
+  --secondaryColor: #a1a1aa;
+  --accentColor: #fafaf8;
+  --surfaceColor: #1c1c1e;
+  --surfaceMuted: #121214;
+  --borderColor: #3f3f46;
+}
+
+.cvSectionCard {
+  margin-bottom: var(--spaceSection);
+  padding: var(--spaceBlock) calc(var(--spaceBlock) + 4px);
+  background: var(--surfaceMuted);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radiusCard);
+}
+
+.cvSectionTitle--card {
+  color: var(--primaryColor);
+  font-family: var(--fontSans);
+  font-size: var(--titleSize);
+  font-weight: var(--typo-weight-semibold, 600);
+  letter-spacing: var(--cvTrackingKicker, 0.12em);
+  line-height: var(--typo-leading-tight, 1.22);
+  text-transform: uppercase;
+  margin: 0 0 var(--spaceTight);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cvSectionIcon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  flex-shrink: 0;
+}
+
+.cvTimeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 4px;
+}
+
+.cvTimelineItem {
+  position: relative;
+  padding: 0 0 18px 22px;
+  border-left: 2px solid var(--borderColor);
+  margin-left: 6px;
+}
+
+.cvTimelineItem:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.cvTimelineDot {
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surfaceColor);
+  border: 2px solid var(--accentColor);
+}
+
+.cvTimelineContent p {
+  margin: 0;
+  color: var(--primaryColor);
+  line-height: var(--cvLeadingBody, 1.58);
+}
+
+.cv.template-premium-moderne,
+.cv.template-premium-classique,
+.cv.template-premium-creatif,
+.cv.template-premium-luxe {
+  color: var(--primaryColor);
+  background: var(--surfaceColor);
+  font-family: var(--fontSans);
+}
+
+.cv.template-premium-moderne .cvName,
+.cv.template-premium-classique .cvName,
+.cv.template-premium-creatif .cvName {
+  color: var(--primaryColor);
+  font-size: var(--nameSize);
+}
+
+.cv.template-premium-luxe .cvHead--premiumLuxe .cvName {
+  font-size: var(--nameSize);
+}
+
+.cv.template-premium-moderne .cvTitle,
+.cv.template-premium-classique .cvTitle,
+.cv.template-premium-creatif .cvTitle {
+  color: var(--secondaryColor);
+}

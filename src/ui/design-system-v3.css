@@ -1,0 +1,660 @@
+/**
+ * DESIGN SYSTEM V3 — Premium product chrome
+ * Direction: Apple · Linear · Arc Browser · Notion
+ * Rules: less borders · more hierarchy · fewer colors · premium shadows · larger preview · smaller controls
+ */
+
+:root {
+  /* —— V3 tokens —— */
+  --ds3-bg: #f3f3f1;
+  --ds3-surface: #ffffff;
+  --ds3-surface-raised: #ffffff;
+  --ds3-surface-sunken: #ececea;
+  --ds3-canvas: #e4e4e0;
+
+  --ds3-ink: #111110;
+  --ds3-ink-secondary: #3a3a38;
+  --ds3-ink-tertiary: #868682;
+  --ds3-ink-quaternary: #b0b0ab;
+
+  --ds3-accent: #111110;
+  --ds3-accent-soft: rgba(17, 17, 16, 0.06);
+
+  --ds3-border-hairline: rgba(17, 17, 16, 0.05);
+  --ds3-border-subtle: rgba(17, 17, 16, 0.08);
+
+  --ds3-shadow-xs: 0 1px 2px rgba(17, 17, 16, 0.03);
+  --ds3-shadow-sm:
+    0 1px 2px rgba(17, 17, 16, 0.04),
+    0 4px 12px rgba(17, 17, 16, 0.05);
+  --ds3-shadow-md:
+    0 2px 4px rgba(17, 17, 16, 0.03),
+    0 8px 28px rgba(17, 17, 16, 0.07);
+  --ds3-shadow-lg:
+    0 4px 8px rgba(17, 17, 16, 0.04),
+    0 20px 48px rgba(17, 17, 16, 0.09);
+  --ds3-shadow-cv:
+    0 1px 1px rgba(17, 17, 16, 0.02),
+    0 6px 16px rgba(17, 17, 16, 0.06),
+    0 28px 56px rgba(17, 17, 16, 0.1);
+
+  --ds3-font: var(--typo-font-ui, Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif);
+  --ds3-font-display: var(--typo-font-display-sans, Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif);
+  --ds3-font-editorial: var(--typo-font-display-serif, 'Source Serif 4', Georgia, serif);
+
+  --ds3-text-display: var(--typo-ui-display, 2.5rem);
+  --ds3-text-title1: var(--typo-ui-title1, 1.75rem);
+  --ds3-text-title2: var(--typo-ui-title2, 1.375rem);
+  --ds3-text-title3: var(--typo-ui-title3, 1.0625rem);
+  --ds3-text-body: var(--typo-ui-body, 0.875rem);
+  --ds3-text-lead: var(--typo-ui-lead, 0.9375rem);
+  --ds3-text-caption: var(--typo-ui-caption, 0.75rem);
+  --ds3-text-micro: var(--typo-ui-micro, 0.6875rem);
+
+  --ds3-leading-display: var(--typo-leading-display, 1.08);
+  --ds3-leading-tight: var(--typo-leading-tight, 1.22);
+  --ds3-leading-body: var(--typo-leading-body, 1.58);
+  --ds3-leading-relaxed: var(--typo-leading-relaxed, 1.65);
+  --ds3-tracking-tight: var(--typo-tracking-display, -0.04em);
+  --ds3-tracking-title: var(--typo-tracking-title, -0.03em);
+  --ds3-tracking-label: var(--typo-tracking-label, 0.06em);
+  --ds3-tracking-kicker: var(--typo-tracking-kicker, 0.12em);
+
+  --ds3-weight-regular: var(--typo-weight-regular, 400);
+  --ds3-weight-medium: var(--typo-weight-medium, 500);
+  --ds3-weight-semibold: var(--typo-weight-semibold, 600);
+  --ds3-weight-bold: var(--typo-weight-bold, 700);
+
+  --ds3-space-1: 4px;
+  --ds3-space-2: 8px;
+  --ds3-space-3: 12px;
+  --ds3-space-4: 16px;
+  --ds3-space-5: 20px;
+  --ds3-space-6: 24px;
+  --ds3-space-8: 32px;
+  --ds3-space-10: 40px;
+  --ds3-space-12: 48px;
+
+  --ds3-radius-sm: 8px;
+  --ds3-radius-md: 12px;
+  --ds3-radius-lg: 16px;
+  --ds3-radius-xl: 20px;
+  --ds3-radius-pill: 999px;
+
+  --ds3-max: 1520px;
+  --ds3-rail-width: 132px;
+  --ds3-import-max: 196px;
+  --ds3-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Map legacy vars */
+  --bg: var(--ds3-bg);
+  --paper: var(--ds3-surface);
+  --ink: var(--ds3-ink);
+  --muted: var(--ds3-ink-tertiary);
+  --line: var(--ds3-border-hairline);
+  --wash: var(--ds3-surface-sunken);
+  --accent: var(--ds3-accent);
+  --blue: var(--ds3-accent);
+  --blue-soft: var(--ds3-accent-soft);
+  --green: var(--ds3-ink-secondary);
+  --amber: var(--ds3-ink-tertiary);
+  --rose: var(--ds3-ink-tertiary);
+  --radius-sm: var(--ds3-radius-sm);
+  --radius-md: var(--ds3-radius-md);
+  --radius-lg: var(--ds3-radius-lg);
+  --radius-xl: var(--ds3-radius-xl);
+  --shadow-sm: var(--ds3-shadow-xs);
+  --shadow-md: var(--ds3-shadow-sm);
+  --shadow-lg: var(--ds3-shadow-md);
+  --shadow-cv: var(--ds3-shadow-cv);
+  --font-ui: var(--ds3-font);
+  --ease-out: var(--ds3-ease);
+  --hirely-max: var(--ds3-max);
+  --hirely-aside-max: var(--ds3-rail-width);
+  --hirely-aside-import-max: var(--ds3-import-max);
+  --hirely-h1: var(--ds3-text-display);
+  --hirely-h2: var(--ds3-text-title1);
+  --hirely-h3: var(--ds3-text-title2);
+  --hirely-body: var(--ds3-text-body);
+  --hirely-caption: var(--ds3-text-caption);
+  --space-1: var(--ds3-space-1);
+  --space-2: var(--ds3-space-2);
+  --space-3: var(--ds3-space-3);
+  --space-4: var(--ds3-space-4);
+  --space-5: var(--ds3-space-5);
+  --space-6: var(--ds3-space-6);
+  --space-8: var(--ds3-space-8);
+}
+
+/* —— Base —— */
+body {
+  font-family: var(--ds3-font);
+  font-size: var(--ds3-text-body);
+  line-height: var(--ds3-leading-body);
+  letter-spacing: var(--typo-tracking-body, -0.011em);
+  color: var(--ds3-ink);
+  background: var(--ds3-bg);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* —— Typography hierarchy —— */
+h1,
+.heroCopy h1 {
+  font-family: var(--ds3-font-display);
+  font-size: var(--ds3-text-display);
+  font-weight: var(--ds3-weight-semibold);
+  line-height: var(--ds3-leading-display);
+  letter-spacing: var(--ds3-tracking-tight);
+}
+
+h2,
+.importPanel h2,
+.styleStepHead h2,
+.exportStepHead h2,
+.wsCommandBarTitle {
+  font-size: var(--ds3-text-title2);
+  font-weight: var(--ds3-weight-semibold);
+  letter-spacing: var(--ds3-tracking-title);
+  line-height: var(--ds3-leading-tight);
+}
+
+h3,
+.reviewV2Head h3,
+.coverLetterHead h3 {
+  font-size: var(--ds3-text-title3);
+  font-weight: var(--ds3-weight-semibold);
+  letter-spacing: var(--typo-tracking-subtitle, -0.02em);
+  line-height: var(--ds3-leading-tight);
+}
+
+.kicker,
+.scoreCardCopy h3,
+.reviewV2Block h4,
+.toolsField label,
+.recsBlock h4 {
+  font-size: var(--ds3-text-micro);
+  font-weight: var(--ds3-weight-semibold);
+  letter-spacing: var(--ds3-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--ds3-ink-tertiary);
+}
+
+.lead,
+.importPanel .sub,
+.heroHow,
+.exportStepLead {
+  font-size: var(--ds3-text-lead);
+  line-height: var(--ds3-leading-relaxed);
+  color: var(--ds3-ink-tertiary);
+  font-weight: var(--ds3-weight-regular);
+  max-width: 48ch;
+}
+
+p + p {
+  margin-top: var(--typo-paragraph-gap, 0.62em);
+}
+
+/* —— Top chrome (borderless glass) —— */
+.top {
+  height: 44px;
+  margin-top: var(--ds3-space-2);
+  padding: 0 var(--ds3-space-2);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: 0;
+  border-radius: var(--ds3-radius-lg);
+  box-shadow: var(--ds3-shadow-xs);
+}
+
+.brand {
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.nav {
+  gap: var(--ds3-space-5);
+  font-size: var(--ds3-text-caption);
+  font-weight: 500;
+  color: var(--ds3-ink-tertiary);
+}
+
+.nav a.active {
+  color: var(--ds3-ink);
+}
+
+/* —— Controls (smaller, Linear-style) —— */
+.btn {
+  padding: 6px 11px;
+  font-size: var(--ds3-text-caption);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 0;
+  border-radius: var(--ds3-radius-sm);
+  box-shadow: inset 0 0 0 1px var(--ds3-border-subtle);
+  background: var(--ds3-surface);
+  color: var(--ds3-ink);
+  transition:
+    background 0.16s var(--ds3-ease),
+    box-shadow 0.16s var(--ds3-ease),
+    transform 0.1s var(--ds3-ease);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--ds3-surface-sunken);
+  box-shadow: inset 0 0 0 1px rgba(17, 17, 16, 0.1), var(--ds3-shadow-xs);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn.primary {
+  background: var(--ds3-ink);
+  color: #fff;
+  box-shadow: var(--ds3-shadow-xs);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #2a2a28;
+  box-shadow: var(--ds3-shadow-sm);
+}
+
+.btn.small {
+  padding: 4px 8px;
+  font-size: var(--ds3-text-micro);
+  border-radius: 6px;
+}
+
+.btn.ghost {
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn.ghost:hover:not(:disabled) {
+  background: var(--ds3-accent-soft);
+}
+
+/* —— Panels: shadow not border —— */
+.panel,
+.wsInsights,
+.importPanel--workspaceSplit,
+.importPanel--compact,
+.app--workspace .wsImport,
+.reviewStudioCenter,
+.reviewStudioAnalysis,
+.coverLetterWorkspace {
+  border: 0 !important;
+  box-shadow: var(--ds3-shadow-sm) !important;
+  background: var(--ds3-surface) !important;
+  border-radius: var(--ds3-radius-lg) !important;
+}
+
+.wsProduct {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* —— Progress nav (Notion pills) —— */
+.hirelyProgressTrack {
+  height: 2px;
+  background: var(--ds3-border-hairline);
+  margin-bottom: var(--ds3-space-4);
+}
+
+.hirelyProgressFill {
+  background: var(--ds3-ink);
+}
+
+.hirelyProgressBtn {
+  padding: 8px 10px;
+  border: 0 !important;
+  border-radius: var(--ds3-radius-md);
+  background: transparent;
+  box-shadow: none;
+}
+
+.hirelyProgressBtn:hover:not(:disabled) {
+  background: var(--ds3-accent-soft);
+}
+
+.hirelyProgressStep.is-active .hirelyProgressBtn {
+  background: var(--ds3-surface);
+  box-shadow: var(--ds3-shadow-xs);
+}
+
+.hirelyProgressStep.is-done .hirelyProgressIcon {
+  background: var(--ds3-ink);
+}
+
+.hirelyProgressIcon {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  background: var(--ds3-surface-sunken);
+}
+
+.hirelyProgressLabel {
+  font-size: var(--ds3-text-micro);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.hirelyProgressHint {
+  border: 0;
+  background: var(--ds3-surface-sunken);
+  font-size: var(--ds3-text-caption);
+  border-radius: var(--ds3-radius-md);
+}
+
+/* —— Import drop (minimal dashed) —— */
+.drop {
+  min-height: 80px;
+  padding: var(--ds3-space-5);
+  border: 1px dashed var(--ds3-border-subtle) !important;
+  border-radius: var(--ds3-radius-lg) !important;
+  background: var(--ds3-surface) !important;
+  box-shadow: none !important;
+}
+
+.drop:hover,
+.drop.drag,
+.drop.drop--busy {
+  border-style: solid !important;
+  border-color: rgba(17, 17, 16, 0.14) !important;
+  background: var(--ds3-surface) !important;
+  box-shadow: var(--ds3-shadow-sm) !important;
+}
+
+.dropLabel {
+  font-size: var(--ds3-text-title3);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.dropHint {
+  font-size: var(--ds3-text-caption);
+  color: var(--ds3-ink-tertiary);
+}
+
+/* —— Workspace: larger preview, narrower rails —— */
+.app {
+  width: min(var(--ds3-max), calc(100% - var(--ds3-space-8)));
+}
+
+.workspaceGrid {
+  gap: var(--ds3-space-3);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready:not(.docStep-edit) {
+  grid-template-columns: minmax(0, 1fr) minmax(120px, var(--ds3-rail-width));
+  gap: var(--ds3-space-2) var(--ds3-space-3);
+}
+
+.workspaceGrid--ready {
+  gap: var(--ds3-space-2);
+}
+
+.wsInsights,
+.wsImport {
+  padding: var(--ds3-space-3) var(--ds3-space-3);
+}
+
+/* CV canvas — Arc-style sunken stage */
+.app--workspace .cvFocus,
+.workspaceGrid--ready .cvStage,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStage {
+  background: var(--ds3-canvas) !important;
+  padding: var(--ds3-space-6) var(--ds3-space-5) var(--ds3-space-8) !important;
+  border: 0 !important;
+  border-radius: var(--ds3-radius-lg) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  min-height: min(72vh, 920px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview #a4Viewport {
+  min-height: min(64vh, 860px) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview {
+  min-height: min(70vh, 900px);
+}
+
+#cvStage .cv,
+#cvStage .cvA4Sheet__surface,
+.cvA4Sheet__surface {
+  border: 0 !important;
+  box-shadow: var(--ds3-shadow-cv) !important;
+}
+
+.workspaceGrid--ready .wsCenterStack {
+  min-height: min(58vh, 680px);
+}
+
+.workspaceGrid--ready .workspaceCanvas {
+  min-height: min(52vh, 620px);
+}
+
+@container cv-canvas (min-width: 720px) {
+  .cvStageInner {
+    --cv-preview-scale: min(1.14, calc((100cqi - 16px) / 794));
+  }
+}
+
+@container cv-canvas (min-width: 1100px) {
+  .cvStageInner {
+    --cv-preview-scale: min(1.22, calc((100cqi - 20px) / 794));
+  }
+}
+
+/* —— Template gallery —— */
+.templatePickerBar {
+  border: 0 !important;
+  box-shadow: var(--ds3-shadow-xs) !important;
+  background: var(--ds3-surface) !important;
+}
+
+.tplCard,
+.premiumTplCard {
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+}
+
+.tplCard:hover,
+.premiumTplCard:hover {
+  box-shadow: inset 0 0 0 1px rgba(17, 17, 16, 0.1), var(--ds3-shadow-xs);
+}
+
+.tplCard.active,
+.premiumTplCard.is-active {
+  box-shadow: inset 0 0 0 2px var(--ds3-ink), var(--ds3-shadow-sm) !important;
+}
+
+.premiumGalleryFilter {
+  padding: 4px 9px;
+  font-size: var(--ds3-text-micro);
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+  border-radius: var(--ds3-radius-pill);
+}
+
+/* —— Review / score (monochrome) —— */
+.reviewStudioCenter .suggestionCard,
+.reviewV2Gate,
+.issuesList li,
+.toClassifyCard {
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+  background: var(--ds3-surface);
+}
+
+.scoreRing--score-low,
+.scoreRing--score-mid,
+.scoreRing--score-high {
+  --score-accent: var(--ds3-ink-secondary);
+}
+
+.scoreRing--score-low {
+  --score-accent: var(--ds3-ink-quaternary);
+}
+
+.scoreRing--score-high {
+  --score-accent: var(--ds3-ink);
+}
+
+.reviewV2ScoreRing,
+.scoreCardPremium .scoreRing {
+  width: 48px;
+  height: 48px;
+}
+
+.scoreCardPremium .scoreRing span,
+.reviewV2ScoreRing {
+  font-size: 0.9375rem;
+}
+
+.scoreCardCopy .insightLead {
+  font-size: var(--ds3-text-title3);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.cvReviewItem--ok .cvReviewMark,
+.detectedChecklist .detMark,
+.recruiterInsights li.insightPos .insMark {
+  color: var(--ds3-ink-secondary);
+}
+
+/* —— Fields (borderless inset) —— */
+.field input,
+.field select,
+.field textarea,
+.toolsField input,
+.toolsField select {
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+  border-radius: var(--ds3-radius-sm);
+  padding: 7px 10px;
+  font-size: var(--ds3-text-caption);
+  background: var(--ds3-surface);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.toolsField input:focus,
+.toolsField select:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1.5px rgba(17, 17, 16, 0.18);
+}
+
+/* —— Export bar —— */
+.docFooter .cvExportBar {
+  border: 0 !important;
+  box-shadow: var(--ds3-shadow-md) !important;
+  border-radius: var(--ds3-radius-lg) !important;
+  padding: var(--ds3-space-3) var(--ds3-space-4) !important;
+}
+
+.docFooter .cvExportBar .btn.primary {
+  min-width: 160px;
+  padding: 9px 16px;
+  font-size: var(--ds3-text-body);
+}
+
+/* —— Hero —— */
+.hero {
+  padding: var(--ds3-space-10) 0 var(--ds3-space-8);
+}
+
+.heroBadge {
+  border: 0;
+  background: var(--ds3-accent-soft);
+  color: var(--ds3-ink-secondary);
+  font-size: var(--ds3-text-micro);
+}
+
+.heroStep {
+  border: 0;
+  box-shadow: var(--ds3-shadow-xs);
+  background: var(--ds3-surface);
+}
+
+.heroStep--export {
+  box-shadow: var(--ds3-shadow-sm);
+}
+
+/* —— Pricing —— */
+.price {
+  border: 0 !important;
+  box-shadow: var(--ds3-shadow-sm) !important;
+}
+
+.price.pro {
+  box-shadow: var(--ds3-shadow-md) !important;
+}
+
+/* —— LinkedIn import block —— */
+.liImportBlock {
+  border: 0 !important;
+  background: var(--ds3-surface-sunken) !important;
+  box-shadow: none !important;
+}
+
+.liImportSource {
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+}
+
+/* —— Recruiter command center —— */
+.reviewStudioAnalysis.recruiterCommandCenter {
+  background: var(--ds3-surface) !important;
+  border: 0 !important;
+}
+
+.rccCard,
+.rccBenchCard {
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+}
+
+/* —— Details / accordion —— */
+details.detectedDetails,
+.toolsMore,
+.rccSection {
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--ds3-border-hairline);
+  border-radius: var(--ds3-radius-md);
+}
+
+/* —— Mobile —— */
+@media (max-width: 760px) {
+  .app {
+    width: calc(100% - var(--ds3-space-5));
+  }
+
+  .top {
+    height: 42px;
+  }
+
+  .app--workspace .cvFocus,
+  .workspaceGrid--ready .cvStage {
+    padding: var(--ds3-space-4) var(--ds3-space-3) var(--ds3-space-5) !important;
+    min-height: min(64vh, 720px) !important;
+  }
+
+  .cvStageInner {
+    --cv-preview-scale: 1 !important;
+    transform: none !important;
+  }
+}

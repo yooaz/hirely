@@ -1,0 +1,30 @@
+Alex Chen
+Senior Software Engineer
+alex.chen@email.com · +1 415 555 0192 · San Francisco · github.com/alexchen
+
+Summary
+Full-stack engineer with 9 years building scalable web applications, APIs, and developer tooling in product-led companies.
+
+Experience
+Senior Software Engineer — Stripe — San Francisco — 2019 – Present
+- Led migration of billing microservices to Kubernetes, improving deployment frequency by 4x.
+- Built payment observability dashboards used by 200+ engineers.
+
+Software Engineer — Dropbox — 2015 – 2019
+- Shipped file-sync performance improvements reducing latency by 30%.
+
+Education
+MIT — B.S. Computer Science — 2011 – 2015
+
+Skills
+System design, API design, distributed systems, mentoring, code review
+
+Tools
+TypeScript, Python, Go, React, PostgreSQL, Redis, Docker, Kubernetes, AWS
+
+Languages
+English — fluent
+Mandarin — conversational
+
+Interests
+Running, chess, open source

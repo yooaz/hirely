@@ -1,0 +1,255 @@
+/**
+ * Hirely PDF Export Pro — A4, multi-page, breaks, widow/orphan, no clip.
+ */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page,
+  #cvDoc.cv-page {
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  body.export-pdf .top,
+  body.export-pdf .docNav,
+  body.export-pdf .templatePickerBar,
+  body.export-pdf .wsImport,
+  body.export-pdf .docFooter,
+  body.export-pdf .hero,
+  body.export-pdf .wsInsights,
+  body.export-pdf .cvExportBar {
+    display: none !important;
+  }
+}
+
+body.export-pdf {
+  background: #fff !important;
+  overflow: visible !important;
+}
+
+body.export-pdf .cvStage,
+body.export-pdf .cvStageInner,
+body.export-pdf .cvDocWrap {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #fff !important;
+  overflow: visible !important;
+  max-width: none !important;
+}
+
+body.export-pdf .cv,
+body.export-pdf .cv.cv--pdf-export {
+  width: 210mm !important;
+  max-width: 210mm !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 auto !important;
+  transform: none !important;
+  page-break-after: auto;
+}
+
+body.export-pdf .cvInner,
+body.export-pdf .cvBody,
+body.export-pdf .cvMain,
+body.export-pdf .cvSide {
+  overflow: visible !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+body.export-pdf .cv .cvHead,
+body.export-pdf .cv .cvSection,
+body.export-pdf .cv .cvExpEntry,
+body.export-pdf .cv .cvProjectEntry,
+body.export-pdf .cv .cvMetaFooter,
+body.export-pdf .cv .cvSide {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.export-pdf .cv .cvHead {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+body.export-pdf .cv .cvSectionTitle {
+  break-after: avoid;
+  page-break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+body.export-pdf .cv .cvSectionBody p,
+body.export-pdf .cv .cvExpEntry p,
+body.export-pdf .cv .cvProjectEntry p,
+body.export-pdf .cv .cvLead {
+  orphans: 2;
+  widows: 2;
+}
+
+body.export-pdf .cv .cvSection--experience {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+body.export-pdf .cv .cvExpEntry,
+body.export-pdf .cv .cvProjectEntry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.export-pdf .html2pdf__page-break,
+body.export-pdf .html2pdf__page-break--before {
+  break-before: page;
+  page-break-before: always;
+}
+
+/* html2pdf capture — fixed width, no clipping */
+body.export-pdf .cv.cv--pdf-export {
+  width: 794px !important;
+  max-width: 794px !important;
+}
+
+/* H20 — per-template PDF grids */
+body.export-pdf .cv.template-ats.cvTpl-h20-ats .cvMain {
+  padding: 14px 24px 22px !important;
+}
+
+body.export-pdf .cv.template-executive-minimal.cvTpl-h20-executive-minimal {
+  background: #fafaf9 !important;
+}
+
+body.export-pdf .cv.template-executive-minimal.cvTpl-h20-executive-minimal .cvHead--executive-minimal {
+  text-align: center !important;
+}
+
+body.export-pdf .cv.template-creative.cvTpl-h20-creative .cvHead--split {
+  display: grid !important;
+  grid-template-columns: 1fr 1.15fr !important;
+  border-bottom: 3px solid #18181b !important;
+}
+
+body.export-pdf .cv.template-editorial.cvTpl-h20-editorial .cvBody--editorial {
+  display: grid !important;
+  grid-template-columns: 188px 1fr !important;
+}
+
+body.export-pdf .cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvBody--tech,
+body.export-pdf .cv.template-modern-two-column .cvBody {
+  display: grid !important;
+  grid-template-columns: 188px 1fr !important;
+}
+
+body.export-pdf .cv.template-modern-two-column.cvTpl-h20-modern-two-column .cvSide--meta {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body.export-pdf .cv.template-swiss .cvBody,
+body.export-pdf .cv.template-minimal-swiss .cvMain--swiss,
+body.export-pdf .cv.template-consultingelite .cvBody--consulting,
+body.export-pdf .cv.template-artdirector .cvBody,
+body.export-pdf .cv.template-art-director .cvBody--art-director {
+  display: grid !important;
+  grid-template-columns: 188px 1fr !important;
+}
+
+body.export-pdf .cv.template-swiss .cvSide--meta,
+body.export-pdf .cv.template-minimal-swiss .cvMain--swiss,
+body.export-pdf .cv.template-modern-two-column .cvSide--meta,
+body.export-pdf .cv.template-editorial .cvSide--editorial,
+body.export-pdf .cv.template-magazine-editorial .cvBody--magazine,
+body.export-pdf .cv.template-consultingelite .cvSide--consulting,
+body.export-pdf .cv.template-artdirector .cvSide--meta,
+body.export-pdf .cv.template-art-director .cvSide--art-director {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.export-pdf .cv.template-behance-showcase.cvTpl-h20-behance-showcase,
+body.export-pdf .cv.template-magazine-editorial.cvTpl-h20-magazine-editorial,
+body.export-pdf .cv.template-illustrator-portfolio.cvTpl-h20-illustrator-portfolio {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body.export-pdf .cvA4Sheet .cvSection,
+body.export-pdf .cvA4Sheet .cvSectionBody,
+body.export-pdf .cvA4Sheet .cvExpEntry,
+body.export-pdf .cvA4Sheet .cvProjectEntry {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+body.export-pdf .cv:not(.cv--with-photo) .cvPhotoWrap,
+body.export-pdf .cv:not(.cv--with-photo) .cvPhoto,
+body.export-pdf .cvSkillBars,
+body.export-pdf .cvScore {
+  display: none !important;
+}
+
+body.export-pdf .cv.cv--with-photo .cvPhotoWrap {
+  display: block !important;
+  max-width: 96px;
+  margin: 0 auto 12px;
+}
+
+body.export-pdf .cv.cv--with-photo .cvPhoto {
+  display: block !important;
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Headers & footers — never clip during html2canvas capture */
+body.export-pdf .cv .cvHead,
+body.export-pdf .cv .cvMetaFooter,
+body.export-pdf .cvA4Sheet .cvHead,
+body.export-pdf .cvA4Sheet .cvMetaFooter {
+  overflow: visible !important;
+  max-height: none !important;
+  visibility: visible !important;
+}
+
+body.export-pdf .cvA4Sheet[data-page="1"] .cvHead {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.export-pdf-v2 .pdfExportV2Root,
+body.export-pdf-v2 .pdfV2Page {
+  overflow: hidden;
+  background: #fff !important;
+}
+
+body.export-pdf-v2 .pdfV2Page--cv .cvHead,
+body.export-pdf-v2 .pdfV2Page--cv .cvMetaFooter {
+  overflow: visible !important;
+}

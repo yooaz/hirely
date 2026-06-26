@@ -1,0 +1,186 @@
+/**
+ * A4 CV page sheets — Canva-style stacked pages, preview ≡ PDF.
+ */
+
+:root {
+  --cv-a4-width: 794px;
+  --cv-a4-height: 1123px;
+  --cv-a4-gap: 24px;
+}
+
+.cv-preview-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
+  padding: 48px 24px;
+}
+
+.cv-page {
+  width: 794px;
+  min-height: 1123px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  transform-origin: top center;
+  background: #fff;
+}
+
+/* Root CV container becomes a page stack host (no infinite scroll sheet) */
+#cvDoc.cv--a4,
+.cv.cv--a4 {
+  width: var(--cv-a4-width) !important;
+  max-width: var(--cv-a4-width) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.cvA4Stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cv-a4-gap);
+  width: var(--cv-a4-width);
+  min-height: 0;
+}
+
+.cvA4Sheet {
+  width: var(--cv-a4-width);
+  height: var(--cv-a4-height);
+  min-height: var(--cv-a4-height);
+  max-width: var(--cv-a4-width);
+  max-height: var(--cv-a4-height);
+  aspect-ratio: 210 / 297;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.cvA4Sheet:not(:first-child)::before {
+  content: 'Page ' attr(data-page);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.cvA4Sheet + .cvA4Sheet .cvA4Sheet__surface {
+  box-shadow:
+    0 -1px 0 #e2e8f0,
+    var(--shadow-cv, 0 12px 40px rgba(15, 23, 42, 0.1));
+}
+
+.cvA4Sheet__surface {
+  width: 100%;
+  height: 100%;
+  overflow-x: visible;
+  overflow-y: hidden;
+  background: #fff;
+  border: 1px solid #e8e8e4;
+  border-radius: 0;
+  box-shadow: var(--shadow-cv, 0 12px 40px rgba(15, 23, 42, 0.1));
+  box-sizing: border-box;
+}
+
+body:not(.export-pdf) .cvA4Sheet,
+body:not(.export-pdf) .cvA4Sheet__surface {
+  overflow: visible;
+}
+
+body:not(.export-pdf) .cvA4Sheet:not(.cvA4Sheet--overflow) .cvInner {
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+.cvA4Sheet .cvInner {
+  width: 100%;
+  min-height: 0;
+  max-height: var(--cv-a4-height);
+  overflow-x: visible;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.cvA4Sheet .cvHead,
+.cvA4Sheet .cvHead--ats,
+.cvA4Sheet .cvMain,
+.cvA4Sheet .cvSide {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  transform: none !important;
+}
+
+.cvA4Page--continue .cvMain--full {
+  padding-top: 32px;
+}
+
+/* Export / print — stacked sheets, no gap, hard page breaks */
+body.export-pdf .cvA4Stack {
+  gap: 0;
+}
+
+body.export-pdf .cvA4Sheet {
+  break-after: page;
+  page-break-after: always;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+body.export-pdf .cvA4Sheet:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+body.export-pdf .cvA4Sheet__surface {
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+body.export-pdf .cvA4Sheet,
+body.export-pdf .cvA4Sheet .cvInner {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+body.export-pdf .cv--a4,
+body.export-pdf #cvDoc.cv--a4 {
+  width: var(--cv-a4-width) !important;
+  transform: none !important;
+}
+
+@media print {
+  .cvA4Stack {
+    gap: 0 !important;
+  }
+
+  .cvA4Sheet {
+    break-after: page;
+    page-break-after: always;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .cvA4Sheet:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}

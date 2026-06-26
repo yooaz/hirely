@@ -1,0 +1,143 @@
+/**
+ * Raw text review — two columns: CV preview | Texte à vérifier
+ */
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .wsProduct {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  grid-template-areas: "preview verify";
+  gap: 20px;
+  align-items: start;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .studioPreview {
+  grid-area: preview;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .wsInsights {
+  grid-area: verify;
+  display: flex !important;
+  flex-direction: column;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .studioRail {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview #studioSuggestionsPanel,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .resultScoreBlock,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .verifyReviewBlock,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview #extractionQualityStep {
+  display: none !important;
+}
+
+.rawTextReviewPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.rawTextReviewPanel.hidden {
+  display: none !important;
+}
+
+.rawTextReviewHead h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.rawTextReviewLead {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.rawTextReviewConf {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.rawTextReviewConf--low {
+  color: #b45309;
+}
+
+.rawTextReviewList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rawTextReviewCard {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.rawTextReviewLine {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.rawTextReviewActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.rawTextReviewMoveSelect {
+  flex: 1;
+  min-width: 140px;
+  height: 36px;
+  font: inherit;
+  font-size: 12px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.rawTextReviewMore {
+  font-size: 12px;
+  color: var(--muted);
+  list-style: none;
+  padding: 4px 0;
+}
+
+.rawTextReviewEmpty {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 8px 0;
+}
+
+@media (max-width: 999px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit.workspaceGrid--rawTextReview .wsProduct {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "preview"
+      "verify";
+  }
+}

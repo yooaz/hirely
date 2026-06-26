@@ -1,0 +1,214 @@
+/**
+ * P0 Subtraction Sprint — calmer chrome, document-first review, style-only templates.
+ */
+
+/* —— Template gallery: style step only —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #templatePickerBar,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export #templatePickerBar,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-import #templatePickerBar {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style #templatePickerBar {
+  display: block !important;
+}
+
+/* —— Review: no quality band or template chrome —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #extractionQualityStep {
+  display: none !important;
+}
+
+/* —— Review: document-first 68 / 32 —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 32%);
+  gap: 12px;
+  align-items: start;
+  min-height: 0 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack .workspaceCanvas {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: min(72vh, 820px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioAnalysis {
+  grid-column: 2;
+  grid-row: 1;
+  max-height: min(78vh, 880px);
+  overflow: auto;
+  padding: 12px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #reviewStudioCenter {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsInsights {
+  display: none !important;
+}
+
+/* —— Slim review sidebar —— */
+html:not(.debug-mode) .reviewStudioAnalysis .rccTop {
+  margin-bottom: 8px;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2ScoreDesc,
+html:not(.debug-mode) .reviewStudioAnalysis .rccConfHost {
+  display: none;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2StatusRow,
+html:not(.debug-mode) .reviewStudioAnalysis .rccStatusRow {
+  margin-bottom: 8px;
+}
+
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2LetterCta {
+  display: none;
+}
+
+html:not(.debug-mode) #recruiterCommandCenter .rccSlimOnly ~ .rccFullOnly {
+  display: none !important;
+}
+
+/* —— Import: hide duplicate progress macro —— */
+html:not(.debug-mode) .importFlowV2__macro {
+  display: none !important;
+}
+
+html:not(.debug-mode) .importFlowV2 {
+  margin-bottom: 8px;
+}
+
+/* —— Canonical recovery panel —— */
+.importPasteFallbackMeta {
+  display: none !important;
+}
+
+.importRecoveryPanel .importPasteFallbackLead {
+  margin-bottom: 12px;
+}
+
+/* —— Export: PDF + More —— */
+.cvExportBar {
+  gap: 8px !important;
+  padding: 10px 12px !important;
+  max-width: min(420px, 100%);
+}
+
+.cvExportBar .btn.primary {
+  min-width: 0 !important;
+  flex: 1;
+}
+
+.exportMoreWrap {
+  position: relative;
+}
+
+.exportMoreMenu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 6px);
+  min-width: 200px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exportMoreMenu.hidden {
+  display: none !important;
+}
+
+.exportMoreMenu .btn {
+  width: 100%;
+  justify-content: flex-start;
+  min-width: 0 !important;
+  box-shadow: none;
+  border-radius: var(--radius-sm);
+}
+
+.exportMoreMenu .btn:hover {
+  background: #f8f8f6;
+}
+
+/* —— Smaller sticky stepper —— */
+.hirelyProgressNav {
+  margin-bottom: 10px !important;
+}
+
+.hirelyProgressTrack {
+  height: 3px !important;
+  margin-bottom: 8px !important;
+}
+
+.hirelyProgressBtn {
+  padding: 6px 6px 5px !important;
+  gap: 4px !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.hirelyProgressIcon {
+  width: 18px !important;
+  height: 18px !important;
+  font-size: 11px !important;
+}
+
+.hirelyProgressLabel {
+  font-size: 10px !important;
+}
+
+html:not(.debug-mode) .docNav {
+  padding: 4px 0 2px !important;
+  top: 48px !important;
+}
+
+/* —— Calmer zoom on review —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .cvStage {
+  padding: 12px 10px !important;
+}
+
+/* —— Production: no debug / duplicate recovery chrome —— */
+html:not(.debug-mode) #hirelyTestClickBtn,
+html:not(.debug-mode) #hirelyTestImport,
+html:not(.debug-mode) #importDebugPanel,
+html:not(.debug-mode) .hirelyDebugPanel,
+html:not(.debug-mode) .hirelyForensicPanel,
+html:not(.debug-mode) #extractionGate,
+html:not(.debug-mode) #extractionAlert,
+html:not(.debug-mode) .importActions,
+html:not(.debug-mode) #exportFinalPanel,
+html:not(.debug-mode) .cvProductHead,
+html:not(.debug-mode) #auditPanel,
+html:not(.debug-mode) #linkedinPanel,
+html:not(.debug-mode) #letterPanel {
+  display: none !important;
+}
+
+/* —— Review: calmer sidebar (title + up to 3 items) —— */
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2ScoreRing,
+html:not(.debug-mode) .reviewStudioAnalysis .reviewV2ScoreLead {
+  display: none !important;
+}
+
+/* —— Export: single primary in bar —— */
+html:not(.debug-mode) .cvExportBar > .btn:not(.primary):not(#exportMoreBtn) {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsCenterStack {
+    grid-template-columns: 1fr;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .reviewStudioAnalysis {
+    grid-column: 1;
+    max-height: none;
+  }
+}

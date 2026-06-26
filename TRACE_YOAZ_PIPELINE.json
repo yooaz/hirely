@@ -1,0 +1,3250 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-06T11:36:07.517Z",
+    "pdfPath": "/Users/yohannazancot/Documents/cv/cv2022 yohann azancot copie.pdf",
+    "ocrCacheUsed": true,
+    "extractionSource": "live_pdf",
+    "note": "Trace only — no fixes applied",
+    "extractionError": "PDF.js non chargé. Collez le texte du CV."
+  },
+  "checkpoints": {
+    "OCR_OUTPUT": {
+      "checkpoint": "OCR_OUTPUT",
+      "counts": {
+        "experiences": 0,
+        "education": 0,
+        "skills": 0,
+        "tools": 0,
+        "languages": 0,
+        "clients": 0,
+        "projects": 0,
+        "unsorted": 0,
+        "summary": 0,
+        "blocks": 0,
+        "lines": 41,
+        "textLength": 1292
+      },
+      "examples": {
+        "identity": {
+          "name": null,
+          "title": null,
+          "email": null,
+          "phone": null,
+          "location": null,
+          "website": null,
+          "linkedin": null
+        },
+        "summary": null,
+        "experiences": [],
+        "education": [],
+        "skills": [],
+        "tools": [],
+        "languages": [],
+        "clients": [],
+        "unsorted": []
+      },
+      "missing_fields": {
+        "identity": [
+          "name",
+          "title",
+          "email",
+          "phone",
+          "location",
+          "website",
+          "linkedin"
+        ],
+        "sections_empty": [
+          "experiences",
+          "education",
+          "skills",
+          "tools",
+          "languages",
+          "clients"
+        ],
+        "ocr_quality": {
+          "textLength": 1292,
+          "gatePass": true,
+          "emptyLines": 0
+        }
+      },
+      "delta_from_prior": null,
+      "object": {
+        "method": "ocr",
+        "text": "ee à\nA A TN\nv3 2 GRADRIC designer & Illustrator\nPROFILE WORK EXPERIENCE\n_— pe\n30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.\ndesigner edition, logos...\n(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse\nPantone, Adobe, Arte and more)\n20N : McCann G. Agency (Internship)\nCONTACT\n- EDUCATION\nes\nRS Phone:\n+33649434839 2011 2012 : LISAA, web and motion design\n2009 20M : Créapole, creation school management\n@ man visual communication\nyoaz@hotmail fr (typography, visuel identity, corporate identity.\npackaging. poster, logos, web design, illustrations.\neditions, client analyse, target customer, art history\n» Be.net/yoaz marketing, technologie, marketing studies\n@ 27voaz market reviews)\nIc) yoaz27 2008 2009 : Créapole creation school management\nign fin hie. je\nQ voaz.tumblr com product design (infographie, ergonomie, extern\nobservation, maquette, packaging.)\n2007 2009 : Créapole creation school management\nmultisectoral year {visual communication\nproduct design, video game, architecture}\nLANGUAGES\nSKILLS INTEREST\nTT Lu\nFrench: native\nPhotograph:\nEnglish: fluent Ps] photoshop EEE CTT\nMustrator RE scowboscc\n[6] incesion me SE\nDrawing\nIustration, Graphic design, Movies\nPrint, Logo, Vector, Art... Reading\nMusic\nNature",
+        "lines": [
+          {
+            "text": "ee à",
+            "rawExtraction": "ee à",
+            "cleanedText": "ee à",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 0,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 0,
+            "lineIndex": 0,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "A A TN",
+            "rawExtraction": "A A TN",
+            "cleanedText": "A A TN",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 1,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 1,
+            "lineIndex": 1,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "v3 2 GRADRIC designer & Illustrator",
+            "rawExtraction": "v3 2 GRADRIC designer & Illustrator",
+            "cleanedText": "v3 2 GRADRIC designer & Illustrator",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 2,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 2,
+            "lineIndex": 2,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "PROFILE WORK EXPERIENCE",
+            "rawExtraction": "PROFILE WORK EXPERIENCE",
+            "cleanedText": "PROFILE WORK EXPERIENCE",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 3,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 3,
+            "lineIndex": 3,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "_— pe",
+            "rawExtraction": "_— pe",
+            "cleanedText": "_— pe",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 4,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 4,
+            "lineIndex": 4,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "rawExtraction": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "cleanedText": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 5,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 5,
+            "lineIndex": 5,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "designer edition, logos...",
+            "rawExtraction": "designer edition, logos...",
+            "cleanedText": "designer edition, logos...",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 6,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 6,
+            "lineIndex": 6,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "rawExtraction": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "cleanedText": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 7,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 7,
+            "lineIndex": 7,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Pantone, Adobe, Arte and more)",
+            "rawExtraction": "Pantone, Adobe, Arte and more)",
+            "cleanedText": "Pantone, Adobe, Arte and more)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 8,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 8,
+            "lineIndex": 8,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "20N : McCann G. Agency (Internship)",
+            "rawExtraction": "20N : McCann G. Agency (Internship)",
+            "cleanedText": "20N : McCann G. Agency (Internship)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 9,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 9,
+            "lineIndex": 9,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "CONTACT",
+            "rawExtraction": "CONTACT",
+            "cleanedText": "CONTACT",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 10,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 10,
+            "lineIndex": 10,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "- EDUCATION",
+            "rawExtraction": "- EDUCATION",
+            "cleanedText": "- EDUCATION",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 11,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 11,
+            "lineIndex": 11,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "es",
+            "rawExtraction": "es",
+            "cleanedText": "es",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 12,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 12,
+            "lineIndex": 12,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "RS Phone:",
+            "rawExtraction": "RS Phone:",
+            "cleanedText": "RS Phone:",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 13,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 13,
+            "lineIndex": 13,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "rawExtraction": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "cleanedText": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 14,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 14,
+            "lineIndex": 14,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "2009 20M : Créapole, creation school management",
+            "rawExtraction": "2009 20M : Créapole, creation school management",
+            "cleanedText": "2009 20M : Créapole, creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 15,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 15,
+            "lineIndex": 15,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "@ man visual communication",
+            "rawExtraction": "@ man visual communication",
+            "cleanedText": "@ man visual communication",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 16,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 16,
+            "lineIndex": 16,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "rawExtraction": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "cleanedText": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 17,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 17,
+            "lineIndex": 17,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "packaging. poster, logos, web design, illustrations.",
+            "rawExtraction": "packaging. poster, logos, web design, illustrations.",
+            "cleanedText": "packaging. poster, logos, web design, illustrations.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 18,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 18,
+            "lineIndex": 18,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "editions, client analyse, target customer, art history",
+            "rawExtraction": "editions, client analyse, target customer, art history",
+            "cleanedText": "editions, client analyse, target customer, art history",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 19,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 19,
+            "lineIndex": 19,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "rawExtraction": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "cleanedText": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 20,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 20,
+            "lineIndex": 20,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "rawExtraction": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "cleanedText": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 22,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 21,
+            "lineIndex": 21,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "ign fin hie. je",
+            "rawExtraction": "ign fin hie. je",
+            "cleanedText": "ign fin hie. je",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 23,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 22,
+            "lineIndex": 22,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "rawExtraction": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "cleanedText": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 24,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 23,
+            "lineIndex": 23,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "observation, maquette, packaging.)",
+            "rawExtraction": "observation, maquette, packaging.)",
+            "cleanedText": "observation, maquette, packaging.)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 25,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 24,
+            "lineIndex": 24,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "2007 2009 : Créapole creation school management",
+            "rawExtraction": "2007 2009 : Créapole creation school management",
+            "cleanedText": "2007 2009 : Créapole creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 26,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 25,
+            "lineIndex": 25,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "multisectoral year {visual communication",
+            "rawExtraction": "multisectoral year {visual communication",
+            "cleanedText": "multisectoral year {visual communication",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 27,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 26,
+            "lineIndex": 26,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "product design, video game, architecture}",
+            "rawExtraction": "product design, video game, architecture}",
+            "cleanedText": "product design, video game, architecture}",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 28,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 27,
+            "lineIndex": 27,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "LANGUAGES",
+            "rawExtraction": "LANGUAGES",
+            "cleanedText": "LANGUAGES",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 29,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 28,
+            "lineIndex": 28,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "SKILLS INTEREST",
+            "rawExtraction": "SKILLS INTEREST",
+            "cleanedText": "SKILLS INTEREST",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 30,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 29,
+            "lineIndex": 29,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "TT Lu",
+            "rawExtraction": "TT Lu",
+            "cleanedText": "TT Lu",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 31,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 30,
+            "lineIndex": 30,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "French: native",
+            "rawExtraction": "French: native",
+            "cleanedText": "French: native",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 32,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 31,
+            "lineIndex": 31,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Photograph:",
+            "rawExtraction": "Photograph:",
+            "cleanedText": "Photograph:",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 33,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 32,
+            "lineIndex": 32,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "English: fluent Ps] photoshop EEE CTT",
+            "rawExtraction": "English: fluent Ps] photoshop EEE CTT",
+            "cleanedText": "English: fluent Ps] photoshop EEE CTT",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 34,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 33,
+            "lineIndex": 33,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Mustrator RE scowboscc",
+            "rawExtraction": "Mustrator RE scowboscc",
+            "cleanedText": "Mustrator RE scowboscc",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 35,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 34,
+            "lineIndex": 34,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "[6] incesion me SE",
+            "rawExtraction": "[6] incesion me SE",
+            "cleanedText": "[6] incesion me SE",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 36,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 35,
+            "lineIndex": 35,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Drawing",
+            "rawExtraction": "Drawing",
+            "cleanedText": "Drawing",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 37,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 36,
+            "lineIndex": 36,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Iustration, Graphic design, Movies",
+            "rawExtraction": "Iustration, Graphic design, Movies",
+            "cleanedText": "Iustration, Graphic design, Movies",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 38,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 37,
+            "lineIndex": 37,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Print, Logo, Vector, Art... Reading",
+            "rawExtraction": "Print, Logo, Vector, Art... Reading",
+            "cleanedText": "Print, Logo, Vector, Art... Reading",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 39,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 38,
+            "lineIndex": 38,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Music",
+            "rawExtraction": "Music",
+            "cleanedText": "Music",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 40,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 39,
+            "lineIndex": 39,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Nature",
+            "rawExtraction": "Nature",
+            "cleanedText": "Nature",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 41,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 40,
+            "lineIndex": 40,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          }
+        ],
+        "lineCount": 41,
+        "importStatus": "IMPORT_READY",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    "EXTRACTION_OUTPUT": {
+      "checkpoint": "EXTRACTION_OUTPUT",
+      "counts": {
+        "experiences": 0,
+        "education": 0,
+        "skills": 0,
+        "tools": 0,
+        "languages": 0,
+        "clients": 0,
+        "projects": 0,
+        "unsorted": 41,
+        "summary": 0,
+        "blocks": 0,
+        "lines": 41,
+        "textLength": 1267,
+        "enterprise_lines": 41,
+        "cleanedTextLength": 1267
+      },
+      "examples": {
+        "identity": {
+          "name": null,
+          "title": null,
+          "email": null,
+          "phone": null,
+          "location": null,
+          "website": null,
+          "linkedin": null
+        },
+        "summary": null,
+        "experiences": [],
+        "education": [],
+        "skills": [],
+        "tools": [],
+        "languages": [],
+        "clients": [],
+        "unsorted": [
+          "ee à",
+          "A A TN",
+          "v3 2 GRADRIC designer & Illustrator",
+          "PROFILE WORK EXPERIENCE",
+          "_— pe",
+          "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+          "designer edition, logos...",
+          "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse"
+        ],
+        "cleanedText_preview": "ee à\nA A TN\nv3 2 GRADRIC designer & Illustrator\nPROFILE WORK EXPERIENCE\n_— pe\n30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.\ndesigner edition, logos...\n(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse\nPantone, Adobe, Arte and more)\n20N : McCann G. Agency (Internship)\nCONTACT\n- EDUCATION\nes\nRS Phone:\n+33649434839 2011 2012 : LISAA, web and motion design\n2009 20M : Créapole, creation school management\n@ man visual communication\nyoaz@hotmail fr (typography, visuel identity, corporate identity.\npackaging. poster, logos, web des",
+        "lines": {
+          "lines": [
+            {
+              "text": "ee à",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "A A TN",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "v3 2 GRADRIC designer & Illustrator",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "PROFILE WORK EXPERIENCE",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "_— pe",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "designer edition, logos...",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Pantone, Adobe, Arte and more)",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "20N : McCann G. Agency (Internship)",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "CONTACT",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "- EDUCATION",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "es",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "RS Phone:",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "+33649434839 2011 2012 : LISAA, web and motion design",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "2009 20M : Créapole, creation school management",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "@ man visual communication",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "packaging. poster, logos, web design, illustrations.",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "editions, client analyse, target customer, art history",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "» Be.net/yoaz marketing, technologie, marketing studies",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "ign fin hie. je",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "observation, maquette, packaging.)",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "2007 2009 : Créapole creation school management",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "multisectoral year {visual communication",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "product design, video game, architecture}",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "LANGUAGES",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "SKILLS INTEREST",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "TT Lu",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "French: native",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Photograph:",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "English: fluent Ps] photoshop EEE CTT",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Mustrator RE scowboscc",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "[6] incesion me SE",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Drawing",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Iustration, Graphic design, Movies",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Print, Logo, Vector, Art... Reading",
+              "confidence": 92,
+              "bucket": null
+            },
+            {
+              "text": "Music",
+              "confidence": 92,
+              "bucket": null
+            }
+          ],
+          "truncated": true,
+          "total": 41
+        }
+      },
+      "missing_fields": {
+        "identity": [
+          "name",
+          "title",
+          "email",
+          "phone",
+          "location",
+          "website",
+          "linkedin"
+        ],
+        "sections_empty": [
+          "experiences",
+          "education",
+          "skills",
+          "tools",
+          "languages",
+          "clients"
+        ]
+      },
+      "delta_from_prior": null,
+      "object": {
+        "method": "ocr",
+        "text": "ee à\nA A TN\nv3 2 GRADRIC designer & Illustrator\nPROFILE WORK EXPERIENCE\n_— pe\n30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.\ndesigner edition, logos...\n(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse\nPantone, Adobe, Arte and more)\n20N : McCann G. Agency (Internship)\nCONTACT\n- EDUCATION\nes\nRS Phone:\n+33649434839 2011 2012 : LISAA, web and motion design\n2009 20M : Créapole, creation school management\n@ man visual communication\nyoaz@hotmail fr (typography, visuel identity, corporate identity.\npackaging. poster, logos, web design, illustrations.\neditions, client analyse, target customer, art history\n» Be.net/yoaz marketing, technologie, marketing studies\nIc) yoaz27 2008 2009 : Créapole creation school management\nign fin hie. je\nQ voaz.tumblr com product design (infographie, ergonomie, extern\nobservation, maquette, packaging.)\n2007 2009 : Créapole creation school management\nmultisectoral year {visual communication\nproduct design, video game, architecture}\nLANGUAGES\nSKILLS INTEREST\nTT Lu\nFrench: native\nPhotograph:\nEnglish: fluent Ps] photoshop EEE CTT\nMustrator RE scowboscc\n[6] incesion me SE\nDrawing\nIustration, Graphic design, Movies\nPrint, Logo, Vector, Art... Reading\nMusic\nNature",
+        "enterprise": {
+          "method": "paste",
+          "cleanedText": "ee à\nA A TN\nv3 2 GRADRIC designer & Illustrator\nPROFILE WORK EXPERIENCE\n_— pe\n30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.\ndesigner edition, logos...\n(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse\nPantone, Adobe, Arte and more)\n20N : McCann G. Agency (Internship)\nCONTACT\n- EDUCATION\nes\nRS Phone:\n+33649434839 2011 2012 : LISAA, web and motion design\n2009 20M : Créapole, creation school management\n@ man visual communication\nyoaz@hotmail fr (typography, visuel identity, corporate identity.\npackaging. poster, logos, web design, illustrations.\neditions, client analyse, target customer, art history\n» Be.net/yoaz marketing, technologie, marketing studies\nIc) yoaz27 2008 2009 : Créapole creation school management\nign fin hie. je\nQ voaz.tumblr com product design (infographie, ergonomie, extern\nobservation, maquette, packaging.)\n2007 2009 : Créapole creation school management\nmultisectoral year {visual communication\nproduct design, video game, architecture}\nLANGUAGES\nSKILLS INTEREST\nTT Lu\nFrench: native\nPhotograph:\nEnglish: fluent Ps] photoshop EEE CTT\nMustrator RE scowboscc\n[6] incesion me SE\nDrawing\nIustration, Graphic design, Movies\nPrint, Logo, Vector, Art... Reading\nMusic\nNature",
+          "rawExtraction": "ee à\nA A TN\nv3 2 GRADRIC designer & Illustrator\nPROFILE WORK EXPERIENCE\n_— pe\n30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.\ndesigner edition, logos...\n(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse\nPantone, Adobe, Arte and more)\n20N : McCann G. Agency (Internship)\nCONTACT\n- EDUCATION\nes\nRS Phone:\n+33649434839 2011 2012 : LISAA, web and motion design\n2009 20M : Créapole, creation school management\n@ man visual communication\nyoaz@hotmail fr (typography, visuel identity, corporate identity.\npackaging. poster, logos, web design, illustrations.\neditions, client analyse, target customer, art history\n» Be.net/yoaz marketing, technologie, marketing studies\nIc) yoaz27 2008 2009 : Créapole creation school management\nign fin hie. je\nQ voaz.tumblr com product design (infographie, ergonomie, extern\nobservation, maquette, packaging.)\n2007 2009 : Créapole creation school management\nmultisectoral year {visual communication\nproduct design, video game, architecture}\nLANGUAGES\nSKILLS INTEREST\nTT Lu\nFrench: native\nPhotograph:\nEnglish: fluent Ps] photoshop EEE CTT\nMustrator RE scowboscc\n[6] incesion me SE\nDrawing\nIustration, Graphic design, Movies\nPrint, Logo, Vector, Art... Reading\nMusic\nNature",
+          "lines": [
+            {
+              "text": "ee à",
+              "rawExtraction": "ee à",
+              "cleanedText": "ee à",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 0,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 0,
+              "lineIndex": 0,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "A A TN",
+              "rawExtraction": "A A TN",
+              "cleanedText": "A A TN",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 1,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 1,
+              "lineIndex": 1,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "v3 2 GRADRIC designer & Illustrator",
+              "rawExtraction": "v3 2 GRADRIC designer & Illustrator",
+              "cleanedText": "v3 2 GRADRIC designer & Illustrator",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 2,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 2,
+              "lineIndex": 2,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "PROFILE WORK EXPERIENCE",
+              "rawExtraction": "PROFILE WORK EXPERIENCE",
+              "cleanedText": "PROFILE WORK EXPERIENCE",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 3,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 3,
+              "lineIndex": 3,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "_— pe",
+              "rawExtraction": "_— pe",
+              "cleanedText": "_— pe",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 4,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 4,
+              "lineIndex": 4,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+              "rawExtraction": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+              "cleanedText": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 5,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 5,
+              "lineIndex": 5,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "designer edition, logos...",
+              "rawExtraction": "designer edition, logos...",
+              "cleanedText": "designer edition, logos...",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 6,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 6,
+              "lineIndex": 6,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+              "rawExtraction": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+              "cleanedText": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 7,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 7,
+              "lineIndex": 7,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Pantone, Adobe, Arte and more)",
+              "rawExtraction": "Pantone, Adobe, Arte and more)",
+              "cleanedText": "Pantone, Adobe, Arte and more)",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 8,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 8,
+              "lineIndex": 8,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "20N : McCann G. Agency (Internship)",
+              "rawExtraction": "20N : McCann G. Agency (Internship)",
+              "cleanedText": "20N : McCann G. Agency (Internship)",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 9,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 9,
+              "lineIndex": 9,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "CONTACT",
+              "rawExtraction": "CONTACT",
+              "cleanedText": "CONTACT",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 10,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 10,
+              "lineIndex": 10,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "- EDUCATION",
+              "rawExtraction": "- EDUCATION",
+              "cleanedText": "- EDUCATION",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 11,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 11,
+              "lineIndex": 11,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "es",
+              "rawExtraction": "es",
+              "cleanedText": "es",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 12,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 12,
+              "lineIndex": 12,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "RS Phone:",
+              "rawExtraction": "RS Phone:",
+              "cleanedText": "RS Phone:",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 13,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 13,
+              "lineIndex": 13,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "+33649434839 2011 2012 : LISAA, web and motion design",
+              "rawExtraction": "+33649434839 2011 2012 : LISAA, web and motion design",
+              "cleanedText": "+33649434839 2011 2012 : LISAA, web and motion design",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 14,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 14,
+              "lineIndex": 14,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "2009 20M : Créapole, creation school management",
+              "rawExtraction": "2009 20M : Créapole, creation school management",
+              "cleanedText": "2009 20M : Créapole, creation school management",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 15,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 15,
+              "lineIndex": 15,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "@ man visual communication",
+              "rawExtraction": "@ man visual communication",
+              "cleanedText": "@ man visual communication",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 16,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 16,
+              "lineIndex": 16,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+              "rawExtraction": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+              "cleanedText": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 17,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 17,
+              "lineIndex": 17,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "packaging. poster, logos, web design, illustrations.",
+              "rawExtraction": "packaging. poster, logos, web design, illustrations.",
+              "cleanedText": "packaging. poster, logos, web design, illustrations.",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 18,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 18,
+              "lineIndex": 18,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "editions, client analyse, target customer, art history",
+              "rawExtraction": "editions, client analyse, target customer, art history",
+              "cleanedText": "editions, client analyse, target customer, art history",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 19,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 19,
+              "lineIndex": 19,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "» Be.net/yoaz marketing, technologie, marketing studies",
+              "rawExtraction": "» Be.net/yoaz marketing, technologie, marketing studies",
+              "cleanedText": "» Be.net/yoaz marketing, technologie, marketing studies",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 20,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 20,
+              "lineIndex": 20,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+              "rawExtraction": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+              "cleanedText": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 22,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 21,
+              "lineIndex": 21,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "ign fin hie. je",
+              "rawExtraction": "ign fin hie. je",
+              "cleanedText": "ign fin hie. je",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 23,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 22,
+              "lineIndex": 22,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+              "rawExtraction": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+              "cleanedText": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 24,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 23,
+              "lineIndex": 23,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "observation, maquette, packaging.)",
+              "rawExtraction": "observation, maquette, packaging.)",
+              "cleanedText": "observation, maquette, packaging.)",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 25,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 24,
+              "lineIndex": 24,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "2007 2009 : Créapole creation school management",
+              "rawExtraction": "2007 2009 : Créapole creation school management",
+              "cleanedText": "2007 2009 : Créapole creation school management",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 26,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 25,
+              "lineIndex": 25,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "multisectoral year {visual communication",
+              "rawExtraction": "multisectoral year {visual communication",
+              "cleanedText": "multisectoral year {visual communication",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 27,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 26,
+              "lineIndex": 26,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "product design, video game, architecture}",
+              "rawExtraction": "product design, video game, architecture}",
+              "cleanedText": "product design, video game, architecture}",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 28,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 27,
+              "lineIndex": 27,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "LANGUAGES",
+              "rawExtraction": "LANGUAGES",
+              "cleanedText": "LANGUAGES",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 29,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 28,
+              "lineIndex": 28,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "SKILLS INTEREST",
+              "rawExtraction": "SKILLS INTEREST",
+              "cleanedText": "SKILLS INTEREST",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 30,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 29,
+              "lineIndex": 29,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "TT Lu",
+              "rawExtraction": "TT Lu",
+              "cleanedText": "TT Lu",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 31,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 30,
+              "lineIndex": 30,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "French: native",
+              "rawExtraction": "French: native",
+              "cleanedText": "French: native",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 32,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 31,
+              "lineIndex": 31,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Photograph:",
+              "rawExtraction": "Photograph:",
+              "cleanedText": "Photograph:",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 33,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 32,
+              "lineIndex": 32,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "English: fluent Ps] photoshop EEE CTT",
+              "rawExtraction": "English: fluent Ps] photoshop EEE CTT",
+              "cleanedText": "English: fluent Ps] photoshop EEE CTT",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 34,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 33,
+              "lineIndex": 33,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Mustrator RE scowboscc",
+              "rawExtraction": "Mustrator RE scowboscc",
+              "cleanedText": "Mustrator RE scowboscc",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 35,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 34,
+              "lineIndex": 34,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "[6] incesion me SE",
+              "rawExtraction": "[6] incesion me SE",
+              "cleanedText": "[6] incesion me SE",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 36,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 35,
+              "lineIndex": 35,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Drawing",
+              "rawExtraction": "Drawing",
+              "cleanedText": "Drawing",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 37,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 36,
+              "lineIndex": 36,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Iustration, Graphic design, Movies",
+              "rawExtraction": "Iustration, Graphic design, Movies",
+              "cleanedText": "Iustration, Graphic design, Movies",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 38,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 37,
+              "lineIndex": 37,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Print, Logo, Vector, Art... Reading",
+              "rawExtraction": "Print, Logo, Vector, Art... Reading",
+              "cleanedText": "Print, Logo, Vector, Art... Reading",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 39,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 38,
+              "lineIndex": 38,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Music",
+              "rawExtraction": "Music",
+              "cleanedText": "Music",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 40,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 39,
+              "lineIndex": 39,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            },
+            {
+              "text": "Nature",
+              "rawExtraction": "Nature",
+              "cleanedText": "Nature",
+              "confidence": 92,
+              "source": "native",
+              "page": 1,
+              "line": 41,
+              "x": 0,
+              "y": 0,
+              "readingOrder": 40,
+              "lineIndex": 40,
+              "columnId": "LEFT_COLUMN",
+              "region": "left",
+              "zone": "header"
+            }
+          ],
+          "lineCount": 41
+        },
+        "pdfExtraction": {
+          "fromCache": true,
+          "pdf": "/Users/yohannazancot/Documents/cv/cv2022 yohann azancot copie.pdf"
+        },
+        "importStatus": "IMPORT_READY",
+        "errors": [],
+        "identity": {},
+        "experiences": [],
+        "education": [],
+        "skills": [],
+        "tools": [],
+        "languages": [],
+        "clients": [],
+        "unsorted": [
+          "ee à",
+          "A A TN",
+          "v3 2 GRADRIC designer & Illustrator",
+          "PROFILE WORK EXPERIENCE",
+          "_— pe",
+          "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+          "designer edition, logos...",
+          "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+          "Pantone, Adobe, Arte and more)",
+          "20N : McCann G. Agency (Internship)",
+          "CONTACT",
+          "- EDUCATION",
+          "es",
+          "RS Phone:",
+          "+33649434839 2011 2012 : LISAA, web and motion design",
+          "2009 20M : Créapole, creation school management",
+          "@ man visual communication",
+          "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+          "packaging. poster, logos, web design, illustrations.",
+          "editions, client analyse, target customer, art history",
+          "» Be.net/yoaz marketing, technologie, marketing studies",
+          "Ic) yoaz27 2008 2009 : Créapole creation school management",
+          "ign fin hie. je",
+          "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+          "observation, maquette, packaging.)",
+          "2007 2009 : Créapole creation school management",
+          "multisectoral year {visual communication",
+          "product design, video game, architecture}",
+          "LANGUAGES",
+          "SKILLS INTEREST",
+          "TT Lu",
+          "French: native",
+          "Photograph:",
+          "English: fluent Ps] photoshop EEE CTT",
+          "Mustrator RE scowboscc",
+          "[6] incesion me SE",
+          "Drawing",
+          "Iustration, Graphic design, Movies",
+          "Print, Logo, Vector, Art... Reading",
+          "Music",
+          "Nature"
+        ],
+        "lines": [
+          {
+            "text": "ee à",
+            "rawExtraction": "ee à",
+            "cleanedText": "ee à",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 0,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 0,
+            "lineIndex": 0,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "A A TN",
+            "rawExtraction": "A A TN",
+            "cleanedText": "A A TN",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 1,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 1,
+            "lineIndex": 1,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "v3 2 GRADRIC designer & Illustrator",
+            "rawExtraction": "v3 2 GRADRIC designer & Illustrator",
+            "cleanedText": "v3 2 GRADRIC designer & Illustrator",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 2,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 2,
+            "lineIndex": 2,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "PROFILE WORK EXPERIENCE",
+            "rawExtraction": "PROFILE WORK EXPERIENCE",
+            "cleanedText": "PROFILE WORK EXPERIENCE",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 3,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 3,
+            "lineIndex": 3,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "_— pe",
+            "rawExtraction": "_— pe",
+            "cleanedText": "_— pe",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 4,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 4,
+            "lineIndex": 4,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "rawExtraction": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "cleanedText": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 5,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 5,
+            "lineIndex": 5,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "designer edition, logos...",
+            "rawExtraction": "designer edition, logos...",
+            "cleanedText": "designer edition, logos...",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 6,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 6,
+            "lineIndex": 6,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "rawExtraction": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "cleanedText": "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 7,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 7,
+            "lineIndex": 7,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Pantone, Adobe, Arte and more)",
+            "rawExtraction": "Pantone, Adobe, Arte and more)",
+            "cleanedText": "Pantone, Adobe, Arte and more)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 8,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 8,
+            "lineIndex": 8,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "20N : McCann G. Agency (Internship)",
+            "rawExtraction": "20N : McCann G. Agency (Internship)",
+            "cleanedText": "20N : McCann G. Agency (Internship)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 9,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 9,
+            "lineIndex": 9,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "CONTACT",
+            "rawExtraction": "CONTACT",
+            "cleanedText": "CONTACT",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 10,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 10,
+            "lineIndex": 10,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "- EDUCATION",
+            "rawExtraction": "- EDUCATION",
+            "cleanedText": "- EDUCATION",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 11,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 11,
+            "lineIndex": 11,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "es",
+            "rawExtraction": "es",
+            "cleanedText": "es",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 12,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 12,
+            "lineIndex": 12,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "RS Phone:",
+            "rawExtraction": "RS Phone:",
+            "cleanedText": "RS Phone:",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 13,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 13,
+            "lineIndex": 13,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "rawExtraction": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "cleanedText": "+33649434839 2011 2012 : LISAA, web and motion design",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 14,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 14,
+            "lineIndex": 14,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "2009 20M : Créapole, creation school management",
+            "rawExtraction": "2009 20M : Créapole, creation school management",
+            "cleanedText": "2009 20M : Créapole, creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 15,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 15,
+            "lineIndex": 15,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "@ man visual communication",
+            "rawExtraction": "@ man visual communication",
+            "cleanedText": "@ man visual communication",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 16,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 16,
+            "lineIndex": 16,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "rawExtraction": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "cleanedText": "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 17,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 17,
+            "lineIndex": 17,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "packaging. poster, logos, web design, illustrations.",
+            "rawExtraction": "packaging. poster, logos, web design, illustrations.",
+            "cleanedText": "packaging. poster, logos, web design, illustrations.",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 18,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 18,
+            "lineIndex": 18,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "editions, client analyse, target customer, art history",
+            "rawExtraction": "editions, client analyse, target customer, art history",
+            "cleanedText": "editions, client analyse, target customer, art history",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 19,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 19,
+            "lineIndex": 19,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "rawExtraction": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "cleanedText": "» Be.net/yoaz marketing, technologie, marketing studies",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 20,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 20,
+            "lineIndex": 20,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "rawExtraction": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "cleanedText": "Ic) yoaz27 2008 2009 : Créapole creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 22,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 21,
+            "lineIndex": 21,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "ign fin hie. je",
+            "rawExtraction": "ign fin hie. je",
+            "cleanedText": "ign fin hie. je",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 23,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 22,
+            "lineIndex": 22,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "rawExtraction": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "cleanedText": "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 24,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 23,
+            "lineIndex": 23,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "observation, maquette, packaging.)",
+            "rawExtraction": "observation, maquette, packaging.)",
+            "cleanedText": "observation, maquette, packaging.)",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 25,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 24,
+            "lineIndex": 24,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "2007 2009 : Créapole creation school management",
+            "rawExtraction": "2007 2009 : Créapole creation school management",
+            "cleanedText": "2007 2009 : Créapole creation school management",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 26,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 25,
+            "lineIndex": 25,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "multisectoral year {visual communication",
+            "rawExtraction": "multisectoral year {visual communication",
+            "cleanedText": "multisectoral year {visual communication",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 27,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 26,
+            "lineIndex": 26,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "product design, video game, architecture}",
+            "rawExtraction": "product design, video game, architecture}",
+            "cleanedText": "product design, video game, architecture}",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 28,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 27,
+            "lineIndex": 27,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "LANGUAGES",
+            "rawExtraction": "LANGUAGES",
+            "cleanedText": "LANGUAGES",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 29,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 28,
+            "lineIndex": 28,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "SKILLS INTEREST",
+            "rawExtraction": "SKILLS INTEREST",
+            "cleanedText": "SKILLS INTEREST",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 30,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 29,
+            "lineIndex": 29,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "TT Lu",
+            "rawExtraction": "TT Lu",
+            "cleanedText": "TT Lu",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 31,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 30,
+            "lineIndex": 30,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "French: native",
+            "rawExtraction": "French: native",
+            "cleanedText": "French: native",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 32,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 31,
+            "lineIndex": 31,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Photograph:",
+            "rawExtraction": "Photograph:",
+            "cleanedText": "Photograph:",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 33,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 32,
+            "lineIndex": 32,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "English: fluent Ps] photoshop EEE CTT",
+            "rawExtraction": "English: fluent Ps] photoshop EEE CTT",
+            "cleanedText": "English: fluent Ps] photoshop EEE CTT",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 34,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 33,
+            "lineIndex": 33,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Mustrator RE scowboscc",
+            "rawExtraction": "Mustrator RE scowboscc",
+            "cleanedText": "Mustrator RE scowboscc",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 35,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 34,
+            "lineIndex": 34,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "[6] incesion me SE",
+            "rawExtraction": "[6] incesion me SE",
+            "cleanedText": "[6] incesion me SE",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 36,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 35,
+            "lineIndex": 35,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Drawing",
+            "rawExtraction": "Drawing",
+            "cleanedText": "Drawing",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 37,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 36,
+            "lineIndex": 36,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Iustration, Graphic design, Movies",
+            "rawExtraction": "Iustration, Graphic design, Movies",
+            "cleanedText": "Iustration, Graphic design, Movies",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 38,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 37,
+            "lineIndex": 37,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Print, Logo, Vector, Art... Reading",
+            "rawExtraction": "Print, Logo, Vector, Art... Reading",
+            "cleanedText": "Print, Logo, Vector, Art... Reading",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 39,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 38,
+            "lineIndex": 38,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Music",
+            "rawExtraction": "Music",
+            "cleanedText": "Music",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 40,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 39,
+            "lineIndex": 39,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          },
+          {
+            "text": "Nature",
+            "rawExtraction": "Nature",
+            "cleanedText": "Nature",
+            "confidence": 92,
+            "source": "native",
+            "page": 1,
+            "line": 41,
+            "x": 0,
+            "y": 0,
+            "readingOrder": 40,
+            "lineIndex": 40,
+            "columnId": "LEFT_COLUMN",
+            "region": "left",
+            "zone": "header"
+          }
+        ]
+      }
+    },
+    "STRUCTURED_RESUME": {
+      "checkpoint": "STRUCTURED_RESUME",
+      "counts": {
+        "experiences": 1,
+        "education": 7,
+        "skills": 4,
+        "tools": 0,
+        "languages": 0,
+        "clients": 5,
+        "projects": 0,
+        "unsorted": 40,
+        "summary": 0,
+        "blocks": 0,
+        "lines": 0,
+        "textLength": 0,
+        "reviewQueue": 30
+      },
+      "examples": {
+        "identity": {
+          "name": "Nom à confirmer",
+          "title": "v3 2 GRADRIC designer & Illustrator",
+          "email": null,
+          "phone": "2011-2022",
+          "location": null,
+          "website": null,
+          "linkedin": null
+        },
+        "summary": null,
+        "experiences": [
+          {
+            "role": "Freelance Illustrator / Graphic Designer",
+            "company": "Independent / Freelance",
+            "dates": "2011–2022",
+            "bullets": [
+              "Posters, packaging."
+            ],
+            "confidence": null
+          }
+        ],
+        "education": [
+          "+33649434839 2011 2012 : LISAA, web and motion design",
+          "Ic) yoaz27 2008 2009 : Créapole creation school management ign fin hie. je",
+          "2007 2009 : Créapole creation school management multisectoral year {visual communication product design, video game, architecture}"
+        ],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)"
+        ],
+        "tools": [],
+        "languages": [],
+        "clients": [
+          "(Nike Louis Vuitton",
+          "Marvel Cadillec",
+          "Pantone"
+        ],
+        "unsorted": [
+          "ee à",
+          "A A TN",
+          "v3 2 GRADRIC designer & Illustrator",
+          "_— pe",
+          "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+          "designer edition, logos...",
+          "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+          "Pantone, Adobe, Arte and more)"
+        ],
+        "reviewQueue": [
+          {
+            "sourceText": "ee à A A TN v3 2 GRADRIC designer & Illustrator",
+            "confidence": 50
+          },
+          {
+            "sourceText": "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+            "confidence": 50
+          },
+          {
+            "sourceText": "designer edition, logos...",
+            "confidence": 50
+          },
+          {
+            "sourceText": "20N : McCann G. Agency (Internship)",
+            "confidence": 50
+          },
+          {
+            "sourceText": "2009 20M : Créapole, creation school management @ man visual communication",
+            "confidence": 50
+          }
+        ]
+      },
+      "missing_fields": {
+        "identity": [
+          "email",
+          "location",
+          "website",
+          "linkedin"
+        ],
+        "sections_empty": [
+          "tools",
+          "languages"
+        ]
+      },
+      "delta_from_prior": {
+        "experiences": {
+          "before": 0,
+          "after": 1,
+          "lost": 0,
+          "gained": 1
+        },
+        "education": {
+          "before": 0,
+          "after": 7,
+          "lost": 0,
+          "gained": 7
+        },
+        "skills": {
+          "before": 0,
+          "after": 4,
+          "lost": 0,
+          "gained": 4
+        },
+        "clients": {
+          "before": 0,
+          "after": 5,
+          "lost": 0,
+          "gained": 5
+        },
+        "unsorted": {
+          "before": 41,
+          "after": 40,
+          "lost": 1,
+          "gained": 0
+        },
+        "lines": {
+          "before": 41,
+          "after": 0,
+          "lost": 41,
+          "gained": 0
+        },
+        "textLength": {
+          "before": 1267,
+          "after": 0,
+          "lost": 1267,
+          "gained": 0
+        },
+        "enterprise_lines": {
+          "before": 41,
+          "after": 0,
+          "lost": 41,
+          "gained": 0
+        },
+        "cleanedTextLength": {
+          "before": 1267,
+          "after": 0,
+          "lost": 1267,
+          "gained": 0
+        }
+      },
+      "object": {
+        "identity": {
+          "name": "Nom à confirmer",
+          "title": "v3 2 GRADRIC designer & Illustrator",
+          "email": "",
+          "phone": "2011-2022",
+          "location": "",
+          "website": "",
+          "linkedin": ""
+        },
+        "summary": "",
+        "experiences": [
+          {
+            "role": "Freelance Illustrator / Graphic Designer",
+            "company": "Independent / Freelance",
+            "location": "",
+            "startDate": "2011",
+            "endDate": "2022",
+            "dates": "2011–2022",
+            "bullets": [
+              "Posters, packaging."
+            ],
+            "clients": []
+          }
+        ],
+        "education": [
+          "+33649434839 2011 2012 : LISAA, web and motion design",
+          "Ic) yoaz27 2008 2009 : Créapole creation school management ign fin hie. je",
+          "2007 2009 : Créapole creation school management multisectoral year {visual communication product design, video game, architecture}",
+          "LISAA — Web and motion design (2011–2012)",
+          "Créapole — M : , creation school management",
+          "Créapole — Ic) yoaz : creation school management (2008–2009)",
+          "Créapole — Creation school management (2007–2009)"
+        ],
+        "clients": [
+          "(Nike Louis Vuitton",
+          "Marvel Cadillec",
+          "Pantone",
+          "Adobe",
+          "Arte and more)"
+        ],
+        "projects": [],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)",
+          "Graphic design"
+        ],
+        "tools": [],
+        "languages": [],
+        "unsorted": [
+          "ee à",
+          "A A TN",
+          "v3 2 GRADRIC designer & Illustrator",
+          "_— pe",
+          "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging.",
+          "designer edition, logos...",
+          "(Nike Louis Vuitton, Marvel Cadillec, Fortune, Converse",
+          "Pantone, Adobe, Arte and more)",
+          "20N : McCann G. Agency (Internship)",
+          "RS Phone:",
+          "+33649434839 2011 2012 : LISAA, web and motion design",
+          "2009 20M : Créapole, creation school management",
+          "@ man visual communication",
+          "yoaz@hotmail fr (typography, visuel identity, corporate identity.",
+          "packaging. poster, logos, web design, illustrations.",
+          "editions, client analyse, target customer, art history",
+          "» Be.net/yoaz marketing, technologie, marketing studies",
+          "Ic) yoaz27 2008 2009 : Créapole creation school management",
+          "ign fin hie. je",
+          "Q voaz.tumblr com product design (infographie, ergonomie, extern",
+          "observation, maquette, packaging.)",
+          "2007 2009 : Créapole creation school management",
+          "multisectoral year {visual communication",
+          "product design, video game, architecture}",
+          "French: native",
+          "Photograph:",
+          "English: fluent Ps] photoshop EEE CTT",
+          "Mustrator RE scowboscc",
+          "[6] incesion me SE",
+          "Drawing",
+          "Iustration, Graphic design, Movies",
+          "Print, Logo, Vector, Art... Reading",
+          "Music",
+          "Nature",
+          "ee à A A TN v3 2 GRADRIC designer & Illustrator",
+          "2009 20M : Créapole, creation school management @ man visual communication",
+          "visuel identity",
+          "corporate identity.",
+          "logos",
+          "illustrations."
+        ]
+      }
+    },
+    "RESUME_DATA": {
+      "checkpoint": "RESUME_DATA",
+      "counts": {
+        "experiences": 1,
+        "education": 2,
+        "skills": 4,
+        "tools": 2,
+        "languages": 2,
+        "clients": 9,
+        "projects": 0,
+        "unsorted": 2,
+        "summary": 0,
+        "blocks": 0,
+        "lines": 0,
+        "textLength": 0,
+        "reviewQueue": 24
+      },
+      "examples": {
+        "identity": {
+          "name": "Nom à confirmer",
+          "title": "Graphic Designer & Illustrator",
+          "email": null,
+          "phone": "+33649434839",
+          "location": null,
+          "website": null,
+          "linkedin": null
+        },
+        "summary": null,
+        "experiences": [
+          {
+            "role": "Freelance Illustrator / Graphic Designer",
+            "company": "Independent / Freelance",
+            "dates": "2011–2022",
+            "bullets": [
+              "Posters, packaging."
+            ],
+            "confidence": null
+          }
+        ],
+        "education": [
+          "LISAA — Web and motion design (2011–2012)",
+          "Créapole — Visual Communication — 2007–2009"
+        ],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)"
+        ],
+        "tools": [
+          "v3 2 GRADRIC designer & Illustrator",
+          "Adobe"
+        ],
+        "languages": [
+          "French: native",
+          "English: fluent Ps] photoshop EEE CTT"
+        ],
+        "clients": [
+          "Nike",
+          "Louis Vuitton",
+          "Marvel"
+        ],
+        "unsorted": [
+          "@ man visual communication",
+          "Drawing"
+        ],
+        "reviewQueue": [
+          {
+            "sourceText": "designer edition, logos..."
+          },
+          {
+            "sourceText": "20N : McCann G. Agency (Internship)"
+          },
+          {
+            "sourceText": "2009 20M : Créapole, creation school management @ man visual communication"
+          },
+          {
+            "sourceText": "visuel identity"
+          },
+          {
+            "sourceText": "corporate identity."
+          }
+        ]
+      },
+      "missing_fields": {
+        "identity": [
+          "email",
+          "location",
+          "website",
+          "linkedin"
+        ],
+        "sections_empty": [],
+        "import_warnings": [
+          "No pinned corruption pattern in default needles.",
+          "Nom non détecté — vérifiez en haut du CV."
+        ],
+        "import_errors": []
+      },
+      "delta_from_prior": {
+        "education": {
+          "before": 7,
+          "after": 2,
+          "lost": 5,
+          "gained": 0
+        },
+        "tools": {
+          "before": 0,
+          "after": 2,
+          "lost": 0,
+          "gained": 2
+        },
+        "languages": {
+          "before": 0,
+          "after": 2,
+          "lost": 0,
+          "gained": 2
+        },
+        "clients": {
+          "before": 5,
+          "after": 9,
+          "lost": 0,
+          "gained": 4
+        },
+        "unsorted": {
+          "before": 40,
+          "after": 2,
+          "lost": 38,
+          "gained": 0
+        },
+        "reviewQueue": {
+          "before": 30,
+          "after": 0,
+          "lost": 30,
+          "gained": 0
+        }
+      },
+      "object": {
+        "identity": {
+          "name": "Nom à confirmer",
+          "title": "Graphic Designer & Illustrator",
+          "email": "",
+          "location": "",
+          "phone": "+33649434839",
+          "website": "",
+          "linkedin": ""
+        },
+        "summary": "",
+        "experiences": [
+          {
+            "role": "Freelance Illustrator / Graphic Designer",
+            "company": "Independent / Freelance",
+            "location": "",
+            "startDate": "2011",
+            "endDate": "2022",
+            "dates": "2011–2022",
+            "bullets": [
+              "Posters, packaging."
+            ],
+            "clients": [],
+            "sourceLines": [
+              "30-year old Illustrator and graphic 2011-2022 : Freelancer Illustrator, Graphic designer : Posters, packaging."
+            ],
+            "sourceLineId": "src-5"
+          }
+        ],
+        "education": [
+          "LISAA — Web and motion design (2011–2012)",
+          "Créapole — Visual Communication — 2007–2009"
+        ],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)",
+          "Graphic design"
+        ],
+        "tools": [
+          "v3 2 GRADRIC designer & Illustrator",
+          "Adobe"
+        ],
+        "languages": [
+          "French: native",
+          "English: fluent Ps] photoshop EEE CTT"
+        ],
+        "clients": [
+          "Nike",
+          "Louis Vuitton",
+          "Marvel",
+          "Cadillac",
+          "Fortune",
+          "Converse",
+          "Pantone",
+          "Arte",
+          "McCann"
+        ],
+        "projects": [],
+        "unsorted": [
+          "@ man visual communication",
+          "Drawing"
+        ],
+        "meta": {
+          "fileName": "cv2022 yohann azancot copie.pdf",
+          "fileType": "pdf",
+          "extractionMethod": "ocr",
+          "confidence": null,
+          "warnings": [
+            "No pinned corruption pattern in default needles.",
+            "Nom non détecté — vérifiez en haut du CV.",
+            "AUTO_ACCEPT_SUGGESTIONS:3",
+            "AUTO_ACCEPT_SUGGESTIONS:3"
+          ],
+          "errors": [],
+          "creativeMode": {
+            "active": true,
+            "targetRolesDetected": [
+              "Illustrator",
+              "Designer",
+              "Graphic Designer"
+            ],
+            "signals": [
+              "target_roles:Illustrator,Designer,Graphic Designer",
+              "entities:14",
+              "clients:Adobe,Nike,Marvel,Converse,Pantone,Fortune",
+              "creative_sections_reconciled",
+              "creative_sections_reconciled"
+            ]
+          },
+          "unsortedArchive": [],
+          "confidenceGate": {
+            "version": "CONFIDENCE_GATE_V1",
+            "thresholds": {
+              "identity": 95,
+              "experience": 85,
+              "education": 85,
+              "skills": 75
+            },
+            "routed": 3,
+            "at": "2026-06-06T11:36:08.867Z"
+          },
+          "safetyGate": "UNIVERSAL_SAFETY_GATE",
+          "safetyGateAt": "2026-06-06T11:36:08.868Z",
+          "displaySanitize": "SANITIZE_RESUME_DISPLAY_V1",
+          "displaySanitizeAt": "2026-06-06T11:36:08.872Z",
+          "displayRejectedCount": 1,
+          "sanitizedResumeSize": 2139,
+          "consumedSourceLineIds": [
+            "src-2",
+            "src-5",
+            "src-7",
+            "src-8",
+            "src-14",
+            "src-18",
+            "src-24",
+            "src-31",
+            "src-33",
+            "src-37"
+          ],
+          "sourceLineCount": 41
+        }
+      }
+    },
+    "CV_DATA": {
+      "checkpoint": "CV_DATA",
+      "counts": {
+        "experiences": 1,
+        "education": 2,
+        "skills": 4,
+        "tools": 2,
+        "languages": 1,
+        "clients": 9,
+        "projects": 0,
+        "unsorted": 0,
+        "summary": 0,
+        "blocks": 0,
+        "lines": 0,
+        "textLength": 0
+      },
+      "examples": {
+        "identity": {
+          "name": "Nom à confirmer",
+          "title": "Graphic Designer & Illustrator",
+          "email": null,
+          "phone": "+33649434839",
+          "location": null,
+          "website": null,
+          "linkedin": null
+        },
+        "summary": null,
+        "experiences": [
+          "Freelance Illustrator / Graphic Designer — Independent / Freelance — 2011–2022: Posters, packaging."
+        ],
+        "education": [
+          "LISAA — Web and motion design (2011–2012)",
+          "Créapole — Visual Communication — 2007–2009"
+        ],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)"
+        ],
+        "tools": [
+          "v3 2 GRADRIC designer & Illustrator",
+          "Adobe"
+        ],
+        "languages": [
+          "French: native"
+        ],
+        "clients": [
+          "Nike",
+          "Louis Vuitton",
+          "Marvel"
+        ],
+        "unsorted": []
+      },
+      "missing_fields": {
+        "identity": [
+          "email",
+          "location",
+          "website",
+          "linkedin"
+        ],
+        "sections_empty": [],
+        "cv_specific": {
+          "unsorted_cleared": true,
+          "experience_field": 1,
+          "resume_experiences": 1
+        }
+      },
+      "delta_from_prior": {
+        "languages": {
+          "before": 2,
+          "after": 1,
+          "lost": 1,
+          "gained": 0
+        },
+        "unsorted": {
+          "before": 2,
+          "after": 0,
+          "lost": 2,
+          "gained": 0
+        },
+        "reviewQueue": {
+          "before": 24,
+          "after": 0,
+          "lost": 24,
+          "gained": 0
+        }
+      },
+      "object": {
+        "name": "Nom à confirmer",
+        "title": "Graphic Designer & Illustrator",
+        "email": "",
+        "phone": "+33649434839",
+        "linkedin": "",
+        "portfolio": "",
+        "location": "",
+        "summary": "",
+        "experience": [
+          "Freelance Illustrator / Graphic Designer — Independent / Freelance — 2011–2022: Posters, packaging."
+        ],
+        "education": [
+          "LISAA — Web and motion design (2011–2012)",
+          "Créapole — Visual Communication — 2007–2009"
+        ],
+        "skills": [
+          "packaging. poster",
+          "web design",
+          "packaging.)",
+          "Graphic design"
+        ],
+        "tools": [
+          "v3 2 GRADRIC designer & Illustrator",
+          "Adobe"
+        ],
+        "languages": [
+          "French: native"
+        ],
+        "clients": [
+          "Nike",
+          "Louis Vuitton",
+          "Marvel",
+          "Cadillac",
+          "Fortune",
+          "Converse",
+          "Pantone",
+          "Arte",
+          "McCann"
+        ],
+        "awards": [],
+        "exhibitions": [],
+        "publications": [],
+        "portfolioLinks": [],
+        "interests": [],
+        "projects": [],
+        "other": [],
+        "sectionConfidence": {},
+        "extra": [],
+        "_creativeMode": {
+          "active": true,
+          "targetRolesDetected": [
+            "Illustrator",
+            "Designer",
+            "Graphic Designer"
+          ],
+          "signals": [
+            "target_roles:Illustrator,Designer,Graphic Designer",
+            "entities:14",
+            "clients:Adobe,Nike,Marvel,Converse,Pantone,Fortune",
+            "creative_sections_reconciled",
+            "creative_sections_reconciled"
+          ]
+        }
+      }
+    }
+  },
+  "loss_summary": [
+    {
+      "from": "EXTRACTION_OUTPUT",
+      "to": "STRUCTURED_RESUME",
+      "delta": {
+        "experiences": {
+          "before": 0,
+          "after": 1,
+          "lost": 0,
+          "gained": 1
+        },
+        "education": {
+          "before": 0,
+          "after": 7,
+          "lost": 0,
+          "gained": 7
+        },
+        "skills": {
+          "before": 0,
+          "after": 4,
+          "lost": 0,
+          "gained": 4
+        },
+        "clients": {
+          "before": 0,
+          "after": 5,
+          "lost": 0,
+          "gained": 5
+        },
+        "unsorted": {
+          "before": 41,
+          "after": 40,
+          "lost": 1,
+          "gained": 0
+        },
+        "lines": {
+          "before": 41,
+          "after": 0,
+          "lost": 41,
+          "gained": 0
+        },
+        "textLength": {
+          "before": 1267,
+          "after": 0,
+          "lost": 1267,
+          "gained": 0
+        },
+        "enterprise_lines": {
+          "before": 41,
+          "after": 0,
+          "lost": 41,
+          "gained": 0
+        },
+        "cleanedTextLength": {
+          "before": 1267,
+          "after": 0,
+          "lost": 1267,
+          "gained": 0
+        }
+      }
+    },
+    {
+      "from": "STRUCTURED_RESUME",
+      "to": "RESUME_DATA",
+      "delta": {
+        "education": {
+          "before": 7,
+          "after": 2,
+          "lost": 5,
+          "gained": 0
+        },
+        "tools": {
+          "before": 0,
+          "after": 2,
+          "lost": 0,
+          "gained": 2
+        },
+        "languages": {
+          "before": 0,
+          "after": 2,
+          "lost": 0,
+          "gained": 2
+        },
+        "clients": {
+          "before": 5,
+          "after": 9,
+          "lost": 0,
+          "gained": 4
+        },
+        "unsorted": {
+          "before": 40,
+          "after": 2,
+          "lost": 38,
+          "gained": 0
+        },
+        "reviewQueue": {
+          "before": 30,
+          "after": 0,
+          "lost": 30,
+          "gained": 0
+        }
+      }
+    },
+    {
+      "from": "RESUME_DATA",
+      "to": "CV_DATA",
+      "delta": {
+        "languages": {
+          "before": 2,
+          "after": 1,
+          "lost": 1,
+          "gained": 0
+        },
+        "unsorted": {
+          "before": 2,
+          "after": 0,
+          "lost": 2,
+          "gained": 0
+        },
+        "reviewQueue": {
+          "before": 24,
+          "after": 0,
+          "lost": 24,
+          "gained": 0
+        }
+      }
+    }
+  ],
+  "print_summary": {
+    "OCR_OUTPUT": {
+      "experiences": 0,
+      "education": 0,
+      "skills": 0,
+      "tools": 0,
+      "languages": 0,
+      "clients": 0,
+      "projects": 0,
+      "unsorted": 0,
+      "summary": 0,
+      "blocks": 0,
+      "lines": 41,
+      "textLength": 1292
+    },
+    "EXTRACTION_OUTPUT": {
+      "lines": 41,
+      "unsorted_lines": 41
+    },
+    "STRUCTURED_RESUME": {
+      "experiences": 1,
+      "education": 7,
+      "skills": 4,
+      "tools": 0,
+      "languages": 0,
+      "clients": 5,
+      "projects": 0,
+      "unsorted": 40,
+      "summary": 0,
+      "blocks": 0,
+      "lines": 0,
+      "textLength": 0,
+      "reviewQueue": 30
+    },
+    "RESUME_DATA": {
+      "experiences": 1,
+      "education": 2,
+      "skills": 4,
+      "tools": 2,
+      "languages": 2,
+      "clients": 9,
+      "projects": 0,
+      "unsorted": 2,
+      "summary": 0,
+      "blocks": 0,
+      "lines": 0,
+      "textLength": 0,
+      "reviewQueue": 24
+    },
+    "CV_DATA": {
+      "experiences": 1,
+      "education": 2,
+      "skills": 4,
+      "tools": 2,
+      "languages": 1,
+      "clients": 9,
+      "projects": 0,
+      "unsorted": 0,
+      "summary": 0,
+      "blocks": 0,
+      "lines": 0,
+      "textLength": 0
+    }
+  }
+}

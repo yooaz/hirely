@@ -1,0 +1,14 @@
+Marie Dupont
+Product Manager
+marie@email.com
+
+Experience
+Senior PM at Acme 2019 Present
+Led billing module for 120k users
+Reduced churn by 12 percent through onboarding redesign
+
+Education
+HEC Paris MBA 2018
+
+Skills
+Product strategy Agile SQL User research

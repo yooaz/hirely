@@ -1,0 +1,166 @@
+{
+  "version": "CORPUS_RESUME_INVENTORY_V1",
+  "generated_at": "2026-06-16T23:30:00.000Z",
+  "description": "Resume fixture corpus grouped by layout family, language, and format.",
+  "groups": {
+    "single_column": {
+      "description": "Standard top-to-bottom single column resumes",
+      "fixtures": [
+        "developer-cv",
+        "student-cv",
+        "consultant-cv",
+        "executive-cv",
+        "marketing-cv",
+        "sales-cv",
+        "recruiter-cv",
+        "docx"
+      ],
+      "corpus_txt": [
+        "developer",
+        "student",
+        "consultant",
+        "executive",
+        "marketing",
+        "sales",
+        "engineer",
+        "nurse",
+        "teacher",
+        "freelancer",
+        "hr",
+        "lawyer",
+        "finance",
+        "data-analyst",
+        "project-manager",
+        "customer-support",
+        "restaurant-manager",
+        "retail"
+      ]
+    },
+    "two_column": {
+      "description": "Two-column or sidebar-like layouts (spatial or dense text proxy)",
+      "fixtures": ["two-column-cv", "yoaz-pdf-benchmark"],
+      "corpus_txt": []
+    },
+    "sidebar_left": {
+      "description": "Left sidebar contact + main content",
+      "fixtures": ["yoaz-pdf-benchmark"],
+      "corpus_txt": []
+    },
+    "sidebar_right": {
+      "description": "Right sidebar layouts",
+      "fixtures": ["right-sidebar-cv"],
+      "corpus_txt": []
+    },
+    "creative": {
+      "description": "Design / creative / portfolio-heavy resumes",
+      "fixtures": ["yoaz-pdf-benchmark"],
+      "corpus_txt": ["designer", "artist", "photographer", "creative-director", "architect"],
+      "notes": "creative-cv/fixture.txt duplicates yoaz identity — use corpus designer/artist instead"
+    },
+    "academic": {
+      "description": "Research / academic CVs with publications tone",
+      "fixtures": ["academic-cv"],
+      "corpus_txt": []
+    },
+    "scanned_ocr": {
+      "description": "Noisy OCR / scanned PDF text proxies",
+      "fixtures": ["scanned-pdf", "yoaz-pdf-live/ocr-fragmented.txt"],
+      "corpus_txt": []
+    },
+    "native_text_pdf": {
+      "description": "Clean native-text PDF extraction proxies",
+      "fixtures": ["text-pdf"],
+      "corpus_txt": []
+    },
+    "docx": {
+      "description": "Word document structured resumes",
+      "fixtures": ["docx"],
+      "corpus_txt": []
+    },
+    "image_cv": {
+      "description": "Image-based CV OCR path",
+      "fixtures": ["image-cv/fixture.txt"],
+      "corpus_txt": []
+    },
+    "portfolio_mixed_page": {
+      "description": "Multi-page CV with portfolio/gallery pages",
+      "fixtures": ["yoaz-pdf-benchmark"],
+      "corpus_txt": []
+    },
+    "language_en": {
+      "fixtures": [
+        "developer-cv",
+        "student-cv",
+        "executive-cv",
+        "academic-cv",
+        "marketing-cv",
+        "sales-cv",
+        "recruiter-cv"
+      ],
+      "corpus_txt": [
+        "developer",
+        "student",
+        "executive",
+        "marketing",
+        "sales",
+        "engineer",
+        "nurse",
+        "teacher",
+        "hr",
+        "lawyer",
+        "finance",
+        "data-analyst",
+        "project-manager",
+        "customer-support",
+        "restaurant-manager",
+        "retail"
+      ]
+    },
+    "language_fr": {
+      "fixtures": ["consultant-cv", "two-column-cv", "scanned-pdf", "docx"],
+      "corpus_txt": ["consultant"]
+    }
+  },
+  "benchmark_suites": {
+    "cv_parse_benchmark": {
+      "registry": "tests/benchmarks/cv-parse-benchmark.registry.json",
+      "runner": "src/tests/qa-cv-parse-benchmark.mjs",
+      "fixture_count": 15
+    },
+    "generalization_proof": {
+      "corpus_dir": "tests/cv-corpus",
+      "runner": "src/tests/qa-generalization-proof.mjs",
+      "fixture_count": 23
+    },
+    "corpus_resume_benchmark": {
+      "runner": "src/tests/qa-corpus-resume-benchmark.mjs",
+      "combines": ["cv_parse_benchmark", "generalization_proof", "anti_overfit_audit"]
+    },
+    "yoaz_regression": {
+      "runners": [
+        "src/tests/qa-live-upload-path-yoaz.mjs",
+        "src/tests/qa-yoaz-pdf-regression.mjs",
+        "src/tests/qa-canonical-product-import-yoaz.mjs"
+      ],
+      "mandatory": true,
+      "not_sole_acceptance_target": true
+    }
+  },
+  "missing_coverage": [
+    {
+      "category": "sidebar_right_spatial",
+      "priority": "medium",
+      "recommendation": "Add spatial lines JSON with x>400 contact column (text proxy exists today)"
+    },
+    {
+      "category": "multi_page_dense",
+      "priority": "low",
+      "recommendation": "Add 3+ page academic CV with publications section only on page 3"
+    },
+    {
+      "category": "binary_docx",
+      "priority": "low",
+      "recommendation": "Add real .docx binary in hirely-test-lab for end-to-end extraction (text proxy exists today)"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+/**
+ * HIRELY Typography System V1
+ * References: Apple · Financial Times · Airbnb · Stripe
+ *
+ * Apple      — tight display tracking, SF-grade sans, light body option
+ * FT         — serif masthead + editorial body, wide kicker tracking
+ * Airbnb     — warm humanist sans (DM Sans), comfortable paragraph rhythm
+ * Stripe     — precise UI sans, mono metadata, tabular numerals
+ */
+
+:root {
+  /* —— Font stacks —— */
+  --typo-font-ui: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --typo-font-display-sans: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui,
+    sans-serif;
+  --typo-font-display-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --typo-font-editorial: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+  --typo-font-warm: 'DM Sans', Inter, system-ui, sans-serif;
+  --typo-font-precision: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  --typo-font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* —— Weight ladder —— */
+  --typo-weight-light: 300;
+  --typo-weight-regular: 400;
+  --typo-weight-medium: 500;
+  --typo-weight-semibold: 600;
+  --typo-weight-bold: 700;
+  --typo-weight-heavy: 800;
+
+  /* —— Leading scale —— */
+  --typo-leading-display: 1.08;
+  --typo-leading-tight: 1.22;
+  --typo-leading-snug: 1.38;
+  --typo-leading-body: 1.58;
+  --typo-leading-relaxed: 1.65;
+  --typo-leading-loose: 1.72;
+  --typo-leading-ats: 1.36;
+
+  /* —— Tracking —— */
+  --typo-tracking-display: -0.04em;
+  --typo-tracking-title: -0.03em;
+  --typo-tracking-subtitle: -0.02em;
+  --typo-tracking-body: -0.011em;
+  --typo-tracking-neutral: 0;
+  --typo-tracking-label: 0.06em;
+  --typo-tracking-kicker: 0.12em;
+  --typo-tracking-masthead: 0.18em;
+
+  /* —— Paragraph rhythm —— */
+  --typo-paragraph-gap: 0.62em;
+  --typo-bullet-gap: 0.48em;
+  --typo-section-gap-ui: 1.35rem;
+  --typo-block-gap-ui: 0.85rem;
+
+  /* —— Product UI scale (rem) —— */
+  --typo-ui-display: 2.5rem;
+  --typo-ui-title1: 1.75rem;
+  --typo-ui-title2: 1.375rem;
+  --typo-ui-title3: 1.0625rem;
+  --typo-ui-body: 0.875rem;
+  --typo-ui-lead: 0.9375rem;
+  --typo-ui-caption: 0.75rem;
+  --typo-ui-micro: 0.6875rem;
+
+  /* —— CV scale (pt) —— */
+  --typo-cv-masthead: 28pt;
+  --typo-cv-name-lg: 36pt;
+  --typo-cv-name-md: 24pt;
+  --typo-cv-name-sm: 16pt;
+  --typo-cv-deck: 11pt;
+  --typo-cv-body: 10pt;
+  --typo-cv-body-sm: 9.5pt;
+  --typo-cv-section: 8pt;
+  --typo-cv-meta: 8.5pt;
+  --typo-cv-micro: 7.5pt;
+
+  /* —— CV spacing rhythm —— */
+  --typo-cv-section-gap: 18px;
+  --typo-cv-block-gap: 10px;
+  --typo-cv-tight-gap: 6px;
+
+  /* —— Preset pairings (template assignment) —— */
+  --typo-preset-apple-display: var(--typo-font-display-sans);
+  --typo-preset-apple-body: var(--typo-font-ui);
+  --typo-preset-ft-display: var(--typo-font-editorial);
+  --typo-preset-ft-body: var(--typo-font-display-serif);
+  --typo-preset-airbnb-display: var(--typo-font-warm);
+  --typo-preset-airbnb-body: var(--typo-font-warm);
+  --typo-preset-stripe-ui: var(--typo-font-ui);
+  --typo-preset-stripe-mono: var(--typo-font-mono);
+}
+
+/* —— Global rendering quality —— */
+body {
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: proportional-nums;
+  text-rendering: optimizeLegibility;
+}
+
+/* —— CV document defaults —— */
+.cv,
+.cvInner {
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cv .cvInner.cvLayout-v3 {
+  line-height: var(--typo-leading-body);
+  font-size: var(--typo-cv-body);
+}
+
+/* Masthead hierarchy */
+.cv .cvInner.cvLayout-v3 .cvName {
+  line-height: var(--typo-leading-display);
+  letter-spacing: var(--typo-tracking-display);
+  font-weight: var(--typo-weight-semibold);
+}
+
+.cv .cvInner.cvLayout-v3 .cvTitle {
+  line-height: var(--typo-leading-snug);
+  letter-spacing: var(--typo-tracking-subtitle);
+  font-weight: var(--typo-weight-regular);
+}
+
+/* Section kickers — FT editorial */
+.cv .cvInner.cvLayout-v3 .cvSectionTitle {
+  line-height: var(--typo-leading-tight);
+  font-weight: var(--typo-weight-semibold);
+}
+
+/* Paragraph rhythm */
+.cv .cvInner.cvLayout-v3 .cvLead,
+.cv .cvInner.cvLayout-v3 .cvSectionBody,
+.cv .cvInner.cvLayout-v3 .cvExpEntry p,
+.cv .cvInner.cvLayout-v3 .cvProjectEntry p,
+.cv .cvInner.cvLayout-v3 .cvListEntry p,
+.cv .cvInner.cvLayout-v3 .cvEduLine,
+.cv .cvInner.cvLayout-v3 .cvSkillLine,
+.cv .cvInner.cvLayout-v3 .cvToolsLine,
+.cv .cvInner.cvLayout-v3 .cvLangLine {
+  line-height: var(--typo-leading-body);
+}
+
+.cv .cvInner.cvLayout-v3 .cvLead {
+  line-height: var(--typo-leading-relaxed);
+  max-width: 48em;
+}
+
+.cv .cvInner.cvLayout-v3 .cvExpBullet + .cvExpBullet,
+.cv .cvInner.cvLayout-v3 .cvExpEntry p + p {
+  margin-top: var(--typo-bullet-gap);
+}
+
+.cv .cvInner.cvLayout-v3 .cvSection {
+  margin-bottom: var(--typo-cv-block-gap);
+}
+
+.cv .cvInner.cvLayout-v3 .cvSection:last-child {
+  margin-bottom: 0;
+}
+
+/* Experience weight hierarchy — Stripe clarity */
+.cv .cvInner.cvLayout-v3 .cvSection--experience .cvExpRole {
+  font-weight: var(--typo-weight-semibold);
+  line-height: var(--typo-leading-tight);
+  letter-spacing: var(--typo-tracking-subtitle);
+}
+
+.cv .cvInner.cvLayout-v3 .cvSection--experience .cvExpCompany {
+  font-weight: var(--typo-weight-medium);
+  line-height: var(--typo-leading-snug);
+}
+
+.cv .cvInner.cvLayout-v3 .cvSection--experience .cvExpDates {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--typo-weight-regular);
+  line-height: var(--typo-leading-tight);
+}
+
+/* Contact + meta — Airbnb warmth, Stripe precision */
+.cv .cvInner.cvLayout-v3 .cvContact p,
+.cv .cvInner.cvLayout-v3 .cvMetaFooter,
+.cv .cvInner.cvLayout-v3 .cvMetaGrid {
+  line-height: var(--typo-leading-snug);
+  letter-spacing: var(--typo-tracking-neutral);
+}
+
+/* Template preset bindings */
+.cv.template-apple-style {
+  --fontSans: var(--typo-preset-apple-body);
+  --fontDisplay: var(--typo-preset-apple-display);
+}
+
+.cv.template-consulting-elite,
+.cv.template-executive-board {
+  --fontSans: var(--typo-font-precision);
+  --fontDisplay: var(--typo-preset-ft-display);
+}
+
+.cv.template-creative-director,
+.cv.template-luxury-editorial,
+.cv.template-startup-founder .cvV3SfRail {
+  --fontSans: var(--typo-preset-airbnb-body);
+}
+
+.cv.template-senior-engineer,
+.cv.template-minimal-ats {
+  --fontSans: var(--typo-preset-stripe-ui);
+  --fontMono: var(--typo-preset-stripe-mono);
+}
+
+.cv.template-academic {
+  --fontDisplay: 'EB Garamond', Georgia, serif;
+  --fontSans: 'Crimson Pro', Georgia, serif;
+}

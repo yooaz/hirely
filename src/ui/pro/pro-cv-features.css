@@ -1,0 +1,247 @@
+/* Hirely Pro — profile photo + section reordering (collapsible drawer) */
+
+.proCvLayoutTools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 8px;
+  width: 100%;
+}
+
+.proCvLayoutTools.hidden {
+  display: none !important;
+}
+
+.proCvLayoutToggle {
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.proCvEditDrawer {
+  width: 100%;
+}
+
+.proCvEditDrawer[hidden] {
+  display: none !important;
+}
+
+.proCvEditBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 16px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  background: var(--panel, #fafafa);
+}
+
+.proCvEditGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.proCvEditGroup--grow {
+  flex: 1 1 220px;
+}
+
+.proCvEditLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #6b7280);
+}
+
+.proCvPhotoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.proCvPhotoThumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e5e7eb;
+  flex: 0 0 48px;
+}
+
+.proCvPhotoThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.proCvPhotoThumb--empty {
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.proCvSectionOrder {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.proCvSectionOrderVis {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.proCvSectionOrderVis input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.proCvSectionOrderLabel.is-hidden-section {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.proCvSectionOrderItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: grab;
+  user-select: none;
+  font-size: 13px;
+}
+
+.proCvSectionOrderItem:active {
+  cursor: grabbing;
+}
+
+.proCvSectionOrderItem.is-dragging {
+  opacity: 0.55;
+}
+
+.proCvSectionOrderHandle {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.proCvAtsOrderWarn {
+  font-size: 12px;
+  color: #b45309;
+  margin: 4px 0 0;
+  max-width: 28rem;
+}
+
+.proCvPhotoToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted, #6b7280);
+}
+
+/* Photo visible in supported templates */
+.cv.cv--with-photo .cvPhotoWrap {
+  display: block !important;
+}
+
+.cv.cv--with-photo .cvPhoto {
+  display: block !important;
+  width: 88px;
+  height: 88px;
+  max-width: 88px;
+  max-height: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cv.cv--with-photo .cvHead--grid .cvPhotoWrap {
+  justify-self: end;
+}
+
+.cv.cv--with-photo .cvHead--executive-luxury .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--editorial-magazine .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--director .cvPhotoWrap,
+.cv.cv--with-photo .cvHead--art-director-portfolio .cvPhotoWrap {
+  margin-bottom: 10px;
+}
+
+/* Photo editor dialog */
+.photoEditorDialog {
+  border: 0;
+  border-radius: 14px;
+  padding: 0;
+  max-width: min(92vw, 420px);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+}
+
+.photoEditorDialog::backdrop {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.photoEditorCard {
+  padding: 16px;
+}
+
+.photoEditorCard h4 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.photoEditorStage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111827;
+  touch-action: none;
+}
+
+.photoEditorStage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.photoEditorControls {
+  display: grid;
+  gap: 10px;
+}
+
+.photoEditorControls label {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.photoEditorActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}

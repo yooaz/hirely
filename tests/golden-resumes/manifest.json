@@ -1,0 +1,32 @@
+{
+  "version": "1",
+  "description": "Universal golden resumes — structural acceptance only (no person-specific expected values).",
+  "categories": {
+    "ats": "ATS / single-column text CVs",
+    "corporate": "Corporate / consultant CVs",
+    "creative": "Creative / portfolio CVs",
+    "scanned": "OCR-shaped or scan-like text",
+    "docx": "DOCX-derived plain text samples",
+    "paste": "Pasted plain-text CVs"
+  },
+  "cases": [
+    { "id": "ats-text-pdf", "category": "ats", "fixture": "tests/fixtures/text-pdf/fixture.txt" },
+    { "id": "ats-executive", "category": "ats", "fixture": "tests/fixtures/executive-cv/fixture.txt" },
+    { "id": "ats-consultant", "category": "ats", "fixture": "tests/fixtures/consultant-cv/fixture.txt" },
+    { "id": "corp-developer", "category": "corporate", "fixture": "tests/fixtures/developer-cv/fixture.txt" },
+    { "id": "corp-consultant", "category": "corporate", "fixture": "tests/fixtures/consultant-cv/fixture.txt" },
+    { "id": "corp-executive", "category": "corporate", "fixture": "tests/fixtures/executive-cv/fixture.txt" },
+    { "id": "creative-portfolio", "category": "creative", "fixture": "tests/fixtures/creative-cv/fixture.txt" },
+    { "id": "creative-two-column", "category": "creative", "fixture": "tests/fixtures/two-column-cv/fixture.txt" },
+    { "id": "creative-designer-sample", "category": "creative", "fixture": "tests/fixtures/yoaz-cv/fixture.txt" },
+    { "id": "scan-scanned-pdf", "category": "scanned", "fixture": "tests/fixtures/scanned-pdf/fixture.txt" },
+    { "id": "scan-image-cv", "category": "scanned", "fixture": "tests/fixtures/image-cv/fixture.txt" },
+    { "id": "scan-mvp-sample", "category": "scanned", "fixture": "tests/fixtures/mvp-sample.txt" },
+    { "id": "docx-sample", "category": "docx", "fixture": "tests/fixtures/docx/fixture.txt" },
+    { "id": "docx-student", "category": "docx", "fixture": "tests/fixtures/student-cv/fixture.txt" },
+    { "id": "docx-developer", "category": "docx", "fixture": "tests/fixtures/developer-cv/fixture.txt" },
+    { "id": "paste-student", "category": "paste", "fixture": "tests/fixtures/student-cv/fixture.txt" },
+    { "id": "paste-developer", "category": "paste", "fixture": "tests/fixtures/developer-cv/fixture.txt" },
+    { "id": "paste-creative", "category": "paste", "fixture": "tests/fixtures/creative-cv/fixture.txt" }
+  ]
+}

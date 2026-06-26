@@ -1,0 +1,513 @@
+/**
+ * Recruiter Command Center — consulting-grade audit UI.
+ * McKinsey · Bain · BCG · LinkedIn Talent Solutions
+ */
+
+html:not(.debug-mode) .reviewStudioAnalysis.recruiterCommandCenter #reviewV2Metrics,
+html:not(.debug-mode) .reviewStudioAnalysis.recruiterCommandCenter #cvReviewPanel,
+html:not(.debug-mode) .reviewStudioAnalysis.recruiterCommandCenter .reviewV2Block--debug {
+  display: none !important;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter {
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #fafaf8 !important;
+  border-color: #e0e0dc !important;
+}
+
+.rccTop {
+  padding: 16px 16px 12px;
+  background: linear-gradient(180deg, #fff 0%, #fafaf8 100%);
+  border-bottom: 1px solid #e6e6e3;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2Head--score {
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2HeadCopy h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6e6e73;
+  margin: 0 0 4px;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2ScoreLead {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  color: #111;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2ScoreDesc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #6e6e73;
+  margin: 4px 0 0;
+}
+
+.rccScoreRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2ScoreRing {
+  width: 72px !important;
+  height: 72px !important;
+  flex-shrink: 0;
+}
+
+.rccConfBadge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e3;
+  background: #fff;
+}
+
+.rccConfBadgeLbl {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.rccConfBadgeVal {
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: #111;
+}
+
+.rccConfBadge.rccTier--high .rccConfBadgeVal {
+  color: #15803d;
+}
+.rccConfBadge.rccTier--mid .rccConfBadgeVal {
+  color: #a16207;
+}
+.rccConfBadge.rccTier--low .rccConfBadgeVal {
+  color: #b91c1c;
+}
+
+.rccStatusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 12px;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2Ready {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rccBody {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rccKicker {
+  margin: 0 0 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.rccInsightBlock {
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e6e6e3;
+  border-radius: 10px;
+}
+
+.rccInsightHeadline {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  color: #111;
+  line-height: 1.3;
+}
+
+.rccInsightHeadline--sm {
+  font-size: 14px;
+}
+
+.rccInsightSummary,
+.rccBodyText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #3d3d3d;
+}
+
+.rccTwinCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rccCard {
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #e6e6e3;
+  border-radius: 10px;
+  min-height: 0;
+}
+
+.rccCardTitle {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.rccCard--strengths {
+  border-left: 3px solid #22c55e;
+}
+
+.rccCard--weaknesses {
+  border-left: 3px solid #f59e0b;
+}
+
+.rccList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rccListItem {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #111;
+}
+
+.rccListMark {
+  flex: 0 0 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.rccListItem--ok .rccListMark {
+  color: #16a34a;
+}
+.rccListItem--warn .rccListMark {
+  color: #d97706;
+}
+.rccListItem--risk-high .rccListMark {
+  color: #dc2626;
+}
+
+.rccListEmpty {
+  font-size: 11px;
+  color: #6e6e73;
+}
+
+.rccSection {
+  background: #fff;
+  border: 1px solid #e6e6e3;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rccSectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.rccSectionHead::-webkit-details-marker {
+  display: none;
+}
+
+.rccSectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.rccSectionChevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #6e6e73;
+  border-bottom: 2px solid #6e6e73;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-top: -2px;
+}
+
+.rccSection[open] .rccSectionChevron {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.rccSectionBody {
+  padding: 0 12px 12px;
+  border-top: 1px solid #f0f0ee;
+}
+
+.rccMetricHero {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.rccMetricHeroVal {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: #111;
+}
+
+.rccMetricHero.rccTier--high .rccMetricHeroVal {
+  color: #15803d;
+}
+.rccMetricHero.rccTier--mid .rccMetricHeroVal {
+  color: #a16207;
+}
+.rccMetricHero.rccTier--low .rccMetricHeroVal {
+  color: #b91c1c;
+}
+
+.rccMetricHeroLbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6e6e73;
+}
+
+.rccBarRow {
+  margin-bottom: 8px;
+}
+
+.rccBarMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #6e6e73;
+  margin-bottom: 4px;
+}
+
+.rccBarPct {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.rccBarTrack {
+  height: 4px;
+  border-radius: 999px;
+  background: #ececea;
+  overflow: hidden;
+}
+
+.rccBarFill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111 0%, #404040 100%);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rccChipList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.rccChipList li {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f3f3f0;
+  border: 1px solid #e6e6e3;
+  color: #3d3d3d;
+}
+
+.rccChipList--ok li {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.rccChipList--warn li {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.rccSubLbl {
+  margin: 10px 0 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6e6e73;
+}
+
+.rccSalaryRange {
+  margin: 10px 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111;
+}
+
+.rccDisclaimer {
+  font-size: 10px !important;
+  color: #6e6e73 !important;
+  font-style: italic;
+}
+
+.rccMetaDl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0 0;
+  font-size: 11px;
+}
+
+.rccMetaDl dt {
+  color: #6e6e73;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rccMetaDl dd {
+  margin: 2px 0 0;
+  color: #111;
+  font-weight: 650;
+}
+
+.rccEmpty {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.rccEmptyTitle {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #111;
+}
+
+.rccEmptySub {
+  margin: 0;
+  font-size: 12px;
+  color: #6e6e73;
+  line-height: 1.45;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2LetterCta {
+  padding: 12px 14px;
+  border-top: 1px solid #e6e6e3;
+  background: #fff;
+  margin: 0;
+}
+
+.reviewStudioAnalysis.recruiterCommandCenter .reviewV2LetterCta .btn {
+  width: 100%;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .rccTwinCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .rccScoreRow {
+    flex-wrap: wrap;
+  }
+
+  .rccBody {
+    padding: 10px 12px 14px;
+  }
+}
+
+.rccBenchGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.rccBenchCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e3;
+  background: #fff;
+  font-size: 12px;
+}
+
+.rccBenchCard.rccTier--high {
+  border-color: #b8e0c8;
+  background: #f4fbf6;
+}
+
+.rccBenchCard.rccTier--mid {
+  border-color: #e8dfc4;
+  background: #fffdf6;
+}
+
+.rccBenchCard.rccTier--low {
+  border-color: #e8c4c4;
+  background: #fff6f6;
+}
+
+.rccBenchName {
+  font-weight: 600;
+  color: #3a3a3c;
+}
+
+.rccBenchScore {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

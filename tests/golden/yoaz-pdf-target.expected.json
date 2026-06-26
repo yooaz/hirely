@@ -1,0 +1,190 @@
+{
+  "version": "YOAZ_PDF_TARGET_V1",
+  "id": "yoaz-pdf-benchmark",
+  "label": "Yohann Azancot PDF — mandatory regression target (cv. Yohann azancot.pdf)",
+  "sourceFile": "cv. Yohann azancot.pdf",
+  "fixturePdf": "tests/fixtures/yoaz-pdf-benchmark/document.pdf",
+  "fixtureText": "tests/fixtures/yoaz-pdf-benchmark/fixture.txt",
+  "fixturePage1": "tests/fixtures/yoaz-pdf-benchmark/fixture-page1.txt",
+  "fixturePage2": "tests/fixtures/yoaz-pdf-benchmark/fixture-page2.txt",
+  "linesJson": [
+    "tests/fixtures/yoaz-pdf-benchmark/page1-lines.json",
+    "tests/fixtures/yoaz-pdf-benchmark/page2-lines.json"
+  ],
+  "pdfPageCount": 2,
+  "pageClassification": {
+    "page1": "resume_core",
+    "page2": "portfolio_page",
+    "resume_core_pages": [1],
+    "portfolio_pages": [2]
+  },
+  "sectionPurity": {
+    "sidebar_x_max": 280,
+    "main_x_min": 300,
+    "sidebar_must_include_text": [
+      "yoaz@hotmail.fr",
+      "+336494344839",
+      "French native",
+      "English fluent",
+      "35 years old"
+    ],
+    "sidebar_must_not_include_text": [
+      "McCann",
+      "3B impressions",
+      "LISAA",
+      "Photoshop",
+      "Personal Project",
+      "Sunglass"
+    ],
+    "main_must_include_text": [
+      "Freelancer Illustrator",
+      "McCann",
+      "3B impressions",
+      "LISAA",
+      "Créapôle",
+      "Photoshop",
+      "Photography",
+      "Nature"
+    ],
+    "main_must_not_include_text": [
+      "yoaz@hotmail.fr",
+      "Personal Project Sunglass",
+      "God of War"
+    ]
+  },
+  "contact": {
+    "full_name": "Yohann Azancot",
+    "title": "Graphic Designer & Illustrator",
+    "phone": "+336494344839",
+    "email": "yoaz@hotmail.fr",
+    "address_contains": "176 Boulevard de Charonne"
+  },
+  "summary_contains": ["35 years old", "illustrator", "graphic designer"],
+  "languages": [
+    { "label_contains": "French", "level_contains": "native" },
+    { "label_contains": "English", "level_contains": "fluent" }
+  ],
+  "experiences": [
+    {
+      "id": "exp-freelance-2011-2023",
+      "start_date": "2011",
+      "end_date": "2023",
+      "role_contains": ["Freelancer", "Illustrator", "Graphic Designer"],
+      "clients_include": ["Nike", "Converse", "Pantone", "Adobe", "Arte"]
+    },
+    {
+      "id": "exp-mccann-2011",
+      "start_date": "2011",
+      "end_date": "2011",
+      "company_contains": "McCann",
+      "internship": true
+    },
+    {
+      "id": "exp-3b-2010",
+      "start_date": "2010",
+      "end_date": "2010",
+      "company_contains": "3B",
+      "internship": true
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-lisaa",
+      "school_contains": "LISAA",
+      "field_contains": "web",
+      "start_date": "2011",
+      "end_date": "2012"
+    },
+    {
+      "id": "edu-creapole-visual",
+      "school_contains": "Créapôle",
+      "field_contains": "visual communication",
+      "start_date": "2009",
+      "end_date": "2011"
+    },
+    {
+      "id": "edu-creapole-product",
+      "school_contains": "Créapôle",
+      "field_contains": "product design",
+      "start_date": "2008",
+      "end_date": "2009"
+    },
+    {
+      "id": "edu-creapole-multi",
+      "school_contains": "Créapôle",
+      "field_contains": "multisectoral",
+      "start_date": "2007",
+      "end_date": "2009"
+    }
+  ],
+  "skills": [
+    "Photoshop",
+    "Illustrator",
+    "Indesign",
+    "Affinity designer",
+    "Procreate",
+    "After effect"
+  ],
+  "interests": [
+    "Photography",
+    "Art",
+    "Snowboard",
+    "Soccer",
+    "Drawing",
+    "Movies",
+    "Reading",
+    "Music",
+    "Nature"
+  ],
+  "clientBrands": ["Nike", "Converse", "Pantone", "Adobe", "Arte"],
+  "portfolioMarkers": [
+    "Personal Project",
+    "Sunglass Man",
+    "Cubist Art",
+    "Fortune 500 Cover",
+    "God of War",
+    "Metro Display",
+    "adidas creation",
+    "Elon Musk"
+  ],
+  "columnMergeForbiddenPatterns": [
+    {
+      "id": "email_merged_education",
+      "pattern": "yoaz@hotmail\\.fr.*LISAA",
+      "flags": "is",
+      "reason": "sidebar email merged into education column"
+    },
+    {
+      "id": "languages_merged_experience",
+      "pattern": "French native.*Freelancer",
+      "flags": "is",
+      "reason": "languages sidebar merged into work experience"
+    },
+    {
+      "id": "phone_merged_education_dates",
+      "pattern": "\\+336494344839.*2011\\s*-\\s*2012",
+      "flags": "is",
+      "reason": "phone merged with education dates (column collapse)"
+    },
+    {
+      "id": "skills_merged_experience",
+      "pattern": "Photoshop.*McCann",
+      "flags": "is",
+      "reason": "skills column merged with experience body"
+    },
+    {
+      "id": "interests_merged_identity",
+      "pattern": "Art Snowboard",
+      "flags": "i",
+      "reason": "interests merged into identity name"
+    }
+  ],
+  "counts": {
+    "experiences_min": 3,
+    "experiences_max": 3,
+    "education_min": 4,
+    "education_max": 4,
+    "skills_min": 6,
+    "interests_min": 9
+  }
+}

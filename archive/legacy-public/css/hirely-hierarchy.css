@@ -1,0 +1,469 @@
+/* Hirely Hierarchy — McKinsey clarity + editorial scan path */
+
+/* —— Noise reduction —— */
+.flow,
+.narrativeArc,
+.trustBadge,
+.trustStrip,
+.stepHint,
+.recruiterImpression,
+#bars,
+.insightGrid,
+.readinessGrid,
+.scorePanel .metaHint,
+.workspaceBadge,
+.editHint,
+.profileRecBanner:not(:empty) {
+  display: none !important;
+}
+
+.sectionHead .small {
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+.cardHead .label,
+.uploadBand .stepHint {
+  display: none;
+}
+
+/* —— Hero: one message, one action —— */
+.hero.hero--compact {
+  padding-bottom: 32px;
+}
+
+.hero .kicker--elite {
+  margin-bottom: 12px;
+}
+
+.heroEntrance h1 {
+  margin-bottom: 16px;
+}
+
+.heroLead {
+  max-width: 34ch !important;
+  font-size: 15px !important;
+  margin-bottom: 0 !important;
+}
+
+.heroInsight {
+  margin: 14px auto 0;
+  max-width: 36ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #64748b;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+}
+
+.hero .actions {
+  margin-top: 24px;
+}
+
+.hero .actions .btn.ghost {
+  display: none;
+}
+
+/* —— Product shell scan path —— */
+.sectionHead {
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.sectionHead h2 {
+  font-size: 1.25rem;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+  font-weight: 600;
+}
+
+.uploadBand {
+  margin-bottom: 8px;
+}
+
+.uploadBand h2 {
+  font-size: 1.05rem;
+}
+
+.uploadBand .actions .btn.ghost {
+  opacity: 0.55;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.uploadBand .generateBtnPrimary {
+  flex: 1;
+  min-width: 200px;
+}
+
+.cinemaGrid {
+  align-items: start;
+}
+
+/* —— Score: executive intelligence summary —— */
+.scorePanel .cardHead h2 {
+  font-family: var(--font-ui, "Inter Tight", sans-serif) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.scoreTop {
+  display: block !important;
+  grid-template-columns: unset !important;
+}
+
+.scorePanel .scoreHero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.scorePanel .ring {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.scorePanel .scoreLabel {
+  font-size: 10px;
+  text-align: left;
+  margin: 0;
+}
+
+.scorePanel .scoreDelta {
+  text-align: left;
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.75;
+}
+
+.scorePanel #verdict,
+.scorePanel #summary {
+  display: none !important;
+}
+
+.intelSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.intelSummary.hidden {
+  display: none !important;
+}
+
+.intelLabel {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+}
+
+.scorePanel .intelLabel {
+  color: #94a3b8;
+}
+
+.intelBlock--primary {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#primaryInsight {
+  margin: 0;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: #f1f5f9;
+}
+
+.intelSecondary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.intelSecondary.hidden {
+  display: none !important;
+}
+
+.intelSecondary li {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.intelSecondary li span {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 4px;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+}
+
+.intelSecondary li p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cbd5e1;
+  font-family: var(--font-ui, "Inter Tight", sans-serif);
+}
+
+.intelActions {
+  padding-top: 4px;
+}
+
+.intelActions .fixBox,
+.scorePanel .fixBox {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.intelActions .fixBox b,
+.scorePanel .fixBox b {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.intelActions ul,
+.scorePanel #fixList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.intelActions li,
+.scorePanel #fixList li {
+  position: relative;
+  padding: 10px 0 10px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.intelActions li::before,
+.scorePanel #fixList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.intelActions li:last-child,
+.scorePanel #fixList li:last-child {
+  border-bottom: none;
+}
+
+.transformPanel {
+  margin-top: 20px;
+  opacity: 0.92;
+}
+
+/* —— CV: publication-grade clarity —— */
+.cvPage {
+  color: #0a0c10;
+}
+
+.cvPage .cvName {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.cvPage .cvTitle {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.45;
+  opacity: 0.72;
+  margin-bottom: 18px;
+  max-width: 42ch;
+}
+
+.cvPage .cvContactLine,
+.cvPage .cvMeta {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  opacity: 0.62;
+}
+
+.cvPage .cvSection {
+  margin-bottom: 22px;
+}
+
+.cvPage .cvSection h3 {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  opacity: 0.55;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom-width: 1px;
+}
+
+.cvPage .cvSection p,
+.cvPage .cvSection li {
+  font-size: 12.5px;
+  line-height: 1.58;
+}
+
+.cvPage .cvRole {
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.cvPage .cvExp {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cvPage .cvExp:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cvPage .cvExp ul {
+  margin-top: 8px;
+}
+
+.cvPage .cvExp li {
+  margin-bottom: 5px;
+  padding-left: 2px;
+}
+
+/* Template-specific editorial tension */
+.tpl-ats .cvName {
+  font-size: 26px;
+}
+.tpl-editorial .cvName,
+.tpl-luxury .cvName {
+  font-weight: 400;
+}
+.tpl-swiss .cvSection h3 {
+  opacity: 0.45;
+}
+
+/* —— Workspace action levels —— */
+.workspaceHead {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.workspaceHead .actions {
+  margin-left: auto;
+}
+
+.workspaceHead .actions .btn.blue {
+  order: -1;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.22);
+}
+
+.workspaceHead .actions .btn.ghost {
+  font-size: 12px;
+  padding: 9px 12px;
+  opacity: 0.55;
+  border: none;
+  background: transparent;
+}
+
+.workspaceToolbar {
+  border: none !important;
+  background: #fafbfc !important;
+  box-shadow: inset 0 -1px 0 rgba(12, 14, 20, 0.05);
+}
+
+.workspaceToolbar .toolbarLabel:first-of-type {
+  font-weight: 700;
+  color: var(--ink, #0b0d12);
+}
+
+#templateButtons.templateGallery {
+  flex: 1;
+}
+
+.workspaceToolbar .moveBtn,
+#shareScore,
+#downloadTxtToolbar {
+  opacity: 0.65;
+  font-size: 12px;
+}
+
+#downloadPdfToolbar {
+  font-weight: 600;
+}
+
+.tabs {
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  gap: 20px !important;
+}
+
+.tab {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 0 !important;
+  box-shadow: none !important;
+  font-size: 13px;
+  color: #94a3b8;
+  border-bottom: 2px solid transparent !important;
+}
+
+.tab.active {
+  color: var(--ink, #0b0d12) !important;
+  border-bottom-color: var(--ink, #0b0d12) !important;
+  background: transparent !important;
+}
+
+.templateCard .tplMeta {
+  gap: 3px;
+}
+
+.templateCard .tplTag {
+  font-size: 7px;
+  padding: 2px 5px;
+  background: #f8fafc;
+}
+
+/* —— Asymmetric editorial pacing —— */
+@media (min-width: 1024px) {
+  .cinemaGrid {
+    grid-template-columns: minmax(300px, 0.95fr) 1.15fr;
+  }
+  .previewColumn .workspacePreview {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .uploadBand .actions {
+    flex-direction: column;
+  }
+  .uploadBand .actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "languages",
+  "version": 4,
+  "entityType": "language",
+  "boost": 20,
+  "entities": [
+    { "id": "french", "name": "French", "aliases": ["Français", "français", "FR", "French (native)", "French — native"], "type": "language" },
+    { "id": "english", "name": "English", "aliases": ["Anglais", "anglais", "EN", "English (fluent)", "English — fluent"], "type": "language" },
+    { "id": "german", "name": "German", "aliases": ["Allemand", "Deutsch", "German (professional)"], "type": "language" },
+    { "id": "spanish", "name": "Spanish", "aliases": ["Espagnol", "español", "Castilian"], "type": "language" },
+    { "id": "italian", "name": "Italian", "aliases": ["Italien", "italiano"], "type": "language" },
+    { "id": "portuguese", "name": "Portuguese", "aliases": ["português", "Portuguese (Brazil)"], "type": "language" },
+    { "id": "dutch", "name": "Dutch", "aliases": ["Nederlands"], "type": "language" },
+    { "id": "mandarin", "name": "Mandarin", "aliases": ["Chinese", "Mandarin Chinese", "中文"], "type": "language" },
+    { "id": "japanese", "name": "Japanese", "aliases": ["日本語"], "type": "language" },
+    { "id": "korean", "name": "Korean", "aliases": ["한국어"], "type": "language" },
+    { "id": "arabic", "name": "Arabic", "aliases": ["العربية"], "type": "language" },
+    { "id": "russian", "name": "Russian", "aliases": ["русский"], "type": "language" },
+    { "id": "bilingual-en-fr", "name": "Bilingual English/French", "aliases": ["Bilingual FR/EN", "Bilingue anglais-français"], "type": "language" }
+  ],
+  "terms": [
+    "French",
+    "Français",
+    "English",
+    "Anglais",
+    "German",
+    "Allemand",
+    "Spanish",
+    "Espagnol",
+    "Italian",
+    "Italien",
+    "Portuguese",
+    "Dutch",
+    "Mandarin",
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Arabic",
+    "Russian",
+    "Bilingual"
+  ]
+}

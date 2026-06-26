@@ -1,0 +1,260 @@
+/* CV Workspace — compact template picker (above preview) */
+
+.cvWorkspaceSection .templatePicker {
+  margin: 0 0 12px;
+  padding: 10px 12px 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 20, 25, 0.04);
+}
+
+.cvWorkspaceSection .templatePickerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cvWorkspaceSection .templatePickerLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.cvWorkspaceSection .templatePicker .templateRec {
+  font-size: 10px;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cvWorkspaceSection .templatePickerGrid,
+.cvWorkspaceSection #templateButtons.templatePickerGrid {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 4px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  min-height: 88px;
+}
+
+.cvWorkspaceSection .templatePickerGrid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.cvWorkspaceSection .templatePickerGrid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.cvWorkspaceSection .tplPickerCard {
+  flex: 0 0 128px;
+  min-width: 128px;
+  max-width: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafbfc;
+  cursor: pointer;
+  scroll-snap-align: start;
+  overflow: hidden;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.cvWorkspaceSection .tplPickerCard:hover {
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.cvWorkspaceSection .tplPickerCard.is-active {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.35),
+    0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.cvWorkspaceSection .tplPickerCard.is-active::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.cvWorkspaceSection .tplPickerCard {
+  position: relative;
+}
+
+.cvWorkspaceSection .tplPickerCard.is-rec:not(.is-active)::before {
+  content: "★";
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  z-index: 2;
+  font-size: 9px;
+  color: #d97706;
+  line-height: 1;
+}
+
+.cvWorkspaceSection .tplPickerPreview {
+  display: block;
+  width: 100%;
+  height: 42px;
+  min-height: 42px;
+  border-radius: 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.cvWorkspaceSection .tplPickerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 7px 8px 8px;
+}
+
+.cvWorkspaceSection .tplPickerName {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cvWorkspaceSection .tplPickerMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.cvWorkspaceSection .tplPickerType {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.cvWorkspaceSection .tplPickerType--ats {
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+.cvWorkspaceSection .tplPickerType--creative {
+  color: #6d28d9;
+  background: #ede9fe;
+}
+
+.cvWorkspaceSection .tplPickerType--executive {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+.cvWorkspaceSection .tplPickerType--editorial {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.cvWorkspaceSection .tplPickerRead {
+  font-size: 9px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.cvWorkspaceSection .tplPickerCard.is-active .tplPickerRead {
+  color: #2563eb;
+}
+
+.cvWorkspaceSection .templatePicker--empty .tplPickerRead {
+  color: #9ca3af;
+}
+
+/* Mini previews — reuse template skin hints */
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="ats"] {
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #0f172a;
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="swiss"] {
+  background: linear-gradient(90deg, #f4f4f5 38%, #fff 38%);
+  border-left: 3px solid #0f172a;
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="executive"] {
+  background: linear-gradient(180deg, #0f172a 42%, #fff 42%);
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="editorial"] {
+  background: linear-gradient(135deg, #fafaf9 0%, #fff 60%);
+  box-shadow: inset 0 -2px 0 #1c1917;
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="portfolio"] {
+  background: linear-gradient(90deg, #18181b 40%, #fff 40%);
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="luxury"] {
+  background: #fff;
+  box-shadow: inset 0 10px 0 #e5e5e5;
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="sidebar"],
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="art"] {
+  background: linear-gradient(90deg, #0f172a 44%, #fff 44%);
+}
+
+.cvWorkspaceSection .tplPickerPreview.tplCardPreview[data-tpl="art"] {
+  box-shadow: inset -3px 0 0 #fff;
+}
+
+@media print {
+  .cvWorkspaceSection .templatePicker {
+    display: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .cvWorkspaceSection .tplPickerCard {
+    flex: 0 0 116px;
+    min-width: 116px;
+    max-width: 116px;
+  }
+
+  .cvWorkspaceSection .tplPickerPreview {
+    height: 36px;
+    min-height: 36px;
+  }
+}

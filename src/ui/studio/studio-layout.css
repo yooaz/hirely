@@ -1,0 +1,588 @@
+/**
+ * Resume Studio — 3-column layout (preview | suggestions | editor).
+ * Loaded after index.html inline styles so these rules win.
+ */
+
+/* —— Debug-only chrome —— */
+html:not(.debug-mode) #hirelyTestClickBtn,
+html:not(.debug-mode) #hirelyTestImport,
+html:not(.debug-mode) .hirelyDebugPanel,
+html:not(.debug-mode) .hirelyForensicPanel,
+html:not(.debug-mode) .workspaceGrid--ready #resetBtn,
+html:not(.debug-mode) .workspaceGrid--ready #rawDetails.docSourceEditor {
+  display: none !important;
+}
+
+/* —— Studio row on workspace grid —— */
+html:not(.debug-mode) .app--workspace .workspaceGrid--ready.docStep-edit {
+  max-width: min(1440px, 100%);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit {
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "studio";
+  gap: 16px;
+  max-width: min(1440px, 100%);
+  align-items: start;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeStudioHead {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsDocNav {
+  grid-area: nav;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsImport {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsProduct {
+  grid-area: studio;
+  display: grid !important;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "head"
+    "preview";
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  align-items: start;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeStudioHead {
+  grid-area: head;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview {
+  grid-area: preview;
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+  top: auto;
+  z-index: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  align-self: stretch;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsInsights {
+  grid-area: suggestions;
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  top: auto;
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  min-width: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioRail {
+  grid-area: editor;
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  top: auto;
+  align-self: start;
+  min-width: 0;
+  gap: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioSectionNav {
+  display: block !important;
+  margin-bottom: 12px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* CV preview container — no overlap with editor */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .wsCenterStack {
+  position: relative;
+  z-index: 0;
+  min-height: 0;
+  height: auto;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .workspaceCanvas {
+  position: relative;
+  z-index: 0;
+  flex: 0 1 auto;
+  min-height: 0;
+  height: auto;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStageWrap,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStage {
+  position: relative;
+  z-index: 0;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .workspaceCanvas {
+  container-type: inline-size;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStage {
+  overflow-x: auto;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px 24px;
+  background: #efefeb;
+  min-height: min(68vh, 880px);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview #a4Viewport {
+  flex: 1;
+  min-height: min(60vh, 820px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvStageInner {
+  width: 794px;
+  max-width: 794px;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview #cvDoc,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cv {
+  width: 794px !important;
+  max-width: 794px !important;
+  min-height: 1123px;
+  aspect-ratio: 210 / 297;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview #cvDoc.cv--a4,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cv.cv--a4 {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvA4Sheet {
+  width: 794px !important;
+  height: 1123px !important;
+  min-height: 1123px !important;
+  max-width: 794px !important;
+  max-height: 1123px !important;
+  aspect-ratio: 210 / 297 !important;
+  overflow: visible !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cvDocWrap,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .cv {
+  position: relative;
+  z-index: 0;
+  transform: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioSuggestionsPanel {
+  display: block !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #issuesPanel,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .verifyReviewBlock,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resultScoreBlock,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .scoreCardPremium,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #pipelineReportPanel {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioSuggestionsPanel {
+  display: block !important;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+/* Product score panel — right column (editor rail) */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioScorePanel {
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioScorePanel .scoreCardPremium {
+  display: flex !important;
+  flex-direction: column;
+  gap: 14px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit #studioScorePanel .scoreMetricsGrid {
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ATS checklist — deterministic recruiter analysis */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsChecklist {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsCheckItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsCheckItem--ok {
+  color: var(--ink);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsCheckMark {
+  width: 18px;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsCheckItem--ok .atsCheckMark {
+  color: #166534;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .atsCheckItem--miss .atsCheckMark {
+  color: #9ca3af;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioSuggestionsPanel .toClassifyCompactList {
+  gap: 8px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .toClassifyCardCompact {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .toClassifyMore {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 4px 0;
+  list-style: none;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .wsProduct,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .wsProduct {
+  display: flex !important;
+  flex-direction: column;
+  grid-template-columns: none;
+  grid-template-areas: none;
+  width: 100%;
+  min-width: 0;
+  gap: 16px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .wsInsights,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .wsInsights {
+  display: none !important;
+}
+
+/* Export / style — full-width A4 preview (content first) */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview {
+  display: flex !important;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: min(72vh, 900px);
+  flex: 1;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .exportStepHead {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 4px 2px 0;
+  margin-bottom: 4px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .exportStepHead.hidden {
+  display: none !important;
+}
+
+html:not(.debug-mode) .exportStepHead {
+  display: none;
+}
+
+html:not(.debug-mode) .exportStepLead {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 42ch;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .wsCenterStack,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .wsCenterStack {
+  min-height: min(68vh, 860px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .workspaceCanvas,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .workspaceCanvas {
+  flex: 1;
+  min-height: min(58vh, 720px);
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStageWrap,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cvStageWrap,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cvStage {
+  flex: 1;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cvStage {
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px 20px;
+  background: #efefeb;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview #a4Viewport,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview #a4Viewport {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStageInner,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cvStageInner {
+  width: 794px;
+  max-width: 794px;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview #cvDoc,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview #cvDoc,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cv,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-export .studioPreview .cv {
+  width: 794px !important;
+  max-width: 794px !important;
+  min-height: 1123px;
+}
+
+/* —— Right editor fields —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkRow,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .rdRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkRow label,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .rdRow label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkInput,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .rdRow input {
+  height: 44px;
+  min-height: 44px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkInput--area,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel textarea {
+  min-height: 88px;
+  height: auto;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkCanvasHead {
+  margin-bottom: 12px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkCanvasHead h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel .blkIdentity {
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* —— Compact À classer —— */
+.studioSuggestionsPanel--repair .toClassifyCompactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toClassifyCardCompact {
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+  border: 1px solid var(--line);
+}
+
+.toClassifyCardCompact p,
+.toClassifyCardCompact .smartRepairLineText {
+  margin: 0 0 8px !important;
+  font-size: 12px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.toClassifyCardRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.toClassifyMoveSelect {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  font: inherit;
+  font-size: 12px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.toClassifyCardRow .btn[data-classify-target='ignore'] {
+  flex-shrink: 0;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+
+.toClassifyMore {
+  margin: 4px 0 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--muted);
+  list-style: none;
+}
+
+html:not(.debug-mode) .studioSuggestionsPanel--repair .smartRepairActions {
+  display: none !important;
+}
+
+/* —— Responsive —— */
+@media (max-width: 1199px) and (min-width: 800px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsProduct {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "head head"
+      "preview preview"
+      "suggestions editor";
+    gap: 20px;
+  }
+}
+
+@media (max-width: 799px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .wsProduct {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "editor"
+      "suggestions"
+      "preview";
+    gap: 16px;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .resumeEditorPanel {
+    max-height: none;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-edit .studioPreview .workspaceCanvas {
+    min-height: min(48vh, 560px);
+  }
+}

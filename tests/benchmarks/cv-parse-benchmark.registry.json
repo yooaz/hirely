@@ -1,0 +1,470 @@
+{
+  "version": "CV_PARSE_BENCHMARK_V3",
+  "description": "Corpus-level CV parsing benchmarks — layout families, languages, OCR/DOCX proxies, portfolio leakage guards.",
+  "summary_thresholds": {
+    "avg_parsing_time_ms_max": 20000,
+    "corpus_pass_rate_min": 0.85
+  },
+  "fixtures": [
+    {
+      "id": "yoaz-pdf-benchmark",
+      "label": "Sidebar left + portfolio page 2 (spatial regression)",
+      "family": "sidebar_left",
+      "language": "en",
+      "format": "spatial_pdf",
+      "runner": "spatial_pipeline",
+      "linesJson": [
+        "tests/fixtures/yoaz-pdf-benchmark/page1-lines.json",
+        "tests/fixtures/yoaz-pdf-benchmark/page2-lines.json"
+      ],
+      "textFixture": "tests/fixtures/yoaz-pdf-benchmark/fixture.txt",
+      "goldens": {
+        "experience": "tests/golden/yoaz-experience-parsed.expected.json",
+        "education": "tests/golden/yoaz-education-parsed.expected.json",
+        "skills": "tests/golden/yoaz-skills-parsed.expected.json"
+      },
+      "expect": {
+        "contact": {
+          "name": "Yohann Azancot",
+          "email": "yoaz@hotmail.fr",
+          "phone_contains": "336494344839",
+          "address_contains": "Charonne"
+        },
+        "sections": ["summary", "languages", "experience", "education", "skills"],
+        "experience_golden_min_match": 0.66,
+        "experience_min": 2,
+        "education_count_min": 4,
+        "education_count_max": 4,
+        "education_dedupe_max_duplicates": 0,
+        "skills_min": 3,
+        "portfolio_markers": [
+          "sunglass",
+          "playstation",
+          "god of war",
+          "fortune 500",
+          "cubist art",
+          "elon musk",
+          "metro display",
+          "personal project"
+        ],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.3,
+        "contact_accuracy_min": 0.75,
+        "header_detection_rate_min": 0.75,
+        "section_detection_accuracy_min": 0.8,
+        "experience_segmentation_accuracy_min": 0.66,
+        "education_deduplication_success_min": 1,
+        "skills_purity_min": 1
+      }
+    },
+    {
+      "id": "developer-cv",
+      "label": "Tech single-column (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/developer-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Alex Chen",
+          "email": "alex.chen@email.com",
+          "phone_contains": "415"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "education_count_max": 2,
+        "education_dedupe_max_duplicates": 0,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.4,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.6,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 1,
+        "skills_purity_min": 0.9
+      }
+    },
+    {
+      "id": "student-cv",
+      "label": "Student internship (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/student-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Emma Johnson",
+          "email": "emma.johnson@university.edu",
+          "phone_contains": "7700"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 1,
+        "education_count_min": 2,
+        "education_count_max": 2,
+        "education_dedupe_max_duplicates": 0,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.6,
+        "experience_segmentation_accuracy_min": 0.4,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "consultant-cv",
+      "label": "Consulting / business (FR)",
+      "family": "single_column",
+      "language": "fr",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/consultant-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Sophie Martin",
+          "email": "sophie.martin@consult.fr",
+          "phone_contains": "33611223344"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 2,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "executive-cv",
+      "label": "Executive / C-suite (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/executive-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "James Whitfield",
+          "email": "j.whitfield@corp.com",
+          "phone_contains": "2125554400"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 2,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.4,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "academic-cv",
+      "label": "Academic / research (EN)",
+      "family": "multi_section",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/academic-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Elena Vasquez",
+          "email": "e.vasquez@university.edu",
+          "phone_contains": "6175550199"
+        },
+        "sections": ["summary", "experience", "education", "skills", "languages"],
+        "experience_min": 2,
+        "education_count_min": 2,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.5,
+        "header_detection_rate_min": 0.5,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "two-column-cv",
+      "label": "Dense two-column proxy (FR minimal)",
+      "family": "two_column",
+      "language": "fr",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/two-column-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Marie Dupont",
+          "email": "marie.dupont@email.com",
+          "phone_contains": "33612345678"
+        },
+        "sections": ["experience", "education", "skills"],
+        "experience_min": 1,
+        "education_count_min": 1,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.5,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.4,
+        "experience_segmentation_accuracy_min": 0.4,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "marketing-cv",
+      "label": "Marketing / growth (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/marketing-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Laura Bennett",
+          "email": "laura.bennett@agency.com",
+          "phone_contains": "2079460958"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "sales-cv",
+      "label": "Sales / B2B (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/sales-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Marcus Reed",
+          "email": "marcus.reed@salesco.com",
+          "phone_contains": "3125558821"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "recruiter-cv",
+      "label": "HR / recruiting (EN)",
+      "family": "single_column",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/recruiter-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "David Okonkwo",
+          "email": "david.okonkwo@talent.co",
+          "phone_contains": "6465550187"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "scanned-pdf",
+      "label": "OCR-noisy scanned proxy (FR)",
+      "family": "scanned_ocr",
+      "language": "fr",
+      "format": "ocr_text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/scanned-pdf/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Marie Dupont",
+          "email": "marie@email.com"
+        },
+        "sections": ["experience", "education", "skills"],
+        "experience_min": 1,
+        "education_count_min": 1,
+        "skills_min": 2,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.55,
+        "contact_accuracy_min": 0.5,
+        "header_detection_rate_min": 0.5,
+        "section_detection_accuracy_min": 0.35,
+        "experience_segmentation_accuracy_min": 0.35,
+        "education_deduplication_success_min": 0.7,
+        "skills_purity_min": 0.8
+      }
+    },
+    {
+      "id": "docx",
+      "label": "DOCX structured proxy (FR)",
+      "family": "single_column",
+      "language": "fr",
+      "format": "docx_text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/docx/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Marie Dupont",
+          "email": "marie.dupont@email.com",
+          "phone_contains": "33612345678"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "text-pdf",
+      "label": "Native text PDF proxy (FR)",
+      "family": "native_text_pdf",
+      "language": "fr",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/text-pdf/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Marie Dupont",
+          "email": "marie.dupont@email.com",
+          "phone_contains": "33612345678"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "image-cv",
+      "label": "Image/OCR CV proxy (EN creative)",
+      "family": "image_cv",
+      "language": "en",
+      "format": "ocr_text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/image-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Jordan Garcia",
+          "email": "jordan.garcia@design.studio",
+          "phone_contains": "4155552341"
+        },
+        "sections": ["experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.5,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.4,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    },
+    {
+      "id": "right-sidebar-cv",
+      "label": "Right-sidebar reading-order proxy (EN)",
+      "family": "sidebar_right",
+      "language": "en",
+      "format": "text",
+      "runner": "text_pipeline",
+      "textFixture": "tests/fixtures/right-sidebar-cv/fixture.txt",
+      "expect": {
+        "contact": {
+          "name": "Laura Bennett",
+          "email": "laura.bennett@agency.com",
+          "phone_contains": "2079460958"
+        },
+        "sections": ["summary", "experience", "education", "skills"],
+        "experience_min": 2,
+        "education_count_min": 1,
+        "skills_min": 3,
+        "portfolio_markers": [],
+        "portfolio_leakage_max": 0,
+        "unclassified_block_rate_max": 0.45,
+        "contact_accuracy_min": 0.66,
+        "header_detection_rate_min": 0.66,
+        "section_detection_accuracy_min": 0.5,
+        "experience_segmentation_accuracy_min": 0.5,
+        "education_deduplication_success_min": 0.8,
+        "skills_purity_min": 0.85
+      }
+    }
+  ]
+}

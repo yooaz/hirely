@@ -1,0 +1,506 @@
+/**
+ * HIRELY Template Library V3 — structural differentiation per template.
+ * Grid · hierarchy · typography · spacing · emphasis
+ */
+
+.cv.template-consulting-elite .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-apple-style .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-google-style .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-startup-founder .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-creative-director .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-senior-engineer .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-executive-board .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-minimal-ats .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-premium-ats .cvInner.cvLayout-v3 .cvSectionTitle,
+.cv.template-luxury-editorial .cvInner.cvLayout-v3 .cvSectionTitle {
+  letter-spacing: inherit;
+  text-transform: none;
+  border: none;
+  background: none;
+}
+
+/* ═══ 1. Consulting Elite — 3/9 split + KPI strip ═══ */
+.cv.template-consulting-elite {
+  --v3-ce-display: 'Cormorant Garamond', Georgia, serif;
+  --v3-ce-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --v3-ce-ink: #1e293b;
+  --v3-ce-navy: #0f172a;
+  font-family: var(--v3-ce-body);
+  font-size: 10pt;
+  color: var(--v3-ce-ink);
+}
+.cv.template-consulting-elite .cvHead--v3-consulting {
+  padding: 18px 24px 12px;
+  border-bottom: 2px solid var(--v3-ce-navy);
+}
+.cv.template-consulting-elite .cvName {
+  font-family: var(--v3-ce-display);
+  font-size: 24pt;
+  font-weight: 700;
+  color: var(--v3-ce-navy);
+}
+.cv.template-consulting-elite .cvTitle { font-size: 10pt; color: #475569; margin-top: 4px; }
+.cv.template-consulting-elite .cvV3CeContact { font-size: 8.5pt; color: #64748b; margin-top: 8px; }
+.cv.template-consulting-elite .cvV3CeKpiStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-bottom: 1px solid #cbd5e1;
+  background: #f8fafc;
+}
+.cv.template-consulting-elite .cvV3CeKpi {
+  padding: 6px 10px;
+  border-right: 1px solid #e2e8f0;
+  font-size: 8.5pt;
+}
+.cv.template-consulting-elite .cvV3CeKpi:last-child { border-right: 0; }
+.cv.template-consulting-elite .cvV3CeKpiLabel {
+  display: block;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #64748b;
+}
+.cv.template-consulting-elite .cvV3CeGrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 180px;
+}
+.cv.template-consulting-elite .cvV3CeRail {
+  padding: 18px 16px;
+  background: #f1f5f9;
+  border-right: 1px solid #cbd5e1;
+}
+.cv.template-consulting-elite .cvV3CeMain { padding: 18px 22px; }
+.cv.template-consulting-elite .cvSectionTitle {
+  font-family: var(--v3-ce-display);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v3-ce-navy);
+  margin-bottom: 10px;
+}
+
+/* ═══ 2. Apple Style — centered monument + timeline spine ═══ */
+.cv.template-apple-style {
+  --v3-ap-sans: var(--typo-preset-apple-body);
+  font-family: var(--v3-ap-sans);
+  font-size: var(--typo-cv-body);
+  font-weight: var(--typo-weight-light);
+  color: #1d1d1f;
+  line-height: var(--typo-leading-body);
+}
+.cv.template-apple-style .cvHead--v3-apple {
+  padding: 22px 40px 14px;
+  text-align: center;
+  border-bottom: 0.5px solid #d2d2d7;
+}
+.cv.template-apple-style .cvName {
+  font-size: 28pt;
+  font-weight: var(--typo-weight-semibold);
+  letter-spacing: var(--typo-tracking-display);
+  line-height: var(--typo-leading-display);
+}
+.cv.template-apple-style .cvTitle { font-size: var(--typo-cv-deck); color: #86868b; margin-top: 10px; font-weight: var(--typo-weight-regular); line-height: var(--typo-leading-snug); }
+.cv.template-apple-style .cvV3ApThesis {
+  max-width: 40ch;
+  margin: 18px auto 0;
+  font-size: var(--typo-cv-deck);
+  color: #424245;
+  line-height: var(--typo-leading-relaxed);
+}
+.cv.template-apple-style .cvV3ApContact { font-size: 9pt; color: #86868b; margin-top: 14px; }
+.cv.template-apple-style .cvV3ApBody { padding: 18px 40px 28px; }
+.cv.template-apple-style .cvV3ApSpine {
+  border-left: 1px solid #d2d2d7;
+  margin-left: 12px;
+  padding-left: 22px;
+}
+.cv.template-apple-style .cvSectionTitle {
+  font-size: 9pt;
+  font-weight: 500;
+  color: #86868b;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+/* ═══ 3. Google Style — color bar + material rail ═══ */
+.cv.template-google-style {
+  --v3-gg-body: 'Roboto', Inter, system-ui, sans-serif;
+  font-family: var(--v3-gg-body);
+  font-size: 10pt;
+  color: #202124;
+}
+.cv.template-google-style .cvV3GgBar {
+  height: 4px;
+  background: linear-gradient(90deg, #4285f4 25%, #ea4335 50%, #fbbc04 75%, #34a853 100%);
+}
+.cv.template-google-style .cvHead--v3-google { padding: 18px 24px 12px; }
+.cv.template-google-style .cvName { font-size: 20pt; font-weight: 500; color: #202124; }
+.cv.template-google-style .cvTitle { font-size: 10pt; color: #5f6368; margin-top: 2px; }
+.cv.template-google-style .cvV3GgGrid {
+  display: grid;
+  grid-template-columns: 26% 74%;
+  border-top: 1px solid #dadce0;
+}
+.cv.template-google-style .cvV3GgRail {
+  padding: 14px 16px;
+  background: #f8f9fa;
+  border-right: 1px solid #dadce0;
+}
+.cv.template-google-style .cvV3GgMain { padding: 14px 20px; }
+.cv.template-google-style .cvV3GgChip {
+  display: inline-block;
+  padding: 3px 8px;
+  margin: 2px 4px 2px 0;
+  border-radius: 12px;
+  background: #e8f0fe;
+  color: #1967d2;
+  font-size: 8pt;
+  font-weight: 500;
+}
+.cv.template-google-style .cvSectionTitle {
+  font-size: 8pt;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6368;
+  margin-bottom: 8px;
+}
+
+/* ═══ 4. Startup Founder — venture hero + operator split ═══ */
+.cv.template-startup-founder {
+  --v3-sf-ui: Inter, system-ui, sans-serif;
+  font-family: var(--v3-sf-ui);
+  font-size: 10pt;
+  color: #18181b;
+}
+.cv.template-startup-founder .cvHead--v3-founder {
+  padding: 28px 28px 20px;
+  background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  border-bottom: 1px solid #e4e4e7;
+}
+.cv.template-startup-founder .cvName { font-size: 26pt; font-weight: 800; letter-spacing: -0.03em; }
+.cv.template-startup-founder .cvTitle { font-size: 10pt; color: #5b21b6; font-weight: 600; margin-top: 4px; }
+.cv.template-startup-founder .cvV3SfThesis { font-size: 10.5pt; color: #3f3f46; margin-top: 12px; line-height: 1.5; }
+.cv.template-startup-founder .cvV3SfTraction {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 14px 28px;
+  background: #faf5ff;
+  border-bottom: 1px solid #e9d5ff;
+}
+.cv.template-startup-founder .cvV3SfMetric {
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid #e9d5ff;
+  border-radius: 8px;
+  font-size: 8.5pt;
+}
+.cv.template-startup-founder .cvV3SfSplit {
+  display: grid;
+  grid-template-columns: 24% 76%;
+}
+.cv.template-startup-founder .cvV3SfRail { padding: 16px 14px; background: #fafafa; border-right: 1px solid #e4e4e7; }
+.cv.template-startup-founder .cvV3SfMain { padding: 16px 22px; }
+
+/* ═══ 5. Creative Director — hero + client grid ═══ */
+.cv.template-creative-director {
+  --v3-cd-display: Fraunces, 'Instrument Serif', Georgia, serif;
+  --v3-cd-ui: 'DM Sans', system-ui, sans-serif;
+  font-family: var(--v3-cd-ui);
+  font-size: 10pt;
+  color: #18181b;
+}
+.cv.template-creative-director .cvHead--v3-creative {
+  padding: 16px 22px 10px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fff 55%);
+  border-bottom: 3px solid #ea580c;
+}
+.cv.template-creative-director .cvName {
+  font-family: var(--v3-cd-display);
+  font-size: 32pt;
+  line-height: 0.95;
+  font-weight: 500;
+}
+.cv.template-creative-director .cvTitle { font-size: 10pt; letter-spacing: 0.14em; text-transform: uppercase; color: #9a3412; margin-top: 10px; }
+.cv.template-creative-director .cvV3CdDeck { font-size: 10pt; color: #44403c; margin-top: 10px; line-height: 1.45; max-width: 52ch; }
+.cv.template-creative-director .cvV3CdClientGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px 32px;
+}
+.cv.template-creative-director .cvV3CdClientCell {
+  padding: 14px 8px;
+  text-align: center;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #fed7aa;
+  background: #fff;
+}
+.cv.template-creative-director .cvV3CdMain { padding: 20px 32px 28px; }
+
+/* ═══ 6. Senior Engineer — mono rail + dense cards ═══ */
+.cv.template-senior-engineer {
+  --v3-se-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+  --v3-se-body: Inter, system-ui, sans-serif;
+  font-family: var(--v3-se-body);
+  font-size: 9.5pt;
+  color: #0f172a;
+  line-height: 1.4;
+}
+.cv.template-senior-engineer .cvHead--v3-engineer {
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+.cv.template-senior-engineer .cvName { font-family: var(--v3-se-mono); font-size: 14pt; font-weight: 700; }
+.cv.template-senior-engineer .cvTitle { font-size: 9pt; color: #64748b; margin-top: 2px; }
+.cv.template-senior-engineer .cvV3SeGrid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.cv.template-senior-engineer .cvV3SeRail {
+  padding: 12px 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: var(--v3-se-mono);
+  font-size: 7.5pt;
+}
+.cv.template-senior-engineer .cvV3SeRail .cvSectionTitle { color: #94a3b8; font-size: 7pt; letter-spacing: 0.1em; }
+.cv.template-senior-engineer .cvV3SeStackLine {
+  display: block;
+  padding: 2px 0;
+  border-bottom: 1px solid #1e293b;
+}
+.cv.template-senior-engineer .cvV3SeMain { padding: 12px 16px; }
+.cv.template-senior-engineer .cvV3SeCard {
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+}
+
+/* ═══ 7. Executive Board — centered board masthead ═══ */
+.cv.template-executive-board {
+  --v3-eb-serif: 'Source Serif 4', Georgia, serif;
+  --v3-eb-body: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+  --v3-eb-gold: #a08c6a;
+  font-family: var(--v3-eb-body);
+  font-size: 11pt;
+  color: #0f172a;
+  background: #fdfcfa;
+}
+.cv.template-executive-board .cvHead--v3-board {
+  text-align: center;
+  padding: 38px 44px 26px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.cv.template-executive-board .cvV3EbRule {
+  width: 80px;
+  height: 2px;
+  margin: 0 auto 20px;
+  background: linear-gradient(90deg, transparent, var(--v3-eb-gold), transparent);
+}
+.cv.template-executive-board .cvName {
+  font-family: var(--v3-eb-serif);
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.cv.template-executive-board .cvTitle {
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-top: 10px;
+}
+.cv.template-executive-board .cvMain--v3-board {
+  padding: 30px 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cv.template-executive-board .cvSectionTitle {
+  font-family: var(--v3-eb-serif);
+  font-size: 10pt;
+  font-weight: 600;
+  border-bottom: 1px solid var(--v3-eb-gold);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* ═══ 8. Minimal ATS — ultra-dense single column ═══ */
+.cv.template-minimal-ats {
+  font-family: var(--typo-preset-stripe-ui);
+  font-size: var(--typo-cv-body-sm);
+  line-height: var(--typo-leading-ats);
+  color: #000;
+}
+.cv.template-minimal-ats .cvHead--v3-ats {
+  padding: 12px 18px 6px;
+  border-bottom: 1.5px solid #000;
+}
+.cv.template-minimal-ats .cvName { font-size: 16pt; font-weight: 700; }
+.cv.template-minimal-ats .cvTitle { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 2px; }
+.cv.template-minimal-ats .cvV3MaBand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 5px 18px;
+  font-size: 8pt;
+  background: #f4f4f5;
+  border-bottom: 1px solid #d4d4d8;
+}
+.cv.template-minimal-ats .cvMain--v3-ats { padding: 8px 18px 16px; max-width: 68ch; }
+.cv.template-minimal-ats .cvSectionTitle {
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+}
+.cv.template-minimal-ats .cvV3MaRow {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.cv.template-minimal-ats .cvV3MaDates { font-size: 7.5pt; font-variant-numeric: tabular-nums; color: #52525b; }
+
+/* ═══ 9. Premium ATS — indigo recruiter band + dense grid ═══ */
+.cv.template-premium-ats {
+  --v3-pa-ui: Inter, system-ui, sans-serif;
+  --v3-pa-indigo: #4f46e5;
+  --v3-pa-ink: #0f172a;
+  font-family: var(--v3-pa-ui);
+  font-size: 9.5pt;
+  line-height: 1.38;
+  color: var(--v3-pa-ink);
+}
+.cv.template-premium-ats .cvV3PaRibbon {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 18px;
+  background: linear-gradient(90deg, #eef2ff 0%, #e0e7ff 100%);
+  border-bottom: 1px solid #c7d2fe;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--v3-pa-indigo);
+}
+.cv.template-premium-ats .cvHead--v3-premium-ats {
+  padding: 14px 18px 8px;
+  border-bottom: 2px solid var(--v3-pa-indigo);
+}
+.cv.template-premium-ats .cvName { font-size: 17pt; font-weight: 800; letter-spacing: -0.02em; }
+.cv.template-premium-ats .cvTitle {
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #6366f1;
+  margin-top: 3px;
+}
+.cv.template-premium-ats .cvV3PaBand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 6px 18px;
+  font-size: 8pt;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.cv.template-premium-ats .cvMain--v3-premium-ats {
+  padding: 10px 18px 18px;
+  max-width: 100%;
+}
+.cv.template-premium-ats .cvSectionTitle {
+  font-size: 7.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--v3-pa-indigo);
+  border-bottom: 2px solid #e0e7ff;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+}
+.cv.template-premium-ats .cvV3PaRow {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cv.template-premium-ats .cvV3PaDates {
+  font-size: 7.5pt;
+  font-variant-numeric: tabular-nums;
+  color: #64748b;
+  font-weight: 600;
+}
+.cv.template-premium-ats .cvV3PaBody ul { margin: 4px 0 0; padding-left: 14px; }
+.cv.template-premium-ats .cvSection,
+.cv.template-minimal-ats .cvSection,
+.cv.template-luxury-editorial .cvSection {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ═══ 10. Marketing — three-column spread ═══ */
+.cv.template-luxury-editorial {
+  --v3-le-display: 'Playfair Display', Georgia, serif;
+  --v3-le-body: Lora, Georgia, serif;
+  --v3-le-ui: 'DM Sans', system-ui, sans-serif;
+  font-family: var(--v3-le-body);
+  font-size: 10.5pt;
+  color: #292524;
+}
+.cv.template-luxury-editorial .cvHead--v3-editorial {
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid #d6d3d1;
+}
+.cv.template-luxury-editorial .cvName {
+  font-family: var(--v3-le-display);
+  font-size: 38pt;
+  line-height: 0.92;
+  font-weight: 500;
+}
+.cv.template-luxury-editorial .cvTitle {
+  font-family: var(--v3-le-ui);
+  font-size: 8pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #78716c;
+  margin-top: 12px;
+}
+.cv.template-luxury-editorial .cvV3LeSpread {
+  display: grid;
+  grid-template-columns: 22% 48% 30%;
+  gap: 14px;
+  padding: 16px 28px 120px;
+}
+.cv.template-luxury-editorial .cvV3LeCol--feature .cvSectionTitle {
+  font-family: var(--v3-le-display);
+  font-size: 13pt;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.cv.template-luxury-editorial .cvV3LeCol .cvSectionTitle {
+  font-family: var(--v3-le-ui);
+  font-size: 7pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #78716c;
+}

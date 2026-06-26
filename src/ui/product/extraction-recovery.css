@@ -1,0 +1,249 @@
+/**
+ * Extraction Recovery panel — editorial inspector styling
+ */
+
+.extractionRecoveryPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 12px;
+  background: var(--ds3-surface, #fff);
+  border-radius: 14px;
+  box-shadow: var(--ds3-shadow-sm, 0 4px 12px rgba(17, 17, 16, 0.06));
+}
+
+.extractionRecoveryPanel.hidden {
+  display: none !important;
+}
+
+.extractionRecoveryHead h3 {
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.extractionRecoveryLead {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ds3-ink-tertiary, var(--muted));
+}
+
+.extractionRecoveryBanner {
+  margin: 10px 0 0;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: rgba(17, 17, 16, 0.06);
+  color: var(--ds3-ink-secondary, var(--ink));
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.extractionRecoveryBlock h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ds3-ink-tertiary, var(--muted));
+}
+
+.extractionRecoveryList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.extractionRecoveryItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: rgba(17, 17, 16, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(17, 17, 16, 0.06);
+}
+
+.extractionRecoveryItem--miss {
+  background: rgba(17, 17, 16, 0.05);
+}
+
+.extractionRecoveryItemMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.extractionRecoveryMsg {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ds3-ink, var(--ink));
+}
+
+.extractionRecoverySub {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--ds3-ink-tertiary, var(--muted));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.extractionRecoveryMeta {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ds3-ink-tertiary, var(--muted));
+}
+
+.extractionRecoveryEmpty {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ds3-ink-tertiary, var(--muted));
+}
+
+.extractionRecoveryFix {
+  flex-shrink: 0;
+  padding: 4px 8px !important;
+  font-size: 10px !important;
+}
+
+.extractionRecoveryPanel--blocked {
+  box-shadow: var(--ds3-shadow-sm, 0 4px 12px rgba(17, 17, 16, 0.06)),
+    inset 0 0 0 1px rgba(17, 17, 16, 0.08);
+}
+
+.extractionRecoveryPrimaryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.extractionRecoveryAction--primary {
+  font-weight: 650 !important;
+}
+
+.extractionRecoveryIssueTitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--ds3-ink-secondary, var(--ink));
+  margin-bottom: 2px;
+}
+
+.extractionRecoveryCode {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ds3-ink-tertiary, var(--muted));
+  margin-left: 4px;
+}
+
+.extractionRecoveryItem--critical {
+  background: rgba(120, 53, 15, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(120, 53, 15, 0.12);
+}
+
+.extractionRecoveryItemActions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.extractionRecoveryMetrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  margin: 0;
+}
+
+.extractionRecoveryMetric dt {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ds3-ink-tertiary, var(--muted));
+}
+
+.extractionRecoveryMetric dd {
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.extractionRecoveryCandidates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.extractionRecoveryCandidatesLabel {
+  font-size: 10px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ds3-ink-tertiary, var(--muted));
+  min-width: 42px;
+}
+
+.extractionRecoveryFooter {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(17, 17, 16, 0.08);
+}
+
+.workspaceGrid--recovery-mode .templatePickerBar,
+.workspaceGrid--recovery-mode .wsTemplateRail {
+  opacity: 0.45;
+  pointer-events: none;
+  filter: grayscale(0.2);
+}
+
+.workspaceGrid--recovery-mode .wsProduct {
+  flex: 1 1 auto;
+}
+
+.cvEmptyState--correction .cvRecoveryIssueList {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  text-align: left;
+  max-width: 420px;
+}
+
+.cvEmptyState--correction .cvRecoveryIssueList li {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: rgba(17, 17, 16, 0.04);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.cvEmptyState--correction .cvRecoveryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+html.dex-document .extractionRecoveryPanel {
+  background: var(--dex-float-bg, rgba(255, 255, 255, 0.88));
+  backdrop-filter: var(--dex-float-blur, saturate(180%) blur(20px));
+  border: 0;
+  box-shadow: var(--dex-float-shadow);
+}

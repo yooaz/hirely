@@ -1,0 +1,26 @@
+/* Block canvas */
+.blkCanvas{display:flex;flex-direction:column;gap:10px;min-height:0}
+.blkCanvasHead h3{margin:0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.blkCanvasLead{margin:4px 0 0;font-size:11px;line-height:1.4;color:var(--muted)}
+.blkCreativeBadge{display:inline-block;margin-left:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 7px;border-radius:999px;background:#0f172a;color:#fff;vertical-align:middle}
+.blkAddBar{display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:var(--blue-soft);border-radius:var(--radius-sm)}
+.blkAddBtn{font-size:10px!important;padding:5px 8px!important}
+.blkIdentity{padding:10px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#fafafa}
+.blkIdentity h3{margin:0 0 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.blkList{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.blkEmpty{font-size:12px;color:var(--muted);padding:8px 4px}
+.blkCard{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:10px;box-shadow:var(--shadow-sm);cursor:grab}
+.blkCard:active{cursor:grabbing}
+.blkCard--dragging{opacity:.55}
+.blkCard--dropTarget{border-color:var(--ink);box-shadow:0 0 0 2px rgba(23,23,23,.12)}
+.blkCardHead{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.blkDrag{color:var(--muted);font-size:12px;letter-spacing:-2px;user-select:none;flex-shrink:0}
+.blkType{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);flex:1}
+.blkCardActions{display:flex;gap:4px;flex-shrink:0}
+.blkCardBody{display:flex;flex-direction:column;gap:6px}
+.blkRow{display:flex;flex-direction:column;gap:3px}
+.blkRow label{font-size:10px;font-weight:600;color:var(--muted)}
+.blkRow--inline{flex-direction:row;align-items:center;gap:6px}
+.blkInput{width:100%;font:inherit;font-size:12px;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff}
+.blkInput--area{resize:vertical;min-height:56px;line-height:1.45}
+.blkBullets{display:flex;flex-direction:column;gap:4px}

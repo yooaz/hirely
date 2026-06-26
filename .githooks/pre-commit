@@ -1,0 +1,5 @@
+#!/bin/sh
+# Golden CV gate — install: ./scripts/setup-githooks.sh
+set -e
+echo "Running Golden CV suite (pre-commit)…"
+npm test

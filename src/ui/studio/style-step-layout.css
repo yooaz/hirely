@@ -1,0 +1,375 @@
+/**
+ * Style step — final layout
+ * Top: sticky step nav (workspaceGrid #docNav)
+ * Left: template selector | Center: A4 preview | Right: spacing only
+ */
+
+/* —— Step nav: compact sticky —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .hirelyProgressNav {
+  position: sticky;
+  top: 56px;
+  z-index: 24;
+  margin: 0 auto 8px;
+  padding: 4px 0 6px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .hirelyProgressTrack {
+  height: 3px;
+  margin-bottom: 8px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .hirelyProgressBtn {
+  padding: 6px 4px;
+  gap: 4px;
+  font-size: 11px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .hirelyProgressLabel {
+  font-size: 10px;
+}
+
+/* —— Hide redundant chrome on style step —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleStepHead,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .extractionQualityStep,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style #trustStrip,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style #a4ZoomBar,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryFilters,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style #cvHeaderBar,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style #mvpImportBanner {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .wsProduct {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+/* —— 3-column body: templates | preview | spacing —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .wsCenterStack {
+  display: grid !important;
+  grid-template-columns: minmax(200px, 236px) minmax(0, 1fr) minmax(108px, 132px);
+  grid-template-areas: 'templates preview spacing';
+  grid-template-rows: minmax(0, 1fr);
+  gap: 12px 14px;
+  align-items: stretch;
+  min-height: calc(100vh - 148px) !important;
+  max-height: calc(100vh - 132px);
+}
+
+/* —— Left: template selector (never overlays CV) —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .templatePickerBar {
+  grid-area: templates;
+  position: static !important;
+  top: auto !important;
+  z-index: 1 !important;
+  margin: 0 !important;
+  padding: 10px 10px 12px !important;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--paper) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+  backdrop-filter: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerHead {
+  margin: 0;
+  gap: 4px;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerHead .kicker,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerMeta {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerHead strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTemplateGallery {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryGrid {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 2px 2px 4px;
+  grid-template-columns: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transform: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard:hover,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard.active {
+  transform: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard.active::after {
+  display: none;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplPreview {
+  margin: 0;
+  border-radius: 6px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplPreview .tplMiniWrap {
+  height: 88px !important;
+  min-height: 88px !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplPreview .tplMini {
+  transform: scale(0.148) !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplHiring,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplBest,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplStyle {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplName {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .templateGalleryMoreBtn {
+  flex: 0 0 auto;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2px;
+  font-size: 11px;
+  padding: 6px 10px;
+}
+
+/* —— Center: A4 preview at 100% —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .workspaceCanvas {
+  grid-area: preview;
+  min-height: 0 !important;
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview #cvPanel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStageWrap,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage {
+  flex: 1;
+  min-height: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage {
+  padding: 12px 16px 16px !important;
+  background: #efefeb !important;
+  overflow: auto;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview #a4Viewport {
+  flex: 1;
+  min-height: 0 !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStageInner {
+  width: 794px;
+  max-width: 794px;
+  margin: 0 auto;
+  transform-origin: top center;
+  transform: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview #cvDoc,
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cv {
+  width: 794px !important;
+  max-width: 794px !important;
+  min-height: 1123px;
+}
+
+/* —— Right: spacing controls only —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleSpacingRail {
+  grid-area: spacing;
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  align-self: stretch;
+  min-height: 0;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleSpacingRail.hidden {
+  display: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleSpacingTitle {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .spacingGroup--vertical {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 4px;
+  gap: 4px;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .spacingGroup--vertical .btn.small {
+  width: 100%;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+/* —— Kill floating overlay / document-experience conflicts —— */
+html.dex-document:not(.debug-mode) .workspaceGrid--ready.docStep-style .templatePickerBar {
+  position: static !important;
+  backdrop-filter: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+html.dex-document:not(.debug-mode) #workspace[data-doc-step='style'] .cvStage {
+  padding-bottom: 16px !important;
+}
+
+html.dex-document:not(.debug-mode) #workspace[data-doc-step='style'] #templatePickerBar {
+  animation: none !important;
+}
+
+/* —— Tablet: templates strip on top, CV + spacing below —— */
+@media (max-width: 1099px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .wsCenterStack {
+    grid-template-columns: minmax(0, 1fr) minmax(108px, 132px);
+    grid-template-areas:
+      'templates templates'
+      'preview spacing';
+    grid-template-rows: auto minmax(0, 1fr);
+    max-height: none;
+    min-height: min(72vh, 820px) !important;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .templatePickerBar {
+    max-height: 168px;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryGrid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 112px;
+    scroll-snap-type: x proximity;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumTplCard {
+    flex: 0 0 148px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    scroll-snap-align: start;
+  }
+}
+
+/* —— Override ui-scale-fix / studio-layout style conflicts —— */
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .premiumGalleryGrid {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: none !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .cvStage {
+  min-height: 0 !important;
+}
+
+html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .wsCenterStack {
+  min-height: calc(100vh - 148px) !important;
+}
+
+@media (max-width: 719px) {
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .studioPreview .wsCenterStack {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'preview'
+      'templates'
+      'spacing';
+    grid-template-rows: minmax(280px, 1fr) auto auto;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .styleSpacingRail {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  html:not(.debug-mode) .workspaceGrid--ready.docStep-style .spacingGroup--vertical {
+    flex-direction: row;
+    flex: 1;
+    max-width: 240px;
+  }
+}

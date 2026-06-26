@@ -1,0 +1,20 @@
+Marie Dupont
+Product Manager
+marie.dupont@email.com · +33 6 12 34 56 78
+Paris, France
+
+Summary
+Product manager with 8 years in B2B SaaS, focused on roadmap delivery and cross-functional leadership.
+
+Experience
+Senior Product Manager — Acme SaaS — 2019 – Present
+- Shipped billing module used by 120k users.
+- Reduced churn by 12% through onboarding redesign.
+Product Manager — Beta Corp — 2015 – 2019
+- Launched mobile app with 50k MAU in year one.
+
+Education
+HEC Paris — MBA 2018
+
+Skills
+Product strategy, Agile, SQL, User research, Roadmapping

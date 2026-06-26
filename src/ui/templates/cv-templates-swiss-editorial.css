@@ -1,0 +1,197 @@
+/**
+ * Swiss Editorial — Neue Grafik · Swiss design · Monocle · Financial Times.
+ * Grid-based editorial · strong typography · large margins · no gimmicks.
+ */
+
+.cv.template-swiss-editorial {
+  --se-ink: #111111;
+  --se-muted: #5a5a5a;
+  --se-line: #d9d9d9;
+  --se-rule: #c41230;
+  --se-paper: #ffffff;
+  --se-body: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --se-display: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--se-body);
+  font-size: 9.75pt;
+  line-height: 1.5;
+  color: var(--se-ink);
+  background: var(--se-paper);
+}
+
+.cv.template-swiss-editorial .cvInner.cvLayout-swiss-editorial {
+  padding: 0;
+}
+
+.cv.template-swiss-editorial .cvHead--swiss-editorial {
+  padding: 56px 60px 28px;
+  border-bottom: 2px solid var(--se-ink);
+  position: relative;
+}
+
+.cv.template-swiss-editorial .cvHead--swiss-editorial::after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  bottom: -4px;
+  height: 2px;
+  background: var(--se-rule);
+}
+
+.cv.template-swiss-editorial .cvSwissMasthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px 48px;
+  align-items: end;
+}
+
+.cv.template-swiss-editorial .cvName {
+  font-family: var(--se-display);
+  font-size: 26pt;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cv.template-swiss-editorial .cvTitle {
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--se-muted);
+  margin: 10px 0 0;
+}
+
+.cv.template-swiss-editorial .cvSwissContact {
+  font-size: 8pt;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--se-muted);
+  margin: 0;
+  text-align: right;
+}
+
+.cv.template-swiss-editorial .cvMain--swiss-editorial {
+  padding: 36px 60px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cv.template-swiss-editorial .cvSection--swiss-summary {
+  max-width: 72ch;
+}
+
+.cv.template-swiss-editorial .cvSectionTitle {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--se-ink);
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--se-line);
+}
+
+.cv.template-swiss-editorial .cvSwissLead {
+  font-size: 10.5pt;
+  line-height: 1.58;
+  margin: 0;
+  color: var(--se-ink);
+}
+
+.cv.template-swiss-editorial .cvSwissGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.cv.template-swiss-editorial .cvSwissCol--main .cvSection--experience {
+  margin: 0;
+}
+
+.cv.template-swiss-editorial .cvSwissCol--side {
+  border-left: 1px solid var(--se-line);
+  padding-left: 28px;
+}
+
+.cv.template-swiss-editorial .cvSwissCol--side .cvSection {
+  margin-bottom: 22px;
+}
+
+.cv.template-swiss-editorial .cvSwissCol--side .cvSection:last-child {
+  margin-bottom: 0;
+}
+
+.cv.template-swiss-editorial .cvExpList--airy .cvExpEntry {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--se-line);
+}
+
+.cv.template-swiss-editorial .cvExpList--airy .cvExpEntry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv.template-swiss-editorial .cvExpRole {
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.cv.template-swiss-editorial .cvExpCompany,
+.cv.template-swiss-editorial .cvExpDates {
+  font-size: 8.75pt;
+  color: var(--se-muted);
+  margin: 3px 0 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cv.template-swiss-editorial .cvExpBullet {
+  font-size: 9.5pt;
+  line-height: 1.48;
+  margin: 6px 0 0;
+}
+
+.cv.template-swiss-editorial .cvSwissLine,
+.cv.template-swiss-editorial .cvSwissLangLine {
+  font-size: 9pt;
+  line-height: 1.5;
+  margin: 0 0 4px;
+  color: var(--se-ink);
+}
+
+.cv.template-swiss-editorial .cvEduSchool {
+  font-size: 10pt;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cv.template-swiss-editorial .cvEduProgram,
+.cv.template-swiss-editorial .cvEduDates,
+.cv.template-swiss-editorial .cvEduLine {
+  font-size: 8.75pt;
+  color: var(--se-muted);
+  margin: 3px 0 0;
+}
+
+.cv.template-swiss-editorial:not(.cv--with-photo) .cvPhoto,
+.cv.template-swiss-editorial:not(.cv--with-photo) .cvPhotoWrap,
+.cv.template-swiss-editorial .cvTimelineDot,
+.cv.template-swiss-editorial .cvClientChip,
+.cv.template-swiss-editorial .cvSkillChip,
+.cv.template-swiss-editorial .cvProgress,
+.cv.template-swiss-editorial [class*='Icon'] {
+  display: none !important;
+}
+
+.tplMiniWrap--swiss-editorial {
+  border-bottom: 3px solid #111;
+  background: #fff;
+}

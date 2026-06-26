@@ -1,0 +1,206 @@
+/**
+ * A4Viewport — centered proportional preview, no silent crop.
+ */
+
+.a4Viewport {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.a4Viewport--native {
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-padding: 16px;
+}
+
+.a4Viewport__fit {
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.a4ZoomBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  max-width: min(794px, 100%);
+  margin: 0 auto 10px;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.a4ZoomBar.hidden {
+  display: none !important;
+}
+
+.a4ZoomBarLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+.a4ZoomBar .a4ZoomBtn.active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.a4Viewport .cvStageInner {
+  width: 794px;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  transform-origin: top center;
+  flex-shrink: 0;
+}
+
+.a4OverflowWarn {
+  width: 100%;
+  max-width: min(794px, 100%);
+  margin: 0 auto 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.a4OverflowWarn.hidden {
+  display: none !important;
+}
+
+/* True A4 page — ratio locked, scales via transform (never crop) */
+.cv-preview-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 32px 20px 24px;
+}
+
+.cv-page,
+#cvDoc.cv:not(.cv--a4),
+.cv.cv-page {
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 210mm;
+  aspect-ratio: 210 / 297;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+#cvDoc.cv--a4 .cvA4Sheet,
+.cv.cv--a4 .cvA4Sheet {
+  width: 794px;
+  height: 1123px;
+  min-height: 1123px;
+  max-width: 794px;
+  max-height: 1123px;
+  aspect-ratio: 210 / 297;
+  flex-shrink: 0;
+}
+
+/* Overflow sheets — visible bleed + warning ring (never silent crop) */
+body:not(.export-pdf) .cvA4Sheet--overflow .cvA4Sheet__surface {
+  overflow: visible !important;
+  outline: 2px solid #f59e0b;
+  outline-offset: 0;
+}
+
+body:not(.export-pdf) .cvA4Sheet--overflow .cvA4Sheet__surface,
+body:not(.export-pdf) .cv-preview-shell,
+body:not(.export-pdf) .cvStage {
+  overflow: visible;
+}
+
+body:not(.export-pdf) .cvA4Sheet--overflow .cvInner {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page,
+  #cvDoc.cv-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .cv-preview-shell,
+  .cvStage {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cv-preview-shell,
+  .cvStage {
+    padding: 24px 12px;
+  }
+
+  .a4OverflowWarn {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}
+
+/* Readable lines — wrap inside A4 box, never clip horizontally */
+#cvDoc,
+#cvDoc .cvInner,
+#cvDoc .cvA4Sheet,
+#cvDoc .cvA4Sheet__surface,
+#cvDoc .cvHead,
+#cvDoc .cvMain,
+#cvDoc .cvSide,
+#cvDoc .cvSection,
+#cvDoc .cvSectionBody,
+#cvDoc .cvExpEntry,
+#cvDoc .cvEduLine,
+#cvDoc .cvLangLine,
+#cvDoc .cvToolsLine,
+#cvDoc .cvContact,
+#cvDoc .cvContact p,
+#cvDoc .cvName,
+#cvDoc .cvTitle {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  hyphens: auto;
+}

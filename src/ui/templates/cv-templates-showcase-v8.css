@@ -1,0 +1,280 @@
+/**
+ * HIRELY Template Showcase V8 — brand-inspired polish layer.
+ * Loads after cv-templates-v2-families.css
+ * A4: 794×1123px · ATS-safe text · no overlap
+ */
+
+/* ── A4 export fidelity (all 8 showcase templates) ── */
+.cv.template-luxury-executive,
+.cv.template-mckinsey-consulting,
+.cv.template-creative-director-portfolio,
+.cv.template-startup-founder,
+.cv.template-tech-engineer,
+.cv.template-classic-corporate,
+.cv.template-apple-minimal,
+.cv.template-ats-recruiter {
+  width: 794px;
+  max-width: 794px;
+  min-height: 1123px;
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cv.template-luxury-executive .cvInner,
+.cv.template-mckinsey-consulting .cvInner,
+.cv.template-creative-director-portfolio .cvInner,
+.cv.template-startup-founder .cvInner,
+.cv.template-tech-engineer .cvInner,
+.cv.template-classic-corporate .cvInner,
+.cv.template-apple-minimal .cvInner,
+.cv.template-ats-recruiter .cvInner {
+  max-width: 794px;
+  box-sizing: border-box;
+}
+
+/* Prevent float/overlap bleed */
+.cv.template-luxury-executive .cvSection,
+.cv.template-mckinsey-consulting .cvSection,
+.cv.template-creative-director-portfolio .cvSection,
+.cv.template-startup-founder .cvSection,
+.cv.template-tech-engineer .cvSection,
+.cv.template-classic-corporate .cvSection,
+.cv.template-apple-minimal .cvSection,
+.cv.template-ats-recruiter .cvSection {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  overflow: hidden;
+}
+
+/* ═══ 01 Executive — Apple ═══ */
+.cv.template-luxury-executive {
+  --showcase-accent: #1d1d1f;
+  --showcase-muted: #86868b;
+  background: #fff;
+}
+.cv.template-luxury-executive .cvHead--executive-luxury {
+  padding: 44px 48px 32px;
+  border-bottom: none;
+}
+.cv.template-luxury-executive .cvLuxuryRibbon {
+  width: 48px;
+  height: 2px;
+  background: var(--showcase-accent);
+  margin-bottom: 20px;
+}
+.cv.template-luxury-executive .cvName {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.cv.template-luxury-executive .cvTitle {
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--showcase-muted);
+}
+.cv.template-luxury-executive .cvSectionTitle {
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 9pt;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--showcase-muted);
+  border-bottom: 1px solid #e8e8ed;
+}
+
+/* ═══ 02 Consulting — McKinsey ═══ */
+.cv.template-mckinsey-consulting {
+  --showcase-navy: #051c2c;
+  --showcase-accent: #003366;
+}
+.cv.template-mckinsey-consulting .cvHead--mckinsey {
+  border-bottom: 3px solid var(--showcase-navy);
+  padding-bottom: 18px;
+}
+.cv.template-mckinsey-consulting .cvName {
+  color: var(--showcase-navy);
+}
+.cv.template-mckinsey-consulting .cvMkCred {
+  background: #f7f8fa;
+  border-right: 1px solid #d9dde3;
+}
+.cv.template-mckinsey-consulting .cvMkImpactMatrix {
+  border-top-color: var(--showcase-navy);
+}
+.cv.template-mckinsey-consulting .cvMkImpactCell {
+  border-left: 3px solid var(--showcase-accent);
+}
+
+/* ═══ 03 Creative — Airbnb ═══ */
+.cv.template-creative-director-portfolio {
+  --showcase-coral: #ff5a5f;
+  --showcase-teal: #00a699;
+}
+.cv.template-creative-director-portfolio .cvHead--director {
+  background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+  border-bottom: 3px solid var(--showcase-coral);
+}
+.cv.template-creative-director-portfolio .cvDirectorClientCell,
+.cv.template-creative-director-portfolio .cvSection--clients-hero .cvClientChip {
+  border-color: #ffd5d7;
+  border-radius: 8px;
+  background: #fff;
+  transition: none;
+}
+.cv.template-creative-director-portfolio .cvSectionTitle {
+  color: var(--showcase-coral);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* ═══ 04 Startup — Linear ═══ */
+.cv.template-startup-founder {
+  --showcase-purple: #5e6ad2;
+  --showcase-bg: #f7f8fb;
+}
+.cv.template-startup-founder .cvHead--startup-builder {
+  background: var(--showcase-bg);
+  border-bottom: 2px solid var(--showcase-purple);
+}
+.cv.template-startup-founder .cvName {
+  letter-spacing: -0.03em;
+}
+.cv.template-startup-founder .cvSbMetric {
+  background: #fff;
+  border-left-color: var(--showcase-purple);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+.cv.template-startup-founder .cvSbRail {
+  border-right: 1px solid #e5e7eb;
+}
+
+/* ═══ 05 Tech — Google ═══ */
+.cv.template-tech-engineer::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, #4285f4 0%, #ea4335 25%, #fbbc04 50%, #34a853 75%, #4285f4 100%);
+}
+.cv.template-tech-engineer .cvHead--tech-structured {
+  border-bottom-color: #4285f4;
+}
+.cv.template-tech-engineer .cvSide--tech-structured {
+  background: #202124;
+}
+.cv.template-tech-engineer .cvSide--tech-structured .cvSectionTitle {
+  color: #8ab4f8;
+}
+
+/* ═══ 06 Corporate — Tesla ═══ */
+.cv.template-classic-corporate {
+  --showcase-red: #e82127;
+}
+.cv.template-classic-corporate .cvCcRuleBand {
+  background: linear-gradient(90deg, #171a20 0 85%, var(--showcase-red) 85% 100%);
+  height: 3px;
+}
+.cv.template-classic-corporate .cvName {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #171a20;
+}
+.cv.template-classic-corporate .cvCcMain .cvSectionTitle {
+  border-bottom-color: #171a20;
+}
+
+/* ═══ 07 Minimal — Notion ═══ */
+.cv.template-apple-minimal {
+  --showcase-bg: #fbfbfa;
+  --showcase-border: #e9e9e7;
+  background: var(--showcase-bg);
+}
+.cv.template-apple-minimal .cvHead--apple-minimal {
+  padding: 40px 52px 28px;
+  border-bottom: 1px solid var(--showcase-border);
+  background: #fff;
+}
+.cv.template-apple-minimal .cvName {
+  font-size: 28pt;
+  font-weight: 700;
+  color: #37352f;
+}
+.cv.template-apple-minimal .cvTitle,
+.cv.template-apple-minimal .cvAmThesis,
+.cv.template-apple-minimal .cvAmContact {
+  color: #787774;
+}
+.cv.template-apple-minimal .cvMain--apple-minimal .cvSection {
+  padding: 0 52px;
+  margin-bottom: 28px;
+}
+.cv.template-apple-minimal .cvSectionTitle {
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: #9b9a97;
+  border-bottom: 1px solid var(--showcase-border);
+  padding-bottom: 6px;
+}
+
+/* ═══ 08 Premium ATS — Stripe ═══ */
+.cv.template-ats-recruiter {
+  --showcase-indigo: #635bff;
+}
+.cv.template-ats-recruiter .cvHead--ats-recruiter {
+  border-bottom: 3px solid var(--showcase-indigo);
+  padding-top: 16px;
+}
+.cv.template-ats-recruiter .cvArContactBand {
+  background: #f6f9fc;
+  border-bottom: 1px solid #e6ebf1;
+  color: #425466;
+}
+.cv.template-ats-recruiter .cvSectionTitle {
+  color: var(--showcase-indigo);
+  border-bottom-color: var(--showcase-indigo);
+  font-weight: 700;
+}
+.cv.template-ats-recruiter .cvArExpDates {
+  font-weight: 600;
+  color: #697386;
+}
+.cv.template-ats-recruiter .cvArExpRow {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f0f2f5;
+}
+.cv.template-ats-recruiter .cvArExpRow:last-child {
+  border-bottom: none;
+}
+
+/* Gallery mini accents (showcase) */
+.tplMiniWrap--luxury-executive { border-top: 3px solid #1d1d1f; }
+.tplMiniWrap--mckinsey-consulting { border-left: 4px solid #051c2c; }
+.tplMiniWrap--creative-director-portfolio { border-bottom: 3px solid #ff5a5f; }
+.tplMiniWrap--startup-founder { border-left: 4px solid #5e6ad2; background: #f7f8fb; }
+.tplMiniWrap--tech-engineer { border-top: 3px solid #4285f4; }
+.tplMiniWrap--classic-corporate { border-top: 3px solid #e82127; }
+.tplMiniWrap--apple-minimal { background: #fbfbfa; border: 1px solid #e9e9e7; }
+.tplMiniWrap--ats-recruiter { border-top: 3px solid #635bff; }
+
+@media print {
+  .cv.template-luxury-executive,
+  .cv.template-mckinsey-consulting,
+  .cv.template-creative-director-portfolio,
+  .cv.template-startup-founder,
+  .cv.template-tech-engineer,
+  .cv.template-classic-corporate,
+  .cv.template-apple-minimal,
+  .cv.template-ats-recruiter {
+    width: 794px !important;
+    min-height: 1123px;
+    margin: 0;
+    box-shadow: none;
+  }
+}

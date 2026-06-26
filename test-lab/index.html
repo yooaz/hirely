@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hirely Test Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f3f1;
+      --surface: #fff;
+      --ink: #111110;
+      --muted: #868682;
+      --line: rgba(17, 17, 16, 0.08);
+      --pass: #166534;
+      --fail: #b91c1c;
+      --warn: #b45309;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.58;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { margin: 0 0 6px; font-size: 1.75rem; font-weight: 600; letter-spacing: -0.03em; }
+    .sub { color: var(--muted); margin: 0 0 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 1px 2px rgba(17, 17, 16, 0.04), 0 4px 12px rgba(17, 17, 16, 0.05);
+    }
+    .card .label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+    .card .value { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.03em; margin-top: 4px; }
+    .card.pass .value { color: var(--pass); }
+    .card.fail .value { color: var(--fail); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba(17, 17, 16, 0.04); }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); font-size: 12px; }
+    th { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: #fafaf8; }
+    tr:last-child td { border-bottom: 0; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; }
+    .badge.pass { background: #dcfce7; color: var(--pass); }
+    .badge.fail { background: #fee2e2; color: var(--fail); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .filters select, .filters input {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      background: var(--surface);
+    }
+    .empty { padding: 48px; text-align: center; color: var(--muted); }
+    code { font-size: 11px; background: #f4f4f2; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Hirely Test Lab</h1>
+    <p class="sub">50 CVs · extraction · templates · ATS · PDF readiness</p>
+    <div id="status" class="empty">Loading report…</div>
+    <div id="metrics" class="grid" hidden></div>
+    <div id="filters" class="filters" hidden>
+      <select id="filterCategory"><option value="">All categories</option></select>
+      <select id="filterCountry"><option value="">All countries</option></select>
+      <select id="filterLayout"><option value="">All layouts</option></select>
+      <input id="filterSearch" type="search" placeholder="Search ID or label…" />
+    </div>
+    <div id="tableWrap" hidden>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Role</th>
+            <th>Country</th>
+            <th>Layout</th>
+            <th>Extraction</th>
+            <th>Template</th>
+            <th>ATS</th>
+            <th>PDF</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    const REPORT_URL = '../tests/output/hirely-test-lab/report.json';
+
+    function pct(v) { return `${Number(v || 0).toFixed(1)}%`; }
+    function num(v) { return Number(v || 0).toFixed(1); }
+
+    function metricCard(label, value, goal, isPct = true) {
+      const display = isPct ? pct(value) : num(value);
+      const pass = Number(value) >= Number(goal);
+      return `<div class="card ${pass ? 'pass' : 'fail'}"><div class="label">${label}</div><div class="value">${display}</div></div>`;
+    }
+
+    function fillSelect(sel, values) {
+      for (const v of [...values].sort()) {
+        const o = document.createElement('option');
+        o.value = v;
+        o.textContent = v;
+        sel.appendChild(o);
+      }
+    }
+
+    let allRows = [];
+
+    function renderRows(rows) {
+      const tbody = document.getElementById('rows');
+      tbody.innerHTML = rows.map((r) => {
+        const ok = r.importSuccess && r.extractionAccuracy >= 70;
+        return `<tr>
+          <td><code>${r.id}</code></td>
+          <td>${r.role}</td>
+          <td>${r.country}</td>
+          <td>${r.layout}</td>
+          <td>${pct(r.extractionAccuracy)}</td>
+          <td>${num(r.templateQuality)}</td>
+          <td>${pct(r.atsScoreAccuracy)}</td>
+          <td>${pct(r.pdfQuality)}</td>
+          <td><span class="badge ${ok ? 'pass' : 'fail'}">${ok ? 'PASS' : 'WARN'}</span></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function applyFilters() {
+      const cat = document.getElementById('filterCategory').value;
+      const country = document.getElementById('filterCountry').value;
+      const layout = document.getElementById('filterLayout').value;
+      const q = document.getElementById('filterSearch').value.toLowerCase();
+      const filtered = allRows.filter((r) => {
+        if (cat && r.category !== cat) return false;
+        if (country && r.country !== country) return false;
+        if (layout && r.layout !== layout) return false;
+        if (q && !(`${r.id} ${r.label}`.toLowerCase().includes(q))) return false;
+        return true;
+      });
+      renderRows(filtered);
+    }
+
+    async function boot() {
+      const status = document.getElementById('status');
+      try {
+        const res = await fetch(REPORT_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const report = await res.json();
+        status.hidden = true;
+        document.getElementById('metrics').hidden = false;
+        document.getElementById('filters').hidden = false;
+        document.getElementById('tableWrap').hidden = false;
+
+        const s = report.summary;
+        const g = report.goals;
+        document.getElementById('metrics').innerHTML = [
+          metricCard('Extraction', s.extractionAccuracy, g.extractionAccuracy),
+          metricCard('Template quality', s.templateQuality, g.templateQuality, false),
+          metricCard('ATS accuracy', s.atsScoreAccuracy, g.atsScoreAccuracy),
+          metricCard('PDF quality', s.pdfQuality, g.pdfQuality),
+          metricCard('Import success', s.importSuccessRate, g.importSuccess),
+        ].join('');
+
+        allRows = report.results || [];
+        fillSelect(document.getElementById('filterCategory'), new Set(allRows.map((r) => r.category)));
+        fillSelect(document.getElementById('filterCountry'), new Set(allRows.map((r) => r.country)));
+        fillSelect(document.getElementById('filterLayout'), new Set(allRows.map((r) => r.layout)));
+        ['filterCategory', 'filterCountry', 'filterLayout', 'filterSearch'].forEach((id) => {
+          document.getElementById(id).addEventListener('input', applyFilters);
+          document.getElementById(id).addEventListener('change', applyFilters);
+        });
+        renderRows(allRows);
+      } catch (err) {
+        status.innerHTML = `No report found. Run <code>npm run qa:hirely-test-lab</code> then reload.<br><small>${err.message}</small>`;
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>
