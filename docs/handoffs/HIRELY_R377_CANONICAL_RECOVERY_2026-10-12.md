@@ -1,52 +1,39 @@
-# Hirely V529 R377 — reprise fidèle / handoff (2026-10-12)
+# Hirely V529 R377 — référence canonique vérifiée (12 octobre 2026)
 
-> **ATTENTION — BRANCHE DOCUMENTAIRE UNIQUEMENT.**
-> Ce dépôt GitHub n'est **pas** la base canonique R376/R377 : son historique et sa structure sont plus anciens.
-> Ne pas fusionner cette branche ni prétendre qu'elle contient l'application R377 complète.
+> **Source complète et exécutable : Google Drive, pas les anciens fichiers de ce dépôt GitHub.** Le dépôt `yooaz/hirely` contient un ancien code produit. Les fichiers `docs/handoffs/r377/` préservent le manifeste et un patch ciblé, **pas l'intégralité de la R377**. Ne pas fusionner le code ancien du dépôt dans le ZIP canonique.
 
-## Source canonique
+## Source actuelle — vérifiée par re-téléchargement
 
-- Base complète : `HIRELY_CURRENT_TESTABLE.zip` dans le dossier Google Drive **HIRELY / 00_CURRENT_CANONICAL** ; archive vérifiée V529 R376.
-- Archive source R376 : 3 402 entrées ; 19 exécutables Mac avec permissions `+x`.
-- Sauvegarde R375 distincte dans le dossier Drive **HIRELY_PREVIOUS_BACKUP** ; ne pas supprimer.
-- R377 préparée à partir de R376 par copie vérifiée : 3 413 entrées, 11 nouvelles, 3 fichiers modifiés, zéro entrée supprimée.
-- Empreinte ZIP complet R377 (SHA-256) : `4ecf0b282b7ceef3778016ec996638d1ef1637e0b9c49993717f40eb5c682c19`.
-- Taille ZIP R377 : 99 969 727 octets.
-- Le ZIP R377 a été délivré sous forme de pièce jointe dans la conversation ChatGPT du 12 octobre 2026. **Il n'a pas été téléversé sur Google Drive** (Drive a répondu HTTP 403) et **l'application entière n'a pas été publiée sur GitHub**.
+| Rôle | URL Drive | Taille | SHA-256 |
+| --- | --- | ---: | --- |
+| **CANONIQUE R377** — `HIRELY_CURRENT_TESTABLE.zip` | https://drive.google.com/file/d/17e_77gQuRIAYq8U7UASnABF_LrVPT5-d/view | 99 969 727 octets | `4ecf0b282b7ceef3778016ec996638d1ef1637e0b9c49993717f40eb5c682c19` |
+| **ROLLBACK R376** — `HIRELY_V529_R376_ROLLBACK_VERIFIED_2026-10-12.zip` | https://drive.google.com/file/d/1JcamwuHZuf9hdWvbKFqdrVb87jmPvNkJ/view | 99 435 310 octets | `9c16073a50b7acefb9531c6b6b9578b118068fe4911578a3bfb5355a94cd3f1e` |
 
-## Patch R377 (signature-013 uniquement)
+R377 : 3 413 fichiers, ZIP CRC OK. R376 : 3 402 fichiers. Comparaison stricte R376 → R377 : **3 402 préservés**, **11 ajouts**, **3 fichiers modifiés** (`VERSION.txt`, `index.html`, `scripts/dev-server.mjs`), **aucun supprimé**. Les 19 lanceurs `.command` sont conservés avec leurs permissions.
 
-- `VERSION.txt` : V529 R377
-- `index.html` : charger `dist/hirely-r377-signature013-header.css?build=r377` après R375
-- `scripts/dev-server.mjs` : charger exactement cette feuille CSS pour `payload.template === 'signature-013'` au rendu PDF
-- Ajout : `dist/hirely-r377-signature013-header.css` (copie de la feuille autonome incluse dans ce dossier documentaire GitHub).
-- Le reste du moteur, des assets, des fichiers précompressés JS/CSS, des autres 249 modèles, des paiements, de la configuration et des lanceurs conserve les octets originaux R376.
+## Correctif R377
 
-## Vérifications réellement exécutées
+Seul **Signature 013** est concerné : contenu long/noms composés, panneaux des contacts et de la photo. Nouvelle CSS `dist/hirely-r377-signature013-header.css` chargée dans l'interface et conditionnellement dans l'export PDF ; tous les autres modèles et les assets de la base sont préservés.
 
-- Signature 013 : standard, dense, dense avec photo : **3/3 PDF A4 sur une page**, nom et contacts présents, sans texte hors des limites.
-- Signature 012, standard + dense : PDF de contrôle **pixel-identiques et texte-identiques** entre R376 et R377. Les SHA de leurs fichiers PDF changent uniquement en raison de leurs horodatages de création.
-- Contrôles ciblés : runtime 22/22, carrousel 13/13, continuation Premium 6/6, continuation 10/10.
-- Comparaison ZIP fichier par fichier : **3 402 sources originelles préservées**, seuls `index.html`, `VERSION.txt`, `scripts/dev-server.mjs` changent.
-- **Limites :** audits de l'ensemble des 250 modèles incomplets ; microtypographie trop petite sur certains autres modèles ; essais Mac/Safari réels et Stripe 9 € sandbox non faits.
+Tests documentés dans le ZIP `R377_QA/` : **3 PDF Signature 013** (standard, dense, dense + photo) A4 une page avec texte et contacts lisibles ; **2 PDF Signature 012 témoins** pixel-identiques et texte-identiques à R376 ; **22/22** garde-fous, **13/13** carrousel, **6/6** Premium, **10/10** continuation.
 
-## Instructions de reprise sans perte
+## Nettoyage Drive exécuté — contrôlé le 12 octobre
 
-1. Télécharger **l'archive canonique complète R376** et vérifier son intégrité.
-2. Télécharger l'archive R377 complète jointe dans la livraison du 12 octobre et vérifier le SHA ci-dessus, **avant** d'en faire la source.
-3. Ne **pas** fusionner les anciennes sources GitHub directement dans R377.
-4. Vérifier chaque fichier original, les permissions Mac, les PDF témoins, les caches compressés et les principaux parcours avant publication et tout remplacement de Drive.
-5. Si la livraison complète R377 n'est pas accessible, repartir de R376 intacte et appliquer seulement le patch précisément décrit, sans toucher aux autres fichiers.
+- L'ancienne archive **R375** supprimée après contrôle différentiel R375 → R376 : **0 fichier disparu**, 7 ajouts, 3 modifications. Le rollback indépendant est désormais **R376**.
+- Une archive **R377 uploadée en double** supprimée après remplacement du fichier canonique stable et vérification de son SHA.
+- Dossier actif **00_CURRENT_CANONICAL** : un seul ZIP **R377** ; dossier **HIRELY_PREVIOUS_BACKUP** : un seul ZIP **R376** et les rapports historiques (petits, conservés pour leur contenu).
+- Aucune suppression de la base actuelle ni de la sauvegarde R376.
 
-**Statut : R377 testable localement ; publication commerciale NO-GO tant que tous les contrôles prévus ne sont pas terminés.**
+## Synchronisation GitHub — réalité
 
+Le présent document, le manifeste JSON et le patch CSS sont intégrés sur `main` via PR #1 (squash `0b10b89add4b9ec0760b8daaaee903b702f32f3f`). **La source complète des 3 413 fichiers n'est pas encore répliquée sur GitHub.** Le dépôt `yooaz/hirely` est public ; le ZIP contient `data/hirely.sqlite` et des fichiers de configuration. Toute publication complète exige une exportation Git propre, l'exclusion des données/runtime/secrets, et une comparaison aux empreintes de la version canonique. Ne pas lancer de push à l'aveugle ni écraser `main`.
 
-## Synchronisation confirmée le 12 octobre 2026 — Drive
+## Lancement
 
-- **Lien canonique stable réutilisé** : https://drive.google.com/file/d/17e_77gQuRIAYq8U7UASnABF_LrVPT5-d/view (`HIRELY_CURRENT_TESTABLE.zip` → **R377**, 99 969 727 octets).
-- Téléchargement de contrôle depuis Drive effectué après remplacement, empreinte SHA-256 **4ecf0b282b7ceef3778016ec996638d1ef1637e0b9c49993717f40eb5c682c19** et **3 413** entrées, `ZipFile.testzip() == None`.
-- **Rollback R376 vérifié** et retéléchargé : https://drive.google.com/file/d/1JcamwuHZuf9hdWvbKFqdrVb87jmPvNkJ/view ; SHA-256 **9c16073a50b7acefb9531c6b6b9578b118068fe4911578a3bfb5355a94cd3f1e** (99 435 310 octets, 3 402 entrées).
-- Contrôle comparatif R375 → R376 : **0 fichier supprimé**, 7 fichiers ajoutés, 3 modifiés ; R375 devenu obsolète en tant que sauvegarde séparée.
-- **Le dépôt GitHub ne contient pas tous les octets de l'archive R377** : cette branche conserve la provenance, le manifeste, le patch CSS et les instructions de reprise. Pas de fusion de l'ancien code dans R377.
-- **Protection sécurité** : l'archive contient `data/hirely.sqlite` et ses fichiers journaux ; ne pas pousser ces fichiers ni des secrets directement dans un dépôt public.
-- Référence machine-readable : `docs/handoffs/r377/canonical-release-manifest.json`.
+Décompresser le ZIP canonique R377 dans un **nouveau dossier**. Sur Mac, clic droit → Ouvrir sur `003_OUVRIR_HIRELY_MODE_STABLE_MAC.command`. Ne pas charger `index.html` en `file://`. Conserver R376 sur Drive pour revenir en arrière.
+
+## Reste à faire avant publication
+
+Audit individuel des **250 modèles** (standard/dense/photo), microtypographie et densité des autres modèles, parité éditeur ↔ PDF, tests physiques Mac/Safari/Chrome, paiement Stripe Premium 9 € en sandbox et contrôles de conformité/accessibilité. Les PDF témoins ne certifient pas à eux seuls l'ensemble du catalogue.
+
+**Statut : R377 testable, mise en vente NO-GO.**
