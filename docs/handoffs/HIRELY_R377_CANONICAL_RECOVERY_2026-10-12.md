@@ -39,3 +39,14 @@
 5. Si la livraison complète R377 n'est pas accessible, repartir de R376 intacte et appliquer seulement le patch précisément décrit, sans toucher aux autres fichiers.
 
 **Statut : R377 testable localement ; publication commerciale NO-GO tant que tous les contrôles prévus ne sont pas terminés.**
+
+
+## Synchronisation confirmée le 12 octobre 2026 — Drive
+
+- **Lien canonique stable réutilisé** : https://drive.google.com/file/d/17e_77gQuRIAYq8U7UASnABF_LrVPT5-d/view (`HIRELY_CURRENT_TESTABLE.zip` → **R377**, 99 969 727 octets).
+- Téléchargement de contrôle depuis Drive effectué après remplacement, empreinte SHA-256 **4ecf0b282b7ceef3778016ec996638d1ef1637e0b9c49993717f40eb5c682c19** et **3 413** entrées, `ZipFile.testzip() == None`.
+- **Rollback R376 vérifié** et retéléchargé : https://drive.google.com/file/d/1JcamwuHZuf9hdWvbKFqdrVb87jmPvNkJ/view ; SHA-256 **9c16073a50b7acefb9531c6b6b9578b118068fe4911578a3bfb5355a94cd3f1e** (99 435 310 octets, 3 402 entrées).
+- Contrôle comparatif R375 → R376 : **0 fichier supprimé**, 7 fichiers ajoutés, 3 modifiés ; R375 devenu obsolète en tant que sauvegarde séparée.
+- **Le dépôt GitHub ne contient pas tous les octets de l'archive R377** : cette branche conserve la provenance, le manifeste, le patch CSS et les instructions de reprise. Pas de fusion de l'ancien code dans R377.
+- **Protection sécurité** : l'archive contient `data/hirely.sqlite` et ses fichiers journaux ; ne pas pousser ces fichiers ni des secrets directement dans un dépôt public.
+- Référence machine-readable : `docs/handoffs/r377/canonical-release-manifest.json`.
