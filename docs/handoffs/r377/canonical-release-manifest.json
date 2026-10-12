@@ -1,0 +1,42 @@
+{
+  "project": "HIRELY",
+  "release": "V529 R377",
+  "release_date": "2026-10-12",
+  "status": "testable_not_production_certified",
+  "canonical_drive": {
+    "file_id": "17e_77gQuRIAYq8U7UASnABF_LrVPT5-d",
+    "name": "HIRELY_CURRENT_TESTABLE.zip",
+    "url": "https://drive.google.com/file/d/17e_77gQuRIAYq8U7UASnABF_LrVPT5-d/view",
+    "bytes": 99969727,
+    "sha256": "4ecf0b282b7ceef3778016ec996638d1ef1637e0b9c49993717f40eb5c682c19",
+    "files": 3413,
+    "zip_crc_ok": true,
+    "verified_download": "2026-10-12"
+  },
+  "rollback_drive": {
+    "file_id": "1JcamwuHZuf9hdWvbKFqdrVb87jmPvNkJ",
+    "name": "HIRELY_V529_R376_ROLLBACK_VERIFIED_2026-10-12.zip",
+    "url": "https://drive.google.com/file/d/1JcamwuHZuf9hdWvbKFqdrVb87jmPvNkJ/view",
+    "bytes": 99435310,
+    "sha256": "9c16073a50b7acefb9531c6b6b9578b118068fe4911578a3bfb5355a94cd3f1e",
+    "files": 3402,
+    "verified_download": "2026-10-12"
+  },
+  "preservation": {
+    "r376_files_retained": 3402,
+    "new_files": 11,
+    "modified_files": [
+      "VERSION.txt",
+      "index.html",
+      "scripts/dev-server.mjs"
+    ],
+    "removed_files": 0
+  },
+  "github": {
+    "repository": "yooaz/hirely",
+    "branch": "recovery/r377-drive-canonical-handoff-20261012",
+    "scope": "provenance_manifest_and_targeted_css_patch_only",
+    "full_source_synced": false,
+    "warning": "Do not merge old GitHub code into canonical Drive archive. Prevent SQLite, secrets, and private project data from entering public GitHub."
+  }
+}
