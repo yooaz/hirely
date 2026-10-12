@@ -1,0 +1,36 @@
+/* HIRELY R377 — Signature 013 only. Preserve the approved product/editorial composition.
+ * Prevent long compound names and contact addresses from escaping the fixed A4 header.
+ * Loaded after the canonical styles in BOTH the live editor and PDF export.
+ */
+html body #cvPage.tpl-signature-013 .layout-product>header>div:first-child,
+html body #cvPage.tpl-signature-013 .layout-product .v432Identity{min-width:0!important;max-width:100%!important}
+html body #cvPage.tpl-signature-013 .layout-product .v432Identity h1{
+  font-size:50px!important;line-height:.88!important;letter-spacing:-.045em!important;
+  white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;
+  max-width:100%!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432Identity h1 :is(span,strong){
+  display:block!important;max-width:100%!important;white-space:normal!important;
+  overflow-wrap:break-word!important;word-break:normal!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark{
+  grid-template-columns:minmax(0,1fr) 86px!important;gap:10px!important;
+  padding:24px 14px!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark .v432Contact{
+  min-width:0!important;max-width:100%!important;align-content:center!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark .v432Contact>span{
+  display:block!important;position:relative!important;padding-left:19px!important;
+  min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important;
+  font-size:11px!important;line-height:1.45!important;margin:0 0 8px!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark .v432Contact>span>b{
+  position:absolute!important;left:0!important;top:0!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark .v432Photo{
+  width:86px!important;min-width:86px!important;height:112px!important;max-width:100%!important
+}
+html body #cvPage.tpl-signature-013 .layout-product .v432ProductDark .v432Photo.no-photo>span{
+  font-size:40px!important;letter-spacing:-.03em!important;line-height:1!important
+}
