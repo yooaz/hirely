@@ -37,6 +37,13 @@ async function readJsonBody(req) {
   return JSON.parse(raw);
 }
 
+// Intentionally fail closed: no premium entitlement issuer/verifier exists
+// in this repository. This must only become true after a reviewed server-side
+// authorization integration, never from a client-controlled request field.
+function hasVerifiedPremiumEmailEntitlement(_req) {
+  return false;
+}
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -47,6 +54,16 @@ export default async function handler(req, res) {
 
   if (req.method !== 'POST') {
     json(res, { error: 'Method not allowed' }, 405);
+    return;
+  }
+
+  // P0 HOLD: this legacy endpoint has no trusted server-side proof that the
+  // caller owns a paid CV export. A Resend API key, a browser `pro` flag, an
+  // Origin/Referer header, and a client-provided exportId are NOT entitlement.
+  // Do not read a private CV or invoke the paid email provider until an
+  // independently verified, server-issued entitlement is integrated here.
+  if (!hasVerifiedPremiumEmailEntitlement(req)) {
+    json(res, { error: 'Server-side premium verification required', code: 'PREMIUM_VERIFICATION_REQUIRED' }, 403);
     return;
   }
 
