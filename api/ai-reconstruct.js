@@ -1,3 +1,4 @@
+import { canCallBillableCvProvider, PREMIUM_PROVIDER_HOLD_CODE } from '../lib/premium-provider-gate.js';
 /**
  * AI_RECONSTRUCTION_ENGINE — Gemini structuring with server-side grounding.
  * POST JSON: { "text": "<cleaned OCR text>" }
@@ -29,6 +30,10 @@ function json(res, body, status = 200) {
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return json(res, { ok: true, engine: 'AI_RECONSTRUCTION_ENGINE', usage: 'POST { text }' });
+  }
+
+  if (!canCallBillableCvProvider(req)) {
+    return json(res, { error: 'Premium AI/OCR unavailable pending server-side entitlement and consent', code: PREMIUM_PROVIDER_HOLD_CODE }, 403);
   }
 
   const API_KEY = process.env.GEMINI_API_KEY;

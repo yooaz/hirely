@@ -1,3 +1,4 @@
+import { canCallBillableCvProvider, PREMIUM_PROVIDER_HOLD_CODE } from '../lib/premium-provider-gate.js';
 import {
   cleanCvText as cleanInputText,
   buildFallbackFromCv as buildFallback,
@@ -40,6 +41,12 @@ export default async function handler(req, res) {
     if (!API_KEY) {
       const fallback = buildFallback(cv, job);
       fallback.notice = 'Gemini is not connected. Safe expert fallback used.';
+      return safeJson(res, fallback);
+    }
+
+    if (!canCallBillableCvProvider(req)) {
+      const fallback = buildFallback(cv, job);
+      fallback.notice = 'Premium AI processing is disabled pending server-side entitlement and consent. Local analysis used.';
       return safeJson(res, fallback);
     }
 
