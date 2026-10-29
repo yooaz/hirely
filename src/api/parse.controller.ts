@@ -1,4 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
+import { readBoundedBody, RequestBodyLimitError } from './bounded-request-body.js';
 import { DocumentIngestionService } from '../services/ingestion/document-ingestion.service.js';
 import { ParseResultRepository } from '../storage/parse-result.repository.js';
 import { DocumentStorage } from '../storage/document-storage.js';
@@ -12,12 +13,6 @@ function json(res: ServerResponse, body: unknown, status = 200) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.end(JSON.stringify(body));
-}
-
-async function readBody(req: IncomingMessage): Promise<Buffer> {
-  const chunks: Buffer[] = [];
-  for await (const c of req) chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c));
-  return Buffer.concat(chunks);
 }
 
 function parseMultipart(buffer: Buffer, boundary: string) {
@@ -55,7 +50,7 @@ export class ParseController {
 
     try {
       const ct = String(req.headers['content-type'] || '');
-      const bodyBuf = await readBody(req);
+      const bodyBuf = await readBoundedBody(req);
 
       let fileBuf: Buffer | null = null;
       let filename: string | null = null;
@@ -114,6 +109,7 @@ export class ParseController {
 
       return json(res, { job_id, status: 'processing' });
     } catch (e: any) {
+      if (e instanceof RequestBodyLimitError) return json(res, { error: e.code }, e.status);
       return json(res, { error: e?.message || 'parse_create_failed' }, 500);
     }
   }
@@ -141,7 +137,7 @@ export class ParseController {
     if (!rec?.result) return json(res, { error: 'job not found or not ready' }, 404);
 
     try {
-      const bodyBuf = await readBody(req);
+      const bodyBuf = await readBoundedBody(req);
       const body = JSON.parse(bodyBuf.toString('utf8') || '{}');
       const correction = body as CorrectionPayload;
 
@@ -164,6 +160,7 @@ export class ParseController {
         review_hints: rec.result?.review_hints || [],
       });
     } catch (e: any) {
+      if (e instanceof RequestBodyLimitError) return json(res, { error: e.code }, e.status);
       return json(res, { error: e?.message || 'corrections_failed' }, 500);
     }
   }
