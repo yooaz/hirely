@@ -1,3 +1,4 @@
+import { canCallBillableCvProvider, PREMIUM_PROVIDER_HOLD_CODE } from '../lib/premium-provider-gate.js';
 /**
  * Vercel serverless — Google Cloud Vision OCR (DOCUMENT_TEXT_DETECTION).
  * Env: GOOGLE_CLOUD_VISION_API_KEY or GEMINI_API_KEY unused here.
@@ -77,6 +78,10 @@ export default async function handler(req, res) {
 
   if (req.method !== 'POST') {
     return json(res, { error: 'Method not allowed' }, 405);
+  }
+
+  if (!canCallBillableCvProvider(req)) {
+    return json(res, { error: 'Premium AI/OCR unavailable pending server-side entitlement and consent', code: PREMIUM_PROVIDER_HOLD_CODE }, 403);
   }
 
   const apiKey = process.env.GOOGLE_CLOUD_VISION_API_KEY;
