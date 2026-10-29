@@ -1,3 +1,4 @@
+import { canCallBillableCvProvider, PREMIUM_PROVIDER_HOLD_CODE } from '../lib/premium-provider-gate.js';
 /**
  * Structure OCR/noisy CV text into Hirely cvData JSON via Gemini (optional).
  * POST JSON: { "text": "..." }
@@ -31,6 +32,10 @@ Use only facts from the input. No placeholders. Empty strings/arrays if unknown.
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return json(res, { ok: true, usage: 'POST { text }' });
+  }
+
+  if (!canCallBillableCvProvider(req)) {
+    return json(res, { error: 'Premium AI/OCR unavailable pending server-side entitlement and consent', code: PREMIUM_PROVIDER_HOLD_CODE }, 403);
   }
 
   const API_KEY = process.env.GEMINI_API_KEY;
