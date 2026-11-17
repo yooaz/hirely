@@ -23,3 +23,11 @@ Vérifier les tests disponibles dans `package.json` avant toute exécution. Aucu
 
 ## Validation manquante
 Contrôler dans un navigateur réel : PDF native text, PDF scanné FR/EN, photo JPEG, numérisation multi-colonnes, CV DOCX, 20 fichiers réels consentis et export inchangé ; mesurer temps/mémoire par rapport à main. Vérifier tous les autres appels API éventuels : ce correctif cible **le pipeline OCR canvas** et ne prouve pas que tout Hirely soit dépourvu de services payants.
+
+
+## Fermeture complète du transport OCR payant dans cette branche de laboratoire
+
+- `api/ocr.js` refuse les requêtes de reconnaissance côté serveur avec HTTP **503** (`REMOTE_OCR_DISABLED_USE_LOCAL_TESSERACT`) **avant** le parsing multipart ou la lecture d'une clé Google Vision. Le code de l'API historique est conservé pour une reprise contrôlée, mais rendu inatteignable par le garde explicite.
+- `src/core/extraction/cloud-ocr.js` indique toujours `cloudOcrConfigured() === false` et `tryCloudOcr() === null` dans cette branche, même si une URL cloud était configurée.
+- `src/tests/qa-zero-cloud-ocr-transport.mjs` vérifie que le serveur et le navigateur n'envoient aucune requête de transport, avec un faux endpoint et un `fetch` qui lancerait une erreur si appelé.
+- Cela n'arrête **pas** automatiquement une éventuelle API déjà publiée depuis la branche `main`. La production doit être auditée séparément pour garantir 0 coût.
