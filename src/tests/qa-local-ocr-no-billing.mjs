@@ -16,7 +16,7 @@ test('both local OCR routes avoid expensive PNG serialization',()=>{
 });
 test('cloud-first behavior cannot occur when free-only guard is active',async()=>{
   let worker=0,remote=0,blobs=0;
-  const script=src.replace(/^import [^\n]+\n/g,'').replace(/\bexport\s+/g,'');
+  const script=src.replace(/^import [^\n]+\n/gm,'').replace(/\bexport\s+/g,'');
   const factory=Function('ensureTesseract','recognizeCanvas','recognizeCanvasWithLines','tryCloudOcr','cloudOcrConfigured','hirelyDebugLog','logOcrPropagate','shouldSkipRemoteOcr',
     script+';return {runOcrOnCanvas,runOcrOnCanvasWithLines,tryVisionApi}');
   const mod=factory(
