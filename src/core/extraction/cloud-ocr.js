@@ -4,7 +4,11 @@
  * Response: `{ "text": "..." }` or plain text body.
  */
 
+/** Free-only laboratory policy. Remote OCR is not permitted in this branch. */
+export const HIRELY_REMOTE_OCR_DISABLED = true;
+
 export function cloudOcrConfigured() {
+  if (HIRELY_REMOTE_OCR_DISABLED) return false;
   if (typeof globalThis === 'undefined') return false;
   return Boolean(globalThis.HIRELY_CLOUD_OCR_URL || globalThis.HIRELY_CLOUD_OCR_ENDPOINT);
 }
@@ -19,6 +23,7 @@ function endpoint() {
  * @returns {Promise<string|null>} null if not configured or request failed
  */
 export async function tryCloudOcr(file, opts = {}) {
+  if (HIRELY_REMOTE_OCR_DISABLED) return null;
   const url = endpoint();
   if (!url || typeof fetch !== 'function') return null;
 
