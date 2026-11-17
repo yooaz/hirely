@@ -1,5 +1,6 @@
 /**
- * Unified OCR: Google Vision (/api/ocr) → custom cloud → Tesseract (offline).
+ * Local-only OCR pilot: Tesseract is always used. No billable cloud requests.
+ * Keep a separate canonical release untouched until real-browser QA succeeds.
  */
 
 import { tryCloudOcr, cloudOcrConfigured } from './cloud-ocr.js';
@@ -9,6 +10,8 @@ import { logOcrPropagate } from './ocr-propagation-trace.js';
 import { hirelyDebugLog } from '../runtime/hirely-debug.js';
 
 export const PDF_OCR_RENDER_SCALE = 5;
+/** Absolute product guard: explicitly disables remote OCR billing in this branch. */
+export const HIRELY_FREE_OCR_ONLY = true;
 
 let lastOcrMetrics = null;
 
@@ -30,7 +33,7 @@ function defaultVisionUrl() {
 }
 
 export async function tryVisionApi(blob, opts = {}) {
-  if (shouldSkipRemoteOcr()) return null;
+  if (HIRELY_FREE_OCR_ONLY || shouldSkipRemoteOcr()) return null;
   const url = opts.visionUrl || globalThis.HIRELY_VISION_OCR_URL || defaultVisionUrl();
   if (!url || typeof fetch !== 'function') return null;
 
@@ -57,10 +60,11 @@ async function canvasToPngBlob(canvas) {
 
 export async function runOcrOnCanvas(canvas, opts = {}) {
   const t0 = typeof performance !== 'undefined' ? performance.now() : Date.now();
-  const blob = opts.file || (await canvasToPngBlob(canvas));
+  // Do not encode multi-megapixel PNG unless a remote OCR path is enabled.
+  const blob = HIRELY_FREE_OCR_ONLY ? null : (opts.file || await canvasToPngBlob(canvas));
 
-  let result = await tryVisionApi(blob, opts);
-  if (!result?.text && cloudOcrConfigured()) {
+  let result = HIRELY_FREE_OCR_ONLY ? null : await tryVisionApi(blob, opts);
+  if (!HIRELY_FREE_OCR_ONLY && !result?.text && cloudOcrConfigured()) {
     const cloud = await tryCloudOcr(blob, opts);
     if (cloud) result = { text: cloud, provider: 'cloud-proxy', timingMs: 0 };
   }
@@ -88,10 +92,11 @@ export async function runOcrOnCanvas(canvas, opts = {}) {
  */
 export async function runOcrOnCanvasWithLines(canvas, opts = {}) {
   const t0 = typeof performance !== 'undefined' ? performance.now() : Date.now();
-  const blob = opts.file || (await canvasToPngBlob(canvas));
+  // Do not encode multi-megapixel PNG unless a remote OCR path is enabled.
+  const blob = HIRELY_FREE_OCR_ONLY ? null : (opts.file || await canvasToPngBlob(canvas));
 
-  let result = await tryVisionApi(blob, opts);
-  if (!result?.text && cloudOcrConfigured()) {
+  let result = HIRELY_FREE_OCR_ONLY ? null : await tryVisionApi(blob, opts);
+  if (!HIRELY_FREE_OCR_ONLY && !result?.text && cloudOcrConfigured()) {
     const cloud = await tryCloudOcr(blob, opts);
     if (cloud) result = { text: cloud, provider: 'cloud-proxy', timingMs: 0 };
   }

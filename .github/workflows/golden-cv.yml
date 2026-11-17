@@ -2,7 +2,7 @@ name: Extraction Release Gate
 
 on:
   push:
-    branches: ['**']
+    branches: ['main']
   pull_request:
 
 jobs:
