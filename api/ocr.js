@@ -4,6 +4,9 @@
  * POST multipart field `file` (image/png, jpeg, or application/pdf first page as image from client).
  */
 
+/** No server-side paid Vision inference in this laboratory branch. */
+export const HIRELY_VISION_REMOTE_DISABLED = true;
+
 function json(res, body, status = 200) {
   res.status(status);
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -67,6 +70,14 @@ async function visionOcr(base64, apiKey) {
 }
 
 export default async function handler(req, res) {
+  // Fail closed before parsing uploads, reading credentials or making any fetch.
+  if (HIRELY_VISION_REMOTE_DISABLED) {
+    return json(res, {
+      error: 'REMOTE_OCR_DISABLED_USE_LOCAL_TESSERACT',
+      text: null,
+      configured: false,
+    }, 503);
+  }
   if (req.method === 'GET') {
     return json(res, {
       ok: true,
